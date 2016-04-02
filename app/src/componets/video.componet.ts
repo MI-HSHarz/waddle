@@ -74,15 +74,15 @@ import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen
 })
 
 export class VideoComponent {
-    sources:Array<Object>;
-    cuePointData:Object = {};
+    sources: Array<Object>;
+    cuePointData: Object = {};
 
-    controls:boolean = false;
-    autoplay:boolean = true;
-    loop:boolean = false;
-    preload:string = 'auto';
-    api:VgAPI;
-    fsAPI:VgFullscreenAPI = false;
+    controls: boolean = false;
+    autoplay: boolean = true;
+    loop: boolean = false;
+    preload: string = 'auto';
+    api: VgAPI;
+    fsAPI: VgFullscreenAPI = false;
 
     constructor() {
         this.fsAPI = VgFullscreenAPI;
@@ -95,7 +95,7 @@ export class VideoComponent {
         ];
     }
 
-    onPlayerReady(api:VgAPI) {
+    onPlayerReady(api: VgAPI) {
         this.api = api;
     }
 

@@ -6,12 +6,12 @@ import {Observable} from 'rxjs/Rx';
     selector: '[vgCuePoints]'
 })
 export class VgCuePoints {
-    @Output('onEnterCuePoint') onEnterCuePoint:EventEmitter<any> = new EventEmitter();
-    @Output('onUpdateCuePoint') onUpdateCuePoint:EventEmitter<any> = new EventEmitter();
-    @Output('onExitCuePoint') onExitCuePoint:EventEmitter<any> = new EventEmitter();
-    @Output('onCompleteCuePoint') onCompleteCuePoint:EventEmitter<any> = new EventEmitter();
+    @Output('onEnterCuePoint') onEnterCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onUpdateCuePoint') onUpdateCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onExitCuePoint') onExitCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onCompleteCuePoint') onCompleteCuePoint: EventEmitter<any> = new EventEmitter();
 
-    constructor(public ref:ElementRef) {
+    constructor(public ref: ElementRef) {
 
     }
 
@@ -25,7 +25,7 @@ export class VgCuePoints {
 
         this.ref.nativeElement.cues = cues;
 
-        for (var i:number=0, l:number=cues.length; i<l; i++) {
+        for (var i: number = 0, l: number = cues.length; i < l; i++) {
             var onEnter = Observable.fromEvent(cues[i], VgEvents.VG_ENTER);
             onEnter.subscribe(this.onEnter.bind(this));
 

@@ -4,18 +4,18 @@ import {VgAPI} from "./vg-api";
 
 @Injectable()
 export class VgFullscreenAPI {
-    static polyfill:any;
-    static onchange:string;
-    static onerror:string;
-    static nativeFullscreen:boolean = true;
-    static isFullscreen:boolean = false;
-    static isAvailable:boolean;
-    static videogularElement:HTMLElement;
-    static medias:Array<any>;
+    static polyfill: any;
+    static onchange: string;
+    static onerror: string;
+    static nativeFullscreen: boolean = true;
+    static isFullscreen: boolean = false;
+    static isAvailable: boolean;
+    static videogularElement: HTMLElement;
+    static medias: Array<any>;
 
-    static onChangeFullscreen:EventEmitter<boolean> = new EventEmitter();
+    static onChangeFullscreen: EventEmitter<boolean> = new EventEmitter();
 
-    static init(elem:HTMLElement, medias:Array<any>) {
+    static init(elem: HTMLElement, medias: Array<any>) {
         this.videogularElement = elem;
         this.medias = medias;
 
@@ -80,11 +80,10 @@ export class VgFullscreenAPI {
         this.isAvailable = (this.polyfill != null);
     }
 
-    static toggleFullscreen(element:any = null) {
+    static toggleFullscreen(element: any = null) {
         if (this.isFullscreen) {
             this.exit();
-        }
-        else {
+        } else {
             this.request(element);
         }
     }
@@ -106,8 +105,7 @@ export class VgFullscreenAPI {
                 }
 
                 this.enterElementInFullScreen(elem);
-            }
-            else {
+            } else {
                 this.enterElementInFullScreen(this.videogularElement);
             }
         }

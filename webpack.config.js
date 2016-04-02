@@ -37,10 +37,11 @@ module.exports = {
                 loader: 'ts-loader',
                 query: {
                     'ignoreDiagnostics': [
-                        2403, // 2403 -> Subsequent variable declarations
-                        2300, // 2300 Duplicate identifier
-                        2374, // 2374 -> Duplicate number index signature
-                        2375  // 2375 -> Duplicate string index signature
+                        2403,   // 2403 -> Subsequent variable declarations
+                        2300,   // 2300 -> Duplicate identifier
+                        2374,   // 2374 -> Duplicate number index signature
+                        2375,   // 2375 -> Duplicate string index signature
+                        2656    // 2656 -> Exported external package typings file
                     ]
                 },
                 exclude: [ /\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/ ]
