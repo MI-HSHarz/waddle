@@ -2,6 +2,8 @@
   "name": "waddle",
   "version": "0.0.1",
   "description": "",
+  "author": "waddle",
+  "license": "no license yet",
   "main": "index.js",
   "repository" : "https://github.com/MI-HSHarz/waddle",
   "scripts": {
@@ -13,8 +15,6 @@
     "postinstall": "typings install",
     "electron": "electron app"
   },
-  "author": "Auth0",
-  "license": "MIT",
   "devDependencies": {
     "electron-prebuilt": "^0.35.4",
     "es6-shim": "^0.34.0",
