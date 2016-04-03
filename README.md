@@ -1,6 +1,6 @@
 # waddle
 
-## was muss ich tun um waddle aus zu probieren ?
+## was muss ich tun ?
 
 1. waddle laden dafür nimmst du am besten Git
 
