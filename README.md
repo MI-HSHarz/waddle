@@ -1,5 +1,7 @@
 # waddle
 
+![waddle](https://raw.githubusercontent.com/MI-HSHarz/waddle/master/waddle.png)
+
 ## was muss ich tun ?
 
 1. waddle laden dafür nimmst du am besten Git
