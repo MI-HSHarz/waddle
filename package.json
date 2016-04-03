@@ -13,10 +13,12 @@
     "typings": "typings",
     "lint": "tsconfig-lint",
     "postinstall": "typings install",
-    "electron": "electron app"
+    "electron": "electron app",
+    "electron-package": "electron-packager ./ waddle --platform=all --arch=all"
   },
   "devDependencies": {
     "electron-prebuilt": "^0.35.4",
+    "electron-packager": "6.0.0",
     "es6-shim": "^0.34.0",
     "typescript": "^1.7.3",
     "typings": "^0.7.9",

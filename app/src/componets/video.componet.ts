@@ -19,7 +19,7 @@ import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen
     ],
     template: `
         <div class="row">
-            <div class="col s8">
+            <div class="col s9">
                 <div class='box ratio16_9'>
                     <div class='content'>
                         <vg-player>

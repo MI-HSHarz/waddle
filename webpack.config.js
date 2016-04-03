@@ -14,7 +14,7 @@ module.exports = {
 
     entry: {
         'vendor': './app/vendor.ts',
-        'app': './app/app'
+        'app': './app/bootstrap'
     },
 
     output: {
