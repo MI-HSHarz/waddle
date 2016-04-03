@@ -1,7 +1,37 @@
 {
-  "name": "test",
+  "name": "Tada",
   "pages": [
-    "page1",
-    "page2"
+    {
+      "name": "erste Seite",
+      "text": "irgendein Text",
+      "video": {
+        "videoPath": "pathToViedo",
+        "trackPath": "pathToTrack"
+      },
+      "subPages": [
+        {
+          "name": "eine Unterseite"
+        },
+        {
+          "name": "eine zweite Unterseite"
+        }
+      ]
+    },
+    {
+      "name": "zweite Seite",
+      "text": "ein anderer Text",
+      "video": {
+        "videoPath": "pathToViedo",
+        "trackPath": "pathToTrack"
+      },
+      "subPages": [
+        {
+          "name": "Unterseite:2.1 "
+        },
+        {
+          "name": "Unterseite:2.2 "
+        }
+      ]
+    }
   ]
 }

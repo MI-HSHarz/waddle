@@ -6,6 +6,7 @@ import 'rxjs/add/observable/forkJoin';
 
 import {Component} from 'angular2/core';
 import {VideoComponent} from "./componets/video.componet";
+import {ContentloaderService, Content} from "./services/contentloader.service";
 
 
 @Component({
@@ -16,7 +17,7 @@ import {VideoComponent} from "./componets/video.componet";
     template: `
         <nav>
             <div class="nav-wrapper">
-                <!--<a href="#" class="brand-logo">waddle</a>-->
+                <a href="#" class="brand-logo">Waddle</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a (click)="openNav()"><i class="material-icons">menu</i></a></li>
                 </ul>
@@ -26,13 +27,21 @@ import {VideoComponent} from "./componets/video.componet";
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
             <div class="overlay-content">
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+                <ul>
+                    <li *ngFor="#page of content.pages">
+                        <a >
+                            {{page.name}}
+                        </a>
+                        <ul >
+                           <li *ngFor="#subpage of page.subPages">
+                                {{subpage.name}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
             </div>
          </div>
-        
         
         
         <videoComponet></videoComponet> 
@@ -41,9 +50,13 @@ import {VideoComponent} from "./componets/video.componet";
 
 export class App {
 
+    content: Content = new Content;
 
-    // constructor() {
-    // }
+    constructor(private _contentloaderService: ContentloaderService) {
+        this._contentloaderService.contentSubject.subscribe(content => {
+            this.content = content;
+        });
+    }
 
     openNav() {
         document.getElementById("myNav").style.height = "100%";

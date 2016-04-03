@@ -6,5 +6,13 @@ import 'rxjs/add/observable/forkJoin';
 
 import {bootstrap} from 'angular2/platform/browser';
 import {App} from "./src/app";
+import {ROUTER_PROVIDERS} from "angular2/router";
+import {HTTP_PROVIDERS} from "angular2/http";
 
-bootstrap(App);
+import {ContentloaderService} from "./src/services/contentloader.service";
+
+bootstrap(App, [
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS,
+    ContentloaderService,
+]);
