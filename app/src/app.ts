@@ -5,13 +5,21 @@ import 'rxjs/add/observable/interval';
 import 'rxjs/add/observable/forkJoin';
 
 import {Component} from 'angular2/core';
-import {VideoComponent} from "./componets/video.componet";
+import {VideoPageComponent} from "./componets/videopage.componet.ts";
 import {ContentloaderService, Content} from "./services/contentloader.service";
+import {StartComponent} from "./componets/start.component.ts";
+import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
+import {CORE_DIRECTIVES} from "angular2/common";
+import {UriEncodePipe} from "./pipes/uriEncode.pipe";
 
 
 @Component({
     directives: [
-        VideoComponent
+        ROUTER_DIRECTIVES,
+        CORE_DIRECTIVES
+    ],
+    pipes: [
+        UriEncodePipe
     ],
     selector: 'app',
     template: `
@@ -27,14 +35,17 @@ import {ContentloaderService, Content} from "./services/contentloader.service";
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
             <div class="overlay-content">
+
                 <ul>
                     <li *ngFor="#page of content.pages">
-                        <a >
-                            {{page.name}}
+                         <a href="#/video-page/{{page.$href | uriEncode}}"
+                            (click)="closeNav()">
+                            {{page.menuName}}
                         </a>
                         <ul >
-                           <li *ngFor="#subpage of page.subPages">
-                                {{subpage.name}}
+                           <li *ngFor="#subpage of page.subPages" 
+                                (click)="closeNav()">
+                                {{subpage.menuName}}
                             </li>
                         </ul>
                     </li>
@@ -42,11 +53,30 @@ import {ContentloaderService, Content} from "./services/contentloader.service";
                 
             </div>
          </div>
-        
-        
-        <videoComponet></videoComponet> 
+
+        <main>
+            <router-outlet ></router-outlet>
+        </main>
         `
 })
+
+@RouteConfig([
+    {
+        path: '/',
+        component: StartComponent,
+        name: 'Start'
+    },
+    {
+        path: '/video-page',
+        component: VideoPageComponent,
+        name: 'Page'
+    },
+    {
+        path: '/video-page/:id',
+        component: VideoPageComponent,
+        name: 'VideoPage'
+    }
+])
 
 export class App {
 

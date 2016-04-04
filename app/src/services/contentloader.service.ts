@@ -39,6 +39,14 @@ export class ContentloaderService {
 
 export class Content {
     name: string;
+    colorScheme: {
+        menuColor: string;
+    };
+    imprint: {
+        name: string;
+        type: string;
+        $href: string;
+    };
     pages: string[];
 }
 

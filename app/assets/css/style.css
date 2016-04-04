@@ -67,7 +67,7 @@ body {
 .overlay ul{
     padding: 8px;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -75,7 +75,7 @@ body {
 
 .overlay ul a {
     font-family: "Georgia, serif", Times, serif;
-    font-size: 36px;
+    font-size: 48px;
     color: #eee;
 }
 
@@ -85,7 +85,7 @@ body {
 
 .closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px !important;
+    top: 5px;
+    right: 20px;
+    font-size: 40px !important;
 }

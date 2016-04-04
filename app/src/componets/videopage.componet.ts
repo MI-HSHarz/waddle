@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {VgPlayer} from "../vidogular/vg-player/vg-player";
 import {VgAPI} from "../vidogular/services/vg-api";
 import {VgFullscreenAPI} from "../vidogular/services/vg-fullscreen-api";
@@ -6,14 +6,14 @@ import {VgCuePoints} from "../vidogular/vg-cue-points/vg-cue-points";
 import {VgOverlayPlay} from "../vidogular/vg-overlay-play/vg-overlay-play";
 import {NgIf, NgFor} from "angular2/common";
 import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen";
+import {RouteParams} from "angular2/router";
 
 @Component({
-    selector: 'videoComponet',
+    selector: 'videoPageComponet',
     directives: [
         VgPlayer,
         VgCuePoints,
         VgOverlayPlay,
-
         NgFor,
         NgIf
     ],
@@ -45,8 +45,9 @@ import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen
                             
                             <video id="singleVideo" preload="auto" controls>
                             
-                                <source *ngFor="#video of sources" [src]="video.src" [type]="video.type">        
-                                <track src="./data/cue-points.vtt" kind="metadata" label="Cue Points" default
+                                <source *ngFor="#video of sources" [src]="video.src" [type]="video.type">   
+                                     
+                                <track [src]="track" kind="metadata" label="Cue Points" default
                                        #metadataTrack
                                        vgCuePoints
                                        (onEnterCuePoint)="onEnterCuePoint($event)"
@@ -73,8 +74,10 @@ import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen
   `
 })
 
-export class VideoComponent {
+export class VideoPageComponent implements OnInit {
+
     sources: Array<Object>;
+    track: string;
     cuePointData: Object = {};
 
     controls: boolean = false;
@@ -84,15 +87,23 @@ export class VideoComponent {
     api: VgAPI;
     fsAPI: VgFullscreenAPI = false;
 
-    constructor() {
+    constructor(private _routeParams: RouteParams) {
+
+        console.log(this._routeParams.get('id'));
+
         this.fsAPI = VgFullscreenAPI;
 
+        this.track = "./data/cue-points.vtt";
         this.sources = [
             {
                 src: "data/Chaplin.mp4",
                 type: "video/mp4"
             }
         ];
+    }
+
+    ngOnInit(): any {
+        return undefined;
     }
 
     onPlayerReady(api: VgAPI) {

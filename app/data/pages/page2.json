@@ -1,0 +1,7 @@
+{
+  "text": "irgendein Text",
+  "video": {
+    "videoPath": "pathToViedo",
+    "trackPath": "pathToTrack"
+  }
+}
