@@ -22,7 +22,7 @@ import {RouteParams} from "angular2/router";
   `
 })
 
-export class TextoPageComponent {
+export class TextPageComponent {
 
 
 

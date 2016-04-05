@@ -4,28 +4,33 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/observable/forkJoin';
 
-import {Component} from 'angular2/core';
+import {Component, TemplateRef} from 'angular2/core';
 import {VideoPageComponent} from "./componets/videopage.componet.ts";
-import {ContentloaderService, Content} from "./services/contentloader.service";
+import {ContentloaderService} from "./services/contentloader.service";
 import {StartComponent} from "./componets/start.component.ts";
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
-import {CORE_DIRECTIVES} from "angular2/common";
+import {CORE_DIRECTIVES, NgSwitchWhen, NgSwitch, NgSwitchDefault} from "angular2/common";
 import {UriEncodePipe} from "./pipes/uriEncode.pipe";
+import {Content} from "./services/model";
+import {TextPageComponent} from "./componets/textPage.component";
 
 
 @Component({
     directives: [
         ROUTER_DIRECTIVES,
-        CORE_DIRECTIVES
+        CORE_DIRECTIVES,
+        NgSwitch,
+        NgSwitchWhen,
+        NgSwitchDefault
     ],
     pipes: [
         UriEncodePipe
     ],
     selector: 'app',
     template: `
-        <nav>
+        <nav class=" grey darken-4">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Waddle</a>
+                <!--<a href="#" class="brand-logo">Waddle</a>-->
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a (click)="openNav()"><i class="material-icons">menu</i></a></li>
                 </ul>
@@ -38,14 +43,38 @@ import {UriEncodePipe} from "./pipes/uriEncode.pipe";
 
                 <ul>
                     <li *ngFor="#page of content.pages">
-                         <a href="#/video-page/{{page.$href | uriEncode}}"
-                            (click)="closeNav()">
-                            {{page.menuName}}
-                        </a>
+                         
+                        <div [ngSwitch]="page.type">
+                        
+                                <a *ngSwitchWhen="'textPage'" (click)="closeNav()"
+                                    href="#/text-page/{{page.$href | uriEncode}}">
+                                    {{page.menuName}}
+                                </a>
+                                <a *ngSwitchWhen="'videoPage'" (click)="closeNav()"
+                                    href="#/video-page/{{page.$href | uriEncode}}">
+                                    {{page.menuName}}
+                                </a>
+                                <a *ngSwitchDefault (click)="closeNav()">
+                                    {{page.menuName}} kein gültiger Seitentype
+                                </a>
+                        </div>
+
                         <ul >
-                           <li *ngFor="#subpage of page.subPages" 
-                                (click)="closeNav()">
-                                {{subpage.menuName}}
+                            <li *ngFor="#subpage of page.subPages" >
+                                <div [ngSwitch]="subpage.type">
+                        
+                                    <a *ngSwitchWhen="'textPage'" (click)="closeNav()"
+                                        href="#/text-page/{{subpage.$href | uriEncode}}">
+                                        {{subpage.menuName}}
+                                    </a>
+                                    <a *ngSwitchWhen="'videoPage'" (click)="closeNav()"
+                                        href="#/video-page/{{subpage.$href | uriEncode}}">
+                                        {{subpage.menuName}}
+                                    </a>
+                                    <a *ngSwitchDefault (click)="closeNav()">
+                                        {{subpage.menuName}} kein gültiger Seitentype
+                                    </a>
+                                 </div>
                             </li>
                         </ul>
                     </li>
@@ -59,6 +88,7 @@ import {UriEncodePipe} from "./pipes/uriEncode.pipe";
         </main>
         `
 })
+
 
 @RouteConfig([
     {
@@ -75,6 +105,11 @@ import {UriEncodePipe} from "./pipes/uriEncode.pipe";
         path: '/video-page/:id',
         component: VideoPageComponent,
         name: 'VideoPage'
+    },
+    {
+        path: '/text-page/:id',
+        component: TextPageComponent,
+        name: 'TextPage'
     }
 ])
 

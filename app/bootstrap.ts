@@ -10,12 +10,14 @@ import {ROUTER_PROVIDERS, HashLocationStrategy, LocationStrategy} from "angular2
 import {HTTP_PROVIDERS} from "angular2/http";
 
 import {ContentloaderService} from "./src/services/contentloader.service";
+import {PageService} from "./src/services/page.service";
 import {provide} from "angular2/core";
 
 bootstrap(App, [
     HTTP_PROVIDERS,
     ROUTER_PROVIDERS,
     ContentloaderService,
+    PageService,
     provide(
         LocationStrategy,
         {useClass: HashLocationStrategy}

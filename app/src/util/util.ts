@@ -1,7 +1,7 @@
 const _hasOwnProperty = Object.prototype.hasOwnProperty;
 export const has = function(obj: any, prop: any) {
     return _hasOwnProperty.call(obj, prop);
-}
+};
 
 /**
 * Function signature for comparing
@@ -80,10 +80,11 @@ export function makeString<T>(item: T, join: string = ","): string {
         let first = true;
         for (const prop in item) {
             if (has(item, prop)) {
-                if (first)
+                if (first) {
                     first = false;
-                else
+                } else {
                     toret = toret + join;
+                }
                 toret = toret + prop + ":" + (<any>item)[prop];
             }
         }

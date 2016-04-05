@@ -6,7 +6,7 @@
   "pages": [
     {
       "menuName": "erste Seite",
-      "type": "videoPage",
+      "type": "textPage",
       "$href": "pages/page1.json",
       "subPages": [
         {

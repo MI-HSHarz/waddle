@@ -59,7 +59,7 @@ import {RouteParams} from "angular2/router";
             </div>
                 
             <div class="col s3">
-                <div class="card blue-grey darken-1" style="height: 80%">
+                <div class="card grey darken-4" style="height: 80%">
                     <div class="card-content white-text">
                         <span class="card-title">Begleittext</span>
                         <div *ngIf="cuePointData.title">
