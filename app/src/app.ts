@@ -4,20 +4,33 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/observable/forkJoin';
 
-import {Component} from 'angular2/core';
-import {VideoComponent} from "./componets/video.componet";
-import {ContentloaderService, Content} from "./services/contentloader.service";
+import {Component, TemplateRef} from 'angular2/core';
+import {VideoPageComponent} from "./componets/videopage.componet.ts";
+import {ContentloaderService} from "./services/contentloader.service";
+import {StartComponent} from "./componets/start.component.ts";
+import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
+import {CORE_DIRECTIVES, NgSwitchWhen, NgSwitch, NgSwitchDefault} from "angular2/common";
+import {UriEncodePipe} from "./pipes/uriEncode.pipe";
+import {Content} from "./services/model";
+import {TextPageComponent} from "./componets/textPage.component";
 
 
 @Component({
     directives: [
-        VideoComponent
+        ROUTER_DIRECTIVES,
+        CORE_DIRECTIVES,
+        NgSwitch,
+        NgSwitchWhen,
+        NgSwitchDefault
+    ],
+    pipes: [
+        UriEncodePipe
     ],
     selector: 'app',
     template: `
-        <nav>
+        <nav class=" grey darken-4">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Waddle</a>
+                <!--<a href="#" class="brand-logo">Waddle</a>-->
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a (click)="openNav()"><i class="material-icons">menu</i></a></li>
                 </ul>
@@ -27,14 +40,41 @@ import {ContentloaderService, Content} from "./services/contentloader.service";
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
             <div class="overlay-content">
+
                 <ul>
                     <li *ngFor="#page of content.pages">
-                        <a >
-                            {{page.name}}
-                        </a>
+                         
+                        <div [ngSwitch]="page.type">
+                        
+                                <a *ngSwitchWhen="'textPage'" (click)="closeNav()"
+                                    href="#/text-page/{{page.$href | uriEncode}}">
+                                    {{page.menuName}}
+                                </a>
+                                <a *ngSwitchWhen="'videoPage'" (click)="closeNav()"
+                                    href="#/video-page/{{page.$href | uriEncode}}">
+                                    {{page.menuName}}
+                                </a>
+                                <a *ngSwitchDefault (click)="closeNav()">
+                                    {{page.menuName}} kein gültiger Seitentype
+                                </a>
+                        </div>
+
                         <ul >
-                           <li *ngFor="#subpage of page.subPages">
-                                {{subpage.name}}
+                            <li *ngFor="#subpage of page.subPages" >
+                                <div [ngSwitch]="subpage.type">
+                        
+                                    <a *ngSwitchWhen="'textPage'" (click)="closeNav()"
+                                        href="#/text-page/{{subpage.$href | uriEncode}}">
+                                        {{subpage.menuName}}
+                                    </a>
+                                    <a *ngSwitchWhen="'videoPage'" (click)="closeNav()"
+                                        href="#/video-page/{{subpage.$href | uriEncode}}">
+                                        {{subpage.menuName}}
+                                    </a>
+                                    <a *ngSwitchDefault (click)="closeNav()">
+                                        {{subpage.menuName}} kein gültiger Seitentype
+                                    </a>
+                                 </div>
                             </li>
                         </ul>
                     </li>
@@ -42,11 +82,36 @@ import {ContentloaderService, Content} from "./services/contentloader.service";
                 
             </div>
          </div>
-        
-        
-        <videoComponet></videoComponet> 
+
+        <main>
+            <router-outlet ></router-outlet>
+        </main>
         `
 })
+
+
+@RouteConfig([
+    {
+        path: '/',
+        component: StartComponent,
+        name: 'Start'
+    },
+    {
+        path: '/video-page',
+        component: VideoPageComponent,
+        name: 'Page'
+    },
+    {
+        path: '/video-page/:id',
+        component: VideoPageComponent,
+        name: 'VideoPage'
+    },
+    {
+        path: '/text-page/:id',
+        component: TextPageComponent,
+        name: 'TextPage'
+    }
+])
 
 export class App {
 

@@ -1,6 +1,8 @@
 import {Injectable} from "angular2/core";
 import {Http, Response} from "angular2/http";
 import {Subject} from "rxjs/Subject";
+import {Content} from "./model";
+import {PageService} from "./page.service";
 
 
 @Injectable()
@@ -13,7 +15,8 @@ export class ContentloaderService {
     private content: string;
 
 
-    constructor(public _http: Http) {
+    constructor(private _http: Http,
+                private _pageService: PageService) {
         this.load();
     }
 
@@ -22,12 +25,15 @@ export class ContentloaderService {
     }
 
     public load() {
-        return this._http.get(this.apiBaseUrl)
+        this._http.get(this.apiBaseUrl)
             .map((res: Response) => res.json())
             .subscribe(
-                (res: Content) => {
-                    // console.log(res);
-                    this.contentSubject.next(res);
+                (content: Content) => {
+                    this.contentSubject.next(content);
+
+                    content.pages.forEach( menuPage => {
+                        this._pageService.addPageToCache(menuPage.$href);
+                    });
                 },
                 error => {
                     console.log(error);
@@ -37,25 +43,3 @@ export class ContentloaderService {
     }
 }
 
-export class Content {
-    name: string;
-    pages: string[];
-}
-
-export class Page {
-    name: string;
-    subPages: SubPage[];
-    video: VideoContet;
-    text: string;
-}
-
-export class SubPage {
-    name: string;
-    video: VideoContet;
-    text: string;
-}
-
-export class VideoContet {
-    videoPath: string;
-    trackPath: string;
-}

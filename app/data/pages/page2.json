@@ -1,0 +1,9 @@
+{
+  "titel": "Titel1",
+  "type": "videoPage",
+  "text": "irgendein Text",
+  "video": {
+    "videoPath": "pathToViedo",
+    "trackPath": "pathToTrack"
+  }
+}

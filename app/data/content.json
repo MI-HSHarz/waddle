@@ -1,37 +1,47 @@
 {
   "name": "Tada",
+  "colorScheme":{
+    "menuColor": "#eee"
+  },
   "pages": [
     {
-      "name": "erste Seite",
-      "text": "irgendein Text",
-      "video": {
-        "videoPath": "pathToViedo",
-        "trackPath": "pathToTrack"
-      },
+      "menuName": "erste Seite",
+      "type": "textPage",
+      "$href": "pages/page1.json",
       "subPages": [
         {
-          "name": "eine Unterseite"
+          "menuName": "eine Unterseite",
+          "type": "videoPage",
+          "$href": "pages/page1.json"
         },
         {
-          "name": "eine zweite Unterseite"
+          "menuName": "eine zweite Unterseite",
+          "type": "videoPage",
+          "$href": "pages/page1.json"
         }
       ]
     },
     {
-      "name": "zweite Seite",
-      "text": "ein anderer Text",
-      "video": {
-        "videoPath": "pathToViedo",
-        "trackPath": "pathToTrack"
-      },
+      "menuName": "zweite Seite",
+      "type": "videoPage",
+      "$href": "pages/page2.json",
       "subPages": [
         {
-          "name": "Unterseite:2.1 "
+          "menuName": "Unterseite:2.1 ",
+          "type": "videoPage",
+          "$href": "pages/page1.json"
         },
         {
-          "name": "Unterseite:2.2 "
+          "menuName": "Unterseite:2.2 ",
+          "type": "videoPage",
+          "$href": "pages/page1.json"
         }
       ]
     }
-  ]
+  ],
+  "imprint": {
+    "name": "Impressum",
+    "type": "videoPage",
+    "$href": "pages/page2.json"
+  }
 }

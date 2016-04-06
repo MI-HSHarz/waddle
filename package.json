@@ -7,6 +7,8 @@
   "main": "index.js",
   "repository" : "https://github.com/MI-HSHarz/waddle",
   "scripts": {
+    "start": "electron app",
+      "prestart":"webpack --profile --display-error-details --display-cached",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
     "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
     "dev-server": "webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --port 3000",
