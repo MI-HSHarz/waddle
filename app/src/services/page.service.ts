@@ -26,4 +26,8 @@ export class PageService {
                 }
             );
     }
+
+    public getPage(path: string): Page {
+        return this.pageCacheDict.getValue(path);
+    }
 }

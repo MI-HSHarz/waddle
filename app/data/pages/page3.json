@@ -1,0 +1,15 @@
+{
+  "titel": "Titel1",
+  "type": "videoPage",
+  "text": "irgendein Text",
+  "gallery": [
+    {
+      "path": "pathToImage",
+      "caption": "Bildunterschrift"
+    },
+    {
+      "path": "pathToImage",
+      "caption": "Bildunterschrift"
+    }
+  ]
+}
