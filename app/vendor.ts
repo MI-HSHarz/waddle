@@ -15,4 +15,6 @@ import 'rxjs';
 
 import 'zone.js';
 
+import "materialize-waddle.scss";
+
 // Other vendors for example jQuery or Lodash
