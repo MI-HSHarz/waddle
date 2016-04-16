@@ -115,11 +115,12 @@ import {TextPageComponent} from "./componets/textPage.component";
 
 export class App {
 
-    content: Content = new Content;
+    content: Content = new Content();
 
     constructor(private _contentloaderService: ContentloaderService) {
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
+            
         });
     }
 

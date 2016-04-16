@@ -79,7 +79,7 @@ export class VideoPageComponent implements OnInit {
     sources: Array<Object>;
     track: string;
     cuePointData: Object = {};
-
+    
     controls: boolean = false;
     autoplay: boolean = true;
     loop: boolean = false;
@@ -103,6 +103,7 @@ export class VideoPageComponent implements OnInit {
     }
 
     ngOnInit(): any {
+
         return undefined;
     }
 

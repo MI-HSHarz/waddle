@@ -1,7 +1,5 @@
 {
   "titel": "Titel1",
-  "type": "videoPage",
-  "text": "irgendein Text",
   "components": [
     {
       "gallery": [
