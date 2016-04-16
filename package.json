@@ -42,9 +42,8 @@
     "url-loader": "^0.5.7"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.13",
-    "zone.js": "0.6.6",
-    "bootstrap": "^3.3.6",
+    "angular2": "2.0.0-beta.15",
+    "zone.js": "0.6.10",
     "gulp": "^3.9.0",
     "es6-shim": "0.35.0",
     "es6-promise": "^3.1.2",

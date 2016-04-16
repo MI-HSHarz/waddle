@@ -11,6 +11,8 @@ export class VgCuePoints {
     @Output('onExitCuePoint') onExitCuePoint: EventEmitter<any> = new EventEmitter();
     @Output('onCompleteCuePoint') onCompleteCuePoint: EventEmitter<any> = new EventEmitter();
 
+    cues;
+
     constructor(public ref: ElementRef) {
 
     }
@@ -23,6 +25,8 @@ export class VgCuePoints {
     onLoad(event) {
         var cues = event.target.track.cues;
 
+        this.cues = cues;
+        
         this.ref.nativeElement.cues = cues;
 
         for (var i: number = 0, l: number = cues.length; i < l; i++) {
