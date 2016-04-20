@@ -10,8 +10,10 @@ export class VgCuePoints {
     @Output('onUpdateCuePoint') onUpdateCuePoint: EventEmitter<any> = new EventEmitter();
     @Output('onExitCuePoint') onExitCuePoint: EventEmitter<any> = new EventEmitter();
     @Output('onCompleteCuePoint') onCompleteCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onLoadCompleteCuePoints') onLoadCompleteCuePoints: EventEmitter<TextTrackCue[]> = new EventEmitter();
 
     cues;
+    cuePoints: TextTrackCue[] = [];
 
     constructor(public ref: ElementRef) {
 
@@ -26,7 +28,6 @@ export class VgCuePoints {
         var cues = event.target.track.cues;
 
         this.cues = cues;
-        
         this.ref.nativeElement.cues = cues;
 
         for (var i: number = 0, l: number = cues.length; i < l; i++) {
@@ -35,7 +36,12 @@ export class VgCuePoints {
 
             var onExit = Observable.fromEvent(cues[i], VgEvents.VG_EXIT);
             onExit.subscribe(this.onExit.bind(this));
+
+            this.cuePoints.push(cues[i]);
         }
+
+        this.onLoadCompleteCuePoints.next(this.cuePoints);
+
     }
 
     onEnter(event) {
