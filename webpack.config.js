@@ -7,6 +7,7 @@ var toString = Function.prototype.call.bind(Object.prototype.toString);
 var path = require('path');
 var webpack = require('webpack');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     devtool: 'source-map',
@@ -26,7 +27,8 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.ts', '.js', '.json', '.css', '.html']
+        modulesDirectories: ["node_modules", "app/assets/sass"],
+        extensions: ['', '.ts', '.js', '.json', '.css', '.scss' , '.html']
     },
 
     module: {
@@ -53,7 +55,19 @@ module.exports = {
             { test: /\.css$/,   loader: 'raw-loader' },
 
             // support for .html as raw text
-            { test: /\.html$/,  loader: 'raw-loader' }
+            { test: /\.html$/,  loader: 'raw-loader' },
+            { test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader"),
+            },
+            {
+                test: /\.(|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
+            },
+            // support for .html as raw text
+            { test: /\.html$/,  loader: 'raw-loader' },
+            { test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000&name=img/[name].[ext]" },
+            { test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000&name=img/[name].[ext]" },
+            { test: /\.gif$/,    loader: "url-loader?prefix=img/&limit=5000&name=img/[name].[ext]" }
         ],
         noParse: [
             /zone\.js\/dist\/.+/,
@@ -62,8 +76,13 @@ module.exports = {
         ]
     },
 
+    sassLoader: {
+        exclude: [ /\.jpg\.ts$/, /\.jpg/, /node_modules/ ]
+    },
+
     plugins: [
-        new CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js', minChunks: Infinity})
+        new CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js', minChunks: Infinity}),
+        new ExtractTextPlugin("materialize-waddle.css",{allChunks: false})
     ],
 
     // Other module loader config

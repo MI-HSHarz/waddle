@@ -22,7 +22,7 @@ import {Page} from "../services/model";
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
   `
 })
 

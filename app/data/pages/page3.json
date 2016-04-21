@@ -1,15 +1,23 @@
 {
   "titel": "Titel1",
-  "type": "videoPage",
-  "text": "irgendein Text",
-  "gallery": [
+  "components": [
     {
-      "path": "pathToImage",
-      "caption": "Bildunterschrift"
+      "gallery": [
+        {
+          "path": "pathToImage",
+          "caption": "Bildunterschrift"
+        },
+        {
+          "path": "pathToImage",
+          "caption": "Bildunterschrift"
+        }
+      ]
     },
     {
-      "path": "pathToImage",
-      "caption": "Bildunterschrift"
+      "video": {
+        "videoPath": "pathToViedo",
+        "trackPath": "pathToTrack"
+      }
     }
   ]
 }
