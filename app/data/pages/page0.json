@@ -1,0 +1,11 @@
+{
+  "titel": "Titel1",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/Chaplin.mp4",
+        "trackPath": "data/cue-points.vtt"
+      }
+    }
+  ]
+}

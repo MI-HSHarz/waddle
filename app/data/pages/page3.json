@@ -1,23 +1,11 @@
 {
-  "titel": "Titel1",
+  "titel": "Titel3",
   "components": [
     {
-      "gallery": [
-        {
-          "path": "pathToImage",
-          "caption": "Bildunterschrift"
-        },
-        {
-          "path": "pathToImage",
-          "caption": "Bildunterschrift"
-        }
+      "text": [
+        "text1",
+        "text2"
       ]
-    },
-    {
-      "video": {
-        "videoPath": "pathToViedo",
-        "trackPath": "pathToTrack"
-      }
     }
   ]
 }

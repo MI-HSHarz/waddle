@@ -5,14 +5,13 @@ import 'rxjs/add/observable/interval';
 import 'rxjs/add/observable/forkJoin';
 
 import {Component, TemplateRef} from 'angular2/core';
-import {VideoPageComponent} from "./componets/videopage.componet.ts";
 import {ContentloaderService} from "./services/contentloader.service";
 import {StartComponent} from "./componets/start.component.ts";
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 import {CORE_DIRECTIVES, NgSwitchWhen, NgSwitch, NgSwitchDefault} from "angular2/common";
 import {UriEncodePipe} from "./pipes/uriEncode.pipe";
 import {Content} from "./services/model";
-import {TextPageComponent} from "./componets/textPage.component";
+import {PageComponent} from "./componets/page.component";
 
 
 @Component({
@@ -45,36 +44,18 @@ import {TextPageComponent} from "./componets/textPage.component";
                     <li *ngFor="#page of content.pages">
                          
                         <div [ngSwitch]="page.type">
-                        
-                                <a *ngSwitchWhen="'textPage'" (click)="closeNav()"
-                                    href="#/text-page/{{page.$href | uriEncode}}">
+                            <a (click)="closeNav()"
+                                href="#/page/{{page.$href | uriEncode}}">
                                     {{page.menuName}}
-                                </a>
-                                <a *ngSwitchWhen="'videoPage'" (click)="closeNav()"
-                                    href="#/video-page/{{page.$href | uriEncode}}">
-                                    {{page.menuName}}
-                                </a>
-                                <a *ngSwitchDefault (click)="closeNav()">
-                                    {{page.menuName}} kein gültiger Seitentype
-                                </a>
+                            </a>
                         </div>
 
                         <ul >
                             <li *ngFor="#subpage of page.subPages" >
-                                <div [ngSwitch]="subpage.type">
-                        
-                                    <a *ngSwitchWhen="'textPage'" (click)="closeNav()"
-                                        href="#/text-page/{{subpage.$href | uriEncode}}">
+                                <a (click)="closeNav()"
+                                        href="#/page/{{subpage.$href | uriEncode}}">
                                         {{subpage.menuName}}
-                                    </a>
-                                    <a *ngSwitchWhen="'videoPage'" (click)="closeNav()"
-                                        href="#/video-page/{{subpage.$href | uriEncode}}">
-                                        {{subpage.menuName}}
-                                    </a>
-                                    <a *ngSwitchDefault (click)="closeNav()">
-                                        {{subpage.menuName}} kein gültiger Seitentype
-                                    </a>
-                                 </div>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -97,19 +78,9 @@ import {TextPageComponent} from "./componets/textPage.component";
         name: 'Start'
     },
     {
-        path: '/video-page',
-        component: VideoPageComponent,
+        path: '/page/:id',
+        component: PageComponent,
         name: 'Page'
-    },
-    {
-        path: '/video-page/:id',
-        component: VideoPageComponent,
-        name: 'VideoPage'
-    },
-    {
-        path: '/text-page/:id',
-        component: TextPageComponent,
-        name: 'TextPage'
     }
 ])
 

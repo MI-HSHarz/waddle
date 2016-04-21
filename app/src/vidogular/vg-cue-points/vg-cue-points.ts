@@ -38,11 +38,11 @@ export class VgCuePoints {
             var onExit = Observable.fromEvent(cues[i], VgEvents.VG_EXIT);
             onExit.subscribe(this.onExit.bind(this));
 
-            console.log(cues[i]);
+            //console.log(cues[i]);
 
             var cuePointData = JSON.parse(cues[i].text);
 
-            console.log(cuePointData);
+            //console.log(cuePointData);
 
             var cue = new  Cue();
             cue.id = cues[i].id;
