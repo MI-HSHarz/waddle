@@ -28,3 +28,17 @@ export class VideoContet {
     videoPath: string;
     trackPath: string;
 }
+
+export class Cue {
+    id: string;
+    endTime: number;
+    startTime: number;
+
+    title: string;
+    description: string;
+    shortDescription: string;
+    src: string;
+    href: string;
+
+    duration:number;
+}
