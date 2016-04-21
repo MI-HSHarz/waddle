@@ -5,6 +5,7 @@ import {VgFullscreenAPI} from "../vidogular/services/vg-fullscreen-api";
 import {VgCuePoints} from "../vidogular/vg-cue-points/vg-cue-points";
 import {NgIf, NgFor} from "angular2/common";
 import {RouteParams} from "angular2/router";
+import {Cue} from "../services/model";
 
 
 @Component({
@@ -49,8 +50,10 @@ import {RouteParams} from "angular2/router";
                 <div class="card grey darken-4" style="height: 30%">
                     <div class="card-content white-text">
                         <span class="card-title">Sprungmarken</span>
-                        <div *ngFor="#cuecuePoint of cuePoints">
-                            <a (click)="seekToTime(cuecuePoint.startTime)">{{cuecuePoint.id}}</a>
+                        <div *ngFor="#cuePoint of cuePoints">
+                            <a (click)="seekToTime(cuePoint.startTime)">{{cuePoint.id}}</a> 
+                            - {{cuePoint.shortDescription}}
+                            - Dauer: {{cuePoint.duration}} Sekunden 
                         </div>
                     </div>
                 </div>
@@ -80,7 +83,7 @@ export class VideoPageComponent implements OnInit {
     sources: Array<Object>;
     track: string;
     cuePointData: Object = {};
-    cuePoints: TextTrackCue[];
+    cuePoints: Cue[];
 
     constructor(private _routeParams: RouteParams) {
 
@@ -116,12 +119,12 @@ export class VideoPageComponent implements OnInit {
 
     onLoadCompleteCuePoints($event) {
         this.cuePoints = $event;
-        console.log(this.cuePoints);
+        // console.log(this.cuePoints);
     }
 
     seekToTime(time: number) {
         console.log(time);
         console.log(this.api);
-        this.api.currentTime = time - .1;
+        this.api.currentTime = time;
     }
 }

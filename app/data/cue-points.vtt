@@ -5,6 +5,7 @@ Charlie
 {
     "title": "Charlie Chaplin",
     "description": "Sir Charles Spencer Chaplin jr., KBE, bekannt als Charlie Chaplin (* 16. April 1889 vermutlich in London;[1] † 25. Dezember 1977 in Vevey, Schweiz), war ein britischer Komiker, Schauspieler, Regisseur, Drehbuchautor, Schnittmeister, Komponist und Filmproduzent.",
+    "shortDescription": "Sir Charles Spencer Chaplin jr., KBE, bekannt als Charlie Chaplin",
     "src": "https://upload.wikimedia.org/wikipedia/commons/0/00/Charlie_Chaplin.jpg",
     "href": "https://de.wikipedia.org/wiki/Charlie_Chaplin"
 }
@@ -13,7 +14,8 @@ Tramp
 00:00:10.100 --> 00:00:21.600
 {
     "title": "ls Tramp in Mabel’s Busy Day",
-    "description": "Chaplin zählt zu den einflussreichsten Komikern des 20. Jahrhunderts in der Filmgeschichte. Seine bekannteste Rolle ist der „Tramp“. ",
+    "description": "Chaplin zählt zu den einflussreichsten Komikern des 20. Jahrhunderts in der Filmgeschichte. Seine bekannteste Rolle ist der Tramp. ",
+    "shortDescription": "Chaplin zählt zu den einflussreichsten Komikern des 20. Jahrhunderts",
     "src": "https://upload.wikimedia.org/wikipedia/commons/9/90/Chaplin_Mabels_Busy_Day.jpg",
     "href": "https://de.wikipedia.org/wiki/Charlie_Chaplin"
 }
@@ -23,6 +25,7 @@ Charlie
 {
     "title": "Charlie Chaplin",
     "description": "Sir Charles Spencer Chaplin jr., KBE, bekannt als Charlie Chaplin (* 16. April 1889 vermutlich in London;[1] † 25. Dezember 1977 in Vevey, Schweiz), war ein britischer Komiker, Schauspieler, Regisseur, Drehbuchautor, Schnittmeister, Komponist und Filmproduzent.",
+    "shortDescription": "ein britischer Komiker",
     "src": "https://upload.wikimedia.org/wikipedia/commons/0/00/Charlie_Chaplin.jpg",
     "href": "https://de.wikipedia.org/wiki/Charlie_Chaplin"
 }

@@ -1,6 +1,7 @@
 import {Directive, Output, Input, EventEmitter, ElementRef} from "angular2/core";
 import {VgEvents} from '../events/vg-events';
 import {Observable} from 'rxjs/Rx';
+import {Cue} from "../../services/model";
 
 @Directive({
     selector: '[vgCuePoints]'
@@ -10,10 +11,10 @@ export class VgCuePoints {
     @Output('onUpdateCuePoint') onUpdateCuePoint: EventEmitter<any> = new EventEmitter();
     @Output('onExitCuePoint') onExitCuePoint: EventEmitter<any> = new EventEmitter();
     @Output('onCompleteCuePoint') onCompleteCuePoint: EventEmitter<any> = new EventEmitter();
-    @Output('onLoadCompleteCuePoints') onLoadCompleteCuePoints: EventEmitter<TextTrackCue[]> = new EventEmitter();
+    @Output('onLoadCompleteCuePoints') onLoadCompleteCuePoints: EventEmitter<Cue[]> = new EventEmitter();
 
     cues;
-    cuePoints: TextTrackCue[] = [];
+    cuePoints: Cue[] = [];
 
     constructor(public ref: ElementRef) {
 
@@ -37,7 +38,27 @@ export class VgCuePoints {
             var onExit = Observable.fromEvent(cues[i], VgEvents.VG_EXIT);
             onExit.subscribe(this.onExit.bind(this));
 
-            this.cuePoints.push(cues[i]);
+            console.log(cues[i]);
+
+            var cuePointData = JSON.parse(cues[i].text);
+
+            console.log(cuePointData);
+
+            var cue = new  Cue();
+            cue.id = cues[i].id;
+            cue.startTime = cues[i].startTime;
+            cue.endTime = cues[i].endTime;
+
+            cue.title = cuePointData.title;
+            cue.description = cuePointData.description;
+            cue.shortDescription = cuePointData.shortDescription;
+            cue.src = cuePointData.src;
+            cue.href = cuePointData.href;
+
+            cue.duration = cue.endTime - cue.startTime;
+
+
+            this.cuePoints.push(cue);
         }
 
         this.onLoadCompleteCuePoints.next(this.cuePoints);
