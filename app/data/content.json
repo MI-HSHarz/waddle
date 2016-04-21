@@ -6,42 +6,39 @@
   "pages": [
     {
       "menuName": "erste Seite",
-      "type": "textPage",
-      "$href": "pages/page1.json",
+      "$href": "pages/page0.json",
       "subPages": [
         {
           "menuName": "eine Unterseite",
-          "type": "videoPage",
           "$href": "pages/page1.json"
         },
         {
+          "menuName": "eine Unterseite",
+          "$href": "pages/page2.json"
+        },
+        {
           "menuName": "eine zweite Unterseite",
-          "type": "videoPage",
-          "$href": "pages/page1.json"
+          "$href": "pages/page3.json"
         }
       ]
     },
     {
       "menuName": "zweite Seite",
-      "type": "videoPage",
-      "$href": "pages/page2.json",
+      "$href": "pages/page1.json",
       "subPages": [
         {
           "menuName": "Unterseite:2.1 ",
-          "type": "videoPage",
-          "$href": "pages/page1.json"
+          "$href": "pages/page2.json"
         },
         {
           "menuName": "Unterseite:2.2 ",
-          "type": "videoPage",
-          "$href": "pages/page1.json"
+          "$href": "pages/page3.json"
         }
       ]
     }
   ],
   "imprint": {
     "name": "Impressum",
-    "type": "videoPage",
-    "$href": "pages/page2.json"
+    "$href": "pages/page3.json"
   }
 }

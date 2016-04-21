@@ -5,7 +5,6 @@ export class Content {
     };
     imprint: {
         name: string;
-        type: string;
         $href: string;
     };
     pages: MenuPage[];
@@ -20,8 +19,23 @@ export class MenuPage {
 
 export class Page {
     titel: string;
-    video: VideoContet;
-    text: string;
+    components: ContetComponent[];
+}
+
+export class ContetComponent {
+    gallery: GalleryImage[];
+
+    video: {
+        videoPath: string;
+        trackPath: string;
+    };
+
+    text: string[];
+}
+
+export class GalleryImage {
+    path: string;
+    caption: string;
 }
 
 export class VideoContet {
@@ -40,5 +54,5 @@ export class Cue {
     src: string;
     href: string;
 
-    duration:number;
+    duration: number;
 }

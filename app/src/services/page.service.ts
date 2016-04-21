@@ -14,20 +14,25 @@ export class PageService {
     constructor(private _http: Http) {}
 
     addPageToCache(pageRef: string) {
-        this._http.get(this.apiBaseUrl + pageRef)
-            .map((res: Response) => res.json())
+        this.fetchPage(pageRef)
             .subscribe(
                 (page: Page) => {
                     this.pageCacheDict.setValue(pageRef, page);
-                    console.log(this.pageCacheDict);
+                    //console.log(this.pageCacheDict);
                 },
                 error => {
                     console.log(error);
+                    return error;
                 }
             );
     }
 
-    public getPage(path: string): Page {
-        return this.pageCacheDict.getValue(path);
+    public getPage(pageRef: string): Page {
+        return this.pageCacheDict.getValue(pageRef);
+    }
+
+    public fetchPage(pageRef: string) {
+        return this._http.get(this.apiBaseUrl + pageRef)
+            .map((res: Response) => res.json());
     }
 }

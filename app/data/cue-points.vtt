@@ -1,7 +1,17 @@
 WEBVTT FILE
 
+Start
+00:00:00.000 --> 00:00:00.000
+{
+    "title": "",
+    "description": "",
+    "shortDescription": "",
+    "src": "",
+    "href": ""
+}
+
 Charlie
-00:00:02.200 --> 00:00:10.000
+00:00:02.100 --> 00:00:10.000
 {
     "title": "Charlie Chaplin",
     "description": "Sir Charles Spencer Chaplin jr., KBE, bekannt als Charlie Chaplin (* 16. April 1889 vermutlich in London;[1] † 25. Dezember 1977 in Vevey, Schweiz), war ein britischer Komiker, Schauspieler, Regisseur, Drehbuchautor, Schnittmeister, Komponist und Filmproduzent.",
