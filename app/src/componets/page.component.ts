@@ -29,6 +29,7 @@ import {TextComponent} from "./text.component";
                 </div>
             </div>
         </div> 
+        
         <videoComponet   *ngIf="showVideo"   [track]="track" [source]="source"></videoComponet>
         
         <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
