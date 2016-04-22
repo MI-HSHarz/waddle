@@ -27,7 +27,7 @@ module.exports = {
     },
 
     resolve: {
-        modulesDirectories: ["node_modules", "app/assets/sass"],
+        modulesDirectories: ["node_modules", "app/assets/sass","app/assets/fonts"],
         extensions: ['', '.ts', '.js', '.json', '.css', '.scss' , '.html']
     },
 
