@@ -7,8 +7,7 @@ import {VgAPI} from '../../services/vg-api';
     host: {
         '(click)': 'onClick()'
     },
-    template:
-        `<div class="icon"
+    template: `<div class="icon"
              [class.pause]="getState() === 'play'"
              [class.play]="getState() === 'pause'">
         </div>`,
@@ -43,11 +42,11 @@ import {VgAPI} from '../../services/vg-api';
     `]
 })
 export class VgPlayPause implements OnInit {
-    elem:HTMLElement;
-    vgFor:string;
-    target:any;
+    elem: HTMLElement;
+    vgFor: string;
+    target: any;
 
-    constructor(ref:ElementRef, public API:VgAPI) {
+    constructor(ref: ElementRef, public API: VgAPI) {
         this.elem = ref.nativeElement;
     }
 
@@ -73,17 +72,16 @@ export class VgPlayPause implements OnInit {
     getState() {
         var state;
 
-        if (this.target.state instanceof Object) {
+        if ( this.target.state instanceof Object ) {
             state = 'pause';
 
-            for (var media in this.target.state) {
-                if (this.target.state[media] === 'play'){
+            for ( var media in this.target.state ) {
+                if ( this.target.state[media] === 'play' ) {
                     state = 'play';
                     break;
                 }
             }
-        }
-        else {
+        } else {
             state = this.target.state;
         }
 

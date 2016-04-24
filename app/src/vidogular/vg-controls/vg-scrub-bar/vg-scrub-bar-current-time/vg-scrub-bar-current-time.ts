@@ -35,11 +35,11 @@ import {VgAPI} from '../../../services/vg-api';
     `]
 })
 export class VgScrubBarCurrentTime implements OnInit {
-    elem:HTMLElement;
+    elem: HTMLElement;
     vgFor: string;
     target: any;
 
-    constructor(ref:ElementRef, public API:VgAPI) {
+    constructor(ref: ElementRef, public API: VgAPI) {
         this.elem = ref.nativeElement;
     }
 
