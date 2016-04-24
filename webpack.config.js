@@ -19,15 +19,15 @@ module.exports = {
     },
 
     output: {
-        path: __dirname + '/build/',
-        publicPath: 'build/',
+        path: __dirname + '/app/build/',
+        publicPath: 'app/build/',
         filename: '[name].js',
         sourceMapFilename: '[name].js.map',
         chunkFilename: '[id].chunk.js'
     },
 
     resolve: {
-        modulesDirectories: ["node_modules", "app/assets/sass"],
+        modulesDirectories: ["node_modules", "app/assets/sass","app/assets/fonts"],
         extensions: ['', '.ts', '.js', '.json', '.css', '.scss' , '.html']
     },
 
