@@ -45,12 +45,12 @@ import {VgAPI} from "../services/vg-api";
 })
 export class VgControls {
 
-    @Input('autohide') autohide:boolean = false;
-    @Input('autohide-time') autohideTime:number = 3;
+    @Input('autohide') autohide: boolean = false;
+    @Input('autohide-time') autohideTime: number = 3;
 
-    private timer:number;
+    private timer: number;
 
-    constructor(private api:VgAPI, private element:ElementRef, private renderer:Renderer) {
+    constructor(private api: VgAPI, private element: ElementRef, private renderer: Renderer) {
 
     }
 
@@ -63,16 +63,15 @@ export class VgControls {
     }
 
     ngAfterViewInit() {
-        if (this.autohide) {
+        if ( this.autohide ) {
             this.hide();
-        }
-        else {
+        } else {
             this.show();
         }
     }
 
     hide() {
-        if (this.autohide) {
+        if ( this.autohide ) {
             clearTimeout(this.timer);
             this.hideAsync();
         }

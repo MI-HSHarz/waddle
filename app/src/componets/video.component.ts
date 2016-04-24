@@ -6,6 +6,18 @@ import {VgCuePoints} from "../vidogular/vg-cue-points/vg-cue-points";
 import {NgIf, NgFor} from "angular2/common";
 import {RouteParams} from "angular2/router";
 import {Cue} from "../services/model";
+import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen";
+import {VgOverlayPlay} from "../vidogular/vg-overlay-play/vg-overlay-play";
+import {VgControls} from "../vidogular/vg-controls/vg-controls";
+import {VgPlayPause} from "../vidogular/vg-controls/vg-play-pause/vg-play-pause";
+import {VgPlaybackButton} from "../vidogular/vg-controls/vg-playback-button/vg-playback-button";
+import {VgScrubBar} from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar";
+import {VgScrubBarCurrentTime} from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-current-time/vg-scrub-bar-current-time";
+import {
+    VgScrubBarBufferingTime
+}
+    from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-buffering-time/vg-scrub-bar-buffering-time";
+import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
 
 
 @Component({
@@ -13,6 +25,15 @@ import {Cue} from "../services/model";
     directives: [
         VgPlayer,
         VgCuePoints,
+        VgOverlayPlay,
+        VgControls,
+        VgPlayPause,
+        VgPlaybackButton,
+        VgScrubBar,
+        VgScrubBarCurrentTime,
+        VgScrubBarBufferingTime,
+        VgMute,
+        VgFullscreen,
         NgFor,
         NgIf
     ],
@@ -21,28 +42,37 @@ import {Cue} from "../services/model";
             <div class="col s9">
                 <div class='box ratio16_9'>
                     <div class='content'>
+                        
                         <vg-player (onPlayerReady)="onPlayerReady($event)">
-                            <vg-controls>
-                               
-                                <vg-scrub-bar>
-                                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-                                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-                                    <vg-scrub-bar-cue-points [cuePoints]="metadataTrack.cues"></vg-scrub-bar-cue-points>
-                                </vg-scrub-bar>
-                              
-                            </vg-controls>
-                            
-                            <video id="singleVideo" preload="auto" controls>
-                            
-                                <source [src]="source" type="video/mp4">   
-                                     
-                                <track [src]="track" kind="metadata" label="Cue Points" default
+                        	<!--<vg-overlay-play></vg-overlay-play>-->
+                        
+                        	<vg-controls *ngIf="!controls" [autohide]="true" [autohideTime]="1.5">
+                        		<vg-play-pause></vg-play-pause>
+                        		<vg-playback-button></vg-playback-button>
+                        
+                        		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
+                        
+                        		<vg-scrub-bar>
+                        			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        			<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                        		</vg-scrub-bar>
+                        
+                        		<vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
+                        
+                        		<vg-mute></vg-mute>
+                        
+                        		<vg-fullscreen></vg-fullscreen>
+                        	</vg-controls>
+                        
+                        	<video #media id="singleVideo" preload="auto" [controls]="controls">
+                        		<source [src]="source" type="video/mp4">
+                        		 <track [src]="track" kind="metadata" label="Cue Points" default
                                        #metadataTrack
                                        vgCuePoints
                                        (onEnterCuePoint)="onEnterCuePoint($event)"
                                        (onExitCuePoint)="onExitCuePoint($event)"
                                        (onLoadCompleteCuePoints)="onLoadCompleteCuePoints($event)">
-                            </video>
+                        	</video>
                         </vg-player>
                     </div>
                 </div>
@@ -86,6 +116,30 @@ export class VideoComponent implements OnInit {
     cuePointData: Object = {};
     cuePoints: Cue[];
 
+    controls: boolean = false;
+    autoplay: boolean = false;
+    loop: boolean = false;
+    preload: string = 'auto';
+    fsAPI: VgFullscreenAPI;
+
+    constructor() {
+        this.fsAPI = VgFullscreenAPI;
+
+        this.sources = [
+            {
+                src: "http://static.videogular.com/assets/videos/videogular.mp4",
+                type: "video/mp4"
+            },
+            {
+                src: "http://static.videogular.com/assets/videos/videogular.ogg",
+                type: "video/ogg"
+            },
+            {
+                src: "http://static.videogular.com/assets/videos/videogular.webm",
+                type: "video/webm"
+            }
+        ];
+    }
 
     onPlayerReady(api: VgAPI) {
         this.api = api;

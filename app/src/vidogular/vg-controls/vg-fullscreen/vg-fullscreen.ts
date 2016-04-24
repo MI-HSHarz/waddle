@@ -8,8 +8,7 @@ import {VgFullscreenAPI} from "../../services/vg-fullscreen-api";
     host: {
         '(click)': 'onClick()'
     },
-    template:
-        `<div class="icon"
+    template: `<div class="icon"
              [class.normal]="!fsAPI.isFullscreen"
              [class.fullscreen]="fsAPI.isFullscreen">
         </div>`,
@@ -44,12 +43,12 @@ import {VgFullscreenAPI} from "../../services/vg-fullscreen-api";
     `]
 })
 export class VgFullscreen implements OnInit {
-    elem:HTMLElement;
-    vgFor:string;
-    target:Object;
-    fsAPI:VgFullscreenAPI;
+    elem: HTMLElement;
+    vgFor: string;
+    target: Object;
+    fsAPI: VgFullscreenAPI;
 
-    constructor(ref:ElementRef, public API:VgAPI) {
+    constructor(ref: ElementRef, public API: VgAPI) {
         this.elem = ref.nativeElement;
         this.fsAPI = VgFullscreenAPI;
     }
@@ -62,7 +61,7 @@ export class VgFullscreen implements OnInit {
     onClick() {
         var element = this.target;
 
-        if (this.target instanceof VgAPI) {
+        if ( this.target instanceof VgAPI ) {
             element = null;
         }
 
