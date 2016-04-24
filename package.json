@@ -4,11 +4,11 @@
   "description": "",
   "author": "waddle",
   "license": "no license yet",
-  "main": "index.js",
+  "main": "main.js",
   "repository": "https://github.com/MI-HSHarz/waddle",
   "scripts": {
     "start": "electron app",
-      "prestart":"webpack --profile --display-error-details --display-cached",
+    "prestart":"webpack --profile --display-error-details --display-cached",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
     "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
     "dev-server": "webpack-dev-server --inline --progress --profile --colors --display-error-details --display-cached --port 3000",
@@ -16,7 +16,7 @@
     "lint": "tsconfig-lint",
     "postinstall": "typings install",
     "electron": "electron app",
-    "electron-package": "electron-packager ./ waddle --platform=all --arch=all"
+    "electron-package": "electron-packager ./app waddle --platform=darwin --arch=all --overwrite"
   },
   "devDependencies": {
     "css-loader": "0.23.0",
