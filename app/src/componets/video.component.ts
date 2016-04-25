@@ -39,31 +39,31 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
     ],
     template: `
         <div class="row">
-            <div class="col s9">
+            <div class="col s12 m7 l8">
                 <div class='box ratio16_9'>
                     <div class='content'>
-                        
+
                         <vg-player (onPlayerReady)="onPlayerReady($event)">
                         	<!--<vg-overlay-play></vg-overlay-play>-->
-                        
+
                         	<vg-controls  [autohide]="true" [autohideTime]="1.5">
                         		<vg-play-pause></vg-play-pause>
                         		<vg-playback-button></vg-playback-button>
-                        
+
                         		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
-                        
+
                         		<vg-scrub-bar>
                         			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
                         			<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
                         		</vg-scrub-bar>
-                        
+
                         		<vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
-                        
+
                         		<vg-mute></vg-mute>
-                        
+
                         		<vg-fullscreen></vg-fullscreen>
                         	</vg-controls>
-                        
+
                         	<video #media id="singleVideo" preload="auto" [controls]="controls">
                         		<source [src]="source" type="video/mp4">
                         		 <track [src]="track" kind="metadata" label="Cue Points" default
@@ -76,21 +76,21 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
                         </vg-player>
                     </div>
                 </div>
-                <div class="card grey darken-4">
+                <div class="card grey darken-2">
                     <div class="card-content white-text">
                         <span class="card-title">Sprungmarken</span>
                         <div *ngFor="#cuePoint of cuePoints">
-                            <a (click)="seekToTime(cuePoint.startTime)">{{cuePoint.id}}</a> 
+                            <a (click)="seekToTime(cuePoint.startTime)">{{cuePoint.id}}</a>
                             - {{cuePoint.shortDescription}}
-                            - Dauer: {{cuePoint.duration}} Sekunden 
+                            - Dauer: {{cuePoint.duration}} Sekunden
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-                
-            <div class="col s3">
-                <div class="card grey darken-4" style="height: 70%">
+
+            <div class="col s12 m5 l4">
+                <div class="card full grey darken-4">
                     <div class="card-content white-text">
                         <span class="card-title">Begleittext</span>
                         <div *ngIf="cuePointData.title">
@@ -101,7 +101,7 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
                     </div>
                 </div>
             </div>
-            
+
         </div>
   `
 })

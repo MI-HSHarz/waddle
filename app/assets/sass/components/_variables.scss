@@ -205,9 +205,9 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
    ========================================================================== */
 
 $num-cols: 12 !default;
-$gutter-width: 1.5rem !default;
-$element-top-margin: $gutter-width/3 !default;
-$element-bottom-margin: ($gutter-width*2)/3 !default;
+$gutter-width: 0rem !default;
+$element-top-margin: 0 !default;
+$element-bottom-margin: 0 !default;
 
 
 /* 13. Navigation Bar
@@ -215,7 +215,7 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 
 $navbar-height: 64px !default;
 $navbar-height-mobile: 56px !default;
-$navbar-font-color: #fff !default;
+$navbar-font-color: color("grey", "lighten-1") !default;
 $navbar-brand-font-size: 2.1rem !default;
 
 
