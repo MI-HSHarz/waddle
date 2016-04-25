@@ -46,7 +46,7 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
                         <vg-player (onPlayerReady)="onPlayerReady($event)">
                         	<!--<vg-overlay-play></vg-overlay-play>-->
                         
-                        	<vg-controls *ngIf="!controls" [autohide]="true" [autohideTime]="1.5">
+                        	<vg-controls  [autohide]="true" [autohideTime]="1.5">
                         		<vg-play-pause></vg-play-pause>
                         		<vg-playback-button></vg-playback-button>
                         
