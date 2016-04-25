@@ -42,11 +42,13 @@
       opacity: 0.6;
     }
   }
-  .card-content {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    background-color: inherit;
+  &.module {
+    .card-content {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      background-color: inherit;
+    }
   }
 }
 .card-panel {

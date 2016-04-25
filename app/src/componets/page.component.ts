@@ -31,13 +31,12 @@ import {TextComponent} from "./text.component";
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <videoComponet   *ngIf="showVideo"   [track]="track" [source]="source"></videoComponet>
+                <videoComponet   *ngIf="showVideo"   [track]="track" [source]="source"></videoComponet>
 
             <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
 
             <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
+            </div>
             <div class="section col s12" id="screen-footer">
                 <div class="row dark">
                     <div class="col s12 m7 l8">

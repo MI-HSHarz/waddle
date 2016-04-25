@@ -7,7 +7,7 @@ import {Component} from "angular2/core";
          <div class="container grey darken-2">
                 <div class="section">
                     <div class="row">
-                        <div class="col s12 m6 teal white-text card half">
+                        <div class="col s12 m6 teal white-text card module half">
                               <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="http://lorempixel.com/1000/500/nature/2">
                              </div>
@@ -26,7 +26,7 @@ import {Component} from "angular2/core";
                               </ul>
                             </div>
                         </div>
-                        <div class="col s12 m6 teal darken-2 white-text card half">
+                        <div class="col s12 m6 teal darken-2 white-text card module half">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="http://lorempixel.com/1000/500/nature/4">
                              </div>
@@ -37,7 +37,7 @@ import {Component} from "angular2/core";
                             </div>
                             <div class="card-reveal">
                               <span class="card-title">Berufskolleg Weißenfels<i class="material-icons right">close</i></span>
-                              <ul class="">
+                              <ul class="navigation-list">
                                 <li><a href="#!" class="white-text">Unterricht</a></li>
                                 <li><a href="#!" class="white-text">Interview Lehrer</a></li>
                                 <li><a href="#!" class="white-text">Interview Schüler</a></li>
@@ -47,7 +47,7 @@ import {Component} from "angular2/core";
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s12 m6 teal lighten-2 white-text card half">
+                        <div class="col s12 m6 teal lighten-2 white-text card module half">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="http://lorempixel.com/1000/500/nature/3">
                              </div>
@@ -58,7 +58,7 @@ import {Component} from "angular2/core";
                             </div>
                             <div class="card-reveal">
                               <span class="card-title">Berufskolleg Bad Godesberg<i class="material-icons right">close</i></span>
-                              <ul class="">
+                              <ul class="navigation-list">
                                <li><a href="#!" class="white-text">Unterricht</a></li>
                                 <li><a href="#!" class="white-text">Interview Lehrer</a></li>
                                 <li><a href="#!" class="white-text">Interview Schüler</a></li>
@@ -66,7 +66,7 @@ import {Component} from "angular2/core";
                               </ul>
                             </div>
                         </div>
-                        <div class="col s12 m6 teal darken-3 white-text card half">
+                        <div class="col s12 m6 teal darken-3 white-text card module half">
                            <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="http://lorempixel.com/1000/500/nature/1">
                              </div>
@@ -77,7 +77,7 @@ import {Component} from "angular2/core";
                             </div>
                             <div class="card-reveal">
                               <span class="card-title">Berufskolleg Montabaur<i class="material-icons right">close</i></span>
-                              <ul class="">
+                              <ul class="navigation-list">
                                 <li><a href="#!" class="white-text">Unterricht</a></li>
                                 <li><a href="#!" class="white-text">Interview Lehrer</a></li>
                                 <li><a href="#!" class="white-text">Interview Schüler</a></li>
