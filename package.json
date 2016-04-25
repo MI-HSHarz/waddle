@@ -16,7 +16,10 @@
     "lint": "tsconfig-lint",
     "postinstall": "typings install",
     "electron": "electron app",
-    "electron-package": "electron-packager ./app waddle --platform=darwin --arch=all --overwrite"
+    "package-all": "electron-packager ./app waddle --out=Staging --platform=all --arch=all --ignore=src --ignore=bootstrap.ts --ignore=vendor.ts --overwrite",
+    "package-mac": "electron-packager ./app waddle --out=Staging --platform=mas --arch=all --ignore=src --ignore=bootstrap.ts --ignore=vendor.ts --overwrite",
+    "package-win": "electron-packager ./app waddle --out=Staging --platform=win32 --arch=x64 --asar --prune  --arch=x64  --ignore=src --ignore=bootstrap.ts --ignore=vendor.ts"
+
   },
   "devDependencies": {
     "css-loader": "0.23.0",
