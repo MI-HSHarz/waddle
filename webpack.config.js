@@ -28,7 +28,10 @@ module.exports = {
 
     resolve: {
         modulesDirectories: ["node_modules", "app/assets/sass","app/assets/fonts"],
-        extensions: ['', '.ts', '.js', '.json', '.css', '.scss' , '.html']
+        extensions: ['', '.ts', '.js', '.json', '.css', '.scss' , '.html'],
+        alias: {
+            'jquery': 'app/assets/js/jquery-2.2.3-min.js'
+        }
     },
 
     module: {

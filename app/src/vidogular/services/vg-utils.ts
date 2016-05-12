@@ -4,13 +4,13 @@ export class VgUtils {
      * https://gist.github.com/paulirish/211209
      * @returns {number}
      */
-    static getZIndex(): number {
-        var zIndex: number = 1;
-        var elementZIndex: number;
+    static getZIndex():number {
+        var zIndex:number = 1;
+        var elementZIndex:number;
 
         var tags = document.getElementsByTagName('*');
 
-        for (var i: number = 0, l: number = tags.length; i < l; i++) {
+        for (var i:number = 0, l:number = tags.length; i < l; i++) {
             elementZIndex = parseInt(window.getComputedStyle(tags[i])["z-index"]);
 
             if (elementZIndex > zIndex) {

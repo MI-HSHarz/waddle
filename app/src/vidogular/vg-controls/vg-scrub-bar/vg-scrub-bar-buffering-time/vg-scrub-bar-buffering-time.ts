@@ -31,11 +31,11 @@ import {VgAPI} from '../../../services/vg-api';
     `]
 })
 export class VgScrubBarBufferingTime implements OnInit {
-    elem: HTMLElement;
+    elem:HTMLElement;
     vgFor: string;
     target: any;
 
-    constructor(ref: ElementRef, public API: VgAPI) {
+    constructor(ref:ElementRef, public API:VgAPI) {
         this.elem = ref.nativeElement;
     }
 
@@ -47,7 +47,7 @@ export class VgScrubBarBufferingTime implements OnInit {
     getBufferTime() {
         var bufferTime = "0%";
 
-        if ( this.target.buffer && this.target.buffered.length ) {
+        if (this.target.buffer && this.target.buffered.length) {
             bufferTime = ((this.target.buffer.end / this.target.time.total) * 100) + '%';
         }
 

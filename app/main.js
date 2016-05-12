@@ -1,4 +1,7 @@
-var app = require('app'); 
+const electron = require('electron');
+const app = electron.app;
+const path = require('path');
+
 
 // browser-window creates a native window
 var BrowserWindow = require('browser-window');
@@ -11,6 +14,14 @@ app.on('window-all-closed', function () {
 });
 
 app.on('ready', function () {
+  var protocol = electron.protocol;
+  protocol.registerFileProtocol('atom', function(request, callback) {
+    var url = request.url.substr(7);
+    callback({path: path.normalize(__dirname + '/' + url)});
+  }, function (error) {
+    if (error)
+      console.error('Failed to register protocol')
+  });
 
   // Initialize the window to our specified dimensions
   mainWindow = new BrowserWindow({ width: 1024, height: 768 });

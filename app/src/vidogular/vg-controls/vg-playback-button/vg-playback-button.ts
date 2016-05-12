@@ -29,14 +29,14 @@ import {VgAPI} from '../../services/vg-api';
     `]
 })
 export class VgPlaybackButton implements OnInit {
-    elem: HTMLElement;
+    elem:HTMLElement;
     vgFor: string;
     target: any;
 
     playbackValues: Array<string>;
     playbackIndex: number;
 
-    constructor(ref: ElementRef, public API: VgAPI) {
+    constructor(ref:ElementRef, public API:VgAPI) {
         this.elem = ref.nativeElement;
         this.playbackValues = ['0.5', '1.0', '1.5', '2.0'];
         this.playbackIndex = 1;
@@ -50,9 +50,10 @@ export class VgPlaybackButton implements OnInit {
     onClick() {
         this.playbackIndex = ++this.playbackIndex % this.playbackValues.length;
 
-        if ( this.target instanceof VgAPI ) {
+        if (this.target instanceof VgAPI) {
             this.target.playbackRate = (this.playbackValues[this.playbackIndex]);
-        } else {
+        }
+        else {
             this.target.playbackRate[this.vgFor] = (this.playbackValues[this.playbackIndex]);
         }
     }

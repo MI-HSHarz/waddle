@@ -7,7 +7,8 @@ import {VgAPI} from '../../services/vg-api';
     host: {
         '(click)': 'onClick()'
     },
-    template: `<div class="icon"
+    template:
+        `<div class="icon"
              [class.level3]="getVolume() >= 0.75"
              [class.level2]="getVolume() >= 0.5 && getVolume() < 0.75"
              [class.level1]="getVolume() >= 0.25 && getVolume() < 0.5"
@@ -57,14 +58,14 @@ import {VgAPI} from '../../services/vg-api';
     `]
 })
 export class VgMute implements OnInit {
-    elem: HTMLElement;
+    elem:HTMLElement;
     vgFor: string;
     target: any;
 
-    currentVolume: number;
+    currentVolume:number;
 
 
-    constructor(ref: ElementRef, public API: VgAPI) {
+    constructor(ref:ElementRef, public API:VgAPI) {
         this.elem = ref.nativeElement;
     }
 
@@ -77,9 +78,10 @@ export class VgMute implements OnInit {
     onClick() {
         var volume = this.getVolume();
 
-        if ( volume === 0 ) {
+        if (volume === 0) {
             this.target.volume = this.currentVolume;
-        } else {
+        }
+        else {
             this.currentVolume = volume;
             this.target.volume = 0;
         }
@@ -89,15 +91,16 @@ export class VgMute implements OnInit {
         var volume;
         var result;
 
-        if ( this.target.volume instanceof Object ) {
+        if (this.target.volume instanceof Object) {
             volume = 0;
 
-            for ( var media in this.target.volume ) {
+            for (var media in this.target.volume) {
                 volume += this.target.volume[media];
             }
 
             result = (volume / Object.keys(this.target.volume).length);
-        } else {
+        }
+        else {
             result = this.target.volume;
         }
 

@@ -4,10 +4,12 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class VgAPI {
-    medias: Object = {};
+    medias:Object = {};
     videogularElement: any;
 
-    // constructor() {}
+    constructor() {
+
+    }
 
     getDefaultMedia() {
         for (var item in this.medias) {
@@ -15,7 +17,7 @@ export class VgAPI {
         }
     }
 
-    getMediaById(id: string = null) {
+    getMediaById(id:string = null) {
         var media = this.medias[id];
 
         if (!id || id === '*') {
@@ -109,26 +111,27 @@ export class VgAPI {
         return this.$$getAllProperties('subscriptions');
     }
 
-    seekTime(value: number, byPercent: boolean = false) {
+    seekTime(value:number, byPercent:boolean = false) {
         for (var id in this.medias) {
             this.$$seek(this.medias[id], value, byPercent);
         }
     }
 
-    $$seek(media: any, value: number, byPercent: boolean = false) {
+    $$seek(media:any, value:number, byPercent:boolean = false) {
         var second;
 
         if (byPercent) {
             second = value * media.duration / 100;
             // TODO: Not working unit on-media-ready is available
-        } else {
+        }
+        else {
             second = value;
         }
 
         media.currentTime = second;
     }
 
-    $$getAllProperties(property: string) {
+    $$getAllProperties(property:string){
         var result = {};
 
         for (var id in this.medias) {
@@ -136,24 +139,22 @@ export class VgAPI {
         }
 
         // If there's only one media element then return the plain value
-        if (Object.keys(result).length === 1) {
-            result = result[Object.keys(result)[0]];
-        }
+        if (Object.keys(result).length === 1) result = result[Object.keys(result)[0]];
 
         return result;
     }
 
-    $$setAllProperties(property: string, value) {
+    $$setAllProperties(property:string, value){
         for (var id in this.medias) {
             this.medias[id][property] = value;
         }
     }
 
-    registerElement(elem: HTMLElement) {
+    registerElement(elem:HTMLElement) {
         this.videogularElement = elem;
     }
 
-    registerMedia(media: any) {
+    registerMedia(media:any) {
         media.time = {
             current: 0,
             total: 0,
@@ -170,7 +171,7 @@ export class VgAPI {
         media.isWaiting = false;
         media.isCompleted = false;
         media.state = 'pause';
-        media.seekTime = (value: number, byPercent: boolean = false) => {
+        media.seekTime = (value:number, byPercent:boolean = false) => {
             this.$$seek(media, value, byPercent);
         };
 
@@ -181,7 +182,7 @@ export class VgAPI {
         this.connect(media);
     }
 
-    connect(media: any) {
+    connect(media:any) {
         media.subscriptions.canPlay = Observable.fromEvent(media, VgEvents.VG_CAN_PLAY);
         media.subscriptions.canPlay.subscribe(this.onCanPlay.bind(this));
 
@@ -258,8 +259,7 @@ export class VgAPI {
         var end = this.medias[event.target.id].buffered.length - 1;
 
         this.medias[event.target.id].time.current = this.medias[event.target.id].currentTime * 1000;
-        this.medias[event.target.id].time.left =
-            (this.medias[event.target.id].duration - this.medias[event.target.id].currentTime) * 1000;
+        this.medias[event.target.id].time.left = (this.medias[event.target.id].duration - this.medias[event.target.id].currentTime) * 1000;
 
         if (end >= 0) {
             this.medias[event.target.id].buffer.end = this.medias[event.target.id].buffered.end(end) * 1000;

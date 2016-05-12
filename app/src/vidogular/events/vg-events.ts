@@ -24,7 +24,7 @@ export class VgEvents {
     static VG_TIME_UPDATE: string = 'timeupdate';
     static VG_VOLUME_CHANGE: string = 'volumechange';
     static VG_WAITING: string = 'waiting';
-
+    
     static VG_LOAD: string = 'load';
     static VG_ENTER: string = 'enter';
     static VG_EXIT: string = 'exit';

@@ -37,7 +37,7 @@ export class VgScrubBar implements OnInit {
     vgFor: string;
     target: any;
 
-    constructor(ref: ElementRef, public API: VgAPI) {
+    constructor(ref:ElementRef, public API:VgAPI) {
         this.elem = ref.nativeElement;
     }
 
