@@ -1,17 +1,22 @@
 import {Directive, Output, Input, EventEmitter, ElementRef} from "angular2/core";
 import {VgEvents} from '../events/vg-events';
 import {Observable} from 'rxjs/Rx';
+import {Cue} from "../../services/model";
 
 @Directive({
     selector: '[vgCuePoints]'
 })
 export class VgCuePoints {
-    @Output('onEnterCuePoint') onEnterCuePoint:EventEmitter<any> = new EventEmitter();
-    @Output('onUpdateCuePoint') onUpdateCuePoint:EventEmitter<any> = new EventEmitter();
-    @Output('onExitCuePoint') onExitCuePoint:EventEmitter<any> = new EventEmitter();
-    @Output('onCompleteCuePoint') onCompleteCuePoint:EventEmitter<any> = new EventEmitter();
+    @Output('onEnterCuePoint') onEnterCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onUpdateCuePoint') onUpdateCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onExitCuePoint') onExitCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onCompleteCuePoint') onCompleteCuePoint: EventEmitter<any> = new EventEmitter();
+    @Output('onLoadCompleteCuePoints') onLoadCompleteCuePoints: EventEmitter<Cue[]> = new EventEmitter();
 
-    constructor(public ref:ElementRef) {
+    cues;
+    cuePoints: Cue[] = [];
+
+    constructor(public ref: ElementRef) {
 
     }
 
@@ -23,15 +28,41 @@ export class VgCuePoints {
     onLoad(event) {
         var cues = event.target.track.cues;
 
+        this.cues = cues;
         this.ref.nativeElement.cues = cues;
 
-        for (var i:number=0, l:number=cues.length; i<l; i++) {
+        for (var i: number = 0, l: number = cues.length; i < l; i++) {
             var onEnter = Observable.fromEvent(cues[i], VgEvents.VG_ENTER);
             onEnter.subscribe(this.onEnter.bind(this));
 
             var onExit = Observable.fromEvent(cues[i], VgEvents.VG_EXIT);
             onExit.subscribe(this.onExit.bind(this));
+
+            //console.log(cues[i]);
+
+            var cuePointData = JSON.parse(cues[i].text);
+
+            //console.log(cuePointData);
+
+            var cue = new  Cue();
+            cue.id = cues[i].id;
+            cue.startTime = cues[i].startTime;
+            cue.endTime = cues[i].endTime;
+
+            cue.title = cuePointData.title;
+            cue.description = cuePointData.description;
+            cue.shortDescription = cuePointData.shortDescription;
+            cue.src = cuePointData.src;
+            cue.href = cuePointData.href;
+
+            cue.duration = cue.endTime - cue.startTime;
+
+
+            this.cuePoints.push(cue);
         }
+
+        this.onLoadCompleteCuePoints.next(this.cuePoints);
+
     }
 
     onEnter(event) {
