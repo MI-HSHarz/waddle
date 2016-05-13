@@ -24,7 +24,7 @@
   "devDependencies": {
     "css-loader": "0.23.1",
     "electron-packager": "7.0.1",
-    "electron-prebuilt": "0.37.8",
+    "electron-prebuilt": "1.0.2",
     "exports-loader": "0.6.3",
     "expose-loader": "0.7.1",
     "extract-text-webpack-plugin": "1.0.1",
@@ -37,7 +37,7 @@
     "style-loader": "0.13.1",
     "ts-loader": "0.8.2",
     "tsconfig-lint": "0.11.0",
-    "tslint": "3.9.0",
+    "tslint": "3.10.1",
     "tslint-loader": "2.1.4",
     "typedoc": "0.3.12",
     "typescript": "1.8.10",
