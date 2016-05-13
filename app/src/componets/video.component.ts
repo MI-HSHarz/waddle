@@ -48,7 +48,7 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
 
                         	<vg-controls  [autohide]="true" [autohideTime]="1.5">
                         		<vg-play-pause></vg-play-pause>
-                        		<vg-playback-button></vg-playback-button>
+                        		<!--<vg-playback-button></vg-playback-button>-->
 
                         		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
 
