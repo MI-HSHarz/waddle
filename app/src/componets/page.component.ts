@@ -17,7 +17,7 @@ import {TextComponent} from "./text.component";
         TextComponent
     ],
     template: `
-        <div class="container grey darken-2">
+        <div class="container grey darken-2" id="screen">
             <div class="section">
                 <div class="row">
                     <div class="col s12">
@@ -37,9 +37,9 @@ import {TextComponent} from "./text.component";
 
             <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
             </div>
-            <div class="section col s12" id="screen-footer">
+            <div class="section col s12" id="screen-sidebar">
                 <div class="row dark">
-                    <div class="col s12 m7 l8">
+                    <div class="main">
                      <nav class="transparent">
                             <div class="nav-wrapper">
                                 <ul>
@@ -48,13 +48,13 @@ import {TextComponent} from "./text.component";
                             </div>
                         </nav>
                     </div>
-                    <div class="col s12 m5 l4">
+                    <div class="down">
                         <nav class="transparent">
                             <div class="nav-wrapper">
                                 <ul>
-                                    <li class="left"><a href="sass.html"><i class="material-icons">keyboard_arrow_up</i></a></li>
-                                    <li class="left"><a href="badges.html"><i class="material-icons">keyboard_arrow_down</i></a></li>
-                                    <li class="right"><a href="badges.html"><i class="material-icons">view_list</i></a></li>
+                                    <li class=""><a href="sass.html"><i class="material-icons">keyboard_arrow_up</i></a></li>
+                                    <li class=""><a href="badges.html"><i class="material-icons">keyboard_arrow_down</i></a></li>
+                                    <li class=""><a href="badges.html"><i class="material-icons">view_list</i></a></li>
                                 </ul>
                             </div>
                         </nav>
