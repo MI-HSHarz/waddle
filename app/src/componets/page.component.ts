@@ -37,24 +37,18 @@ import {TextComponent} from "./text.component";
 
             <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
             </div>
-            <div class="section col s12" id="screen-sidebar">
+            <div class="section col s12" id="screen-sidebar-small">
                 <div class="row dark">
                     <div class="main">
-                     <nav class="transparent">
-                            <div class="nav-wrapper">
-                                <ul>
-                                    <li class=""><a href="badges.html"><i class="material-icons left">library_books</i>Materialien</a></li>
-                                </ul>
-                            </div>
-                        </nav>
+
                     </div>
                     <div class="down">
                         <nav class="transparent">
                             <div class="nav-wrapper">
                                 <ul>
-                                    <li class=""><a href="sass.html"><i class="material-icons">keyboard_arrow_up</i></a></li>
-                                    <li class=""><a href="badges.html"><i class="material-icons">keyboard_arrow_down</i></a></li>
-                                    <li class=""><a href="badges.html"><i class="material-icons">view_list</i></a></li>
+                                    <li class="nav-up"><a href="sass.html"><i class="material-icons">keyboard_arrow_up</i></a></li>
+                                    <li class="nav-down"><a href="badges.html"><i class="material-icons">keyboard_arrow_down</i></a></li>
+                                    <li class="nav-expand"><a href="badges.html"><i class="material-icons">arrow_back</i></a></li>
                                 </ul>
                             </div>
                         </nav>
