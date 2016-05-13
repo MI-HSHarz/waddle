@@ -34,13 +34,13 @@ import {VgAPI} from '../../../services/vg-api';
     `]
 })
 export class VgScrubBarCuePoints implements OnChanges, OnInit {
-    elem:HTMLElement;
+    elem: HTMLElement;
     vgFor: string;
     target: any;
 
-    @Input('cuePoints') cuePoints:TextTrackCueList;
+    @Input('cuePoints') cuePoints: TextTrackCueList;
 
-    constructor(ref:ElementRef, public API:VgAPI) {
+    constructor(ref: ElementRef, public API: VgAPI) {
         this.elem = ref.nativeElement;
     }
 
@@ -53,14 +53,14 @@ export class VgScrubBarCuePoints implements OnChanges, OnInit {
     }
 
     onLoadedMetadata() {
-        if (this.cuePoints) {
-            for (var i = 0, l = this.cuePoints.length; i < l; i++) {
+        if ( this.cuePoints ) {
+            for ( var i = 0, l = this.cuePoints.length; i < l; i++ ) {
                 var end = (this.cuePoints[i].endTime >= 0) ? this.cuePoints[i].endTime : this.cuePoints[i].startTime + 1;
                 var cuePointDuration = (end - this.cuePoints[i].startTime) * 1000;
-                var position:string = '0';
-                var percentWidth:string = '0';
+                var position: string = '0';
+                var percentWidth: string = '0';
 
-                if (typeof cuePointDuration === 'number' && this.target.time.total) {
+                if ( typeof cuePointDuration === 'number' && this.target.time.total ) {
                     percentWidth = ((cuePointDuration * 100) / this.target.time.total) + "%";
                     position = (this.cuePoints[i].startTime * 100 / (Math.round(this.target.time.total / 1000))) + "%";
                 }
@@ -74,7 +74,7 @@ export class VgScrubBarCuePoints implements OnChanges, OnInit {
     }
 
     ngOnChanges(changes: {[propName: string]: SimpleChange}) {
-        if (changes['cuePoints'].currentValue) {
+        if ( changes['cuePoints'].currentValue ) {
             this.onLoadedMetadata();
         }
     }

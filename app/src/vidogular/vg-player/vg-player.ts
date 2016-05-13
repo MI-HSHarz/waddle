@@ -1,4 +1,4 @@
-///<reference path="../../node_modules/angular2/typings/browser.d.ts"/>
+///<reference path="../../../../node_modules/angular2/typings/browser.d.ts"/>
 
 import {Output, Component, EventEmitter, ElementRef, OnInit, ContentChild, HostBinding} from 'angular2/core';
 
@@ -45,19 +45,19 @@ import {VgUtils} from "../services/vg-utils";
     `]
 })
 export class VgPlayer implements OnInit {
-    elem:HTMLElement;
-    api:VgAPI;
+    elem: HTMLElement;
+    api: VgAPI;
 
-    @HostBinding('class.fullscreen') isFullscreen:boolean = false;
-    @HostBinding('style.z-index') zIndex:string;
-
-    @Output()
-    onPlayerReady:EventEmitter<VgAPI> = new EventEmitter();
+    @HostBinding('class.fullscreen') isFullscreen: boolean = false;
+    @HostBinding('style.z-index') zIndex: string;
 
     @Output()
-    onMediaReady:EventEmitter<any> = new EventEmitter();
+    onPlayerReady: EventEmitter<VgAPI> = new EventEmitter();
 
-    constructor(ref:ElementRef, api:VgAPI) {
+    @Output()
+    onMediaReady: EventEmitter<any> = new EventEmitter();
+
+    constructor(ref: ElementRef, api: VgAPI) {
         this.api = api;
         this.elem = ref.nativeElement;
 
@@ -65,12 +65,12 @@ export class VgPlayer implements OnInit {
     }
 
     ngOnInit() {
-        var slice:Function = Array.prototype.slice;
-        var videos:Array<any> = slice.call(this.elem.querySelectorAll("video"));
-        var audios:Array<any> = slice.call(this.elem.querySelectorAll("audio"));
-        var medias:Array<any> = videos.concat(audios);
+        var slice: Function = Array.prototype.slice;
+        var videos: Array<any> = slice.call(this.elem.querySelectorAll("video"));
+        var audios: Array<any> = slice.call(this.elem.querySelectorAll("audio"));
+        var medias: Array<any> = videos.concat(audios);
 
-        for (var i=0, l=medias.length; i<l; i++) {
+        for ( var i = 0, l = medias.length; i < l; i++ ) {
             this.api.registerMedia(medias[i]);
         }
 
@@ -81,7 +81,7 @@ export class VgPlayer implements OnInit {
     }
 
     onChangeFullscreen(fsState) {
-        if (!VgFullscreenAPI.nativeFullscreen) {
+        if ( !VgFullscreenAPI.nativeFullscreen ) {
             this.isFullscreen = fsState;
             this.zIndex = fsState ? VgUtils.getZIndex().toString() : 'auto';
         }

@@ -5,8 +5,8 @@ import {ElementRef} from "angular2/core";
 
 describe('Scrub bar buffering time', () => {
     let scrubBarBufferingTime: VgScrubBarBufferingTime;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
