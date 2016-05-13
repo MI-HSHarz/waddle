@@ -13,11 +13,11 @@ import {VgUtils} from "../services/vg-utils";
     styles: [`
         @font-face {
             font-family: 'videogular';
-            src: url('node_modules/videogular2/fonts/videogular.eot');
-            src: url('node_modules/videogular2/fonts/videogular.eot?#iefix') format('embedded-opentype'),
-                 url('node_modules/videogular2/fonts/videogular.woff') format('woff'),
-                 url('node_modules/videogular2/fonts/videogular.ttf') format('truetype'),
-                 url('node_modules/videogular2/fonts/videogular.svg#videogular') format('svg');
+            src: url('assets/fonts/videogular.eot');
+            src: url('assets/fonts/videogular.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/videogular.woff') format('woff'),
+                 url('assets/fonts/videogular.ttf') format('truetype'),
+                 url('assets/fonts/videogular.svg#videogular') format('svg');
             font-weight: normal;
             font-style: normal;
         }
