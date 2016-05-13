@@ -4,18 +4,18 @@ import {VgAPI} from "./vg-api";
 
 @Injectable()
 export class VgFullscreenAPI {
-    static polyfill:any;
-    static onchange:string;
-    static onerror:string;
-    static nativeFullscreen:boolean = true;
-    static isFullscreen:boolean = false;
-    static isAvailable:boolean;
-    static videogularElement:HTMLElement;
-    static medias:Array<any>;
+    static polyfill: any;
+    static onchange: string;
+    static onerror: string;
+    static nativeFullscreen: boolean = true;
+    static isFullscreen: boolean = false;
+    static isAvailable: boolean;
+    static videogularElement: HTMLElement;
+    static medias: Array<any>;
 
-    static onChangeFullscreen:EventEmitter<boolean> = new EventEmitter();
+    static onChangeFullscreen: EventEmitter<boolean> = new EventEmitter();
 
-    static init(elem:HTMLElement, medias:Array<any>) {
+    static init(elem: HTMLElement, medias: Array<any>) {
         this.videogularElement = elem;
         this.medias = medias;
 
@@ -70,8 +70,8 @@ export class VgFullscreenAPI {
             }
         };
 
-        for (var browser in APIs) {
-            if (APIs[browser].enabled in document) {
+        for ( var browser in APIs ) {
+            if ( APIs[browser].enabled in document ) {
                 this.polyfill = APIs[browser];
                 break;
             }
@@ -80,34 +80,32 @@ export class VgFullscreenAPI {
         this.isAvailable = (this.polyfill != null);
     }
 
-    static toggleFullscreen(element:any = null) {
-        if (this.isFullscreen) {
+    static toggleFullscreen(element: any = null) {
+        if ( this.isFullscreen ) {
             this.exit();
-        }
-        else {
+        } else {
             this.request(element);
         }
     }
 
     static request(elem) {
-        if (!elem) elem = this.videogularElement;
+        if ( !elem ) elem = this.videogularElement;
 
         this.isFullscreen = true;
         this.onChangeFullscreen.next(true);
 
         // Perform native full screen support
-        if (this.isAvailable && this.nativeFullscreen) {
+        if ( this.isAvailable && this.nativeFullscreen ) {
             // Fullscreen for mobile devices
-            if (VgUtils.isMobileDevice()) {
+            if ( VgUtils.isMobileDevice() ) {
                 // We should make fullscreen the video object if it doesn't have native fullscreen support
                 // Fallback! We can't set vg-player on fullscreen, only video/audio objects
-                if (!this.polyfill.enabled && elem === this.videogularElement) {
+                if ( !this.polyfill.enabled && elem === this.videogularElement ) {
                     elem = this.medias[0];
                 }
 
                 this.enterElementInFullScreen(elem);
-            }
-            else {
+            } else {
                 this.enterElementInFullScreen(this.videogularElement);
             }
         }
@@ -122,7 +120,7 @@ export class VgFullscreenAPI {
         this.onChangeFullscreen.next(false);
 
         // Exit from native fullscreen
-        if (this.isAvailable && this.nativeFullscreen) {
+        if ( this.isAvailable && this.nativeFullscreen ) {
             document[this.polyfill.exit]();
         }
     }

@@ -6,8 +6,8 @@ import {VgFullscreenAPI} from "../../services/vg-fullscreen-api";
 
 describe('Videogular Player', () => {
     let fullscreen: VgFullscreen;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -24,7 +24,8 @@ describe('Videogular Player', () => {
 
     it('Should get media by id on init', () => {
         spyOn(fullscreen.elem, 'getAttribute').and.callThrough();
-        spyOn(api, 'getMediaById').and.callFake(() => { });
+        spyOn(api, 'getMediaById').and.callFake(() => {
+        });
 
         fullscreen.ngOnInit();
 

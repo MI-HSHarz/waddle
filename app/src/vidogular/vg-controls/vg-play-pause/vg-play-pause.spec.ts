@@ -4,9 +4,9 @@ import {VgAPI} from "../../services/vg-api";
 import {ElementRef} from "angular2/core";
 
 describe('Play/Pause Button', () => {
-    let playPause:VgPlayPause;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let playPause: VgPlayPause;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -88,7 +88,8 @@ describe('Play/Pause Button', () => {
 
     describe('onClick (single and multiple media)', () => {
         it('should pause if current state is different play', () => {
-            spyOn(api, 'pause').and.callFake(() => {});
+            spyOn(api, 'pause').and.callFake(() => {
+            });
 
             api.medias = {
                 main: {
@@ -104,7 +105,8 @@ describe('Play/Pause Button', () => {
         });
 
         it('should play if current state is pause', () => {
-            spyOn(api, 'play').and.callFake(() => {});
+            spyOn(api, 'play').and.callFake(() => {
+            });
 
             api.medias = {
                 main: {

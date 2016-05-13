@@ -5,8 +5,8 @@ import {ElementRef, SimpleChange} from "angular2/core";
 
 describe('Scrub bar current time', () => {
     let scrubBarCuePoints: VgScrubBarCuePoints;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -23,10 +23,10 @@ describe('Scrub bar current time', () => {
     });
 
     xit('Should create cue points when metadata is loaded', () => {
-        var cps:Object = {};
-        var cp1:TextTrackCue = (<TextTrackCue>{startTime: 1});
-        var cp2:TextTrackCue = (<TextTrackCue>{startTime: 5, endTime: 10});
-        var cp3:TextTrackCue = (<TextTrackCue>{startTime: 15, endTime: 20, text: "{value: 'custom params'}"});
+        var cps: Object = {};
+        var cp1: TextTrackCue = (<TextTrackCue>{startTime: 1});
+        var cp2: TextTrackCue = (<TextTrackCue>{startTime: 5, endTime: 10});
+        var cp3: TextTrackCue = (<TextTrackCue>{startTime: 15, endTime: 20, text: "{value: 'custom params'}"});
 
         cps[0] = cp1;
         cps[1] = cp2;
@@ -48,10 +48,10 @@ describe('Scrub bar current time', () => {
     });
 
     xit('Should not calculate style position if there is not duration on media', () => {
-        var cps:Object = {};
-        var cp1:TextTrackCue = (<TextTrackCue>{startTime: 1});
-        var cp2:TextTrackCue = (<TextTrackCue>{startTime: 5, endTime: 10});
-        var cp3:TextTrackCue = (<TextTrackCue>{startTime: 15, endTime: 20, text: "{value: 'custom params'}"});
+        var cps: Object = {};
+        var cp1: TextTrackCue = (<TextTrackCue>{startTime: 1});
+        var cp2: TextTrackCue = (<TextTrackCue>{startTime: 5, endTime: 10});
+        var cp3: TextTrackCue = (<TextTrackCue>{startTime: 15, endTime: 20, text: "{value: 'custom params'}"});
 
         cps[0] = cp1;
         cps[1] = cp2;
