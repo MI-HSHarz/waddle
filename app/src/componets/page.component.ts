@@ -6,6 +6,7 @@ import {Page, ContetComponent, GalleryImage} from "../services/model";
 import {VideoComponent} from "./video.component";
 import {GalleryComponent} from "./gallery.component";
 import {TextComponent} from "./text.component";
+import {SidebarSmall} from "./sidebar-small.component";
 
 @Component({
     selector: 'PageComponet',
@@ -17,7 +18,7 @@ import {TextComponent} from "./text.component";
         TextComponent
     ],
     template: `
-        <div class="container grey darken-2" id="screen">
+        <div class="container grey darken-2 expanded" id="screen">
             <div class="section">
                 <div class="row">
                     <div class="col s12">
@@ -37,24 +38,135 @@ import {TextComponent} from "./text.component";
 
             <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
             </div>
-            <div class="section col s12" id="screen-sidebar-small">
+            <div class="section col" id="screen-sidebar-expanded">
                 <div class="row dark">
                     <div class="main">
+                        <ul class="sidebar-collection collapsible" data-collapsible="accordion">
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                            <li class="collection-item">
+                                <div class="collapsible-header">
+                                    <div class="collection-image">
+                                        <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    </div>
+                                    <span class="title">Title</span>
+                                    <p>First Line <br>
+                                     Second Line
+                                     </p>
+                                 </div>
+                                 <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                            </li>
+                          </ul>
 
                     </div>
                     <div class="down">
                         <nav class="transparent">
                             <div class="nav-wrapper">
                                 <ul>
-                                    <li class="nav-up"><a href="sass.html"><i class="material-icons">keyboard_arrow_up</i></a></li>
-                                    <li class="nav-down"><a href="badges.html"><i class="material-icons">keyboard_arrow_down</i></a></li>
-                                    <li class="nav-expand"><a href="badges.html"><i class="material-icons">arrow_back</i></a></li>
+                                    <li class="nav-up"><a href="#"><i class="material-icons">keyboard_arrow_up</i></a></li>
+                                    <li class="nav-down"><a href="#"><i class="material-icons">keyboard_arrow_down</i></a></li>
+                                    <li class="nav-expand"><a href="#"><i class="material-icons">arrow_forward</i></a></li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
                 </div>
             </div>
+
         </div>
   `
 })

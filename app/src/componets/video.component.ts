@@ -39,7 +39,7 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
     ],
     template: `
         <div class="row">
-            <div class="col s12 m7 l8">
+            <div class="col s12 m12 l12">
                 <div class='box ratio16_9'>
                     <div class='content'>
 
@@ -89,18 +89,18 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
 
             </div>
 
-            <div class="col s12 m5 l4">
-                <div class="card full grey darken-4">
-                    <div class="card-content white-text">
-                        <span class="card-title">Begleittext</span>
-                        <div *ngIf="cuePointData.title">
-                            <h5><a [href]="cuePointData.href">{{ cuePointData.title }}</a></h5>
-                            <p>{{ cuePointData.description }}</p>
-                            <img [src]="cuePointData.src" width="100%">
-                        </div>
-                    </div>
-                </div>
-            </div>
+#            <div class="col s12 m5 l4">
+#                <div class="card full grey darken-4">
+#                    <div class="card-content white-text">
+#                        <span class="card-title">Begleittext</span>
+#                        <div *ngIf="cuePointData.title">
+#                            <h5><a [href]="cuePointData.href">{{ cuePointData.title }}</a></h5>
+#                            <p>{{ cuePointData.description }}</p>
+#                            <img [src]="cuePointData.src" width="100%">
+#                        </div>
+#                    </div>
+#                </div>
+#            </div>
 
         </div>
   `

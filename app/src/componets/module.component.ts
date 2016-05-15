@@ -12,12 +12,12 @@ import {Component} from "angular2/core";
                                 <img class="activator" src="http://lorempixel.com/1000/500/nature/2">
                              </div>
                              <div class="card-content">
-                                <span class="card-title activator">Berufskoleg Stendal</span>
+                                <span class="card-title activator">Berufskolleg Stendal</span>
                                 <a href="#!" class="white-text"><i class="material-icons right">info</i></a>
 
                             </div>
                             <div class="card-reveal">
-                              <span class="card-title">Berufskoleg Stendal<i class="material-icons right">close</i></span>
+                              <span class="card-title">Berufskolleg Stendal<i class="material-icons right">close</i></span>
                               <ul class="navigation-list">
                                 <li><a href="#!" class="white-text">Unterricht</a></li>
                                 <li><a href="#!" class="white-text">Interview Lehrer</a></li>
