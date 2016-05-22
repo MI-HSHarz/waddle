@@ -3,16 +3,17 @@ import {Http, Response} from "angular2/http";
 import {Subject} from "rxjs/Subject";
 import {Content} from "./model";
 import {PageService} from "./page.service";
+import {ReplaySubject} from "rxjs/Rx";
 
 
 @Injectable()
 export class ContentloaderService {
 
-    contentSubject: Subject<Content> = new Subject<Content>();
+    contentSubject: Subject<Content> = new ReplaySubject<Content>();
 
     private apiBaseUrl: string = 'data/content.json';
 
-    private content: string;
+    private content: Content;
 
 
     constructor(private _http: Http,
@@ -20,16 +21,13 @@ export class ContentloaderService {
         this.load();
     }
 
-    getContent(): string {
-        return this.content;
-    }
-
     public load() {
         this._http.get(this.apiBaseUrl)
             .map((res: Response) => res.json())
             .subscribe(
                 (content: Content) => {
-                    this.contentSubject.next(content);
+                    this.content = content;
+                    this.contentSubject.next( this.content);
 
                     content.pages.forEach( menuPage => {
                         this._pageService.addPageToCache(menuPage.$href);

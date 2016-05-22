@@ -26,6 +26,6 @@ import {Component} from "angular2/core";
 })
 
 
-export class ModuleComponent {
+export class SidebarSmall {
 
 }

@@ -18,6 +18,7 @@ import {
 }
     from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-buffering-time/vg-scrub-bar-buffering-time";
 import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
+import {RoundPipe} from "../pipes/round.pipe";
 
 
 @Component({
@@ -36,6 +37,9 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
         VgFullscreen,
         NgFor,
         NgIf
+    ],
+    pipes: [
+        RoundPipe
     ],
     template: `
         <div class="row">
@@ -76,33 +80,56 @@ import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
                         </vg-player>
                     </div>
                 </div>
-                <div class="card grey darken-2">
-                    <div class="card-content white-text">
-                        <span class="card-title">Sprungmarken</span>
-                        <div *ngFor="#cuePoint of cuePoints">
-                            <a (click)="seekToTime(cuePoint.startTime)">{{cuePoint.id}}</a>
-                            - {{cuePoint.shortDescription}}
-                            - Dauer: {{cuePoint.duration}} Sekunden
-                        </div>
-                    </div>
-                </div>
-
+               
             </div>
 
-#            <div class="col s12 m5 l4">
-#                <div class="card full grey darken-4">
-#                    <div class="card-content white-text">
-#                        <span class="card-title">Begleittext</span>
-#                        <div *ngIf="cuePointData.title">
-#                            <h5><a [href]="cuePointData.href">{{ cuePointData.title }}</a></h5>
-#                            <p>{{ cuePointData.description }}</p>
-#                            <img [src]="cuePointData.src" width="100%">
-#                        </div>
-#                    </div>
-#                </div>
-#            </div>
-
+           <!--<div class="col s12 m5 l4">-->
+               <!--<div class="card full grey darken-4">-->
+                   <!--<div class="card-content white-text">-->
+                       <!--<span class="card-title">Begleittext</span>-->
+                       <!--<div *ngIf="cuePointData.title">-->
+                           <!--<h5><a [href]="cuePointData.href">{{ cuePointData.title }}</a></h5>-->
+                           <!--<p>{{ cuePointData.description }}</p>-->
+                           <!--<img [src]="cuePointData.src" width="100%">-->
+                       <!--</div>-->
+                   <!--</div>-->
+               <!--</div>-->
+           <!--</div>-->
         </div>
+        
+        <div class="section col" id="screen-sidebar-expanded">
+            <div class="row dark">
+                <div class="main">
+                    <ul class="sidebar-collection collapsible" data-collapsible="accordion">
+                    
+                        <li *ngFor="#cuePoint of cuePoints" class="collection-item">
+                            <div class="collapsible-header">
+                                <div class="collection-image">
+                                    <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                </div>
+                                <span class="title">{{cuePoint.id}}</span>
+                                <p>{{cuePoint.startTime}}<br>
+                                 Dauer: {{cuePoint.duration | round}} sec
+                                 </p>
+                             </div>
+                             <div class="collapsible-body"><p>{{ cuePointData.description }}</p></div>
+                        </li>
+                      </ul>
+                </div>
+                <div class="down">
+                    <nav class="transparent">
+                        <div class="nav-wrapper">
+                            <ul>
+                                <li class="nav-up"><a ><i class="material-icons">keyboard_arrow_up</i></a></li>
+                                <li class="nav-down"><a ><i class="material-icons">keyboard_arrow_down</i></a></li>
+                                <li class="nav-expand"><a ><i class="material-icons">arrow_forward</i></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+              
   `
 })
 

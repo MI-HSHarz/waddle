@@ -38,42 +38,30 @@ import {PageComponent} from "./componets/page.component";
                         </ul>
 
                         <ul class="right second">
-                            <li><a (click)="openNav()"><i class="material-icons">menu</i></a></li>
-                            <li><a href="screen.html">Impressum</a></li>
+                            <li><a onclick="$('#modal1').openModal();" >Impressum</a></li>
                         </ul>
                     </div>
+                  
                 </nav>
             </div>
-            <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
-            <div class="overlay-content">
-
-                <ul>
-                    <li *ngFor="#page of content.pages">
-
-                        <div [ngSwitch]="page.type">
-                            <a (click)="closeNav()"
-                                href="#/page/{{page.$href | uriEncode}}">
-                                    {{page.menuName}}
-                            </a>
-                        </div>
-
-                        <ul>
-                            <li *ngFor="#subpage of page.subPages" >
-                                <a (click)="closeNav()"
-                                        href="#/page/{{subpage.$href | uriEncode}}">
-                                        {{subpage.menuName}}
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-         </div>
+            
         </header>
 
         <main id="main flow-text">
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Impressum</h4>
+                    <div class="input-field col s12">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class=" modal-action modal-close waves-effect btn-flat"
+                        onclick="$('#modal1').closeModal();">
+                            schließen
+                    </button>
+                </div>
+             </div>
             <router-outlet></router-outlet>
         </main>
         `

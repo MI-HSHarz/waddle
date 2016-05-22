@@ -5,7 +5,8 @@
   },
   "pages": [
     {
-      "menuName": "erste Seite",
+      "menuName": "Berufskolleg Stendal",
+      "img": "data/img/schulen/Stendal.jpg",
       "$href": "pages/page0.json",
       "subPages": [
         {
@@ -23,7 +24,46 @@
       ]
     },
     {
-      "menuName": "zweite Seite",
+      "menuName": "Berufskolleg Weißenfels",
+      "img": "data/img/schulen/Stendal.jpg",
+      "$href": "pages/page0.json",
+      "subPages": [
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/page1.json"
+        },
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/page2.json"
+        },
+        {
+          "menuName": "eine zweite Unterseite",
+          "$href": "pages/page3.json"
+        }
+      ]
+    },
+    {
+      "menuName": "Berufskolleg Bad Godesberg",
+      "img": "data/img/schulen/Stendal.jpg",
+      "$href": "pages/page0.json",
+      "subPages": [
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/page1.json"
+        },
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/page2.json"
+        },
+        {
+          "menuName": "eine zweite Unterseite",
+          "$href": "pages/page3.json"
+        }
+      ]
+    },
+    {
+      "menuName": "Berufskolleg Montabaur",
+      "img": "data/img/schulen/Stendal.jpg",
       "$href": "pages/page1.json",
       "subPages": [
         {
