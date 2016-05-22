@@ -105,7 +105,7 @@ import {RoundPipe} from "../pipes/round.pipe";
                         <li *ngFor="#cuePoint of cuePoints" class="collection-item">
                             <div class="collapsible-header">
                                 <div class="collection-image">
-                                    <img src="http://placehold.it/320x180" alt="" class="responsive-img">
+                                    <img src="{{cuePoint.src}}" alt="" class="responsive-img">
                                 </div>
                                 <span class="title">{{cuePoint.id}}</span>
                                 <p>{{cuePoint.startTime}}<br>
@@ -151,21 +151,6 @@ export class VideoComponent implements OnInit {
 
     constructor() {
         this.fsAPI = VgFullscreenAPI;
-
-        this.sources = [
-            {
-                src: "http://static.videogular.com/assets/videos/videogular.mp4",
-                type: "video/mp4"
-            },
-            {
-                src: "http://static.videogular.com/assets/videos/videogular.ogg",
-                type: "video/ogg"
-            },
-            {
-                src: "http://static.videogular.com/assets/videos/videogular.webm",
-                type: "video/webm"
-            }
-        ];
     }
 
     onPlayerReady(api: VgAPI) {

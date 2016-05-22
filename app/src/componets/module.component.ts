@@ -21,15 +21,20 @@ import {ContentloaderService} from "../services/contentloader.service";
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">{{page.menuName}}</span>
-                                <a href="#!" class="white-text"><i class="material-icons right">info</i></a>
+                                <a  class="white-text"><i class="material-icons right">info</i></a>
 
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title">{{page.menuName}}<i class="material-icons right">close</i></span>
+                                <span class="card-title">
+                                    {{page.menuName}}
+                                    <i class="material-icons right">close</i>
+                                </span>
                                 
                                 <ul class="navigation-list">
                                     <li *ngFor="#subpage of page.subPages">
-                                        <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">{{subpage.menuName}}</a>
+                                        <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
+                                            {{subpage.menuName}}
+                                        </a>
                                     </li>
                                 </ul>
                             </div>

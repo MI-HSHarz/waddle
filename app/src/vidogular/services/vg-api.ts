@@ -7,7 +7,7 @@ export class VgAPI {
     medias: Object = {};
     videogularElement: any;
 
-    constructor() {}
+    // constructor() {}
 
     getDefaultMedia() {
         for ( var item in this.medias ) {

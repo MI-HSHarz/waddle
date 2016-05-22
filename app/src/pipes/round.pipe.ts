@@ -6,10 +6,6 @@ import {Pipe, bind} from 'angular2/core';
 
 export class RoundPipe {
     transform(input: any, args: Array<any>): string {
-
-        let returnvalue = Math.round(input * 100) / 100;
-        // console.log(input);
-        // console.log(returnvalue);
-        return returnvalue;
+        return Math.round(input * 100) / 100 + "";
     }
 }
