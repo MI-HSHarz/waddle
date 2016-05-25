@@ -94,8 +94,8 @@ import {RoundPipe} from "../pipes/round.pipe";
                        <!--</div>-->
                    <!--</div>-->
                <!--</div>-->
-           <!--</div>-->
-        </div>
+        </div><!--</div>-->
+     
         
         <div class="section col" id="screen-sidebar-expanded">
             <div class="row dark">
@@ -108,7 +108,7 @@ import {RoundPipe} from "../pipes/round.pipe";
                                     <img src="{{cuePoint.src}}" alt="" class="responsive-img">
                                 </div>
                                 <span class="title">{{cuePoint.id}}</span>
-                                <p>{{cuePoint.startTime}}<br>
+                                <p>{{cuePoint.startTime}} sec<br>
                                  Dauer: {{cuePoint.duration | round}} sec
                                  </p>
                              </div>

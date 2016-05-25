@@ -24,9 +24,6 @@ import {TextComponent} from "./text.component";
                         <div class="card grey darken-4">
                             <div class="card-content white-text">
                                 <span class="card-title"><h4>{{page.titel}}</h4></span>
-                                <p class="flow-text">
-                                   {{page.text}}
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -38,10 +35,7 @@ import {TextComponent} from "./text.component";
 
                 <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
             
-            
-            
-
-            
+                
             
         </div>
     </div>
@@ -111,7 +105,7 @@ export class PageComponent implements OnInit {
                 this.source = pageComponent.video.videoPath;
 
                 this.showVideo = true;
-                
+
             } else if (pageComponent.gallery != null) {
                 console.log("gallery");
 
