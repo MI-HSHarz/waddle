@@ -19,6 +19,7 @@ import {
     from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-buffering-time/vg-scrub-bar-buffering-time";
 import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
 import {RoundPipe} from "../pipes/round.pipe";
+import {indexOfId} from "../util/comon";
 
 
 @Component({
@@ -48,7 +49,7 @@ import {RoundPipe} from "../pipes/round.pipe";
                     <div class='content'>
 
                         <vg-player (onPlayerReady)="onPlayerReady($event)">
-                        	<!--<vg-overlay-play></vg-overlay-play>-->
+                        	<vg-overlay-play></vg-overlay-play>
 
                         	<vg-controls  [autohide]="true" [autohideTime]="1.5">
                         		<vg-play-pause></vg-play-pause>
@@ -97,19 +98,24 @@ import {RoundPipe} from "../pipes/round.pipe";
         </div><!--</div>-->
      
         
-        <div class="section col" id="screen-sidebar-expanded">
+        <div class="section col" id="screen-sidebar-expanded"
+            *ngIf="!hasSmallControlls">
             <div class="row dark">
                 <div class="main">
-                    <ul class="sidebar-collection collapsible" data-collapsible="accordion">
+                    <ul class="sidebar-collection">
                     
-                        <li *ngFor="#cuePoint of cuePoints" class="collection-item">
+                        <li *ngFor="#cuePoint of cuePoints" class="collection-item active"
+                            [ngClass]="{active: cuePoint.id === avtivCue.id}"
+                            (click)="jumpToCue(cuePoint)">
+                            
                             <div class="collapsible-header">
+                                
                                 <div class="collection-image">
                                     <img src="{{cuePoint.src}}" alt="" class="responsive-img">
                                 </div>
-                                <span class="title">{{cuePoint.id}}</span>
-                                <p>{{cuePoint.startTime}} sec<br>
-                                 Dauer: {{cuePoint.duration | round}} sec
+                                <span class="title">{{cuePoint.title}}</span>
+                                <p>{{cuePoint.startTime | round}}<br>
+                                 Dauer: {{cuePoint.duration | round}}
                                  </p>
                              </div>
                              <div class="collapsible-body"><p>{{ cuePointData.description }}</p></div>
@@ -120,9 +126,41 @@ import {RoundPipe} from "../pipes/round.pipe";
                     <nav class="transparent">
                         <div class="nav-wrapper">
                             <ul>
-                                <li class="nav-up"><a ><i class="material-icons">keyboard_arrow_up</i></a></li>
-                                <li class="nav-down"><a ><i class="material-icons">keyboard_arrow_down</i></a></li>
-                                <li class="nav-expand"><a ><i class="material-icons">arrow_forward</i></a></li>
+                                <li class="nav-up" (click)="prev()"><a >
+                                    <i class="material-icons">keyboard_arrow_up</i></a>
+                                </li>
+                                <li class="nav-down" (click)="next()"><a >
+                                    <i class="material-icons">keyboard_arrow_down</i></a>
+                                </li>
+                                <li class="nav-expand" (click)="minimize()"><a >
+                                    <i class="material-icons">arrow_forward</i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section col" id="screen-sidebar-small"
+            *ngIf="hasSmallControlls">
+            <div class="row dark">
+                <div class="main">
+                </div>
+                
+                <div class="down">
+                    <nav class="transparent">
+                        <div class="nav-wrapper">
+                            <ul>
+                                <li class="nav-up" (click)="prev()"><a>
+                                    <i class="material-icons">keyboard_arrow_up</i></a>
+                                </li>
+                                <li class="nav-down" (click)="next()"><a >
+                                    <i class="material-icons">keyboard_arrow_down</i></a>
+                                </li>
+                                <li class="nav-expand" (click)="maximize()"><a >
+                                    <i class="material-icons">arrow_back</i></a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -142,6 +180,10 @@ export class VideoComponent implements OnInit {
     sources: Array<Object>;
     cuePointData: Object = {};
     cuePoints: Cue[];
+    avtivCue: Cue = new Cue();
+    activCueIndex: number = 0;
+
+    hasSmallControlls: boolean = false;
 
     controls: boolean = false;
     autoplay: boolean = false;
@@ -164,7 +206,11 @@ export class VideoComponent implements OnInit {
 
     onEnterCuePoint($event) {
         this.cuePointData = JSON.parse($event.text);
-        console.log($event);
+
+        this.activCueIndex = indexOfId(this.cuePoints, $event.id);
+        this.avtivCue = this.cuePoints[this.activCueIndex];
+
+        console.log(this.activCueIndex);
     }
 
     onExitCuePoint($event) {
@@ -176,9 +222,41 @@ export class VideoComponent implements OnInit {
         // console.log(this.cuePoints);
     }
 
+    jumpToCue(cue: Cue) {
+        console.log(cue);
+        this.avtivCue = cue;
+        this.seekToTime(cue.startTime);
+    }
+
     seekToTime(time: number) {
-        console.log(time);
-        console.log(this.api);
         this.api.currentTime = time;
+    }
+
+    next() {
+        console.log("next");
+        if (this.activCueIndex < this.cuePoints.length - 1) {
+            this.activCueIndex++;
+            this.avtivCue = this.cuePoints[this.activCueIndex];
+
+            this.seekToTime(this.avtivCue.startTime);
+        }
+    }
+
+    prev() {
+        console.log("next");
+        if (this.activCueIndex > 0) {
+            this.activCueIndex--;
+            this.avtivCue = this.cuePoints[this.activCueIndex];
+
+            this.seekToTime(this.avtivCue.startTime);
+        }
+    }
+
+    minimize() {
+        this.hasSmallControlls = true;
+    }
+
+    maximize() {
+        this.hasSmallControlls = false;
     }
 }

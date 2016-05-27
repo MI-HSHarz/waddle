@@ -15,7 +15,7 @@
         },
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page2.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine zweite Unterseite",

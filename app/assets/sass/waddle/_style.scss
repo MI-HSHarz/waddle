@@ -25,9 +25,6 @@ html, body {
   }
 }
 
-
-
-
 /* 2. Navigation
    ========================================================================== */
 
@@ -173,7 +170,7 @@ nav {
             }
           }
         }
-        .active {
+        &.active {
           color: color("shades", "white");
           .collection-image {
             img {
