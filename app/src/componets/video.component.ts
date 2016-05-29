@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from 'angular2/core';
+import {Component, OnInit, Input, Output, EventEmitter} from 'angular2/core';
 import {VgPlayer} from "../vidogular/vg-player/vg-player";
 import {VgAPI} from "../vidogular/services/vg-api";
 import {VgFullscreenAPI} from "../vidogular/services/vg-fullscreen-api";
@@ -43,6 +43,18 @@ import {indexOfId} from "../util/comon";
         RoundPipe
     ],
     template: `
+    <div class="" id="screen" 
+        [ngClass]="{expanded: !hasSmallControlls, small: hasSmallControlls}">
+                
+        <div class="row">
+            <div class="col s12">
+                <div class="card grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title"><h4>{{titel}}</h4></span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class='box ratio16_9'>
@@ -53,7 +65,6 @@ import {indexOfId} from "../util/comon";
 
                         	<vg-controls  [autohide]="true" [autohideTime]="1.5">
                         		<vg-play-pause></vg-play-pause>
-                        		<!--<vg-playback-button></vg-playback-button>-->
 
                         		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
 
@@ -95,16 +106,18 @@ import {indexOfId} from "../util/comon";
                        <!--</div>-->
                    <!--</div>-->
                <!--</div>-->
-        </div><!--</div>-->
+            <!--</div>-->
+            
+        </div>        
+     </div>
      
-        
         <div class="section col" id="screen-sidebar-expanded"
             *ngIf="!hasSmallControlls">
             <div class="row dark">
                 <div class="main">
                     <ul class="sidebar-collection">
                     
-                        <li *ngFor="#cuePoint of cuePoints" class="collection-item active"
+                        <li *ngFor="#cuePoint of cuePoints" class="collection-item"
                             [ngClass]="{active: cuePoint.id === avtivCue.id}"
                             (click)="jumpToCue(cuePoint)">
                             
@@ -146,6 +159,7 @@ import {indexOfId} from "../util/comon";
             *ngIf="hasSmallControlls">
             <div class="row dark">
                 <div class="main">
+                
                 </div>
                 
                 <div class="down">
@@ -167,7 +181,7 @@ import {indexOfId} from "../util/comon";
                 </div>
             </div>
         </div>
-              
+             
   `
 })
 
@@ -175,6 +189,7 @@ export class VideoComponent implements OnInit {
 
     @Input('track') track: string;
     @Input('source') source: string;
+    @Input('titel') titel: string;
 
     api: VgAPI;
     sources: Array<Object>;

@@ -17,33 +17,21 @@ import {TextComponent} from "./text.component";
         TextComponent
     ],
     template: `
-        <div class="container grey darken-4 expanded" id="screen">
-            <div class="section">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card grey darken-4">
-                            <div class="card-content white-text">
-                                <span class="card-title"><h4>{{page.titel}}</h4></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="container grey darken-4 " >
             
-                <videoComponet   *ngIf="showVideo"   [track]="track" [source]="source"></videoComponet>
+            <videoComponet   *ngIf="showVideo"   
+                [track]="track" [source]="source" [titel]="page.titel">     
+            </videoComponet>
 
-                <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
+            <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
 
-                <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
-            
-                
+            <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
             
         </div>
-    </div>
   `
 })
 
 export class PageComponent implements OnInit {
-
 
     page: Page = new Page();
     pageRef: string;

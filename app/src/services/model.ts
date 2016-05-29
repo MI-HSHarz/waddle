@@ -9,6 +9,12 @@ export class Content {
         $href: string;
     };
     pages: MenuPage[];
+    modules: ContentModul[];
+}
+
+export class ContentModul {
+    name: string;
+    pages: MenuPage[];
 }
 
 export class MenuPage {

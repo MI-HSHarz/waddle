@@ -1,5 +1,5 @@
 {
-  "name": "Tada",
+  "name": "Titel",
   "colorScheme":{
     "menuColor": "#eee"
   },
@@ -11,7 +11,7 @@
       "subPages": [
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page1.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine Unterseite",
@@ -19,7 +19,7 @@
         },
         {
           "menuName": "eine zweite Unterseite",
-          "$href": "pages/page3.json"
+          "$href": "pages/bsp.json"
         }
       ]
     },
@@ -30,15 +30,15 @@
       "subPages": [
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page1.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page2.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine zweite Unterseite",
-          "$href": "pages/page3.json"
+          "$href": "pages/bsp.json"
         }
       ]
     },
@@ -49,15 +49,15 @@
       "subPages": [
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page1.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page2.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine zweite Unterseite",
-          "$href": "pages/page3.json"
+          "$href": "pages/bsp.json"
         }
       ]
     },
@@ -68,11 +68,11 @@
       "subPages": [
         {
           "menuName": "Unterseite:2.1 ",
-          "$href": "pages/page2.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "Unterseite:2.2 ",
-          "$href": "pages/page3.json"
+          "$href": "pages/bsp.json"
         }
       ]
     }

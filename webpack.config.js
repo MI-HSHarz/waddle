@@ -20,6 +20,7 @@ module.exports = {
 
     output: {
         path: __dirname + '/app/build/',
+        publicPath: 'app/build/',
         filename: '[name].js',
         sourceMapFilename: '[name].js.map',
         chunkFilename: '[id].chunk.js'
