@@ -93,7 +93,6 @@ export class App {
     constructor(private _contentloaderService: ContentloaderService) {
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
-            
         });
     }
 

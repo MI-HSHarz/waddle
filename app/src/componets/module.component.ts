@@ -38,7 +38,12 @@ import {ContentloaderService} from "../services/contentloader.service";
                             <ul class="navigation-list">
                                 <li *ngFor="#subpage of page.subPages">
                                     <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
-                                        {{subpage.menuName}}
+                                        {{subpage.menuName}} 
+                                    </a>
+                                    <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
+                                        <i class="material-icons right">
+                                            work
+                                        </i>
                                     </a>
                                 </li>
                             </ul>

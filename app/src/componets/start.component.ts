@@ -8,26 +8,28 @@ import {Content} from "../services/model";
     template: `
         <div class="container grey darken-4 valign-wrapper">
             <div class="section valign">
-                <div class="row">
-                    <div class="col s12 m6 offset-m3">
-                        <div class="card card-panel large grey darken-4">
-                            <div class="card-content white-text">
-                                <span class="card-title">
-                                    Title
-                                </span>
-                                <!--<ul class="">-->
-                                    <!--<li  *ngFor="#contentModul of content.modules">-->
-                                        <!--&lt;!&ndash;<a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">&ndash;&gt;-->
-                                            <!--{{contentModul.name}}-->
-                                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                                    <!--</li>-->
-                                <!--</ul>-->
+                <img class="bibor_splash1" src="data/img/bibor_splash1.png" alt="">
+                
+                <div class="bibor_splash_contents">
+                   
+                        <div class="white-text">
                                 
-                            </div>
+                                <ul class="modullist">
+                                    <li >
+                                       Modul1
+                                    </li>
+                                     <li  >
+                                       <a href="#/module">Modul2</a>
+                                    </li>
+                                </ul>
+                                
+                            
                             
                         </div>
-                    </div>
+                   
                 </div>
+                
+                <img class="bibor_splash2" src="data/img/bibor_splash2.png" alt="">
             </div>
         </div>
  `
