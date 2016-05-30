@@ -41,9 +41,11 @@ import {ContentloaderService} from "../services/contentloader.service";
                                         {{subpage.menuName}} 
                                     </a>
                                     <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
-                                        <i class="material-icons right">
-                                            work
-                                        </i>
+                                        <a  href="data/pdf/test.pdf">
+                                            <i class="material-icons right">
+                                                work
+                                            </i>
+                                        </a>
                                     </a>
                                 </li>
                             </ul>
