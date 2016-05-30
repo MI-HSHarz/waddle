@@ -4,9 +4,9 @@ import {VgAPI} from "../../services/vg-api";
 import {ElementRef} from "angular2/core";
 
 describe('Scrub bar', () => {
-    let scrubBar:VgScrubBar;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let scrubBar: VgScrubBar;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
@@ -39,7 +39,7 @@ describe('Scrub bar', () => {
 
             scrubBar.target = api;
 
-            scrubBar.onMouseDownScrubBar({ offsetX: 20 });
+            scrubBar.onMouseDownScrubBar({offsetX: 20});
 
             expect(api.seekTime).toHaveBeenCalledWith(10, true);
         });
@@ -50,7 +50,7 @@ describe('Scrub bar', () => {
 
             scrubBar.target = api;
 
-            scrubBar.onMouseDownScrubBar({ offsetX: 60 });
+            scrubBar.onMouseDownScrubBar({offsetX: 60});
 
             expect(api.seekTime).toHaveBeenCalledWith(20, true);
         });

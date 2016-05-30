@@ -8,8 +8,7 @@ import {VgAPI} from '../services/vg-api';
         '(click)': 'onClick()',
         'class': 'vg-overlay-play'
     },
-    template:
-        `<div class="vg-overlay-play">
+    template: `<div class="vg-overlay-play">
             <div class="overlay-play-container"
                  [class.play]="getState() === 'pause'">
             </div>
@@ -85,15 +84,15 @@ export class VgOverlayPlay implements OnInit {
     getState() {
         var state;
 
-        if (this.target && this.target.state instanceof Array) {
+        if ( this.target && this.target.state instanceof Array ) {
             state = 'pause';
-            for (var i = 0, l = this.target.state.length; i < l; i++) {
-                if (this.target.state[i] === 'play') {
+            for ( var i = 0, l = this.target.state.length; i < l; i++ ) {
+                if ( this.target.state[i] === 'play' ) {
                     state = 'play';
                     break;
                 }
             }
-        }  else {
+        } else {
             state = this.target.state;
         }
 

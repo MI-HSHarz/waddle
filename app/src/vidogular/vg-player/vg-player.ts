@@ -1,3 +1,4 @@
+///<reference path="../../../../node_modules/angular2/typings/browser.d.ts"/>
 
 import {Output, Component, EventEmitter, ElementRef, OnInit, ContentChild, HostBinding} from 'angular2/core';
 
@@ -12,11 +13,11 @@ import {VgUtils} from "../services/vg-utils";
     styles: [`
         @font-face {
             font-family: 'videogular';
-            src: url('./assets/fonts/videogular.eot');
-            src: url('./assets/fonts/videogular.eot?#iefix') format('embedded-opentype'),
-                 url('./assets/fonts/videogular.woff') format('woff'),
-                 url('./assets/fonts/videogular.ttf') format('truetype'),
-                 url('./assets/fonts/videogular.svg#videogular') format('svg');
+            src: url('assets/fonts/videogular.eot');
+            src: url('assets/fonts/videogular.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/videogular.woff') format('woff'),
+                 url('assets/fonts/videogular.ttf') format('truetype'),
+                 url('assets/fonts/videogular.svg#videogular') format('svg');
             font-weight: normal;
             font-style: normal;
         }
@@ -69,7 +70,7 @@ export class VgPlayer implements OnInit {
         var audios: Array<any> = slice.call(this.elem.querySelectorAll("audio"));
         var medias: Array<any> = videos.concat(audios);
 
-        for (var i = 0, l = medias.length; i < l; i++) {
+        for ( var i = 0, l = medias.length; i < l; i++ ) {
             this.api.registerMedia(medias[i]);
         }
 
@@ -80,7 +81,7 @@ export class VgPlayer implements OnInit {
     }
 
     onChangeFullscreen(fsState) {
-        if (!VgFullscreenAPI.nativeFullscreen) {
+        if ( !VgFullscreenAPI.nativeFullscreen ) {
             this.isFullscreen = fsState;
             this.zIndex = fsState ? VgUtils.getZIndex().toString() : 'auto';
         }

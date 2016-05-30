@@ -1,3 +1,4 @@
+import {IdInterface} from "../util/comon";
 export class Content {
     name: string;
     colorScheme: {
@@ -7,6 +8,12 @@ export class Content {
         name: string;
         $href: string;
     };
+    pages: MenuPage[];
+    modules: ContentModul[];
+}
+
+export class ContentModul {
+    name: string;
     pages: MenuPage[];
 }
 
@@ -43,7 +50,7 @@ export class VideoContet {
     trackPath: string;
 }
 
-export class Cue {
+export class Cue implements IdInterface {
     id: string;
     endTime: number;
     startTime: number;

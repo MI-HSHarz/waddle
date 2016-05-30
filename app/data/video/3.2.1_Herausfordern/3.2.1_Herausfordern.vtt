@@ -1,0 +1,74 @@
+WEBVTT FILE
+
+1
+00:00:00.000 --> 00:00:09.000
+{
+    "title": "Herrausfordern",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/1.png",
+    "href": ""
+}
+
+2
+00:00:10.000 --> 00:00:37.000
+{
+    "title": "Neue Wege",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/2.png",
+    "href": ""
+}
+
+3
+00:00:37.000 --> 00:00:44.000
+{
+    "title": "Freie Wahl",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/3.png",
+    "href": ""
+}
+
+4
+00:00:44.000 --> 00:01:04.000
+{
+    "title": "Aktiviernde Fragen",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/4.png",
+    "href": ""
+}
+
+
+5
+00:01:04.000 --> 00:01:54.000
+{
+    "title": "Neue Wege",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/5.png",
+    "href": ""
+}
+
+
+6
+00:01:54.000 --> 00:02:16.000
+{
+    "title": "Aktiviernde Fragen",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/6.png",
+    "href": ""
+}
+
+7
+00:02:16.000 --> 00:03:12.000
+{
+    "title": "Freie Wahl",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "shortDescription": "dolor sit amet, consectetur adipiscing elit",
+    "src": "data/video/3.2.1_Herausfordern/img/7.png",
+    "href": ""
+}
+

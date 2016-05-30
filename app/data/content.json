@@ -1,38 +1,78 @@
 {
-  "name": "Tada",
+  "name": "Titel",
   "colorScheme":{
     "menuColor": "#eee"
   },
   "pages": [
     {
-      "menuName": "erste Seite",
+      "menuName": "Berufskolleg Stendal",
+      "img": "data/img/schulen/bbs_Stendal.jpg",
       "$href": "pages/page0.json",
       "subPages": [
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page1.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine Unterseite",
-          "$href": "pages/page2.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "eine zweite Unterseite",
-          "$href": "pages/page3.json"
+          "$href": "pages/bsp.json"
         }
       ]
     },
     {
-      "menuName": "zweite Seite",
+      "menuName": "Berufskolleg Weißenfels",
+      "img": "data/img/schulen/Berufskolleg Weißenfels.jpg",
+      "$href": "pages/page0.json",
+      "subPages": [
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/bsp.json"
+        },
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/bsp.json"
+        },
+        {
+          "menuName": "eine zweite Unterseite",
+          "$href": "pages/bsp.json"
+        }
+      ]
+    },
+    {
+      "menuName": "Berufskolleg Bad Godesberg",
+      "img": "data/img/schulen/berufsschule_Ahrweiler bzw Godesberg.jpg",
+      "$href": "pages/page0.json",
+      "subPages": [
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/bsp.json"
+        },
+        {
+          "menuName": "eine Unterseite",
+          "$href": "pages/bsp.json"
+        },
+        {
+          "menuName": "eine zweite Unterseite",
+          "$href": "pages/bsp.json"
+        }
+      ]
+    },
+    {
+      "menuName": "Berufskolleg Montabaur",
+      "img": "data/img/schulen/berufsschule_Montabaur.jpg",
       "$href": "pages/page1.json",
       "subPages": [
         {
           "menuName": "Unterseite:2.1 ",
-          "$href": "pages/page2.json"
+          "$href": "pages/bsp.json"
         },
         {
           "menuName": "Unterseite:2.2 ",
-          "$href": "pages/page3.json"
+          "$href": "pages/bsp.json"
         }
       ]
     }

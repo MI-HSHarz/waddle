@@ -10,7 +10,7 @@ export class VgAPI {
     // constructor() {}
 
     getDefaultMedia() {
-        for (var item in this.medias) {
+        for ( var item in this.medias ) {
             return this.medias[item];
         }
     }
@@ -18,7 +18,7 @@ export class VgAPI {
     getMediaById(id: string = null) {
         var media = this.medias[id];
 
-        if (!id || id === '*') {
+        if ( !id || id === '*' ) {
             media = this;
         }
 
@@ -26,13 +26,13 @@ export class VgAPI {
     }
 
     play() {
-        for (var id in this.medias) {
+        for ( var id in this.medias ) {
             this.medias[id].play();
         }
     }
 
     pause() {
-        for (var id in this.medias) {
+        for ( var id in this.medias ) {
             this.medias[id].pause();
         }
     }
@@ -110,7 +110,7 @@ export class VgAPI {
     }
 
     seekTime(value: number, byPercent: boolean = false) {
-        for (var id in this.medias) {
+        for ( var id in this.medias ) {
             this.$$seek(this.medias[id], value, byPercent);
         }
     }
@@ -118,7 +118,7 @@ export class VgAPI {
     $$seek(media: any, value: number, byPercent: boolean = false) {
         var second;
 
-        if (byPercent) {
+        if ( byPercent ) {
             second = value * media.duration / 100;
             // TODO: Not working unit on-media-ready is available
         } else {
@@ -131,20 +131,18 @@ export class VgAPI {
     $$getAllProperties(property: string) {
         var result = {};
 
-        for (var id in this.medias) {
+        for ( var id in this.medias ) {
             result[id] = this.medias[id][property];
         }
 
         // If there's only one media element then return the plain value
-        if (Object.keys(result).length === 1) {
-            result = result[Object.keys(result)[0]];
-        }
+        if ( Object.keys(result).length === 1 ) result = result[Object.keys(result)[0]];
 
         return result;
     }
 
     $$setAllProperties(property: string, value) {
-        for (var id in this.medias) {
+        for ( var id in this.medias ) {
             this.medias[id][property] = value;
         }
     }
@@ -261,7 +259,7 @@ export class VgAPI {
         this.medias[event.target.id].time.left =
             (this.medias[event.target.id].duration - this.medias[event.target.id].currentTime) * 1000;
 
-        if (end >= 0) {
+        if ( end >= 0 ) {
             this.medias[event.target.id].buffer.end = this.medias[event.target.id].buffered.end(end) * 1000;
         }
     }
@@ -269,7 +267,7 @@ export class VgAPI {
     onProgress(event) {
         var end = this.medias[event.target.id].buffered.length - 1;
 
-        if (end >= 0) {
+        if ( end >= 0 ) {
             this.medias[event.target.id].buffer.end = this.medias[event.target.id].buffered.end(end) * 1000;
         }
     }

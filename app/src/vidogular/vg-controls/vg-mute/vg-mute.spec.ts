@@ -4,9 +4,9 @@ import {VgAPI} from "../../services/vg-api";
 import {ElementRef} from "angular2/core";
 
 describe('Mute Button', () => {
-    let mute:VgMute;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let mute: VgMute;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {

@@ -6,18 +6,6 @@
         "videoPath": "data/Chaplin.mp4",
         "trackPath": "data/cue-points.vtt"
       }
-    },
-    {
-      "gallery": [
-        {
-          "path": "data/img/2.jpg",
-          "caption": "Bildunterschrift"
-        },
-        {
-          "path": "data/img/3.jpg",
-          "caption": "Bildunterschrift"
-        }
-      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
-import {Component, OnInit, AfterViewInit, AfterViewChecked} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {NgIf, NgFor} from "angular2/common";
-import {RouteParams, OnActivate, ComponentInstruction} from "angular2/router";
+import {RouteParams} from "angular2/router";
 import {PageService} from "../services/page.service";
 import {Page, ContetComponent, GalleryImage} from "../services/model";
 import {VideoComponent} from "./video.component";
@@ -17,29 +17,21 @@ import {TextComponent} from "./text.component";
         TextComponent
     ],
     template: `
-        <div class="row">
-            <div class="col s12">
-                <div class="card grey darken-4">
-                    <div class="card-content white-text">
-                        <span class="card-title"><h4>{{page.titel}}</h4></span>
-                        <p class="flow-text">
-                           {{page.text}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        
-        <videoComponet   *ngIf="showVideo"   [track]="track" [source]="source"></videoComponet>
-        
-        <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
-        
-        <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
+        <div class="container grey darken-4 " >
+            
+            <videoComponet   *ngIf="showVideo"   
+                [track]="track" [source]="source" [titel]="page.titel">     
+            </videoComponet>
+
+            <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
+
+            <textComponet    *ngIf="showText"    [texts]="texts" ></textComponet>
+            
+        </div>
   `
 })
 
 export class PageComponent implements OnInit {
-
 
     page: Page = new Page();
     pageRef: string;
@@ -101,7 +93,7 @@ export class PageComponent implements OnInit {
                 this.source = pageComponent.video.videoPath;
 
                 this.showVideo = true;
-                
+
             } else if (pageComponent.gallery != null) {
                 console.log("gallery");
 

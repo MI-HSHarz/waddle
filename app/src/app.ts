@@ -7,6 +7,7 @@ import 'rxjs/add/observable/forkJoin';
 import {Component, TemplateRef} from 'angular2/core';
 import {ContentloaderService} from "./services/contentloader.service";
 import {StartComponent} from "./componets/start.component.ts";
+import {ModuleComponent} from "./componets/module.component.ts";
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 import {CORE_DIRECTIVES, NgSwitchWhen, NgSwitch, NgSwitchDefault} from "angular2/common";
 import {UriEncodePipe} from "./pipes/uriEncode.pipe";
@@ -27,45 +28,41 @@ import {PageComponent} from "./componets/page.component";
     ],
     selector: 'app',
     template: `
-        <nav class=" grey darken-4">
-            <div class="nav-wrapper">
-                <!--<a href="#" class="brand-logo">Waddle</a>-->
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a (click)="openNav()"><i class="material-icons">menu</i></a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
-            <div class="overlay-content">
-
-                <ul>
-                    <li *ngFor="#page of content.pages">
-                         
-                        <div [ngSwitch]="page.type">
-                            <a (click)="closeNav()"
-                                href="#/page/{{page.$href | uriEncode}}">
-                                    {{page.menuName}}
-                            </a>
-                        </div>
-
-                        <ul >
-                            <li *ngFor="#subpage of page.subPages" >
-                                <a (click)="closeNav()"
-                                        href="#/page/{{subpage.$href | uriEncode}}">
-                                        {{subpage.menuName}}
-                                </a>
-                            </li>
+        <header>
+            <div class="navbar-fixed">
+                <nav class="black" role="navigation">
+                    <div class="nav-wrapper container">
+                        <ul class="left">
+                            <li><a [routerLink]="['/Start']" ><i class="material-icons">home</i></a></li>
+                            <li><a [routerLink]="['/Module']">Modul Name</a></li>
                         </ul>
-                    </li>
-                </ul>
-                
-            </div>
-         </div>
 
-        <main>
-            <router-outlet ></router-outlet>
+                        <ul class="right second">
+                            <li><a onclick="$('#modal1').openModal();" >Impressum</a></li>
+                        </ul>
+                    </div>
+                  
+                </nav>
+            </div>
+            
+        </header>
+
+        <main id="main flow-text">
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Impressum</h4>
+                    <div class="input-field col s12">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class=" modal-action modal-close waves-effect btn-flat"
+                        onclick="$('#modal1').closeModal();">
+                            schließen
+                    </button>
+                </div>
+             </div>
+            <router-outlet></router-outlet>
         </main>
         `
 })
@@ -76,6 +73,11 @@ import {PageComponent} from "./componets/page.component";
         path: '/',
         component: StartComponent,
         name: 'Start'
+    },
+    {
+        path: '/module',
+        component: ModuleComponent,
+        name: 'Module'
     },
     {
         path: '/page/:id',
@@ -91,7 +93,6 @@ export class App {
     constructor(private _contentloaderService: ContentloaderService) {
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
-            
         });
     }
 

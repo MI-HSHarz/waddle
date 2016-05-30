@@ -10,10 +10,10 @@ export class VgUtils {
 
         var tags = document.getElementsByTagName('*');
 
-        for (var i: number = 0, l: number = tags.length; i < l; i++) {
+        for ( var i: number = 0, l: number = tags.length; i < l; i++ ) {
             elementZIndex = parseInt(window.getComputedStyle(tags[i])["z-index"]);
 
-            if (elementZIndex > zIndex) {
+            if ( elementZIndex > zIndex ) {
                 zIndex = elementZIndex + 1;
             }
         }

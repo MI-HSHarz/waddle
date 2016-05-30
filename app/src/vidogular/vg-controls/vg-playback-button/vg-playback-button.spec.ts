@@ -4,9 +4,9 @@ import {VgAPI} from "../../services/vg-api";
 import {ElementRef} from "angular2/core";
 
 describe('Playback Button', () => {
-    let playbackButton:VgPlaybackButton;
-    let ref:ElementRef;
-    let api:VgAPI;
+    let playbackButton: VgPlaybackButton;
+    let ref: ElementRef;
+    let api: VgAPI;
 
     beforeEach(() => {
         ref = {
