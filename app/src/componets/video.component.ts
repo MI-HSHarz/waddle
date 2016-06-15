@@ -168,7 +168,7 @@ import {indexOfId} from "../util/comon";
                 </div>
                 
                 <div class="SmallCue red" 
-                    style="top:{{(api?.time?.current / (api?.duration*10))}}%">
+                    style="top:{{(api?.time?.current / (api?.duration * 10))}}%">
                 </div>
             </div>
                 
