@@ -94,14 +94,17 @@ export class App {
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
         });
-    }
 
-    openNav() {
-        document.getElementById("myNav").style.height = "100%";
-    }
+        //Videoabspielamarken löschen
 
-    closeNav() {
-        document.getElementById("myNav").style.height = "0%";
+        for(var key in localStorage) {
+            console.log(key);
+
+            if ( key.startsWith("timeToStart")) {
+                localStorage.removeItem(key);
+            }
+        }
+
     }
 
 }

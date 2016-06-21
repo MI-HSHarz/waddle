@@ -2,6 +2,7 @@ import {Component} from "angular2/core";
 import {UriEncodePipe} from "../pipes/uriEncode.pipe";
 import {Content} from "../services/model";
 import {ContentloaderService} from "../services/contentloader.service";
+
 @Component({
     selector: 'module',
     directives: [],

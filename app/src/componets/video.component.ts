@@ -60,7 +60,8 @@ import {indexOfId} from "../util/comon";
                 <div class='box ratio16_9'>
                     <div class='content'>
 
-                        <vg-player (onPlayerReady)="onPlayerReady($event)">
+                        <vg-player 
+                                (onPlayerReady)= "onPlayerReady($event)">
                         	<vg-overlay-play></vg-overlay-play>
 
                         	<vg-controls  [autohide]="true" [autohideTime]="1.5">
@@ -223,8 +224,20 @@ export class VideoComponent implements OnInit {
 
     onPlayerReady(api: VgAPI) {
         this.api = api;
-        console.log(this.api.duration);
+        //console.log(this.api.duration);
     }
+
+    jumpToStartPoint() {
+        // console.log("jumpToStartPoint");
+        var start: number = localStorage.getItem("timeToStart:" + this.source);
+
+        if (start > 0 ) {
+            let clue = this.cuePoints[start];
+            //console.log(clue);
+            this.jumpToCue(clue);
+        }
+    }
+
 
     ngOnInit(): any {
         return undefined;
@@ -236,7 +249,9 @@ export class VideoComponent implements OnInit {
         this.activCueIndex = indexOfId(this.cuePoints, $event.id);
         this.avtivCue = this.cuePoints[this.activCueIndex];
 
-        console.log(this.activCueIndex);
+        // console.log(this.activCueIndex);
+        this.saveCurrentTime();
+
     }
 
     onExitCuePoint($event) {
@@ -246,6 +261,8 @@ export class VideoComponent implements OnInit {
     onLoadCompleteCuePoints($event) {
         this.cuePoints = $event;
         // console.log(this.cuePoints);
+
+        this.jumpToStartPoint();
     }
 
     jumpToCue(cue: Cue) {
@@ -256,6 +273,8 @@ export class VideoComponent implements OnInit {
 
     seekToTime(time: number) {
         this.api.currentTime = time;
+
+        this.saveCurrentTime();
     }
 
     next() {
@@ -284,5 +303,10 @@ export class VideoComponent implements OnInit {
 
     maximize() {
         this.hasSmallControlls = false;
+    }
+
+    private saveCurrentTime() {
+        // console.log("saveCurrentTime", this.activCueIndex);
+        localStorage.setItem("timeToStart:" + this.source, <string>(this.activCueIndex));
     }
 }
