@@ -57,47 +57,45 @@ import {indexOfId} from "../util/comon";
         </div>
         <div class="row">
             <div class="col s12 m12 l12">
-                <div class='box ratio16_9' id="videoBox">
-                    <div class='content'>
-                <div class="video-padding-box">
-                    <div class="box ratio16_9">
+                <div class="video-padding-box"  id="videoBox">
+                    <div class='box ratio16_9'>
                         <div class="content">
 
-                        <vg-player 
-                                (onPlayerReady)= "onPlayerReady($event)">
-                        	<vg-overlay-play></vg-overlay-play>
-
-                        	<vg-controls  [autohide]="true" [autohideTime]="1.5">
-                        		<vg-play-pause></vg-play-pause>
-
-                        		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
-
-                        		<vg-scrub-bar>
-                        			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-                        			<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-                        		</vg-scrub-bar>
-
-                        		<vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
-
-                        		<vg-mute></vg-mute>
-
-                        		<vg-fullscreen></vg-fullscreen>
-                        	</vg-controls>
-
-                        	<video #media id="singleVideo" preload="auto" [controls]="controls">
-                        		<source [src]="source" type="video/mp4">
-                        		 <track [src]="track" kind="metadata" label="Cue Points" default
-                                       #metadataTrack
-                                       vgCuePoints
-                                       (onEnterCuePoint)="onEnterCuePoint($event)"
-                                       (onExitCuePoint)="onExitCuePoint($event)"
-                                       (onLoadCompleteCuePoints)="onLoadCompleteCuePoints($event)">
-                        	</video>
-                        </vg-player>
+                            <vg-player 
+                                    (onPlayerReady)= "onPlayerReady($event)">
+                            	<vg-overlay-play></vg-overlay-play>
+    
+                            	<vg-controls  [autohide]="true" [autohideTime]="1.5">
+                            		<vg-play-pause></vg-play-pause>
+    
+                            		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
+    
+                            		<vg-scrub-bar>
+                            			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                            			<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                            		</vg-scrub-bar>
+    
+                            		<vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
+    
+                            		<vg-mute></vg-mute>
+    
+                            		<vg-fullscreen></vg-fullscreen>
+                            	</vg-controls>
+    
+                            	<video #media id="singleVideo" preload="auto" [controls]="controls">
+                            		<source [src]="source" type="video/mp4">
+                            		 <track [src]="track" kind="metadata" label="Cue Points" default
+                                           #metadataTrack
+                                           vgCuePoints
+                                           (onEnterCuePoint)="onEnterCuePoint($event)"
+                                           (onExitCuePoint)="onExitCuePoint($event)"
+                                           (onLoadCompleteCuePoints)="onLoadCompleteCuePoints($event)">
+                            	</video>
+                            </vg-player>
+                        </div>
                     </div>
                 </div>
             </div>
-
            <!--<div class="col s12 m5 l4">-->
                <!--<div class="card full grey darken-4">-->
                    <!--<div class="card-content white-text">-->
@@ -242,8 +240,28 @@ export class VideoComponent implements OnInit {
 
 
     ngOnInit(): any {
+
+        window.onresize = this.onWindowLoadOrResize;
+        this.onWindowLoadOrResize();
+
         return undefined;
     }
+
+    onWindowLoadOrResize() {
+        console.log(event);
+
+        var myDiv = document.getElementById('videoBox');
+
+        console.log(myDiv);
+
+        myDiv.style.height = event.target.innerHeight  - 108 - 64 - 20;
+        //myDiv.style.width = myDiv.style.height ;
+
+
+        console.log("width:" + event.target.innerWidth);
+        console.log("height:" + event.target.innerHeight);
+    }
+
 
     onEnterCuePoint($event) {
         this.cuePointData = JSON.parse($event.text);
