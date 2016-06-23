@@ -34,6 +34,7 @@ import {ContentloaderService} from "../services/contentloader.service";
                                 <i class="material-icons right">
                                     close
                                 </i>
+                                 {{page.subtitle}}
                             </span>
                             
                             <ul class="navigation-list">

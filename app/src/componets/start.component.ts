@@ -8,6 +8,8 @@ import {Content} from "../services/model";
     template: `
         <div class="container grey darken-4 valign-wrapper">
             <div class="section valign">
+            
+            
                 <img class="bibor_splash1" src="data/img/bibor_splash1.png" alt="">
                 
                 <div class="bibor_splash_contents">

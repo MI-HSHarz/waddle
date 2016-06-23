@@ -19,8 +19,11 @@ export class ContentModul {
 
 export class MenuPage {
     menuName: string;
+    subtitle: string;
+    info: string;
     type: string;
     $href: string;
+    
     subPages: MenuPage[];
 }
 

@@ -6,6 +6,8 @@
   "pages": [
     {
       "menuName": "Berufskolleg Stendal",
+      "subtitle": "string",
+      "info": "string",
       "img": "data/img/schulen/bbs_Stendal.jpg",
       "$href": "pages/page0.json",
       "subPages": [
@@ -25,6 +27,8 @@
     },
     {
       "menuName": "Berufskolleg Weißenfels",
+      "subtitle": "string",
+      "info": "string",
       "img": "data/img/schulen/Berufskolleg Weißenfels.jpg",
       "$href": "pages/page0.json",
       "subPages": [
@@ -44,6 +48,8 @@
     },
     {
       "menuName": "Berufskolleg Bad Godesberg",
+      "subtitle": "string",
+      "info": "string",
       "img": "data/img/schulen/berufsschule_Ahrweiler bzw Godesberg.jpg",
       "$href": "pages/page0.json",
       "subPages": [
@@ -63,6 +69,8 @@
     },
     {
       "menuName": "Berufskolleg Montabaur",
+      "subtitle": "string",
+      "info": "string",
       "img": "data/img/schulen/berufsschule_Montabaur.jpg",
       "$href": "pages/page1.json",
       "subPages": [

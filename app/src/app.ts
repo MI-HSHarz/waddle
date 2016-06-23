@@ -97,7 +97,7 @@ export class App {
 
         //Videoabspielamarken löschen
 
-        for(var key in localStorage) {
+        for (var key in localStorage) {
             console.log(key);
 
             if ( key.startsWith("timeToStart")) {
