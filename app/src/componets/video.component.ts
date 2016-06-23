@@ -57,42 +57,43 @@ import {indexOfId} from "../util/comon";
         </div>
         <div class="row">
             <div class="col s12 m12 l12">
+                <div class='box ratio16_9' id="videoBox">
+                    <div class='content'>
                 <div class="video-padding-box">
                     <div class="box ratio16_9">
                         <div class="content">
 
-                            <vg-player
-                                    (onPlayerReady)= "onPlayerReady($event)">
-                                <vg-overlay-play></vg-overlay-play>
+                        <vg-player 
+                                (onPlayerReady)= "onPlayerReady($event)">
+                        	<vg-overlay-play></vg-overlay-play>
 
-                                <vg-controls  [autohide]="true" [autohideTime]="1.5">
-                                    <vg-play-pause></vg-play-pause>
+                        	<vg-controls  [autohide]="true" [autohideTime]="1.5">
+                        		<vg-play-pause></vg-play-pause>
 
-                                    <vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
+                        		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
 
-                                    <vg-scrub-bar>
-                                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-                                        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-                                    </vg-scrub-bar>
+                        		<vg-scrub-bar>
+                        			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        			<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                        		</vg-scrub-bar>
 
-                                    <vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
+                        		<vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
 
-                                    <vg-mute></vg-mute>
+                        		<vg-mute></vg-mute>
 
-                                    <vg-fullscreen></vg-fullscreen>
-                                </vg-controls>
+                        		<vg-fullscreen></vg-fullscreen>
+                        	</vg-controls>
 
-                                <video #media id="singleVideo" preload="auto" [controls]="controls">
-                                    <source [src]="source" type="video/mp4">
-                                     <track [src]="track" kind="metadata" label="Cue Points" default
-                                           #metadataTrack
-                                           vgCuePoints
-                                           (onEnterCuePoint)="onEnterCuePoint($event)"
-                                           (onExitCuePoint)="onExitCuePoint($event)"
-                                           (onLoadCompleteCuePoints)="onLoadCompleteCuePoints($event)">
-                                </video>
-                            </vg-player>
-                        </div>
+                        	<video #media id="singleVideo" preload="auto" [controls]="controls">
+                        		<source [src]="source" type="video/mp4">
+                        		 <track [src]="track" kind="metadata" label="Cue Points" default
+                                       #metadataTrack
+                                       vgCuePoints
+                                       (onEnterCuePoint)="onEnterCuePoint($event)"
+                                       (onExitCuePoint)="onExitCuePoint($event)"
+                                       (onLoadCompleteCuePoints)="onLoadCompleteCuePoints($event)">
+                        	</video>
+                        </vg-player>
                     </div>
                 </div>
             </div>
