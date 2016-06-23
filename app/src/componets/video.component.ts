@@ -57,7 +57,7 @@ import {indexOfId} from "../util/comon";
         </div>
         <div class="row">
             <div class="col s12 m12 l12">
-                <div class='box ratio16_9'>
+                <div class='box ratio16_9' id="videoBox">
                     <div class='content'>
 
                         <vg-player 
@@ -240,7 +240,27 @@ export class VideoComponent implements OnInit {
 
 
     ngOnInit(): any {
+
+        window.onresize = this.onWindowLoadOrResize;
+        this.onWindowLoadOrResize();
+
         return undefined;
+    }
+
+    onWindowLoadOrResize() {
+        console.log(event);
+
+        var myDiv = document.getElementById('videoBox');
+
+        console.log(myDiv);
+
+        myDiv.style.height = event.target.innerHeight  - 108 - 64 ;
+        //myDiv.style.width = myDiv.style.height ;
+
+
+
+        console.log("width:" + event.target.innerWidth);
+        console.log("height:" + event.target.innerHeight);
     }
 
     onEnterCuePoint($event) {
