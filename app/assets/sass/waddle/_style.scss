@@ -139,6 +139,7 @@ nav {
   width: 64px;
   height: calc(100vh - 64px);
   background: rgba(0,0,0,0.8);
+  @extend .z-depth-4;
   .main {
     position: relative;
     height: calc(100% - (45px*2 + 64px));
@@ -197,6 +198,7 @@ nav {
     height: 45px*2 + 64px;
     position: absolute;
     bottom: 0;
+    background-color: color("grey", "darken-4");
     nav {
       ul {
         li {
@@ -244,6 +246,7 @@ nav {
   width: 350px;
   height: calc(100vh - 64px);
   background: rgba(0,0,0,0.8);
+  @extend .z-depth-4;
   .main {
     height: calc(100% - 64px);
     overflow: hidden;
@@ -338,6 +341,7 @@ nav {
     border-color: #616161;
     border-top: solid 1px;
     border-top-color: #616161;
+    background-color: color("grey", "darken-4");
     nav {
       ul {
         li {

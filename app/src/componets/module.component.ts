@@ -14,7 +14,7 @@ import {ContentloaderService} from "../services/contentloader.service";
                 <div class="row">
                
                     <div *ngFor="#page of content.pages"
-                        class="col s12 m6 teal white-text card module half">
+                        class="col s12 m6 bibor-blue white-text card module half">
                            
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="{{page.img}}">
@@ -31,13 +31,15 @@ import {ContentloaderService} from "../services/contentloader.service";
                             <div *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</div>
                         </div>
                         <div class="card-reveal">
-                            <div class="card-title">
-                                {{page.menuName}}
-                                <i class="material-icons right">
-                                    close
-                                </i>
+                            <div class="card-reveal-header">
+                                <div class="card-title">
+                                    {{page.menuName}}
+                                    <i class="material-icons right">
+                                        close
+                                    </i>
+                                </div>
+                                <div *ngIf="page.subtitle" class="card-sub-title">{{page.subtitle}}</div>
                             </div>
-                            <div *ngIf="page.subtitle" class="card-sub-title">{{page.subtitle}}</div>
                             <ul class="navigation-list">
                                 <li *ngFor="#subpage of page.subPages">
                                     <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
