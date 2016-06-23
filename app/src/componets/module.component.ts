@@ -2,7 +2,6 @@ import {Component} from "angular2/core";
 import {UriEncodePipe} from "../pipes/uriEncode.pipe";
 import {Content} from "../services/model";
 import {ContentloaderService} from "../services/contentloader.service";
-
 @Component({
     selector: 'module',
     directives: [],
@@ -21,22 +20,24 @@ import {ContentloaderService} from "../services/contentloader.service";
                             <img class="activator" src="{{page.img}}">
                         </div>
                         <div class="card-content">
-                            <span class="card-title activator">{{page.menuName}}</span>
-                            <a  class="white-text">
+                            <div>
+                                <span class="card-title activator">{{page.menuName}}</span>
+                                 <a>
                                 <i class="material-icons right">
                                     info
                                 </i>
                             </a>
+                            </div>
+                            <span *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</span>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title">
+                            <div class="card-title">
                                 {{page.menuName}}
                                 <i class="material-icons right">
                                     close
                                 </i>
-                                 {{page.subtitle}}
-                            </span>
-                            
+                            </div>
+                            <div *ngIf="page.subtitle" class="card-sub-title">{{page.subtitle}}</div>
                             <ul class="navigation-list">
                                 <li *ngFor="#subpage of page.subPages">
                                     <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">

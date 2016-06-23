@@ -43,11 +43,27 @@
     }
   }
   &.module {
+    .card-sub-title {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
     .card-content {
       position: absolute;
       width: 100%;
       bottom: 0;
       background-color: inherit;
+      .material-icons {
+        line-height: 48px;
+      }
+    }
+    .card-reveal {
+      .card-sub-title {
+        margin-bottom: 1.5rem;
+      }
+      .material-icons {
+        line-height: 48px;
+      }
     }
   }
 }

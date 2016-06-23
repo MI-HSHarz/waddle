@@ -84,15 +84,26 @@ nav {
   right: 30px;
   bottom:30px;
   z-index: 1;
+  width: 400px;
 }
-.bibor_splash_contents{
-  position: absolute;
-  right: 30px;
-  bottom:250px;
-  height:300px;
-  width: 500px;
-  z-index: 1;
+#index-page-section-top {
+  padding-top: 30px;
+  .title {
+    opacity: 0.8;
+  }
+  .sub-title {
+    opacity: 0.8;
+  }
 }
+#index-page-section-bottom {
+  padding-top: 20px;
+  ul {
+    li {
+      font-size: $h5-fontsize;
+    }
+  }
+}
+
 
 .modullist{
 

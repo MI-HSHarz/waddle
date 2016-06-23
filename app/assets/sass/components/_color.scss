@@ -6,6 +6,22 @@
 
 // Google Color Palette defined: http://www.google.com/design/spec/style/color.html
 
+$bibor-blue: (
+        "base":       #004291,
+        "lighten-5":  #E3F2FD,
+        "lighten-4":  #BBDEFB,
+        "lighten-3":  #90CAF9,
+        "lighten-2":  #64B5F6,
+        "lighten-1":  #42A5F5,
+        "darken-1":   #1E88E5,
+        "darken-2":   #1976D2,
+        "darken-3":   #1565C0,
+        "darken-4":   #0D47A1,
+        "accent-1":    #82B1FF,
+        "accent-2":    #448AFF,
+        "accent-3":    #2979FF,
+        "accent-4":    #2962FF
+);
 
 $materialize-red: (
   "base":       #e51c23,
@@ -338,6 +354,7 @@ $shades: (
 );
 
 $colors: (
+  "bibor-blue": $bibor-blue,
   "materialize-red": $materialize-red,
   "red": $red,
   "pink": $pink,
