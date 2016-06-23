@@ -28,7 +28,7 @@ import {ContentloaderService} from "../services/contentloader.service";
                                 </i>
                             </a>
                             </div>
-                            <span *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</span>
+                            <div *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</div>
                         </div>
                         <div class="card-reveal">
                             <div class="card-title">
