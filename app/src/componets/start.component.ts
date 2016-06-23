@@ -9,20 +9,20 @@ import {Content} from "../services/model";
         <div class="container grey darken-4">
             <div class="section">
                 <div id="index-page-section-top" class="row card module half bibor-blue">
-                    <div class="col s6 offset-s1 white-text">
+                    <div class="col s6 white-text">
                         <h1 class="title">Religionsunterricht</h1>
                         <h4 class="sub-title">an der gewerblichen Berufsschule</h4>
                     </div>
                 </div>
                 <div id="index-page-section-bottom" class="row card module half grey darken-4">
-                    <div class="col s6 offset-s1">
+                    <div class="col s61">
                         <div class="white-text">
                                 <ul class="navigation-list">
                                     <li>
-                                       Modul1
+                                       <a href="#/module">Die Braxis des BRU</a>
                                     </li>
                                      <li>
-                                       <a href="#/module">Modul2</a>
+                                        <a href="#/module">Berufsbezüge</a>
                                     </li>
                                 </ul>
                         </div>

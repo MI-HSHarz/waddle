@@ -57,8 +57,8 @@ import {indexOfId} from "../util/comon";
         </div>
         <div class="row">
             <div class="col s12 m12 l12">
-                <div class="video-padding-box"  id="videoBox">
-                    <div class='box ratio16_9'>
+                <div class="video-padding-box" >
+                    <div id="videoBox" class='box ratio16_9'>
                         <div class="content">
 
                             <vg-player 

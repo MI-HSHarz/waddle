@@ -93,18 +93,26 @@ nav {
 }
 #index-page-section-top {
   padding-top: 30px;
+  padding-left: 70px;
   .title {
     opacity: 0.8;
+    font-family: "Roboto Light";
+    margin-bottom: 0px;
   }
   .sub-title {
+    font-family: "Roboto Light";
     opacity: 0.8;
+    letter-spacing: 0.4px;
   }
 }
 #index-page-section-bottom {
   padding-top: 20px;
+  padding-left: 70px;
   ul {
     li {
       font-size: $h5-fontsize;
+      margin-bottom: 1rem;
+      margin-top: 0px;
     }
   }
 }
