@@ -10,14 +10,14 @@ var mainWindow;
 
 function createWindow () {
 
-  var protocol = electron.protocol;
+/*  var protocol = electron.protocol;
   protocol.registerFileProtocol('file', function(request, callback) {
     var url = request.url.substr(7);
     callback({path: path.normalize(__dirname + '/' + url)});
   }, function (error) {
     if (error)
       console.error('Failed to register protocol')
-  });
+  });*/
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
@@ -28,7 +28,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: false
     }
-  })
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html')

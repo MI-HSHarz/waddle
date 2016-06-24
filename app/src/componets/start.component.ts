@@ -9,7 +9,7 @@ import {Content} from "../services/model";
         <div class="container grey darken-4">
             <div class="section">
                 <div id="index-page-section-top" class="row card module half bibor-blue">
-                    <div class="col s6 white-text">
+                    <div class="col s12 white-text">
                         <h1 class="title">Religionsunterricht</h1>
                         <h4 class="sub-title">an der gewerblichen Berufsschule</h4>
                     </div>
