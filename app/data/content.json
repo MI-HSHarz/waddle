@@ -10,6 +10,7 @@
       "info": "string",
       "img": "data/img/schulen/bbs_Stendal.jpg",
       "$href": "pages/page0.json",
+      "color": "bibor-blue",
       "subPages": [
         {
           "menuName": "eine Unterseite",
@@ -31,6 +32,7 @@
       "info": "string",
       "img": "data/img/schulen/Berufskolleg Weißenfels.jpg",
       "$href": "pages/page0.json",
+      "color": "bibor-blue darken-3",
       "subPages": [
         {
           "menuName": "eine Unterseite",
@@ -52,6 +54,7 @@
       "info": "string",
       "img": "data/img/schulen/berufsschule_Ahrweiler bzw Godesberg.jpg",
       "$href": "pages/page0.json",
+      "color": "bibor-blue darken-2",
       "subPages": [
         {
           "menuName": "eine Unterseite",
@@ -73,6 +76,7 @@
       "info": "string",
       "img": "data/img/schulen/berufsschule_Montabaur.jpg",
       "$href": "pages/page1.json",
+      "color": "bibor-blue lighten-3",
       "subPages": [
         {
           "menuName": "Unterseite:2.1 ",

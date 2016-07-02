@@ -14,7 +14,7 @@ import {ContentloaderService} from "../services/contentloader.service";
                 <div class="row">
                
                     <div *ngFor="#page of content.pages"
-                        class="col s12 m6 bibor-blue white-text card module half">
+                        class="col s12 m6 {{page.color}} white-text card module half">
                            
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="{{page.img}}">
