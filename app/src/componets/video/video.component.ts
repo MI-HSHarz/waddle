@@ -1,25 +1,25 @@
-import {Component, OnInit, Input, Output, EventEmitter, ElementRef} from 'angular2/core';
-import {VgPlayer} from "../vidogular/vg-player/vg-player";
-import {VgAPI} from "../vidogular/services/vg-api";
-import {VgFullscreenAPI} from "../vidogular/services/vg-fullscreen-api";
-import {VgCuePoints} from "../vidogular/vg-cue-points/vg-cue-points";
+import {Component, OnInit, Input, Output, EventEmitter, ElementRef, AfterViewInit} from 'angular2/core';
+import {VgPlayer} from "../../vidogular/vg-player/vg-player";
+import {VgAPI} from "../../vidogular/services/vg-api";
+import {VgFullscreenAPI} from "../../vidogular/services/vg-fullscreen-api";
+import {VgCuePoints} from "../../vidogular/vg-cue-points/vg-cue-points";
 import {NgIf, NgFor} from "angular2/common";
 import {RouteParams} from "angular2/router";
-import {Cue} from "../services/model";
-import {VgFullscreen} from "../vidogular/vg-controls/vg-fullscreen/vg-fullscreen";
-import {VgOverlayPlay} from "../vidogular/vg-overlay-play/vg-overlay-play";
-import {VgControls} from "../vidogular/vg-controls/vg-controls";
-import {VgPlayPause} from "../vidogular/vg-controls/vg-play-pause/vg-play-pause";
-import {VgPlaybackButton} from "../vidogular/vg-controls/vg-playback-button/vg-playback-button";
-import {VgScrubBar} from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar";
-import {VgScrubBarCurrentTime} from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-current-time/vg-scrub-bar-current-time";
-import {
-    VgScrubBarBufferingTime
-}
-    from "../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-buffering-time/vg-scrub-bar-buffering-time";
-import {VgMute} from "../vidogular/vg-controls/vg-mute/vg-mute";
-import {RoundPipe} from "../pipes/round.pipe";
-import {indexOfId} from "../util/comon";
+import {Cue} from "../../services/model";
+import {VgFullscreen} from "../../vidogular/vg-controls/vg-fullscreen/vg-fullscreen";
+import {VgOverlayPlay} from "../../vidogular/vg-overlay-play/vg-overlay-play";
+import {VgControls} from "../../vidogular/vg-controls/vg-controls";
+import {VgPlayPause} from "../../vidogular/vg-controls/vg-play-pause/vg-play-pause";
+import {VgPlaybackButton} from "../../vidogular/vg-controls/vg-playback-button/vg-playback-button";
+import {VgScrubBar} from "../../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar";
+import {VgScrubBarCurrentTime}
+    from "../../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-current-time/vg-scrub-bar-current-time";
+import {VgScrubBarBufferingTime}
+    from "../../vidogular/vg-controls/vg-scrub-bar/vg-scrub-bar-buffering-time/vg-scrub-bar-buffering-time";
+import {VgMute} from "../../vidogular/vg-controls/vg-mute/vg-mute";
+import {RoundPipe} from "../../pipes/round.pipe";
+import {indexOfId} from "../../util/comon";
+import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
 
 
 @Component({
@@ -37,7 +37,8 @@ import {indexOfId} from "../util/comon";
         VgMute,
         VgFullscreen,
         NgFor,
-        NgIf
+        NgIf,
+        VideoInfoBoxComponent
     ],
     pipes: [
         RoundPipe
@@ -118,6 +119,8 @@ import {indexOfId} from "../util/comon";
             <div class="main">
                 <ul class="sidebar-collection">
                 
+                   
+                
                     <li *ngFor="#cuePoint of cuePoints" class="collection-item"
                         [ngClass]="{active: cuePoint.id === avtivCue.id}"
                         (click)="jumpToCue(cuePoint)">
@@ -196,7 +199,7 @@ import {indexOfId} from "../util/comon";
   `
 })
 
-export class VideoComponent implements OnInit {
+export class VideoComponent implements OnInit, AfterViewInit {
 
     @Input('track') track: string;
     @Input('source') source: string;
@@ -229,7 +232,7 @@ export class VideoComponent implements OnInit {
 
     jumpToStartPoint() {
         // console.log("jumpToStartPoint");
-        var start: number = localStorage.getItem("timeToStart:" + this.source);
+        var start: number = localStorage.getItem("timeToStart:" + this.source) + 0;
 
         if (start > 0 ) {
             let clue = this.cuePoints[start];
@@ -242,23 +245,30 @@ export class VideoComponent implements OnInit {
     ngOnInit(): any {
 
         window.onresize = this.onWindowLoadOrResize;
-        this.onWindowLoadOrResize();
 
         return undefined;
     }
 
+    ngAfterViewInit() {
+        this.onWindowLoadOrResize();
+    }
+
     onWindowLoadOrResize() {
+        console.log("onWindowLoadOrResize");
         console.log(event);
 
         var myDiv = document.getElementById('videoBox');
 
         console.log(myDiv);
 
-        myDiv.style.height = event.target.innerHeight  - 108 - 64 - 20;
+        //noinspection TypeScriptUnresolvedVariable
+        myDiv.style.height = (event.target.innerHeight  - 108 - 64 - 20) + "";
         //myDiv.style.width = myDiv.style.height ;
 
 
+        //noinspection TypeScriptUnresolvedVariable
         console.log("width:" + event.target.innerWidth);
+        //noinspection TypeScriptUnresolvedVariable
         console.log("height:" + event.target.innerHeight);
     }
 
@@ -327,6 +337,6 @@ export class VideoComponent implements OnInit {
 
     private saveCurrentTime() {
         // console.log("saveCurrentTime", this.activCueIndex);
-        localStorage.setItem("timeToStart:" + this.source, <string>(this.activCueIndex));
+        localStorage.setItem("timeToStart:" + this.source, (this.activCueIndex) + "");
     }
 }

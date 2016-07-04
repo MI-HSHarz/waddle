@@ -198,7 +198,6 @@ nav {
     height: 45px*2 + 64px;
     position: absolute;
     bottom: 0;
-    background-color: color("grey", "darken-4");
     nav {
       ul {
         li {
@@ -282,6 +281,9 @@ nav {
               opacity: 1.0;
             }
           }
+          .collapsible-body{
+            display: block;
+          }
         }
         &:last-child {
           border: none;
@@ -328,6 +330,8 @@ nav {
           p {
             padding: 0;
           }
+
+          display: none;
         }
       }
 
@@ -341,7 +345,6 @@ nav {
     border-color: #616161;
     border-top: solid 1px;
     border-top-color: #616161;
-    background-color: color("grey", "darken-4");
     nav {
       ul {
         li {

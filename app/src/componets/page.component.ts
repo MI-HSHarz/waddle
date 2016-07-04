@@ -3,9 +3,9 @@ import {NgIf, NgFor} from "angular2/common";
 import {RouteParams} from "angular2/router";
 import {PageService} from "../services/page.service";
 import {Page, ContetComponent, GalleryImage} from "../services/model";
-import {VideoComponent} from "./video.component";
 import {GalleryComponent} from "./gallery.component";
 import {TextComponent} from "./text.component";
+import {VideoComponent} from "./video/video.component";
 
 @Component({
     selector: 'PageComponet',

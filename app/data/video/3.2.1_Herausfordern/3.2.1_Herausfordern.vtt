@@ -4,7 +4,7 @@ WEBVTT FILE
 00:00:00.000 --> 00:00:09.000
 {
     "title": "Herrausfordern",
-    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "shortDescription": "dolor sit amet, consectetur adipiscing elit",
     "src": "data/video/3.2.1_Herausfordern/img/1.png",
     "href": ""
