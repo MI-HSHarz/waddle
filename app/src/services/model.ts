@@ -1,4 +1,5 @@
 import {IdInterface} from "../util/comon";
+
 export class Content {
     name: string;
     colorScheme: {

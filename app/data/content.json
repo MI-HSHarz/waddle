@@ -3,6 +3,16 @@
   "colorScheme":{
     "menuColor": "#eee"
   },
+  "modules":[
+    {
+      "name":"DIE BRAXIS DES BRU",
+      "pages": []
+    },
+    {
+      "name":"BERUFSBEZÜGE",
+      "pages": []
+    }
+  ],
   "pages": [
     {
       "menuName": "Berufskolleg Stendal",

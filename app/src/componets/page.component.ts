@@ -47,8 +47,7 @@ export class PageComponent implements OnInit {
     texts: string[];
 
     constructor(private _routeParams: RouteParams,
-                private _pageService: PageService) {
-    }
+                private _pageService: PageService) {}
 
     ngOnInit(): any {
         console.log("ngOnInit");

@@ -13,6 +13,7 @@ import {CORE_DIRECTIVES, NgSwitchWhen, NgSwitch, NgSwitchDefault} from "angular2
 import {UriEncodePipe} from "./pipes/uriEncode.pipe";
 import {Content} from "./services/model";
 import {PageComponent} from "./componets/page.component";
+import {ImprintComponent} from "./componets/imprint.component";
 
 
 @Component({
@@ -38,7 +39,7 @@ import {PageComponent} from "./componets/page.component";
                         </ul>
 
                         <ul class="right second">
-                            <li><a onclick="$('#modal1').openModal();" >Impressum</a></li>
+                            <li><a [routerLink]="['/Imprint']" >Impressum</a></li>
                         </ul>
                     </div>
                   
@@ -48,20 +49,6 @@ import {PageComponent} from "./componets/page.component";
         </header>
 
         <main id="main flow-text">
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h4>Impressum</h4>
-                    <div class="input-field col s12">
-                        
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class=" modal-action modal-close waves-effect btn-flat"
-                        onclick="$('#modal1').closeModal();">
-                            schließen
-                    </button>
-                </div>
-             </div>
             <router-outlet></router-outlet>
         </main>
         `
@@ -83,6 +70,11 @@ import {PageComponent} from "./componets/page.component";
         path: '/page/:id',
         component: PageComponent,
         name: 'Page'
+    },
+    {
+        path: '/imprint',
+        component: ImprintComponent,
+        name: 'Imprint'
     }
 ])
 

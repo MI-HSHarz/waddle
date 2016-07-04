@@ -44,7 +44,7 @@ import {Content} from "../services/model";
                     <div class="col s61">
                         <div class="white-text">
                                 <ul class="navigation-list">
-                                    <li>
+                                    <li >
                                        <a href="#/module">Die Braxis des BRU</a>
                                     </li>
                                      <li>
