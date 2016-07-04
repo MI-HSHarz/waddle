@@ -1,6 +1,7 @@
-import {Component, AfterViewChecked, AfterViewInit} from "angular2/core";
+import {Component, AfterViewChecked, AfterViewInit, OnInit} from "angular2/core";
 import {ContentloaderService} from "../services/contentloader.service";
 import {Content} from "../services/model";
+
 @Component({
     selector: 'start',
     directives: [
@@ -43,17 +44,14 @@ import {Content} from "../services/model";
                 <div id="index-page-section-bottom" class="row card module half grey darken-4">
                     <div class="col s61">
                         <div class="white-text">
-                                <ul class="navigation-list">
-                                    <li >
-                                       <a href="#/module">Die Braxis des BRU</a>
-                                    </li>
-                                     <li>
-                                        <a href="#/module">Berufsbezüge</a>
-                                    </li>
-                                </ul>
+                            <ul class="navigation-list">
+                                <li *ngFor="#module of content.modules; #i = index">
+                                   <a href="#/module/{{i}}">{{module.name}}</a>
+                                </li>
+                            </ul>
                         </div>
-                </div>
-                <img class="bibor_splash2" src="data/img/bibor_splash2.png" alt="">
+                    </div>
+                    <img class="bibor_splash2" src="data/img/bibor_splash2.png" alt="">
                 </div>
             </div>
         </div>
@@ -62,7 +60,7 @@ import {Content} from "../services/model";
 })
 
 
-export class StartComponent implements AfterViewInit{
+export class StartComponent implements AfterViewInit, OnInit{
 
     content: Content = new Content();
 
@@ -71,17 +69,21 @@ export class StartComponent implements AfterViewInit{
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
         });
+        
+    }
+
+    ngOnInit(): any {
+        // this._contentloaderService.setModulTitel(NaN);
     }
 
     ngAfterViewInit() {
         var element = document.getElementById('modalSerial');
 
-
-
         var isRegistered = localStorage.getItem("registered");
-        console.log(isRegistered);
+        //console.log(isRegistered);
 
         if ( isRegistered === null ) {
+            //noinspection TypeScriptUnresolvedFunction
             $('#modalSerial').openModal();
         }
     }
@@ -89,6 +91,7 @@ export class StartComponent implements AfterViewInit{
     checkSerial(serial: string) {
 
         localStorage.setItem("registered", serial);
+        //noinspection TypeScriptUnresolvedFunction
         $('#modalSerial').closeModal();
     }
 

@@ -4,7 +4,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/observable/forkJoin';
 
-import {Component, TemplateRef} from 'angular2/core';
+import {Component, TemplateRef, OnChanges} from 'angular2/core';
 import {ContentloaderService} from "./services/contentloader.service";
 import {StartComponent} from "./componets/start.component.ts";
 import {ModuleComponent} from "./componets/module.component.ts";
@@ -34,12 +34,24 @@ import {ImprintComponent} from "./componets/imprint.component";
                 <nav class="black" role="navigation">
                     <div class="nav-wrapper container">
                         <ul class="left">
-                            <li><a [routerLink]="['/Start']" ><i class="material-icons">home</i></a></li>
-                            <li><a [routerLink]="['/Module']">Modul Name</a></li>
+                            <li>
+                                <a [routerLink]="['/Start']" >
+                                    <i class="material-icons">home</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/module/1">
+                                    {{titel}}
+                                </a>
+                            </li>
                         </ul>
 
                         <ul class="right second">
-                            <li><a [routerLink]="['/Imprint']" >Impressum</a></li>
+                            <li>
+                                <a [routerLink]="['/Imprint']" >
+                                    Impressum
+                                </a>
+                            </li>
                         </ul>
                     </div>
                   
@@ -61,8 +73,13 @@ import {ImprintComponent} from "./componets/imprint.component";
         component: StartComponent,
         name: 'Start'
     },
+    // {
+    //     path: '/module',
+    //     component: ModuleComponent,
+    //     name: 'Module'
+    // },
     {
-        path: '/module',
+        path: '/module/:id',
         component: ModuleComponent,
         name: 'Module'
     },
@@ -81,22 +98,32 @@ import {ImprintComponent} from "./componets/imprint.component";
 export class App {
 
     content: Content = new Content();
+    titel: string = "titel";
 
     constructor(private _contentloaderService: ContentloaderService) {
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
+
+            // this._contentloaderService.modulTitelSubject.subscribe(titelNr => {
+            //     if(titelNr != NaN) {
+            //         this.titel = this.content.modules[titelNr].name;
+            //
+            //     }
+            // });
+
         });
+
+
 
         //Videoabspielamarken löschen
 
         for (var key in localStorage) {
-            console.log(key);
+            // console.log(key);
 
             if ( key.startsWith("timeToStart")) {
                 localStorage.removeItem(key);
             }
         }
-
     }
 
 }

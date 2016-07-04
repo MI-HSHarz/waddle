@@ -11,15 +11,20 @@ export class ContentloaderService {
 
     contentSubject: Subject<Content> = new ReplaySubject<Content>();
 
+    // modulTitelSubject: Subject<number> = new ReplaySubject<number>();
+
     private apiBaseUrl: string = 'data/content.json';
 
     private content: Content;
-
 
     constructor(private _http: Http,
                 private _pageService: PageService) {
         this.load();
     }
+
+    // setModulTitel(titel: number){
+    //     this.modulTitelSubject.next( titel);
+    // }
 
     public load() {
         this._http.get(this.apiBaseUrl)
@@ -29,9 +34,12 @@ export class ContentloaderService {
                     this.content = content;
                     this.contentSubject.next( this.content);
 
-                    content.pages.forEach( menuPage => {
-                        this._pageService.addPageToCache(menuPage.$href);
+                    content.modules.forEach(module => {
+                        module.pages.forEach( menuPage => {
+                            this._pageService.addPageToCache(menuPage.$href);
+                        });
                     });
+
                 },
                 error => {
                     console.log(error);

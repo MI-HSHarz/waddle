@@ -6,97 +6,96 @@
   "modules":[
     {
       "name":"DIE BRAXIS DES BRU",
-      "pages": []
+      "pages": [
+        {
+          "menuName": "Berufskolleg Stendal",
+          "subtitle": "",
+          "info": "string",
+          "img": "data/img/schulen/bbs_Stendal.jpg",
+          "$href": "pages/page0.json",
+          "color": "bibor-blue",
+          "subPages": [
+            {
+              "menuName": "eine Unterseite",
+              "$href": "pages/stendalVideo1.json"
+            },
+            {
+              "menuName": "eine Unterseite",
+              "$href": "pages/bsp.json"
+            },
+            {
+              "menuName": "eine zweite Unterseite",
+              "$href": "pages/bsp.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Berufskolleg Weißenfels",
+          "subtitle": "Dinge Dinge",
+          "info": "string",
+          "img": "data/img/schulen/Berufskolleg Weißenfels.jpg",
+          "$href": "pages/page0.json",
+          "color": "bibor-blue darken-3",
+          "subPages": [
+            {
+              "menuName": "eine Unterseite",
+              "$href": "pages/bsp.json"
+            },
+            {
+              "menuName": "eine Unterseite",
+              "$href": "pages/bsp.json"
+            },
+            {
+              "menuName": "eine zweite Unterseite",
+              "$href": "pages/bsp.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Berufskolleg Bad Godesberg",
+          "subtitle": "string",
+          "info": "string",
+          "img": "data/img/schulen/berufsschule_Ahrweiler bzw Godesberg.jpg",
+          "$href": "pages/page0.json",
+          "color": "bibor-blue darken-2",
+          "subPages": [
+            {
+              "menuName": "eine Unterseite",
+              "$href": "pages/bsp.json"
+            },
+            {
+              "menuName": "eine Unterseite",
+              "$href": "pages/bsp.json"
+            },
+            {
+              "menuName": "eine zweite Unterseite",
+              "$href": "pages/bsp.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Berufskolleg Montabaur",
+          "subtitle": "string",
+          "info": "string",
+          "img": "data/img/schulen/berufsschule_Montabaur.jpg",
+          "$href": "pages/page1.json",
+          "color": "bibor-blue lighten-3",
+          "subPages": [
+            {
+              "menuName": "Unterseite:2.1 ",
+              "$href": "pages/bsp.json"
+            },
+            {
+              "menuName": "Unterseite:2.2 ",
+              "$href": "pages/bsp.json"
+            }
+          ]
+        }
+      ]
     },
     {
       "name":"BERUFSBEZÜGE",
       "pages": []
-    }
-  ],
-  "pages": [
-    {
-      "menuName": "Berufskolleg Stendal",
-      "subtitle": "",
-      "info": "string",
-      "img": "data/img/schulen/bbs_Stendal.jpg",
-      "$href": "pages/page0.json",
-      "color": "bibor-blue",
-      "subPages": [
-        {
-          "menuName": "eine Unterseite",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "eine Unterseite",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "eine zweite Unterseite",
-          "$href": "pages/bsp.json"
-        }
-      ]
-    },
-    {
-      "menuName": "Berufskolleg Weißenfels",
-      "subtitle": "Dinge Dinge",
-      "info": "string",
-      "img": "data/img/schulen/Berufskolleg Weißenfels.jpg",
-      "$href": "pages/page0.json",
-      "color": "bibor-blue darken-3",
-      "subPages": [
-        {
-          "menuName": "eine Unterseite",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "eine Unterseite",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "eine zweite Unterseite",
-          "$href": "pages/bsp.json"
-        }
-      ]
-    },
-    {
-      "menuName": "Berufskolleg Bad Godesberg",
-      "subtitle": "string",
-      "info": "string",
-      "img": "data/img/schulen/berufsschule_Ahrweiler bzw Godesberg.jpg",
-      "$href": "pages/page0.json",
-      "color": "bibor-blue darken-2",
-      "subPages": [
-        {
-          "menuName": "eine Unterseite",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "eine Unterseite",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "eine zweite Unterseite",
-          "$href": "pages/bsp.json"
-        }
-      ]
-    },
-    {
-      "menuName": "Berufskolleg Montabaur",
-      "subtitle": "string",
-      "info": "string",
-      "img": "data/img/schulen/berufsschule_Montabaur.jpg",
-      "$href": "pages/page1.json",
-      "color": "bibor-blue lighten-3",
-      "subPages": [
-        {
-          "menuName": "Unterseite:2.1 ",
-          "$href": "pages/bsp.json"
-        },
-        {
-          "menuName": "Unterseite:2.2 ",
-          "$href": "pages/bsp.json"
-        }
-      ]
     }
   ],
   "imprint": {

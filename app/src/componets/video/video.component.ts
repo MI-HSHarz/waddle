@@ -135,7 +135,9 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                              Dauer: {{cuePoint.duration | round}}
                              </p>
                          </div>
-                         <div class="collapsible-body"><p>{{ cuePointData.description }}</p></div>
+                         <div class="collapsible-body">
+                            <p>{{ cuePoint.description }}</p>
+                         </div>
                     </li>
                   </ul>
             </div>
@@ -308,7 +310,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     }
 
     next() {
-        console.log("next");
+
         if (this.activCueIndex < this.cuePoints.length - 1) {
             this.activCueIndex++;
             this.avtivCue = this.cuePoints[this.activCueIndex];
@@ -318,7 +320,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     }
 
     prev() {
-        console.log("next");
+
         if (this.activCueIndex > 0) {
             this.activCueIndex--;
             this.avtivCue = this.cuePoints[this.activCueIndex];

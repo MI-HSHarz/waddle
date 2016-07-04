@@ -1,7 +1,9 @@
 import {Component} from "angular2/core";
 import {UriEncodePipe} from "../pipes/uriEncode.pipe";
-import {Content} from "../services/model";
+import {Content, ContentModul} from "../services/model";
 import {ContentloaderService} from "../services/contentloader.service";
+import {RouteParams} from "angular2/router";
+
 @Component({
     selector: 'module',
     directives: [],
@@ -13,7 +15,7 @@ import {ContentloaderService} from "../services/contentloader.service";
             <div class="section">
                 <div class="row">
                
-                    <div *ngFor="#page of content.pages"
+                    <div *ngFor="#page of modul.pages"
                         class="col s12 m6 {{page.color}} white-text card module half">
                            
                         <div class="card-image waves-effect waves-block waves-light">
@@ -66,12 +68,23 @@ import {ContentloaderService} from "../services/contentloader.service";
 
 export class ModuleComponent {
 
-    content: Content = new Content();
+    modul: ContentModul = new ContentModul();
 
-    constructor(private _contentloaderService: ContentloaderService) {
+    constructor(private _routeParams: RouteParams,
+                private _contentloaderService: ContentloaderService) {
 
         this._contentloaderService.contentSubject.subscribe(content => {
-            this.content = content;
+
+            let id = this._routeParams.get('id');
+            if (id != null) {
+                let modul = content.modules[id];
+                if (modul != null) {
+                    this.modul = modul;
+                }
+            }
+
+            // this._contentloaderService.setModulTitel(id + 0);
         });
+
     }
 }
