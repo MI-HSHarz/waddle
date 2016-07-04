@@ -31,8 +31,8 @@ import {Content} from "../services/model";
                     </button>
                 </div>
             </div>
-            
-            
+
+
             <div class="section">
                 <div id="index-page-section-top" class="row card module half bibor-blue">
                     <div class="col s12 white-text">

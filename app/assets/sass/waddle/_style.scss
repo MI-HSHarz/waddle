@@ -14,8 +14,8 @@
 html, body {
   width: 100%;
   height: 100%;
-  min-width: 1024px;
-  min-height: 768px;
+  //min-width: 1024px;
+  //min-height: 768px;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -466,4 +466,21 @@ nav {
 vg-time-display {
   font-family: Roboto;
 }
-
+/* 5. Imprint
+   ========================================================================== */
+#imprint {
+  font-weight: 300;
+  #imprint-top {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: calc((100vh - #{$navbar-height} ) /3 * 2 );
+    p {
+      margin-top: 0;
+    }
+  }
+  #imprint-bottom {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: calc((100vh - #{$navbar-height} ) /3 );
+  }
+}

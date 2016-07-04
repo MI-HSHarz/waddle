@@ -9,15 +9,71 @@ import {NgIf, NgFor} from "angular2/common";
         NgIf
     ],
     template: `
-        <div class="row">
-            <p class="flow-text white-text">
-               Impressum
-               
-               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-
-            </p>
+        <div id="imprint" class="container">
+            <div id="imprint-top" class="section card module half grey darken-4 grey-text text-lighten-2">
+                <div class="row">
+                    <div class="col s12 white-text">
+                        <h4>Impressum</h4>
+                    </div>
+                    <div class="col s12">
+                        <h6>ISBN 978-3-00-053566-6</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s9">
+                        <h5>Autoren:</h5>
+                    </div>
+                    <div class="col s3">
+                        <h5>Mit Beiträgen von:</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        <p>
+                           Andreas Ziemer<br>
+                           Pädagogisch-Theologisches-<br>
+                           Institut der EKM / EKA<br>9
+                           Klostergarten 6<br>
+                           38871 Drübeck<br>
+                           www.pti.ekmd-online.de
+                       </p>
+                    </div>
+                    <div class="col s5">
+                        <p>
+                            Prof. Dr. Andreas Obermann (V.i.S.d.P.)<br>
+                            Am Hof 1<br>
+                            53113 Bonn<br>
+                            www.bibor.uni-bonn.de
+                        </p>
+                    </div>
+                     <div class="col s3">
+                       <p>
+                           Grube, Alexander<br>
+                           Homann, Markus<br>
+                           Pulver, Anja<br>
+                           Vogel, Mirco<br>
+                           Weidinger, Christoph
+                       </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <h5>Mit Beiträgen von:</h5>
+                    <p>
+                        Grube, Alexander | Homann, Markus | Pulver, Anja<br>
+                        Vogel, Mirco | Weidinger, Christoph
+                    </p>
+                </div>
+            </div>
+            <div id="imprint-bottom" class="section card module half grey darken-3 grey-text text-lighten-2">
+                <div class="row">
+                     <div class="col s5">
+                        <img class="responsive-img" src="data/img/imprint/hs_harz.png" alt="">
+                       <p>
+                           wir.....
+                       </p>
+                    </div>
+                </div>
+            </div>
         </div>
   `
 })
