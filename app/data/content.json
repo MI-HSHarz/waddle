@@ -16,16 +16,16 @@
           "color": "bibor-blue",
           "subPages": [
             {
-              "menuName": "eine Unterseite",
-              "$href": "pages/stendalVideo1.json"
+              "menuName": "Unterricht",
+              "$href": "pages/Stendal/stendalVideo1.json"
             },
             {
-              "menuName": "eine Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Lehrerinterview",
+              "$href": "pages/Stendal/stendalLI.json"
             },
             {
-              "menuName": "eine zweite Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Schühlerinterview",
+              "$href": "pages/Stendal/stendalSI.json"
             }
           ]
         },
