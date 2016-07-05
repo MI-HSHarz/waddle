@@ -20,11 +20,8 @@ import {NgIf, NgFor} from "angular2/common";
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s9">
+                    <div class="col s12">
                         <h5>Autoren:</h5>
-                    </div>
-                    <div class="col s3">
-                        <h5>Mit Beiträgen von:</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -38,7 +35,7 @@ import {NgIf, NgFor} from "angular2/common";
                            www.pti.ekmd-online.de
                        </p>
                     </div>
-                    <div class="col s5">
+                    <div class="col s4">
                         <p>
                             Prof. Dr. Andreas Obermann (V.i.S.d.P.)<br>
                             Am Hof 1<br>
@@ -46,31 +43,57 @@ import {NgIf, NgFor} from "angular2/common";
                             www.bibor.uni-bonn.de
                         </p>
                     </div>
-                     <div class="col s3">
-                       <p>
-                           Grube, Alexander<br>
-                           Homann, Markus<br>
-                           Pulver, Anja<br>
-                           Vogel, Mirco<br>
-                           Weidinger, Christoph
-                       </p>
+                     <div class="col s4">
+                        <img class="responsive-img right" src="data/img/bibor_splash2.png" alt="" width="250px">
                     </div>
                 </div>
                 <div class="row">
-                    <h5>Mit Beiträgen von:</h5>
-                    <p>
-                        Grube, Alexander | Homann, Markus | Pulver, Anja<br>
-                        Vogel, Mirco | Weidinger, Christoph
-                    </p>
+                    <div class="col s8">
+                        <h5>Mit Beiträgen von:</h5>
+                        <p>
+                            Grube, Alexander | Homann, Markus | Pulver, Anja<br>
+                            Vogel, Mirco | Weidinger, Christoph
+                        </p>
+                    </div>
+                     <div class="col s4">
+                       <img class="responsive-img right" src="data/img/imprint/pti_logo.png" alt="" width="80px">
+                    </div>
                 </div>
             </div>
             <div id="imprint-bottom" class="section card module half grey darken-3 grey-text text-lighten-2">
                 <div class="row">
-                     <div class="col s5">
-                        <img class="responsive-img" src="data/img/imprint/hs_harz.png" alt="">
-                       <p>
-                           wir.....
+                     <div class="col s12">
+                        <h5>Hergestellt durch:</h5>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col s4">
+                        <img class="responsive-img" src="data/img/imprint/hs_harz.png" alt="" width="250px">
+                    </div>
+                    <div class="col s4">
+                        <img class="responsive-img" src="data/img/imprint/mi_logo_white.png" alt="" width="180px">
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col s4">
+                        <p>
+                           Friedrichstraße 57 - 59<br>
+                           38855 Wernigerode<br>
+                           www.medieninformatik.de
                        </p>
+                    </div>
+                    <div class="col s4">
+                        <p>
+                            Studiengang Medieninformatik<br>
+                            Prof. Martin Kreyßig<br>
+                            Prof. Daniel Ackermann
+                        </p>
+                    </div>
+                     <div class="col s4">
+                        <p>
+                            Müller, Phillipp | Hasenbalg, Hagen<br>
+                            Dressel, Kevin | Schrebe, Christian
+                        </p>
                     </div>
                 </div>
             </div>
