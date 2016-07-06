@@ -94,6 +94,9 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                             	</video>
                             </vg-player>
                         </div>
+                        <div class="second-player">
+
+                        </div>
                     </div>
                 </div>
             </div>
