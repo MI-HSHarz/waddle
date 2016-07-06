@@ -154,6 +154,9 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                             <li class="nav-expand" (click)="minimize()"><a >
                                 <i class="material-icons">arrow_forward</i></a>
                             </li>
+                            <li class="nav-speaker" ><a>
+                                <i class="material-icons">speaker_notes_off</i></a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -185,10 +188,13 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                             <li class="nav-up" (click)="prev()"><a>
                                 <i class="material-icons">keyboard_arrow_up</i></a>
                             </li>
-                            <li class="nav-down" (click)="next()"><a >
+                            <li class="nav-down" (click)="next()"><a>
                                 <i class="material-icons">keyboard_arrow_down</i></a>
                             </li>
-                            <li class="nav-expand" (click)="maximize()"><a >
+                            <li class="nav-speaker"><a>
+                                <i class="material-icons">speaker_notes_off</i></a>
+                            </li>
+                            <li class="nav-expand" (click)="maximize()"><a>
                                 <i class="material-icons">arrow_back</i></a>
                             </li>
                         </ul>

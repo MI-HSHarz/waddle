@@ -8,32 +8,23 @@ import {Content} from "../services/model";
     ],
     template: `
         <div class="container grey darken-4">
-        
-        
             <div id="modalSerial" class="modal">
                 <div class="modal-content">
                     <h4>Seriennummer eingeben</h4>
                     <div class="input-field col s12">
-                        
                     </div>
                 </div>
                 <div class="modal-footer">
-                    
                     <div class="input-field">
                         <input #serial type="text" class=""type="password">
                         <label for="password">Produktschlüssel</label>
                     </div>
-                    
-                
                     <button class=" modal-action modal-close waves-effect btn-flat"
                         (click)="checkSerial(serial.value)">
-                        
                         überprüfen
                     </button>
                 </div>
             </div>
-
-
             <div class="section">
                 <div id="index-page-section-top" class="row card module half bibor-blue">
                     <div class="col s12 white-text">
@@ -56,11 +47,10 @@ import {Content} from "../services/model";
             </div>
         </div>
  `
-
 })
 
 
-export class StartComponent implements AfterViewInit, OnInit{
+export class StartComponent implements AfterViewInit, OnInit {
 
     content: Content = new Content();
 

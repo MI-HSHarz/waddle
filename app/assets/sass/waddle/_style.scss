@@ -142,7 +142,7 @@ nav {
   @extend .z-depth-4;
   .main {
     position: relative;
-    height: calc(100% - (45px*2 + 64px));
+    height: calc(100% - (45px*2 + 64px*2));
     .SmallCue{
       background-color: grey;
       width: 100%;
@@ -195,7 +195,7 @@ nav {
     }
   }
   .down {
-    height: 45px*2 + 64px;
+    height: 45px*2 + 64px*2;
     position: absolute;
     bottom: 0;
     background-color: color("grey", "darken-4");
@@ -366,6 +366,9 @@ nav {
             border-right-color: #616161;*/
           }
           &.nav-expand {
+            float: right;
+          }
+          &.nav-speaker {
             float: right;
           }
           &:hover {
