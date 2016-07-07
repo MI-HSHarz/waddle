@@ -9,7 +9,7 @@ export class RoundPipe {
         let round = Math.round(input * 10) / 10;
         let min = Math.floor(round  / 60);
 
-        let sec = round - min * 60;
+        let sec = Math.floor(round - min * 60);
 
         if ( sec > 9) {
             return min + ":" + sec + " min" ;

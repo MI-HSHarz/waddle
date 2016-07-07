@@ -77,3 +77,7 @@ crashlytics-build.properties
 
 # Created by .ignore support plugin (hsz.mobi)
 *.mp4
+app/data/video/Stendal/InterviewLehrer/Interview_Lehrer.mp4
+app/data/video/Stendal/InterviewSchuler/Interview_Schüler.mp4
+app/data/video/Stendal/video1/Stendal_20160602_Unterricht.mp4
+
