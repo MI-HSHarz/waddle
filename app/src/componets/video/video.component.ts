@@ -129,14 +129,17 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                         (click)="jumpToCue(cuePoint)">
                             
                         <div class="collapsible-header">
-                                
-                            <div class="collection-image">
-                                <img src="{{cuePoint.src}}" alt="" class="responsive-img">
+                            <div class="collection-image ratio16_9">
+                                <div class="content">
+                                    <img src="{{cuePoint.src}}" alt="" class="responsive-img">
+                                </div>
                             </div>
-                            <span class="title">{{cuePoint.title}}</span>
-                            <p>{{cuePoint.startTime | round}}<br>
-                             Dauer: {{cuePoint.duration | round}}
-                             </p>
+                            <div class="collection-header">
+                                <span class="title">{{cuePoint.title}}</span>
+                                <p>{{cuePoint.startTime | round}}<br>
+                                 Dauer: {{cuePoint.duration | round}}
+                                 </p>
+                             </div>
                          </div>
                          <div class="collapsible-body">
                             <p>{{ cuePoint.description }}</p>

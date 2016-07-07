@@ -291,6 +291,13 @@ nav {
           border: none;
         }
         .collection-image {
+          width: 170px;
+          overflow: hidden;
+          .content {
+            height: 95px;
+            width: 170px;
+            overflow: hidden;
+          }
           //background: #1d4899;
           //background: -moz-linear-gradient(top, #1d4899 0%, black 90%);
           //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, black));
@@ -307,11 +314,14 @@ nav {
           }
         }
         .collapsible-header {
-          padding-left: 180px;
+          padding-left: 0px;
           min-height: 95px;
           background: transparent;
           border: none;
           line-height: inherit;
+          .collection-header {
+            padding-left: 180px;
+          }
 
           &.active {
             background: rgba(0,0,0,0.4);
@@ -319,12 +329,19 @@ nav {
           .title {
             display: block;
             font-style: normal;
-            font-size: 1.2em;
+            font-size: 1.2rem;
+            line-height: 1.3rem;
             padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            height: 45px;
+            margin-bottom: 8px;
+            overflow: hidden;
             @extend .grey-text, .text-lighten-2;
           }
           p {
             margin: 0;
+            font-size: 1rem;
+            line-height: 1.2rem;
           }
         }
         .collapsible-body {
