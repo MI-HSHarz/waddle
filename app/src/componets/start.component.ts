@@ -50,7 +50,7 @@ import {Content} from "../services/model";
 })
 
 
-export class StartComponent implements AfterViewInit, OnInit {
+export class StartComponent implements AfterViewInit {
 
     content: Content = new Content();
 
@@ -60,10 +60,6 @@ export class StartComponent implements AfterViewInit, OnInit {
             this.content = content;
         });
         
-    }
-
-    ngOnInit(): any {
-        // this._contentloaderService.setModulTitel(NaN);
     }
 
     ngAfterViewInit() {
@@ -76,6 +72,7 @@ export class StartComponent implements AfterViewInit, OnInit {
             //noinspection TypeScriptUnresolvedFunction
             $('#modalSerial').openModal();
         }
+
     }
 
     checkSerial(serial: string) {

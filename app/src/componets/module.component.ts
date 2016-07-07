@@ -80,10 +80,12 @@ export class ModuleComponent {
                 let modul = content.modules[id];
                 if (modul != null) {
                     this.modul = modul;
+
+                    this._contentloaderService.setModulTitel(this.modul.name);
                 }
             }
 
-            // this._contentloaderService.setModulTitel(id + 0);
+
         });
 
     }

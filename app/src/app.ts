@@ -4,7 +4,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/observable/forkJoin';
 
-import {Component, TemplateRef, OnChanges} from 'angular2/core';
+import {Component, TemplateRef, OnChanges, ChangeDetectorRef} from 'angular2/core';
 import {ContentloaderService} from "./services/contentloader.service";
 import {StartComponent} from "./componets/start.component.ts";
 import {ModuleComponent} from "./componets/module.component.ts";
@@ -35,12 +35,13 @@ import {ImprintComponent} from "./componets/imprint.component";
                     <div class="nav-wrapper container">
                         <ul class="left">
                             <li>
-                                <a [routerLink]="['/Start']" >
+                                <a [routerLink]="['/Start']" 
+                                    (click)="start()">
                                     <i class="material-icons">home</i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#/module/1">
+                            <li *ngIf="titel !== null" >
+                                <a href="#/module/0">
                                     {{titel}}
                                 </a>
                             </li>
@@ -98,22 +99,21 @@ import {ImprintComponent} from "./componets/imprint.component";
 export class App {
 
     content: Content = new Content();
-    titel: string = "titel";
+    titel: string = "";
 
-    constructor(private _contentloaderService: ContentloaderService) {
+    constructor(private _contentloaderService: ContentloaderService,
+                private _cdr: ChangeDetectorRef) {
+
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
 
-            // this._contentloaderService.modulTitelSubject.subscribe(titelNr => {
-            //     if(titelNr != NaN) {
-            //         this.titel = this.content.modules[titelNr].name;
-            //
-            //     }
-            // });
+            this._contentloaderService.modulTitelSubject.subscribe(titel => {
+
+                    this.titel = titel;
+                    setTimeout(() => this._cdr.reattach());
+            });
 
         });
-
-
 
         //Videoabspielamarken löschen
 
@@ -124,6 +124,10 @@ export class App {
                 localStorage.removeItem(key);
             }
         }
+    }
+
+    start(){
+        this.titel = "";
     }
 
 }

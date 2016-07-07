@@ -11,7 +11,7 @@ export class ContentloaderService {
 
     contentSubject: Subject<Content> = new ReplaySubject<Content>();
 
-    // modulTitelSubject: Subject<number> = new ReplaySubject<number>();
+    modulTitelSubject: Subject<string> = new ReplaySubject<string>();
 
     private apiBaseUrl: string = 'data/content.json';
 
@@ -22,9 +22,9 @@ export class ContentloaderService {
         this.load();
     }
 
-    // setModulTitel(titel: number){
-    //     this.modulTitelSubject.next( titel);
-    // }
+    setModulTitel(titel: string){
+        this.modulTitelSubject.next( titel);
+    }
 
     public load() {
         this._http.get(this.apiBaseUrl)
