@@ -3,232 +3,91 @@ import {Injectable} from "angular2/core";
 @Injectable()
 export class SerialNumberVerificationService {
 
-    private KEY_GOOD = 0;
+    private crcTable =
+        [
+            0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50a5,
+            0x60c6, 0x70e7, 0x8108, 0x9129, 0xa14a, 0xb16b,
+            0xc18c, 0xd1ad, 0xe1ce, 0xf1ef, 0x1231, 0x0210,
+            0x3273, 0x2252, 0x52b5, 0x4294, 0x72f7, 0x62d6,
+            0x9339, 0x8318, 0xb37b, 0xa35a, 0xd3bd, 0xc39c,
+            0xf3ff, 0xe3de, 0x2462, 0x3443, 0x0420, 0x1401,
+            0x64e6, 0x74c7, 0x44a4, 0x5485, 0xa56a, 0xb54b,
+            0x8528, 0x9509, 0xe5ee, 0xf5cf, 0xc5ac, 0xd58d,
+            0x3653, 0x2672, 0x1611, 0x0630, 0x76d7, 0x66f6,
+            0x5695, 0x46b4, 0xb75b, 0xa77a, 0x9719, 0x8738,
+            0xf7df, 0xe7fe, 0xd79d, 0xc7bc, 0x48c4, 0x58e5,
+            0x6886, 0x78a7, 0x0840, 0x1861, 0x2802, 0x3823,
+            0xc9cc, 0xd9ed, 0xe98e, 0xf9af, 0x8948, 0x9969,
+            0xa90a, 0xb92b, 0x5af5, 0x4ad4, 0x7ab7, 0x6a96,
+            0x1a71, 0x0a50, 0x3a33, 0x2a12, 0xdbfd, 0xcbdc,
+            0xfbbf, 0xeb9e, 0x9b79, 0x8b58, 0xbb3b, 0xab1a,
+            0x6ca6, 0x7c87, 0x4ce4, 0x5cc5, 0x2c22, 0x3c03,
+            0x0c60, 0x1c41, 0xedae, 0xfd8f, 0xcdec, 0xddcd,
+            0xad2a, 0xbd0b, 0x8d68, 0x9d49, 0x7e97, 0x6eb6,
+            0x5ed5, 0x4ef4, 0x3e13, 0x2e32, 0x1e51, 0x0e70,
+            0xff9f, 0xefbe, 0xdfdd, 0xcffc, 0xbf1b, 0xaf3a,
+            0x9f59, 0x8f78, 0x9188, 0x81a9, 0xb1ca, 0xa1eb,
+            0xd10c, 0xc12d, 0xf14e, 0xe16f, 0x1080, 0x00a1,
+            0x30c2, 0x20e3, 0x5004, 0x4025, 0x7046, 0x6067,
+            0x83b9, 0x9398, 0xa3fb, 0xb3da, 0xc33d, 0xd31c,
+            0xe37f, 0xf35e, 0x02b1, 0x1290, 0x22f3, 0x32d2,
+            0x4235, 0x5214, 0x6277, 0x7256, 0xb5ea, 0xa5cb,
+            0x95a8, 0x8589, 0xf56e, 0xe54f, 0xd52c, 0xc50d,
+            0x34e2, 0x24c3, 0x14a0, 0x0481, 0x7466, 0x6447,
+            0x5424, 0x4405, 0xa7db, 0xb7fa, 0x8799, 0x97b8,
+            0xe75f, 0xf77e, 0xc71d, 0xd73c, 0x26d3, 0x36f2,
+            0x0691, 0x16b0, 0x6657, 0x7676, 0x4615, 0x5634,
+            0xd94c, 0xc96d, 0xf90e, 0xe92f, 0x99c8, 0x89e9,
+            0xb98a, 0xa9ab, 0x5844, 0x4865, 0x7806, 0x6827,
+            0x18c0, 0x08e1, 0x3882, 0x28a3, 0xcb7d, 0xdb5c,
+            0xeb3f, 0xfb1e, 0x8bf9, 0x9bd8, 0xabbb, 0xbb9a,
+            0x4a75, 0x5a54, 0x6a37, 0x7a16, 0x0af1, 0x1ad0,
+            0x2ab3, 0x3a92, 0xfd2e, 0xed0f, 0xdd6c, 0xcd4d,
+            0xbdaa, 0xad8b, 0x9de8, 0x8dc9, 0x7c26, 0x6c07,
+            0x5c64, 0x4c45, 0x3ca2, 0x2c83, 0x1ce0, 0x0cc1,
+            0xef1f, 0xff3e, 0xcf5d, 0xdf7c, 0xaf9b, 0xbfba,
+            0x8fd9, 0x9ff8, 0x6e17, 0x7e36, 0x4e55, 0x5e74,
+            0x2e93, 0x3eb2, 0x0ed1, 0x1ef0
+        ];
 
-    private KEY_INVALID = 1;
+    public check(s: string): boolean {
 
-    private KEY_BLACKLISTED = 2;
+        if ( s.length === 10 ) {
+            var serialNumer: string = s.substr(0, 6);
 
-    private KEY_PHONY = 3;
+            var userCheckSumm: string = s.substr(6, 4).toUpperCase();
 
-    private BL = [
-        "11111111"
-    ];
+            var calculatedCheckSumm = this.crc16(serialNumer).toString(16).toUpperCase();
 
+            console.log("calculatedCheckSumm" + calculatedCheckSumm);
+            console.log("userCheckSumm" + userCheckSumm);
 
-    /**
-     * Generates a Key Byte
-     * @param {32bit integer} seed e.g. 0xA2791717
-     * @param {8bit integer} a
-     * @param {8bit integer} b
-     * @param {8bit integer} c
-     * @return {8bit hex string}
-     */
-    private pKV_GetKeyByte(seed, a, b, c) {
-        var result;
-        a = a % 25;
-        b = b % 3;
-        if ( a % 2 == 0 ) {
-            result = ((seed >> a) & 0x000000FF) ^ ((seed >> b) | c);
-        } else {
-            result = ((seed >> a) & 0x000000FF) ^ ((seed >> b) & c);
-        }
-        result = result & 0xFF;
-        /* mask 255 values! */
-        return result.toString(16).toUpperCase();
-    }
-
-    /**
-     * Generates the checksum
-     * @param {string} s Seed + Keys
-     * @return {16bit hex string}
-     */
-    private pKV_GetChecksum(s: string) {
-        var left, /* unsigned 16bit integer */
-            right, /* unsigned 16bit integer */
-            sum;
-        /* unsigned 16bit integer */
-        left = 0x0056;
-        /* 101 */
-        right = 0x00AF;
-        /* 175 */
-        if ( s.length ) {
-            for ( var i = 0; i < s.length; i++ ) {
-                right += s.charCodeAt(i);
-                if ( right > 0x00FF ) {
-                    right -= 0x00FF;
-                }
-                left += right;
-                if ( left > 0x00FF ) {
-                    left -= 0x00FF;
-                }
-            }
-            ;
-        }
-        sum = (left << 8) + right;
-        return sum.toString(16);
-    }
-
-    /**
-     * Generates a serial number
-     * @param {32bit integer} seed
-     * @return {20 chars String}
-     */
-    pKV_MakeKey(seed: string) {
-        var keyBytes = [],
-            result = "",
-            serial;
-
-        /* Fill keyBytes with values derived from Seed.
-         The parameters used here must be extactly the same
-         as the ones used in the pKV_CheckKey function.
-         A real key system should use more than four bytes. */
-
-        keyBytes[0] = this.pKV_GetKeyByte(seed, 24, 3, 200);
-        keyBytes[1] = this.pKV_GetKeyByte(seed, 10, 0, 56);
-        keyBytes[2] = this.pKV_GetKeyByte(seed, 1, 2, 91);
-        keyBytes[3] = this.pKV_GetKeyByte(seed, 7, 1, 100);
-
-        /* the key string begins with a hexidecimal string of the seed */
-
-        result = seed.substr(0, 15).toUpperCase();
-
-        /* then is followed by hexidecimal strings of each byte in the key */
-        for ( var i = 0; i < keyBytes.length; i++ ) {
-            result += keyBytes[i].toUpperCase();
-        }
-        ;
-
-        /* Add checksum to key string */
-        result += this.pKV_GetChecksum(result).toUpperCase();
-
-        /* Add some hyphens to make it easier to type */
-        serial = result.split("");
-        var j = serial.length - 4;
-        while (j > 1) {
-            serial.splice(j, 0, "-");
-            j = j - 4;
-        }
-        return serial.join("");
-
-    }
-
-
-
-    /**
-     * Checks if the checksum in the serial is correct
-     * @param {String} key The 20 chars serial
-     * @return {boolean}
-     */
-    pKV_CheckKeyChecksum(key) {
-        var s, c,
-            result = false;
-        s = key.replace(/-/g, "").toUpperCase();
-        if ( s.length !== 20 ) {
-            return result
-        }
-        c = s.slice(s.length - 4);
-        s = s.slice(0, 16);
-        result = ( c === this.pKV_GetChecksum(s).toUpperCase());
-        return result;
-    }
-
-    /**
-     * Check if the Serial is valid
-     * @param {String} s 20 chars serial
-     * @return {integer}
-     * KEY_GOOD = 0,
-     * KEY_INVALID = 1,
-     * KEY_BLACKLISTED = 2,
-     * KEY_PHONY = 3,
-     */
-    pKV_CheckKey(s) {
-        var key, /* String */
-            kb, /* String */
-            seed, /* Int32 */
-            b, /* Byte */
-            result = this.KEY_INVALID;
-
-        if ( !this.pKV_CheckKeyChecksum(s) ) {
-            /* bad checksum or wrong number of characters */
-
-            console.log(" bad checksum or wrong number of characters");
-            return result;
-        }
-        /* remove cosmetic hypens and normalize case */
-        key = s.replace(/-/g, "").toUpperCase();
-
-        /* test against blacklist */
-        var bl = this.BL.length
-        if ( bl ) {
-            for ( var i = 0; i < bl; i++ ) {
-                if ( key.indexOf(this.BL[i].toUpperCase()) > -1 ) {
-                    result = this.KEY_BLACKLISTED;
-                    return result;
-                }
+            if (calculatedCheckSumm === userCheckSumm) {
+                return true;
             }
         }
 
-        /* At this point, the key is either valid or forged,
-         * because a forged key can have a valid checksum.
-         * We now test the "bytes" of the key to determine if it is
-         * actually valid.
-         * When building your release application, use conditional defines
-         * or comment out most of the byte checks!  This is the heart
-         * of the partial key verification system. By not compiling in
-         * each check, there is no way for someone to build a keygen that
-         * will produce valid keys.  If an invalid keygen is released, you
-         * simply change which byte checks are compiled in, and any serial
-         * number built with the fake keygen no longer works.
-         * Note that the parameters used for pKV_GetKeyByte calls MUST
-         * MATCH the values that pKV_MakeKey uses to make the key in the
-         * first place! 
-         */
+        return false;
+    }
 
-        result = this.KEY_PHONY;
+    //CRC16-CCITT with an intial value of 0xFFFF
+    private crc16(s: string) {
+        var crc = 0xFFFF;
+        var j, i;
 
-        /* extract the Seed from the supplied key string */
-        seed = key.substr(0, 8);
-        /* test whether the seed is a valid HEX */
-        if ( seed.match(/[A-F0-9]{8}/) === null ) {
-            return result;
+        for ( i = 0; i < s.length; i++ ) {
+
+            var c = s.charCodeAt(i);
+            if ( c > 255 ) {
+                throw new RangeError();
+            }
+
+            j = (c ^ (crc >> 8)) & 0xFF;
+            crc = this.crcTable[j] ^ (crc << 8);
         }
 
-        /* Keys test - never test them all! */
+        return ((crc ^ 0) & 0xFFFF);
 
-        /* Testing K1 */
-        kb = key.substr(8, 2);
-        b = this.pKV_GetKeyByte(parseInt(seed, 16), 24, 3, 200);
-        if ( kb !== b.toUpperCase() ) {
-            return result;
-        }
-
-        /* Testing K2 */
-        kb = key.substr(10, 2);
-        b = this.pKV_GetKeyByte(parseInt(seed, 16), 10, 0, 56);
-        if ( kb !== b.toUpperCase() ) {
-            return result;
-        }
-
-        /* Testing K3 */
-        kb = key.substr(12, 2);
-        b = this.pKV_GetKeyByte(parseInt(seed, 16), 1, 2, 91);
-        if ( kb !== b.toUpperCase() ) {
-            return result;
-        }
-
-        /* Testing K4 */
-        kb = key.substr(14, 2);
-        b = this.pKV_GetKeyByte(parseInt(seed, 16), 7, 1, 100);
-        if ( kb !== b.toUpperCase() ) {
-            return result;
-        }
-
-        /* If we get this far, then it means the key is either good, or was made
-         * with a keygen derived from "this" release. */
-
-        result = this.KEY_GOOD;
-        return result;
     }
 
 }

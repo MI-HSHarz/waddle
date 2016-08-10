@@ -63,6 +63,7 @@ export class Cue implements IdInterface {
     description: string;
     shortDescription: string;
     src: string;
+    kriterienclip: string;
     href: string;
 
     duration: number;

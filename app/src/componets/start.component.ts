@@ -17,7 +17,7 @@ import {SerialNumberVerificationService} from "../services/SerialNumberVerificat
                 </div>
                 <div class="modal-footer">
                     <div class="input-field">
-                        <input #serial type="text" class=""type="password">
+                        <input #serial type="text" class="" type="password">
                         <label for="password">Produktschlüssel</label>
                     </div>
                     <button class=" modal-action modal-close waves-effect btn-flat"
@@ -75,19 +75,17 @@ export class StartComponent implements AfterViewInit {
             $('#modalSerial').openModal();
         }
 
-        console.log(this._serialNumberVerificationService.pKV_MakeKey("A2791717"));
-
-        console.log(this._serialNumberVerificationService.pKV_CheckKey("A279-1717-7D7A-CA2E-7154"));
-        console.log(this._serialNumberVerificationService.pKV_CheckKey("F4240-C8A8-30A4-828E"));
-
 
     }
 
     checkSerial(serial: string) {
 
-        localStorage.setItem("registered", serial);
-        //noinspection TypeScriptUnresolvedFunction
-        $('#modalSerial').closeModal();
+        if( this._serialNumberVerificationService.check(serial)) {
+            localStorage.setItem("registered", serial);
+            //noinspection TypeScriptUnresolvedFunction
+            $('#modalSerial').closeModal();
+        }
+
     }
 
 }

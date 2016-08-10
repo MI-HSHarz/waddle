@@ -38,16 +38,16 @@
           "color": "bibor-blue darken-3",
           "subPages": [
             {
-              "menuName": "eine Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Unterricht: 12. Klasse",
+              "$href": "pages/Stendal/stendalVideo1.json"
             },
             {
-              "menuName": "eine Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Lehrerinterview",
+              "$href": "pages/Stendal/stendalLI.json"
             },
             {
-              "menuName": "eine zweite Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Schühlerinterview",
+              "$href": "pages/Stendal/stendalSI.json"
             }
           ]
         },

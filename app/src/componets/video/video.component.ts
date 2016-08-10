@@ -20,6 +20,7 @@ import {VgMute} from "../../vidogular/vg-controls/vg-mute/vg-mute";
 import {RoundPipe} from "../../pipes/round.pipe";
 import {indexOfId} from "../../util/comon";
 import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
+import {timeout} from "rxjs/operator/timeout";
 
 
 @Component({
@@ -64,7 +65,8 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
 
                             <vg-player 
                                     (onPlayerReady)= "onPlayerReady($event)">
-                            	<vg-overlay-play></vg-overlay-play>
+                            	<vg-overlay-play>
+                            	</vg-overlay-play>
     
                             	<vg-controls  [autohide]="true" [autohideTime]="1.5">
                             		<vg-play-pause></vg-play-pause>
@@ -94,8 +96,20 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                             	</video>
                             </vg-player>
                         </div>
-                        <div class="second-player">
-
+                        <div class="second-player" 
+                            [ngClass]="{active: introVideoIsPlaying}">
+                            
+                            <vg-player (onPlayerReady)= "onSecondPlayerReady($event)">
+                            
+                                <vg-overlay-play></vg-overlay-play>
+                                
+                            	
+                                <video  id="secondVideo" preload="auto" autoplay [controls]="controls">
+                            		<source [src]="secondPlayerSource" type="video/mp4">
+                            	</video>
+                            	
+                            </vg-player>
+                                                        
                         </div>
                     </div>
                 </div>
@@ -160,8 +174,15 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                             <li class="nav-expand" (click)="minimize()"><a >
                                 <i class="material-icons">arrow_forward</i></a>
                             </li>
-                            <li class="nav-speaker" ><a>
-                                <i class="material-icons">speaker_notes_off</i></a>
+                            <li class="nav-speaker" >
+                                <a *ngIf="!introVideosEnabled"
+                                    (click)="introVideosEnable()">
+                                    <i  class="material-icons">speaker_notes_off</i>
+                                </a>
+                                <a *ngIf="introVideosEnabled"
+                                    (click)="introVideosDisable()">
+                                    <i  class="material-icons">speaker_notes</i>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -197,8 +218,15 @@ import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
                             <li class="nav-down" (click)="next()"><a>
                                 <i class="material-icons">keyboard_arrow_down</i></a>
                             </li>
-                            <li class="nav-speaker"><a>
-                                <i class="material-icons">speaker_notes_off</i></a>
+                            <li class="nav-speaker">
+                                <a *ngIf="!introVideosEnabled"
+                                    (click)="introVideosEnable()">
+                                    <i  class="material-icons">speaker_notes_off</i>
+                                </a>
+                                <a *ngIf="introVideosEnabled"
+                                    (click)="introVideosDisable()">
+                                    <i  class="material-icons">speaker_notes</i>
+                                </a>
                             </li>
                             <li class="nav-expand" (click)="maximize()"><a>
                                 <i class="material-icons">arrow_back</i></a>
@@ -228,6 +256,12 @@ export class VideoComponent implements OnInit, AfterViewInit {
     activCueIndex: number = 0;
 
     hasSmallControlls: boolean = true;
+    introVideosEnabled: boolean = true;
+    introVideoIsPlaying: boolean = false;
+
+    //secong Player stuff
+    secondPlayerApi: VgAPI;
+    secondPlayerSource: string = "";
 
     controls: boolean = false;
     autoplay: boolean = false;
@@ -242,6 +276,10 @@ export class VideoComponent implements OnInit, AfterViewInit {
     onPlayerReady(api: VgAPI) {
         this.api = api;
         //console.log(this.api.duration);
+    }
+
+    onSecondPlayerReady(api: VgAPI) {
+        this.secondPlayerApi = api;
     }
 
     jumpToStartPoint() {
@@ -259,6 +297,9 @@ export class VideoComponent implements OnInit, AfterViewInit {
     ngOnInit(): any {
 
         window.onresize = this.onWindowLoadOrResize;
+
+        this.hasSmallControlls = localStorage.getItem("hasSmallControlls").startsWith("t");
+        this.introVideosEnabled = localStorage.getItem("introVideosEnabled").startsWith("t");
 
         return undefined;
     }
@@ -288,13 +329,29 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
 
     onEnterCuePoint($event) {
+
+        console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
+
         this.cuePointData = JSON.parse($event.text);
 
         this.activCueIndex = indexOfId(this.cuePoints, $event.id);
         this.avtivCue = this.cuePoints[this.activCueIndex];
 
-        // console.log(this.activCueIndex);
         this.saveCurrentTime();
+
+        if (this.introVideosEnabled) {
+
+            console.log("introVideoIsPlaying");
+            this.api.pause();
+            this.introVideoIsPlaying = true;
+
+
+            this.secondPlayerSource = this.avtivCue.kriterienclip;
+
+            this.secondPlayerApi.play();
+
+
+        }
 
     }
 
@@ -341,12 +398,33 @@ export class VideoComponent implements OnInit, AfterViewInit {
         }
     }
 
+
     minimize() {
         this.hasSmallControlls = true;
+        localStorage.setItem("hasSmallControlls" , this.hasSmallControlls.toString());
     }
 
     maximize() {
         this.hasSmallControlls = false;
+        localStorage.setItem("hasSmallControlls" , this.hasSmallControlls.toString());
+    }
+
+    introVideosEnable() {
+        this.introVideosEnabled = true;
+        localStorage.setItem("introVideosEnabled" , this.introVideosEnabled.toString());
+
+    }
+
+    introVideosDisable() {
+
+        this.introVideosEnabled = false;
+
+        this.introVideoIsPlaying = false;
+
+        this.api.play();
+
+        localStorage.setItem("introVideosEnabled" , this.introVideosEnabled.toString());
+
     }
 
     private saveCurrentTime() {
