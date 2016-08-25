@@ -20,7 +20,9 @@ import {VgMute} from "../../vidogular/vg-controls/vg-mute/vg-mute";
 import {RoundPipe} from "../../pipes/round.pipe";
 import {indexOfId} from "../../util/comon";
 import {VideoInfoBoxComponent} from "./videoInfoBox.componet";
+import {VideoOverlayComponent} from "./videoOverlay.component";
 import {timeout} from "rxjs/operator/timeout";
+import {isUndefined} from "../../util/util";
 
 
 @Component({
@@ -39,7 +41,8 @@ import {timeout} from "rxjs/operator/timeout";
         VgFullscreen,
         NgFor,
         NgIf,
-        VideoInfoBoxComponent
+        VideoInfoBoxComponent,
+        VideoOverlayComponent
     ],
     pipes: [
         RoundPipe
@@ -96,21 +99,28 @@ import {timeout} from "rxjs/operator/timeout";
                             	</video>
                             </vg-player>
                         </div>
-                        <div class="second-player" 
-                            [ngClass]="{active: introVideoIsPlaying}">
-                            
-                            <vg-player (onPlayerReady)= "onSecondPlayerReady($event)">
-                            
-                                <vg-overlay-play></vg-overlay-play>
-                                
-                            	
-                                <video  id="secondVideo" preload="auto" autoplay [controls]="controls">
-                            		<source [src]="secondPlayerSource" type="video/mp4">
-                            	</video>
-                            	
-                            </vg-player>
-                                                        
-                        </div>
+                        <videoOverlayComponet 
+                            *ngIf="introVideoIsPlaying"
+                            (onVideoOverlayFinish)="onVideoOverlayFinish($event)"
+                            [source]="secondPlayerSource">     
+                        </videoOverlayComponet>
+                        
+                        
+                        <!--<div class="second -player" -->
+                            <!--[ngClass]="{active: introVideoIsPlaying}">-->
+                            <!---->
+                            <!--<vg-player (onPlayerReady)= "onSecondPlayerReady($event)">-->
+                            <!---->
+                                <!--<vg-overlay-play></vg-overlay-play>-->
+                                <!---->
+                            	<!---->
+                                <!--<video  id="secondVideo" preload="auto" autoplay [controls]="controls">-->
+                            		<!--<source [src]="secondPlayerSource" type="video/mp4">-->
+                            	<!--</video>-->
+                            	<!---->
+                            <!--</vg-player>-->
+                                                        <!---->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -249,7 +259,6 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     api: VgAPI;
     elem: HTMLElement;
-    sources: Array<Object>;
     cuePointData: Object = {};
     cuePoints: Cue[];
     avtivCue: Cue = new Cue();
@@ -315,17 +324,20 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
         var myDiv = document.getElementById('videoBox');
 
-        console.log(myDiv);
+        if (myDiv !== null && myDiv !== undefined) {
+            console.log(myDiv);
 
-        //noinspection TypeScriptUnresolvedVariable
-        myDiv.style.height = (event.target.innerHeight  - 108 - 64 - 20) + "";
-        //myDiv.style.width = myDiv.style.height ;
+            //noinspection TypeScriptUnresolvedVariable
+            myDiv.style.height = (event.target.innerHeight  - 108 - 64 - 20) + "";
+            //myDiv.style.width = myDiv.style.height ;
 
 
-        //noinspection TypeScriptUnresolvedVariable
-        console.log("width:" + event.target.innerWidth);
-        //noinspection TypeScriptUnresolvedVariable
-        console.log("height:" + event.target.innerHeight);
+            //noinspection TypeScriptUnresolvedVariable
+            console.log("width:" + event.target.innerWidth);
+            //noinspection TypeScriptUnresolvedVariable
+            console.log("height:" + event.target.innerHeight);
+        }
+
     }
 
 
@@ -362,6 +374,11 @@ export class VideoComponent implements OnInit, AfterViewInit {
         // console.log(this.cuePoints);
 
         this.jumpToStartPoint();
+    }
+
+    onVideoOverlayFinish($event) {
+        this.introVideoIsPlaying = false;
+        this.api.play();
     }
 
     jumpToCue(cue: Cue) {

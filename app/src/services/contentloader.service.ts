@@ -22,7 +22,7 @@ export class ContentloaderService {
         this.load();
     }
 
-    setModulTitel(titel: string){
+    setModulTitel(titel: string) {
         this.modulTitelSubject.next( titel);
     }
 

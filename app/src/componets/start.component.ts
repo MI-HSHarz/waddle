@@ -17,10 +17,10 @@ import {SerialNumberVerificationService} from "../services/SerialNumberVerificat
                 </div>
                 <div class="modal-footer">
                     <div class="input-field">
-                        <input #serial type="text" class="" type="password">
+                        <input #serial type="text" class="">
                         <label for="password">Produktschlüssel</label>
                     </div>
-                    <button class=" modal-action modal-close waves-effect btn-flat"
+                    <button class=" modal-action waves-effect btn-flat"
                         (click)="checkSerial(serial.value)">
                         überprüfen
                     </button>
@@ -80,7 +80,7 @@ export class StartComponent implements AfterViewInit {
 
     checkSerial(serial: string) {
 
-        if( this._serialNumberVerificationService.check(serial)) {
+        if (this._serialNumberVerificationService.check(serial)) {
             localStorage.setItem("registered", serial);
             //noinspection TypeScriptUnresolvedFunction
             $('#modalSerial').closeModal();

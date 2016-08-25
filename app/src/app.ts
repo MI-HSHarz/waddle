@@ -126,7 +126,7 @@ export class App {
         }
     }
 
-    start(){
+    start() {
         this.titel = "";
     }
 

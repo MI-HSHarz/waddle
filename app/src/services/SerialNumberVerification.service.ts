@@ -53,7 +53,7 @@ export class SerialNumberVerificationService {
     public check(s: string): boolean {
 
         if ( s.length === 10 ) {
-            var serialNumer: string = s.substr(0, 6);
+            var serialNumer: string = s.substr(0, 6).toUpperCase();
 
             var userCheckSumm: string = s.substr(6, 4).toUpperCase();
 
