@@ -308,8 +308,16 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
         window.onresize = this.onWindowLoadOrResize;
 
-        this.hasSmallControlls = localStorage.getItem("hasSmallControlls").startsWith("t");
-        this.introVideosEnabled = localStorage.getItem("introVideosEnabled").startsWith("t");
+
+        var hasSmallControllsLocalStorageValue = localStorage.getItem("hasSmallControlls");
+        if (hasSmallControllsLocalStorageValue !== null && hasSmallControllsLocalStorageValue !== undefined) {
+            this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
+        }
+
+        var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
+        if (introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined) {
+            this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
+        }
 
         return undefined;
     }
