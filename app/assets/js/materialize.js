@@ -705,7 +705,7 @@ if ($) {
         out_duration: 250,
         ready: undefined,
         complete: undefined,
-        dismissible: true,
+        dismissible: false,
         starting_top: '4%'
       },
       $modal = $(this);

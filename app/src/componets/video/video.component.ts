@@ -280,6 +280,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     onSecondPlayerReady(api: VgAPI) {
         this.secondPlayerApi = api;
+        this.secondPlayerApi.play();
     }
 
     jumpToStartPoint() {
@@ -347,9 +348,6 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
 
             this.secondPlayerSource = this.avtivCue.kriterienclip;
-
-            this.secondPlayerApi.play();
-
 
         }
 
