@@ -91,8 +91,9 @@ import {NgIf, NgFor} from "angular2/common";
                     </div>
                      <div class="col s4">
                         <p>
-                            Müller, Phillipp | Hasenbalg, Hagen<br>
-                            Dressel, Kevin | Schrebe, Christian
+                            Müller, Phillip | Hasenbalg, Hagen<br>
+                            Cramme, Jessica | Schrebe, Christian<br>
+                            Dressel, Kevin | Drews, Luisa | Ritter, Robin
                         </p>
                     </div>
                 </div>
