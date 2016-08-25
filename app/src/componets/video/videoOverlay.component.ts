@@ -44,7 +44,7 @@ import {initializeGenericWorkerRenderer} from "angular2/src/platform/worker_rend
         VideoInfoBoxComponent
     ],
     template: `
-        <div class="second-player active" >
+        <div class="second-player active" style="opacity: {{opacity}}">
             <!--[ngClass]="{active: introVideoIsPlaying}">-->
             
             <vg-player (onPlayerReady)= "onPlayerReady($event)">
@@ -85,6 +85,7 @@ export class VideoOverlayComponent implements OnInit {
     preload: string = 'auto';
     fsAPI: VgFullscreenAPI;
     interval;
+    opacity: number = 0;
 
     constructor() {
         console.log("VideoOverlayComponent");
@@ -92,7 +93,7 @@ export class VideoOverlayComponent implements OnInit {
     }
 
     onPlayerReady(api: VgAPI) {
-
+        this.opacity = 1;
         this.api = api;
         this.api.play();
         this.interval = setInterval(() => this.isPlayerReady(), 200 );
@@ -104,9 +105,15 @@ export class VideoOverlayComponent implements OnInit {
 
     private isPlayerReady() {
         if (this.api !== null && this.api !== undefined) {
+
+            if ( (this.api.duration  - this.api.currentTime) < 1 ) {
+
+                this.opacity = 0;
+            }
+
             if (this.api.isCompleted) {
                 clearInterval(this.interval);
-                console.log("isCompleted");
+                //console.log("isCompleted");
                 this.onVideoOverlayFinish.next();
             }
         }

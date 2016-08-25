@@ -50,7 +50,7 @@ export class PageComponent implements OnInit {
                 private _pageService: PageService) {}
 
     ngOnInit(): any {
-        console.log("ngOnInit");
+        //console.log("ngOnInit");
         this.showVideo   = false;
         this.showGallery = false;
         this.showText    = false;
@@ -79,7 +79,7 @@ export class PageComponent implements OnInit {
                 );
         }
 
-        console.log(this.page);
+        //console.log(this.page);
 
         return undefined;
     }
@@ -87,21 +87,21 @@ export class PageComponent implements OnInit {
     setComponents(page: Page) {
         page.components.forEach((pageComponent: ContetComponent) => {
             if (pageComponent.video != null) {
-                console.log("video");
+                //console.log("video");
                 this.track = pageComponent.video.trackPath;
                 this.source = pageComponent.video.videoPath;
 
                 this.showVideo = true;
 
             } else if (pageComponent.gallery != null) {
-                console.log("gallery");
+                //console.log("gallery");
 
                 this.gallery = pageComponent.gallery;
 
                 this.showGallery = true;
 
             } else if (pageComponent.text != null) {
-                console.log("text");
+                //console.log("text");
 
                 this.texts = pageComponent.text;
                 this.showText = true;

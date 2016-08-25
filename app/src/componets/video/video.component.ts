@@ -327,13 +327,13 @@ export class VideoComponent implements OnInit, AfterViewInit {
     }
 
     onWindowLoadOrResize() {
-        console.log("onWindowLoadOrResize");
-        console.log(event);
+        //console.log("onWindowLoadOrResize");
+        //console.log(event);
 
         var myDiv = document.getElementById('videoBox');
 
         if (myDiv !== null && myDiv !== undefined) {
-            console.log(myDiv);
+            //console.log(myDiv);
 
             //noinspection TypeScriptUnresolvedVariable
             myDiv.style.height = (event.target.innerHeight  - 108 - 64 - 20) + "";
@@ -341,9 +341,9 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
 
             //noinspection TypeScriptUnresolvedVariable
-            console.log("width:" + event.target.innerWidth);
+            //console.log("width:" + event.target.innerWidth);
             //noinspection TypeScriptUnresolvedVariable
-            console.log("height:" + event.target.innerHeight);
+            //console.log("height:" + event.target.innerHeight);
         }
 
     }
@@ -351,7 +351,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     onEnterCuePoint($event) {
 
-        console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
+        //console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
 
         this.cuePointData = JSON.parse($event.text);
 
@@ -362,7 +362,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
         if (this.introVideosEnabled) {
 
-            console.log("introVideoIsPlaying");
+            //console.log("introVideoIsPlaying");
             this.api.pause();
             this.introVideoIsPlaying = true;
 
@@ -390,7 +390,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     }
 
     jumpToCue(cue: Cue) {
-        console.log(cue);
+        //console.log(cue);
         this.avtivCue = cue;
         this.seekToTime(cue.startTime);
     }
