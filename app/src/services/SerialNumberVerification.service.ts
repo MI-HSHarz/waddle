@@ -71,7 +71,7 @@ export class SerialNumberVerificationService {
     }
 
     //CRC16-CCITT with an intial value of 0xFFFF
-    private crc16(s: string) {
+    private crc16(s: string): string {
         var crc = 0xFFFF;
         var j, i;
 
@@ -90,4 +90,24 @@ export class SerialNumberVerificationService {
 
     }
 
+    // private makeid() {
+    //     var text = "";
+    //     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    //
+    //     for( var i=0; i < 6; i++ )
+    //         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    //
+    //     return text;
+    // }
+    //
+    //
+    // public generateKeys(){
+    //     for( var i=0; i < 1000; i++ ) {
+    //
+    //         var key = this.makeid();
+    //         var check = this.crc16(key).toString(16).toUpperCase();
+    //         console.log(key + "" + this.crc16(key).toString(16).toUpperCase());
+    //
+    //     }
+    // }
 }
