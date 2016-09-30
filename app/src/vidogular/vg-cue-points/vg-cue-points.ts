@@ -29,6 +29,8 @@ export class VgCuePoints {
         var cues = event.target.track.cues;
 
         this.cues = cues;
+
+        // console.log(event.target.track);
         this.ref.nativeElement.cues = cues;
 
         for (var i: number = 0, l: number = cues.length; i <= l; i++) {
@@ -68,7 +70,6 @@ export class VgCuePoints {
         }
 
         this.onLoadCompleteCuePoints.next(this.cuePoints);
-
     }
 
     onEnter(event) {

@@ -1,49 +1,12 @@
 WEBVTT FILE
 
-
-0
-00:00:00.000 --> 00:00:000
-{
-    "title": "Klare Strukturen ",
-    "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
-    "shortDescription": "",
-    "src": "data/video/Stendal/Unterricht/img/1.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_01_klare Strukturen.mp4'
-    "href": ""
-}
-
 1
-00:00:07.000 --> 00:01:030
+00:00:07.000 --> 00:01:03.000
 {
-    "title": "Klare Strukturen ",
-    "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
+    "title": "",
+    "description": "",
     "shortDescription": "",
     "src": "data/video/Stendal/Unterricht/img/1.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_01_klare Strukturen.mp4'
+    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_01_klare Strukturen.mp4'",
     "href": ""
 }
-
-2
-00:01:03.000 --> 00:02:49.000
-{
-    "title": "Anforderungssituation",
-    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
-    "shortDescription": "",
-    "src": "data/video/Stendal/Unterricht/img/2.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
-    "href": ""
-}
-
-3
-00:02:49.000 --> 00:04:07.000
-{
-    "title": "Kategorial-identitätsstifender Berufsbezug ",
-    "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
-    "shortDescription": "",
-    "src": "data/video/Stendal/Unterricht/img/3.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
-    "href": ""
-}
-
-
-

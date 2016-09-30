@@ -498,8 +498,6 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     onEnterMetaCuePoint($event) {
 
-
-
         //console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
 
         this.metaCuePointData = JSON.parse($event.text);
@@ -530,7 +528,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     onLoadCompleteMetaCuePoints($event) {
 
 
-        // console.log($event);
+        console.log($event);
         this.metaCuePoints = $event;
         // console.log(this.cuePoints);
 

@@ -4,7 +4,8 @@
     {
       "video": {
         "videoPath": "data/video/Weissenfels/Unterricht/Weissenfels_Unterricht.mp4",
-        "trackPath": "data/video/Weissenfels/Unterricht/cue-points.vtt"
+        "trackPath": "data/video/Weissenfels/Unterricht/cue-points.vtt",
+        "metaTrackPath": "data/video/Weissenfels/Unterricht/meta-cue-points.vtt"
       }
     }
   ]

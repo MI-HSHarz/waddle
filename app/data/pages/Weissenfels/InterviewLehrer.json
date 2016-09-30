@@ -4,7 +4,8 @@
     {
       "video": {
         "videoPath": "data/video/Weissenfels/InterviewLehrer/Weissenfels_LehrerInterview.mp4",
-        "trackPath": "data/video/Weissenfels/InterviewLehrer/cue-points.vtt"
+        "trackPath": "data/video/Weissenfels/InterviewLehrer/cue-points.vtt",
+        "metaTrackPath": "data/video/Weissenfels/InterviewLehrer/meta-cue-points.vtt"
       }
     }
   ]
