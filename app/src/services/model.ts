@@ -24,7 +24,9 @@ export class MenuPage {
     info: string;
     type: string;
     $href: string;
-    
+    transkript: string = null;
+    material:string = null;
+    descriptition:string;
     subPages: MenuPage[];
 }
 
@@ -39,6 +41,7 @@ export class ContetComponent {
     video: {
         videoPath: string;
         trackPath: string;
+        metaTrackPath: string;
     };
 
     text: string[];

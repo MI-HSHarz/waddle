@@ -29,8 +29,8 @@ import {SerialNumberVerificationService} from "../services/SerialNumberVerificat
             <div class="section">
                 <div id="index-page-section-top" class="row card module half bibor-blue">
                     <div class="col s12 white-text">
-                        <h1 class="title">Religionsunterricht</h1>
-                        <h4 class="sub-title">an der gewerblichen Berufsschule</h4>
+                        <h1 class="title">Religion trifft Beruf</h1>
+                        <h4 class="sub-title">Die Praxis des Religionsunterrichtes an Berufsbildenden Schulen</h4>
                     </div>
                 </div>
                 <div id="index-page-section-bottom" class="row card module half grey darken-4">

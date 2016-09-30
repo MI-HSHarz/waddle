@@ -6,8 +6,8 @@ WEBVTT FILE
     "title": "Lernstandsdiagnose",
     "description": "Eine BRU-Lehrkraft braucht Lernstandsdiagnosen, d.h. das Wissen um Einstellungen, Haltungen, Kenntnisse und Fertigkeiten der SuS.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/1.png",
-    "kriterienclip": "data/video/Stendal/video1/Stendal_20160602_Unterricht.mp4'
+    "src": "data/video/Montabaur/Unterricht/img/1.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -17,8 +17,8 @@ WEBVTT FILE
     "title": "Anforderungssituation",
     "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/2.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/2.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -28,8 +28,8 @@ WEBVTT FILE
     "title": "Klare Strukturen",
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/3.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/3.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -39,8 +39,8 @@ WEBVTT FILE
     "title": "Echte Lernzeit",
     "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/4.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/4.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -50,7 +50,7 @@ WEBVTT FILE
     "title": "Sinnstiftende Kommunikation",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen. ",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/5.png",
+    "src": "data/video/Montabaur/Unterricht/img/5.png",
     "href": ""
 }
 
@@ -60,8 +60,8 @@ WEBVTT FILE
     "title": "Klare Strukturen",
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/6.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/6.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -71,8 +71,8 @@ WEBVTT FILE
     "title": "Kognitive Aktivierung ",
     "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern. ",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/7.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/7.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -82,8 +82,8 @@ WEBVTT FILE
     "title": "Outcome",
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/8.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/8.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -93,8 +93,8 @@ WEBVTT FILE
     "title": "Sinnstiftende Kommunikation ",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/9.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/9.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -104,8 +104,8 @@ WEBVTT FILE
     "title": "kategorial-identitätsstiftender Berufsbezug ",
     "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/10.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/10.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -115,8 +115,8 @@ WEBVTT FILE
     "title": "Outcome",
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/11.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/11.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -126,8 +126,8 @@ WEBVTT FILE
     "title": "Sinnstiftende Kommunikation ",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen. ",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/12.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/12.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -137,8 +137,8 @@ WEBVTT FILE
     "title": "Meta-Reflexionen",
     "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/13.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/13.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -148,8 +148,8 @@ WEBVTT FILE
     "title": "Outcome",
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/14.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/14.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -159,8 +159,8 @@ WEBVTT FILE
     "title": "Sinnstiftende Kommunikation ",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/15.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/15.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -170,8 +170,8 @@ WEBVTT FILE
     "title": "Outcome",
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/16.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/16.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -181,8 +181,8 @@ WEBVTT FILE
     "title": "Sinnstiftende Kommunikation ",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen. ",
     "shortDescription": "",
-    "src": "data/video/Montabaur/video1/img/17.png",
-    "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "src": "data/video/Montabaur/Unterricht/img/17.png",
+    "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -192,8 +192,8 @@ WEBVTT FILE
      "title": "Outcome",
      "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
      "shortDescription": "",
-     "src": "data/video/Montabaur/video1/img/18.png",
-     "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+     "src": "data/video/Montabaur/Unterricht/img/18.png",
+     "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
      "href": ""
 }
 
@@ -203,8 +203,8 @@ WEBVTT FILE
      "title": "Sinnstiftende Kommunikation ",
      "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen. ",
      "shortDescription": "",
-     "src": "data/video/Montabaur/video1/img/19.png",
-     "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+     "src": "data/video/Montabaur/Unterricht/img/19.png",
+     "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
      "href": ""
 }
 
@@ -214,8 +214,8 @@ WEBVTT FILE
      "title": "Outcome",
      "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
      "shortDescription": "",
-     "src": "data/video/Montabaur/video1/img/20.png",
-     "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+     "src": "data/video/Montabaur/Unterricht/img/20.png",
+     "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
      "href": ""
 }
 
@@ -225,8 +225,8 @@ WEBVTT FILE
         "title": "Klare Strukturen",
         "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
         "shortDescription": "",
-        "src": "data/video/Montabaur/video1/img/21.png",
-        "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+        "src": "data/video/Montabaur/Unterricht/img/21.png",
+        "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
         "href": ""
 }
 
@@ -236,8 +236,8 @@ WEBVTT FILE
      "title": "Meta-Reflexionen",
      "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
      "shortDescription": "",
-     "src": "data/video/Montabaur/video1/img/22.png",
-     "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+     "src": "data/video/Montabaur/Unterricht/img/22.png",
+     "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
      "href": ""
 }
 
@@ -247,8 +247,8 @@ WEBVTT FILE
      "title": "Material-hermeneutischer Berufsbezug",
      "description": "Material-hermeneutische Bezüge zwischen Beruf und Religion sind religiöse Deutungen beruflicher Erfahrungen z.B. durch Symbole oder ethische Herausforderungen.",
      "shortDescription": "",
-     "src": "data/video/Montabaur/video1/img/23.png",
-     "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+     "src": "data/video/Montabaur/Unterricht/img/23.png",
+     "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
      "href": ""
 }
 
@@ -258,8 +258,8 @@ WEBVTT FILE
      "title": "Kategorial-identitätsstiftender Berufsbezug ",
      "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
      "shortDescription": "",
-     "src": "data/video/Montabaur/video1/img/24.png",
-     "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+     "src": "data/video/Montabaur/Unterricht/img/24.png",
+     "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
      "href": ""
 }
 
@@ -269,7 +269,7 @@ WEBVTT FILE
         "title": "Klare Strukturen",
         "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
         "shortDescription": "",
-        "src": "data/video/Montabaur/video1/img/25.png",
-        "kriterienclip": "data/video/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+        "src": "data/video/Montabaur/Unterricht/img/25.png",
+        "kriterienclip": "data/video/Montabaur/Kriterienclips/WW_01_Lernstandsdiagnosen.mp4",
         "href": ""
 }

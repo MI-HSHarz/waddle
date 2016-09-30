@@ -20,7 +20,11 @@ import {VideoComponent} from "./video/video.component";
         <div class="container grey darken-4 " >
             
             <videoComponet   *ngIf="showVideo"   
-                [track]="track" [source]="source" [titel]="page.titel">     
+                [track]="track" 
+                [metaTrack]="metaTrack"
+                [source]="source"
+                [titel]="page.titel"
+                >     
             </videoComponet>
 
             <galleryComponet *ngIf="showGallery" [gallery]="gallery" ></galleryComponet>
@@ -38,6 +42,7 @@ export class PageComponent implements OnInit {
 
     showVideo: boolean;
     track: string;
+    metaTrack:string;
     source: string;
 
     showGallery: boolean;
@@ -88,8 +93,9 @@ export class PageComponent implements OnInit {
         page.components.forEach((pageComponent: ContetComponent) => {
             if (pageComponent.video != null) {
                 //console.log("video");
-                this.track = pageComponent.video.trackPath;
-                this.source = pageComponent.video.videoPath;
+                this.track      = pageComponent.video.trackPath;
+                this.metaTrack  = pageComponent.video.metaTrackPath;
+                this.source     = pageComponent.video.videoPath;
 
                 this.showVideo = true;
 

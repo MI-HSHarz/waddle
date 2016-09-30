@@ -29,6 +29,9 @@
   .card-reveal {
     background-color: inherit;
   }
+  p{
+    font-size: 0.9rem;
+  }
   .card-image {
     z-index: auto;
     background: #1d4899;
@@ -39,7 +42,7 @@
     background: -ms-linear-gradient(top, #1d4899 0%, black 90%);
     background: linear-gradient(to bottom, #1d4899 0%, black 90%);
     img {
-      opacity: 0.6;
+      //opacity: 0.6;
     }
   }
   &.module {

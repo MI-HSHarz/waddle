@@ -48,6 +48,8 @@ import {isUndefined} from "../../util/util";
         RoundPipe
     ],
     template: `
+
+<div *ngIf="!isBezug">
     <div class="" id="screen" 
         [ngClass]="{expanded: !hasSmallControlls, small: hasSmallControlls}">
                 
@@ -90,12 +92,20 @@ import {isUndefined} from "../../util/util";
     
                             	<video #media id="singleVideo" preload="auto" [controls]="controls">
                             		<source [src]="source" type="video/mp4">
-                            		 <track [src]="track" kind="metadata" label="Cue Points" default
+                            		
+                                    <track [src]="track" kind="metadata" label="Cue Points" default
                                            #metadataTrack
                                            vgCuePoints
                                            (onEnterCuePoint)="onEnterCuePoint($event)"
                                            (onExitCuePoint)="onExitCuePoint($event)"
                                            (onLoadCompleteCuePoints)="onLoadCompleteCuePoints($event)">
+                                           
+                                    <track [src]="metaTrack" kind="metadata" label="Meta Cue Points" default
+                                           #metametadataTrack
+                                           vgCuePoints
+                                           (onEnterCuePoint)="onEnterCuePoint($event)"
+                                           (onExitMetaCuePoint)="onExitCuePoint($event)"
+                                           (onLoadCompleteCuePoints)="onLoadCompleteMetaCuePoints($event)">
                             	</video>
                             </vg-player>
                         </div>
@@ -106,21 +116,7 @@ import {isUndefined} from "../../util/util";
                         </videoOverlayComponet>
                         
                         
-                        <!--<div class="second -player" -->
-                            <!--[ngClass]="{active: introVideoIsPlaying}">-->
-                            <!---->
-                            <!--<vg-player (onPlayerReady)= "onSecondPlayerReady($event)">-->
-                            <!---->
-                                <!--<vg-overlay-play></vg-overlay-play>-->
-                                <!---->
-                            	<!---->
-                                <!--<video  id="secondVideo" preload="auto" autoplay [controls]="controls">-->
-                            		<!--<source [src]="secondPlayerSource" type="video/mp4">-->
-                            	<!--</video>-->
-                            	<!---->
-                            <!--</vg-player>-->
-                                                        <!---->
-                        <!--</div>-->
+                       
                     </div>
                 </div>
             </div>
@@ -144,12 +140,11 @@ import {isUndefined} from "../../util/util";
         *ngIf="!hasSmallControlls">
         <div class="row dark">
             <div class="main">
-                <ul class="sidebar-collection">
-                
-                   
-                
+            
+            
+                <ul class="sidebar-collection" *ngIf="!isMeta">
                     <li *ngFor="#cuePoint of cuePoints" class="collection-item"
-                        [ngClass]="{active: cuePoint.id === avtivCue.id}"
+                        [ngClass]="{active:  cuePoint.id === avtivCue?.id}"
                         (click)="jumpToCue(cuePoint)">
                             
                         <div class="collapsible-header">
@@ -169,7 +164,32 @@ import {isUndefined} from "../../util/util";
                             <p>{{ cuePoint.description }}</p>
                          </div>
                     </li>
-                  </ul>
+                </ul>
+                
+                <ul class="sidebar-collection" *ngIf="isMeta">
+                    <li *ngFor="#cuePoint of metaCuePoints" class="collection-item"
+                        [ngClass]="{active:  cuePoint.id === metaAvtivCue?.id}"
+                        (click)="jumpToCue(cuePoint)">
+                            
+                        <div class="collapsible-header">
+                            <div class="collection-image ratio16_9">
+                                <div class="content">
+                                    <img src="{{cuePoint.src}}" alt="" class="responsive-img">
+                                </div>
+                            </div>
+                            <div class="collection-header">
+                                <span class="title">{{cuePoint.title}}</span>
+                                <p>{{cuePoint.startTime | round}}<br>
+                                 Dauer: {{cuePoint.duration | round}}
+                                 </p>
+                             </div>
+                         </div>
+                         <div class="collapsible-body">
+                            <p>{{ cuePoint.description }}</p>
+                         </div>
+                    </li>
+                </ul>
+                
             </div>
             <div class="down">
                 <nav class="transparent">
@@ -184,6 +204,15 @@ import {isUndefined} from "../../util/util";
                             <li class="nav-expand" (click)="minimize()"><a >
                                 <i class="material-icons">arrow_forward</i></a>
                             </li>
+                            <li class="switch">
+                              <label>
+                                K
+                                <input type="checkbox" name="isActive" [(ngModel)]="isMeta">
+                                <span class="lever"></span>
+                                M
+                              </label>
+                            </li>
+
                             <li class="nav-speaker" >
                                 <a *ngIf="!introVideosEnabled"
                                     (click)="introVideosEnable()">
@@ -205,6 +234,7 @@ import {isUndefined} from "../../util/util";
         *ngIf="hasSmallControlls">
         <div class="row dark">
             <div class="main">
+                
                 <div *ngFor="#cuePoint of cuePoints" class="SmallCue" 
                     (click)="jumpToCue(cuePoint)"
                     style="top:{{cuePoint.startTime / api?.duration * 100}}%">
@@ -247,6 +277,66 @@ import {isUndefined} from "../../util/util";
             </div>
         </div>
     </div>
+</div>
+
+
+<div *ngIf="isBezug">
+    <div class="" id="screen" >
+        <!--[ngClass]="{expanded: !hasSmallControlls, small: hasSmallControlls}-->
+        
+                
+        <div class="row">
+            <div class="col s12">
+                <div class="card grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title"><h4>{{titel}}</h4></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="video-padding-box" >
+                    <div id="videoBox" class='box ratio16_9'>
+                        <div class="content">
+
+                            <vg-player 
+                                    (onPlayerReady)= "onPlayerReady($event)">
+                            	<vg-overlay-play>
+                            	</vg-overlay-play>
+    
+                            	<vg-controls  [autohide]="true" [autohideTime]="1.5">
+                            		<vg-play-pause></vg-play-pause>
+    
+                            		<vg-time-display>{{ media?.time?.current | date:'mm:ss' }}</vg-time-display>
+    
+                            		<vg-scrub-bar>
+                            			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                            			<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                            		</vg-scrub-bar>
+    
+                            		<vg-time-display>{{ media?.time?.left | date:'mm:ss' }}</vg-time-display>
+    
+                            		<vg-mute></vg-mute>
+    
+                            		<vg-fullscreen></vg-fullscreen>
+                            	</vg-controls>
+    
+                            	<video #media id="singleVideo" preload="auto" [controls]="controls">
+                            		<source [src]="source" type="video/mp4">
+                            	</video>
+                            </vg-player>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>        
+    </div>
+</div>
+    
+    
              
   `
 })
@@ -254,15 +344,23 @@ import {isUndefined} from "../../util/util";
 export class VideoComponent implements OnInit, AfterViewInit {
 
     @Input('track') track: string;
+    @Input('metaTrack') metaTrack: string;
+
     @Input('source') source: string;
     @Input('titel') titel: string;
 
     api: VgAPI;
     elem: HTMLElement;
+
     cuePointData: Object = {};
     cuePoints: Cue[];
     avtivCue: Cue = new Cue();
     activCueIndex: number = 0;
+
+    metaCuePointData: Object = {};
+    metaCuePoints: Cue[];
+    metaAvtivCue: Cue = new Cue();
+    metaActivCueIndex: number = 0;
 
     hasSmallControlls: boolean = true;
     introVideosEnabled: boolean = true;
@@ -277,6 +375,10 @@ export class VideoComponent implements OnInit, AfterViewInit {
     loop: boolean = false;
     preload: string = 'auto';
     fsAPI: VgFullscreenAPI;
+
+    isMeta: boolean = false;
+
+    isBezug:boolean = false;
 
     constructor() {
         this.fsAPI = VgFullscreenAPI;
@@ -305,6 +407,11 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
 
     ngOnInit(): any {
+
+        console.log(this.track);
+        if (this.track ===  null || this.track === undefined) {
+            this.isBezug = true;
+        }
 
         window.onresize = this.onWindowLoadOrResize;
 
@@ -348,6 +455,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     }
 
+    //cues
 
     onEnterCuePoint($event) {
 
@@ -358,7 +466,9 @@ export class VideoComponent implements OnInit, AfterViewInit {
         this.activCueIndex = indexOfId(this.cuePoints, $event.id);
         this.avtivCue = this.cuePoints[this.activCueIndex];
 
-        this.saveCurrentTime();
+        if(!this.isMeta) {
+            this.saveCurrentTime();
+        }
 
         if (this.introVideosEnabled) {
 
@@ -384,14 +494,61 @@ export class VideoComponent implements OnInit, AfterViewInit {
         this.jumpToStartPoint();
     }
 
-    onVideoOverlayFinish($event) {
-        this.introVideoIsPlaying = false;
-        this.api.play();
+    //Meta cues
+
+    onEnterMetaCuePoint($event) {
+
+
+
+        //console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
+
+        this.metaCuePointData = JSON.parse($event.text);
+
+        this.metaActivCueIndex = indexOfId(this.metaCuePoints, $event.id);
+        this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
+
+        if(this.isMeta) {
+            this.saveCurrentTime();
+        }
+
+
+        if (this.introVideosEnabled) {
+
+            //console.log("introVideoIsPlaying");
+            this.api.pause();
+            this.introVideoIsPlaying = true;
+
+            this.secondPlayerSource = this.metaAvtivCue.kriterienclip;
+
+        }
     }
+
+    onExitMetaCuePoint($event) {
+        this.metaCuePointData = {};
+    }
+
+    onLoadCompleteMetaCuePoints($event) {
+
+
+        // console.log($event);
+        this.metaCuePoints = $event;
+        // console.log(this.cuePoints);
+
+
+        this.jumpToStartPoint();
+    }
+
+
 
     jumpToCue(cue: Cue) {
         //console.log(cue);
-        this.avtivCue = cue;
+
+        if(!this.isMeta) {
+            this.avtivCue = cue;
+        } else {
+            this.metaAvtivCue = cue;
+        }
+
         this.seekToTime(cue.startTime);
     }
 
@@ -447,7 +604,11 @@ export class VideoComponent implements OnInit, AfterViewInit {
         this.api.play();
 
         localStorage.setItem("introVideosEnabled" , this.introVideosEnabled.toString());
+    }
 
+    onVideoOverlayFinish($event) {
+        this.introVideoIsPlaying = false;
+        this.api.play();
     }
 
     private saveCurrentTime() {

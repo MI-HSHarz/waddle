@@ -1,0 +1,11 @@
+{
+  "title": "Lehrerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/video/Weissenfels/InterviewLehrer/Weissenfels_LehrerInterview.mp4",
+        "trackPath": "data/video/Weissenfels/InterviewLehrer/cue-points.vtt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Schülerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/video/Weissenfels/InterviewSchuler/Weissenfels_SchülerInterview.mp4",
+        "trackPath": "data/video/Weissenfels/InterviewSchuler/cue-points.vtt"
+      }
+    }
+  ]
+}

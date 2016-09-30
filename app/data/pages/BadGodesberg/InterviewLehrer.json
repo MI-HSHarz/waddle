@@ -1,0 +1,11 @@
+{
+  "title": "Lehrerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/video/BadGodesberg/InterviewLehrer/BadGodesberg_InterviewLehrer.mp4",
+        "trackPath": "data/video/BadGodesberg/InterviewLehrer/cue-points.vtt"
+      }
+    }
+  ]
+}

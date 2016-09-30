@@ -376,7 +376,13 @@ nav {
       ul {
         li {
           height: 64px;
-          width: 64px;
+          width: 60px;
+          &.switch{
+            float: left;
+            width: 96px;
+            //margin-top:26px;
+
+          }
           &.nav-up {
           }
           &.nav-down {

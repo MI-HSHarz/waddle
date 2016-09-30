@@ -7,6 +7,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewSchuler/img/1.png",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -17,6 +18,7 @@ WEBVTT FILE
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewSchuler/img/2.png",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -27,6 +29,7 @@ WEBVTT FILE
     "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewSchuler/img/3.png",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }
 
@@ -37,5 +40,6 @@ WEBVTT FILE
     "description": "Material-hermeneutische Bezüge zwischen Beruf und Religion sind religiöse Deutungen beruflicher Erfahrungen z.B. durch Symbole oder ethische Herausforderungen.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewSchuler/img/4.png",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
     "href": ""
 }

@@ -5,97 +5,219 @@
   },
   "modules":[
     {
-      "name":"DIE PRAXIS DES BRU",
+      "name":"DER UNTERRICHT IM FILM",
       "pages": [
         {
-          "menuName": "Berufskolleg Stendal",
-          "subtitle": "",
+          "menuName": "Vom Glück im Beruf",
+          "subtitle": "Fachgymnasium, 11 Klasse",
           "info": "string",
-          "img": "data/img/schulen/bbs_Stendal.jpg",
-          "$href": "pages/page0.json",
+          "img": "data/img/schulen/vlcsnap-2016-09-29-17h42m12s288.png",
+          "$href": "pages/Beispiele/page0.json",
           "color": "bibor-blue",
+          "transkript": "data/pdf/Stendal/Stendal_Transkript.pdf",
+          "material": "data/pdf/Stendal/Stendal_Material.pdf",
+          "descriptition": "Berufsbildende Schulen II des Landkreises Stendal\n(Alternativ BBS II, Landkreis Stendal)\n11. Klasse Fachgymnasium\nStR’in Anja Pulver (ev.)",
           "subPages": [
             {
-              "menuName": "Unterricht: 12. Klasse",
-              "$href": "pages/Stendal/stendalVideo1.json"
+              "menuName": "Unterricht",
+              "$href": "pages/Stendal/Unterricht.json"
             },
             {
-              "menuName": "Lehrerinterview",
-              "$href": "pages/Stendal/stendalLI.json"
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/Stendal/InterviewLehrer.json"
             },
             {
-              "menuName": "Schühlerinterview",
-              "$href": "pages/Stendal/stendalSI.json"
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/Stendal/InterviewSchühler.json"
             }
           ]
         },
         {
-          "menuName": "Berufskolleg Weißenfels",
-          "subtitle": "Dinge Dinge",
+          "menuName": "Worrauf ich vertraue",
+          "subtitle": "Fachgymnasium, 11 Klasse",
           "info": "string",
-          "img": "data/img/schulen/Berufskolleg Weißenfels.jpg",
-          "$href": "pages/page0.json",
+          "img": "data/img/schulen/vlcsnap-2016-09-29-17h56m50s482.png",
+          "$href": "pages/Beispiele/page0.json",
           "color": "bibor-blue darken-3",
+          "transkript": "data/pdf/Weissenfels/Weissenfels_Transkript.pdf",
+          "material": "data/pdf/Weissenfels/Weissenfels_Material.pdf",
+          "descriptition": "Friedrich-List Berufskolleg Bad Godesberg\nEinzelhandelskaufleute, zweijährige Ausbildung, 1. Ausbildungsjahr\nPfarrer Markus Homann (ev.)",
+
           "subPages": [
             {
-              "menuName": "Unterricht: 12. Klasse",
-              "$href": "pages/Stendal/stendalVideo1.json"
+              "menuName": "Unterricht",
+              "$href": "pages/Weissenfels/Unterricht.json"
             },
             {
-              "menuName": "Lehrerinterview",
-              "$href": "pages/Stendal/stendalLI.json"
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/Weissenfels/InterviewLehrer.json"
             },
             {
-              "menuName": "Schühlerinterview",
-              "$href": "pages/Stendal/stendalSI.json"
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/Weissenfels/InterviewSchühler.json"
             }
           ]
         },
         {
-          "menuName": "Berufskolleg Bad Godesberg",
-          "subtitle": "string",
+          "menuName": "Vom Sinn der Arbeit",
+          "subtitle": "Fachgymnasium, 11 Klasse",
           "info": "string",
-          "img": "data/img/schulen/berufsschule_Ahrweiler bzw Godesberg.jpg",
-          "$href": "pages/page0.json",
+          "img": "data/img/schulen/vlcsnap-2016-09-29-17h59m20s893.png",
+          "$href": "pages/Beispiele/page0.json",
           "color": "bibor-blue darken-2",
+          "transkript": "data/pdf/Bad Godesberg/Bad Godesberg_Transkript.pdf",
+          "material": "data/pdf/Bad Godesberg/Bad Godesberg_Material.pdf",
+          "descriptition": "Berufsbildende Schulen Burgenlandkreis, Weißenfels\n(Alternativ BBS Burgenlandkreis, Weißenfels)\n11. Klasse Fachgymnasiums\nOStR Alexander Grube (ev.)",
           "subPages": [
             {
-              "menuName": "eine Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Unterricht",
+              "$href": "pages/BadGodesberg/Unterricht.json"
             },
             {
-              "menuName": "eine Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/BadGodesberg/InterviewLehrer.json"
             },
             {
-              "menuName": "eine zweite Unterseite",
-              "$href": "pages/bsp.json"
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/BadGodesberg/InterviewSchühler.json"
             }
           ]
         },
         {
-          "menuName": "Berufskolleg Montabaur",
-          "subtitle": "string",
+          "menuName": "Der Mensch 2.0",
+          "subtitle": "Fachgymnasium, 11 Klasse",
           "info": "string",
-          "img": "data/img/schulen/berufsschule_Montabaur.jpg",
-          "$href": "pages/page1.json",
+          "img": "data/img/schulen/vlcsnap-2016-09-29-18h00m36s745.png",
+          "$href": "pages/Beispiele/page1.json",
           "color": "bibor-blue lighten-3",
+          "transkript": "data/pdf/Montabaur/Montabaur_Transkript.pdf",
+          "material": "data/pdf/Montabaur/Montabaur_Material.pdf",
+          "descriptition": "",
           "subPages": [
             {
-              "menuName": "Unterseite:2.1 ",
-              "$href": "pages/bsp.json"
+              "menuName": "Unterricht",
+              "$href": "pages/Montabaur/Unterricht.json"
             },
             {
-              "menuName": "Unterseite:2.2 ",
-              "$href": "pages/bsp.json"
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/Montabaur/InterviewLehrer.json"
+            },
+            {
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/Montabaur/InterviewSchühler.json"
             }
           ]
         }
       ]
     },
     {
-      "name":"BERUFSBEZÜGE",
-      "pages": []
+      "name":"MATERIALIEN UND KATEGORIALE BERUFSBEZÜGE",
+      "pages": [
+        {
+          "menuName": "Kategorial indentitaetsstiftend",
+          "subtitle": "subtitle",
+          "info": "string",
+          "img": "data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Videotitel1",
+              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/BN_3_kategorial-identitätsstiftend.json"
+            },
+            {
+              "menuName": "Videotitel2",
+              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/SDL_1_kategorial-identitätsstiftend.json"
+            },
+            {
+              "menuName": "Videotitel3",
+              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/SDL_4_kategorial-identitätsstiftend.json"
+            },
+            {
+              "menuName": "Videotitel4",
+              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/WSF_2_kategorial-identitätsstiftend.json"
+            },
+            {
+              "menuName": "Videotitel5",
+              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/WW_1_kategorial-identitätsstiftend.json"
+            },
+            {
+              "menuName": "Videotitel6",
+              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/WW_3_kategorial-identitätsstiftend.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Kategorial transzendierend",
+          "subtitle": "subtitle",
+          "info": "string",
+          "img": "data/img/bezuege/vlcsnap-2016-09-30-19h15m41s516.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue darken-3",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Videotitel1",
+              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/BN_1_kategorial-transzendierend.json"
+            },
+            {
+              "menuName": "Videotitel2",
+              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/BN_2_kategorial-transzendierend.json"
+            },
+            {
+              "menuName": "Videotitel3",
+              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/SDL_3_kategorial-transzendierend.json"
+            },
+            {
+              "menuName": "Videotitel4",
+              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/WSF_1_kategorial-transzendierend.json"
+            },
+            {
+              "menuName": "Videotitel5",
+              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/WSF_3_kategorial-transzendierend.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Material hermeneutisch",
+          "subtitle": "subtitle",
+          "info": "string",
+          "img": "data/img/bezuege/vlcsnap-2016-09-30-19h15m51s608.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue darken-2",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Videotitel1",
+              "$href": "pages/Bezuege_isoliert/material-hermeneutisch/BN_4_material-hermeneutisch.json"
+            },
+            {
+              "menuName": "Videotitel2",
+              "$href": "pages/Bezuege_isoliert/material-hermeneutisch/SDL_2_Material-hermeneutisch.json"
+            },
+            {
+              "menuName": "Videotitel3",
+              "$href": "pages/Bezuege_isoliert/material-hermeneutisch/WW_2_material-hermeneutisch.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Material assoziativ",
+          "subtitle": "subtitle",
+          "info": "string",
+          "img": "data/img/bezuege/vlcsnap-2016-09-30-19h15m57s499.png",
+          "$href": "pages/Beispiele/page1.json",
+          "color": "bibor-blue lighten-3",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Videotitel1",
+              "$href": "pages/Bezuege_isoliert/material-assoziativ/SDL_3_material-assoziativ.json"
+            }
+          ]
+        }
+      ]
     }
   ],
   "imprint": {

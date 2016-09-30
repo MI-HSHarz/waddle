@@ -1,0 +1,11 @@
+{
+  "title": "Lehrerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/video/Stendal/InterviewLehrer/Stendal_InterviewLehrer.mp4",
+        "trackPath": "data/video/Stendal/InterviewLehrer/cue-points.vtt"
+      }
+    }
+  ]
+}

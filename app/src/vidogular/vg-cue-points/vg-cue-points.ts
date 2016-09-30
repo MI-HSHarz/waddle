@@ -31,7 +31,7 @@ export class VgCuePoints {
         this.cues = cues;
         this.ref.nativeElement.cues = cues;
 
-        for (var i: number = 0, l: number = cues.length; i < l; i++) {
+        for (var i: number = 0, l: number = cues.length; i <= l; i++) {
 
             var onEnter = Observable.fromEvent(cues[i], VgEvents.VG_ENTER);
             onEnter.subscribe(this.onEnter.bind(this));
@@ -41,26 +41,30 @@ export class VgCuePoints {
 
             //console.log(cues[i]);
 
-            var cuePointData = JSON.parse(cues[i].text);
-
-            //console.log(cuePointData);
-
-            var cue = new  Cue();
-            cue.id = cues[i].id;
-            cue.startTime = cues[i].startTime;
-            cue.endTime = cues[i].endTime;
-
-            cue.title = cuePointData.title;
-            cue.description = cuePointData.description;
-            cue.shortDescription = cuePointData.shortDescription;
-            cue.src = cuePointData.src;
-            cue.href = cuePointData.href;
-            cue.kriterienclip = cuePointData.kriterienclip;
-
-            cue.duration = cue.endTime - cue.startTime;
+            if (cues[i] != undefined) {
 
 
-            this.cuePoints.push(cue);
+                var cuePointData = JSON.parse(cues[i].text);
+
+                //console.log(cuePointData);
+
+                var cue = new  Cue();
+                cue.id = cues[i].id;
+                cue.startTime = cues[i].startTime;
+                cue.endTime = cues[i].endTime;
+
+                cue.title = cuePointData.title;
+                cue.description = cuePointData.description;
+                cue.shortDescription = cuePointData.shortDescription;
+                cue.src = cuePointData.src;
+                cue.href = cuePointData.href;
+                cue.kriterienclip = cuePointData.kriterienclip;
+
+                cue.duration = cue.endTime - cue.startTime;
+
+
+                this.cuePoints.push(cue);
+            }
         }
 
         this.onLoadCompleteCuePoints.next(this.cuePoints);

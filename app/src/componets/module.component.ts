@@ -25,9 +25,9 @@ import {RouteParams} from "angular2/router";
                             <div>
                                 <span class="card-title activator">{{page.menuName}}</span>
                                  <a>
-                                <i class="material-icons right">
-                                    info
-                                </i>
+                                <!--<i class="material-icons right">-->
+                                    <!--info-->
+                                <!--</i>-->
                             </a>
                             </div>
                             <div *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</div>
@@ -42,20 +42,33 @@ import {RouteParams} from "angular2/router";
                                 </div>
                                 <div *ngIf="page.subtitle" class="card-sub-title">{{page.subtitle}}</div>
                             </div>
+                            
+                           <p style="white-space: pre;">{{page.descriptition}}</p>
+
+                            
                             <ul class="navigation-list">
                                 <li *ngFor="#subpage of page.subPages">
                                     <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
                                         {{subpage.menuName}} 
                                     </a>
-                                    <a  href="#/page/{{subpage.$href | uriEncode}}" class="white-text">
-                                        <a  href="data/pdf/test.pdf">
-                                            <i class="material-icons right">
-                                                work
-                                            </i>
-                                        </a>
+                                </li>
+                            </ul>
+                            
+                            
+                            <ul class="navigation-list" *ngIf="page.transkript != null && page.transkript != undefined">
+                                <li>
+                                    <a  href="{{page.transkript}}" class="white-text">
+                                        Transkript
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="white-text">
+                                        Materialien
                                     </a>
                                 </li>
                             </ul>
+                            
+                            
                         </div>
                     </div>
                     

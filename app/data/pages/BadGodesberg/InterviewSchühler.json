@@ -1,0 +1,11 @@
+{
+  "title": "Schülerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/video/BadGodesberg/InterviewSchuler/BadGodesbergInterviewSchüler.mp4",
+        "trackPath": "data/video/BadGodesberg/InterviewSchuler/cue-points.vtt"
+      }
+    }
+  ]
+}
