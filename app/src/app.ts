@@ -41,7 +41,7 @@ import {ImprintComponent} from "./componets/imprint.component";
                                 </a>
                             </li>
                             <li *ngIf="titel !== null" >
-                                <a href="#/module/0">
+                                <a href="#/module/{{mudulNumber}}">
                                     {{titel}}
                                 </a>
                             </li>
@@ -100,6 +100,7 @@ export class App {
 
     content: Content = new Content();
     titel: string = "";
+    mudulNumber: number = 0;
 
     constructor(private _contentloaderService: ContentloaderService,
                 private _cdr: ChangeDetectorRef) {
@@ -111,6 +112,12 @@ export class App {
 
                     this.titel = titel;
                     setTimeout(() => this._cdr.reattach());
+            });
+
+            this._contentloaderService.modulNumberSubject.subscribe(number => {
+
+                this.mudulNumber = number;
+                setTimeout(() => this._cdr.reattach());
             });
 
         });

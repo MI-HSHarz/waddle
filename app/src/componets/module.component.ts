@@ -95,6 +95,7 @@ export class ModuleComponent {
                     this.modul = modul;
 
                     this._contentloaderService.setModulTitel(this.modul.name);
+                    this._contentloaderService.setModulNumber(Number.parseInt(id));
                 }
             }
 
