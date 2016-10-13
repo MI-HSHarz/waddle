@@ -4,10 +4,10 @@ WEBVTT FILE
 00:01:25.200 --> 00:02:03.020
 {
     "title": "Outcome",
-    "description": "",
+    "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
     "src": "data/video/Stendal/InterviewSchuler/img/1.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -15,10 +15,10 @@ WEBVTT FILE
 00:02:25.090 --> 00:02:53.000
 {
     "title": "Aufgabenkultur",
-    "description": "",
+    "description": "Guter BRU braucht eine Aufgabenkultur, damit die SuS zum selbstständigen und selbsttätigen Arbeiten angeleitet werden.",
     "shortDescription": "",
     "src": "data/video/Stendal/InterviewSchuler/img/2.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -26,21 +26,21 @@ WEBVTT FILE
 00:04:23.000 --> 00:06:06.000
 {
     "title": "Aufgabenkultur",
-    "description": "",
+    "description": "Guter BRU braucht eine Aufgabenkultur, damit die SuS zum selbstständigen und selbsttätigen Arbeiten angeleitet werden.",
     "shortDescription": "",
     "src": "data/video/Stendal/InterviewSchuler/img/3.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
 4
 00:14:04.000 --> 00:16:42.000
 {
-    "title": "Kategorial-identitätsstiftender Berufsbezug",
-    "description": "",
+    "title": "Kategorial\n-identitätsstiftender Berufsbezug",
+    "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
     "shortDescription": "",
     "src": "data/video/Stendal/InterviewSchuler/img/4.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -48,10 +48,10 @@ WEBVTT FILE
 00:16:43.000 --> 00:17:09.000
 {
     "title": "Echte Lernzeit",
-    "description": "",
+    "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
     "shortDescription": "",
     "src": "data/video/Stendal/InterviewSchuler/img/4.png",
-    "kriterienclip": "data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 

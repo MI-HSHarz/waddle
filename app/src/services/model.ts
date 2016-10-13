@@ -25,13 +25,13 @@ export class MenuPage {
     type: string;
     $href: string;
     transkript: string = null;
-    material:string = null;
-    descriptition:string;
+    material: string = null;
+    descriptition: string;
     subPages: MenuPage[];
 }
 
 export class Page {
-    titel: string;
+    title: string;
     components: ContetComponent[];
 }
 

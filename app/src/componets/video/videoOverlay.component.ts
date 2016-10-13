@@ -64,7 +64,7 @@ import {initializeGenericWorkerRenderer} from "angular2/src/platform/worker_rend
             	
                 <video #media id="singleVideo" preload="auto" [controls]="controls">
                     <source [src]="source" type="video/mp4">
-                            		 
+                    
                     </video>
             	
             </vg-player>
@@ -106,7 +106,7 @@ export class VideoOverlayComponent implements OnInit {
     private isPlayerReady() {
         if (this.api !== null && this.api !== undefined) {
 
-            if ( (this.api.duration  - this.api.currentTime) < 1 ) {
+            if ( (this.api.duration - this.api.currentTime) < 1 ) {
 
                 this.opacity = 0;
             }

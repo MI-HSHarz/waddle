@@ -4,8 +4,7 @@
     {
       "video": {
         "videoPath": "data/video/Montabaur/InterviewSchuler/Montabaur_InterviewSchüler.mp4",
-        "trackPath": "data/video/Montabaur/InterviewSchuler/cue-points.vtt",
-        "metaTrackPath": "data/video/Montabaur/InterviewSchuler/meta-cue-points.vtt"
+        "trackPath": "data/video/Montabaur/InterviewSchuler/cue-points.vtt"
       }
     }
   ]

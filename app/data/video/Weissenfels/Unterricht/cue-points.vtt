@@ -3,7 +3,7 @@ WEBVTT FILE
 1
 00:00:00.000 --> 00:01:02.000
 {
-    "title": "Anforderungssituation ",
+    "title": "Anforderungs-\nsituation ",
     "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/1.png",
@@ -18,7 +18,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/2.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_02_klare Strukturen.mp4",
     "href": ""
 }
 
@@ -29,18 +29,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/3.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
-    "href": ""
-}
-
-4
-00:12:52.000 --> 00:13:18.000
-{
-    "title": "Kategorial-transzendierender Berufsbezug",
-    "description": "Kategorial-transzendierende Berufsbezüge erschließen sich im Diskurs über Zugänge zu und Deutungen von Transzendenz im Kontext von Beruflichkeit.",
-    "shortDescription": "",
-    "src": "data/video/Weissenfels/Unterricht/img/4.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_03_echte Lernzeit.mp4",
     "href": ""
 }
 
@@ -51,7 +40,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/5.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_06_Sinnstiftende Kommunikation.mp4",
     "href": ""
 }
 
@@ -73,7 +62,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/7.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_07_klare Strukturen.mp4",
     "href": ""
 }
 
@@ -84,7 +73,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht eine Aufgabenkultur, damit die SuS zum selbstständigen und selbsttätigen Arbeiten angeleitet werden.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/8.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_08_Aufgabenkultur.mp4",
     "href": ""
 }
 
@@ -95,7 +84,7 @@ WEBVTT FILE
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/9.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_09_Sinnstiftende Kommunikation.mp4",
     "href": ""
 }
 
@@ -106,7 +95,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/10.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_10_klare Strukturen.mp4",
     "href": ""
 }
 
@@ -117,39 +106,18 @@ WEBVTT FILE
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/11.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_11_Outcome.mp4",
     "href": ""
 }
 
 12
 00:41:08.000 --> 00:42:23.000
 {
-    "title": "Kognitive Aktivierung",
+    "title": "Kognitive\nAktivierung",
     "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
     "shortDescription": "",
     "src": "data/video/Weissenfels/Unterricht/img/12.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_12_kognitive Aktivierung.mp4",
     "href": ""
 }
 
-13
-00:42:23.000 --> 00:46:29.000
-{
-    "title": "Kategorial-identitätsstiftender Berufsbezug ",
-    "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
-    "shortDescription": "",
-    "src": "data/video/Weissenfels/Unterricht/img/13.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
-    "href": ""
-}
-
-14
-00:46:29.000 --> 00:47:17.000
-{
-    "title": "Kategorial-transzendierender Berufsbezug",
-    "description": "Kategorial-transzendierende Berufsbezüge erschließen sich im Diskurs über Zugänge zu und Deutungen von Transzendenz im Kontext von Beruflichkeit.",
-    "shortDescription": "",
-    "src": "data/video/Weissenfels/Unterricht/img/14.png",
-    "kriterienclip": "data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
-    "href": ""
-}

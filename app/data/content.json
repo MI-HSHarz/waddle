@@ -9,14 +9,14 @@
       "pages": [
         {
           "menuName": "Vom Glück im Beruf",
-          "subtitle": "Fachgymnasium, 11 Klasse",
+          "subtitle": "Berufsbildende Schulen II des Landkreises Stendal",
           "info": "string",
           "img": "data/img/schulen/vlcsnap-2016-09-29-17h42m12s288.png",
           "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue",
+          "color": "bibor-blue darken-1",
           "transkript": "data/pdf/Stendal/Stendal_Transkript.pdf",
           "material": "data/pdf/Stendal/Stendal_Material.pdf",
-          "descriptition": "Berufsbildende Schulen II des Landkreises Stendal\n(Alternativ BBS II, Landkreis Stendal)\n11. Klasse Fachgymnasium\nStR’in Anja Pulver (ev.)",
+          "descriptition": "(Alternativ BBS II, Landkreis Stendal)\n11. Klasse Fachgymnasium\nStR’in Anja Pulver (ev.)",
           "subPages": [
             {
               "menuName": "Unterricht",
@@ -33,16 +33,15 @@
           ]
         },
         {
-          "menuName": "Worrauf ich vertraue",
-          "subtitle": "Fachgymnasium, 11 Klasse",
+          "menuName": "Worauf ich vertraue",
+          "subtitle": "Berufsbildende Schulen Burgenlandkreis, Weißenfels",
           "info": "string",
-          "img": "data/img/schulen/vlcsnap-2016-09-29-17h56m50s482.png",
+          "img": "data/img/schulen/vlcsnap-2016-10-05-12h15m46s657.png",
           "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue darken-3",
+          "color": "bibor-blue",
           "transkript": "data/pdf/Weissenfels/Weissenfels_Transkript.pdf",
           "material": "data/pdf/Weissenfels/Weissenfels_Material.pdf",
-          "descriptition": "Friedrich-List Berufskolleg Bad Godesberg\nEinzelhandelskaufleute, zweijährige Ausbildung, 1. Ausbildungsjahr\nPfarrer Markus Homann (ev.)",
-
+          "descriptition": "(Alternativ BBS Burgenlandkreis, Weißenfels)\n11. Klasse Fachgymnasiums\nOStR Alexander Grube (ev.)",
           "subPages": [
             {
               "menuName": "Unterricht",
@@ -60,14 +59,14 @@
         },
         {
           "menuName": "Vom Sinn der Arbeit",
-          "subtitle": "Fachgymnasium, 11 Klasse",
+          "subtitle": "Friedrich-List Berufskolleg Bad Godesberg",
           "info": "string",
           "img": "data/img/schulen/vlcsnap-2016-09-29-17h59m20s893.png",
           "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue darken-2",
+          "color": "bibor-blue lighten-1",
           "transkript": "data/pdf/Bad Godesberg/Bad Godesberg_Transkript.pdf",
           "material": "data/pdf/Bad Godesberg/Bad Godesberg_Material.pdf",
-          "descriptition": "Berufsbildende Schulen Burgenlandkreis, Weißenfels\n(Alternativ BBS Burgenlandkreis, Weißenfels)\n11. Klasse Fachgymnasiums\nOStR Alexander Grube (ev.)",
+          "descriptition": "Einzelhandelskaufleute, zweijährige Ausbildung, 1. Ausbildungsjahr\nPfarrer Markus Homann (ev.)",
           "subPages": [
             {
               "menuName": "Unterricht",
@@ -85,14 +84,14 @@
         },
         {
           "menuName": "Der Mensch 2.0",
-          "subtitle": "Fachgymnasium, 11 Klasse",
+          "subtitle": "Alternativ BBS Montabaur",
           "info": "string",
           "img": "data/img/schulen/vlcsnap-2016-09-29-18h00m36s745.png",
           "$href": "pages/Beispiele/page1.json",
-          "color": "bibor-blue lighten-3",
+          "color": "bibor-blue lighten-2",
           "transkript": "data/pdf/Montabaur/Montabaur_Transkript.pdf",
           "material": "data/pdf/Montabaur/Montabaur_Material.pdf",
-          "descriptition": "",
+          "descriptition": "Fachinformatiker, dreijährige Ausbildung, 1. Ausbildungsjahr\nStD Christoph Weidinger (kath.)",
           "subPages": [
             {
               "menuName": "Unterricht",

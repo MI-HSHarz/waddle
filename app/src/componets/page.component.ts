@@ -23,7 +23,7 @@ import {VideoComponent} from "./video/video.component";
                 [track]="track" 
                 [metaTrack]="metaTrack"
                 [source]="source"
-                [titel]="page.titel"
+                [title]="page.title"
                 >     
             </videoComponet>
 
@@ -42,7 +42,7 @@ export class PageComponent implements OnInit {
 
     showVideo: boolean;
     track: string;
-    metaTrack:string;
+    metaTrack: string;
     source: string;
 
     showGallery: boolean;

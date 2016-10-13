@@ -12,7 +12,7 @@ export class ContentloaderService {
     contentSubject: Subject<Content> = new ReplaySubject<Content>();
 
     modulTitelSubject: Subject<string> = new ReplaySubject<string>();
-    modulNumberSubject: Subject<Number> = new ReplaySubject<number>();
+    modulNumberSubject: Subject<number> = new ReplaySubject<number>();
 
 
     private apiBaseUrl: string = 'data/content.json';

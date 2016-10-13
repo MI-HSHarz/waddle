@@ -4,8 +4,7 @@
     {
       "video": {
         "videoPath": "data/video/Stendal/InterviewSchuler/Stendal_InterviewSchüler.mp4",
-        "trackPath": "data/video/Stendal/InterviewSchuler/cue-points.vtt",
-        "metaTrackPath": "data/video/Stendal/InterviewSchuler/meta-cue-points.vtt"
+        "trackPath": "data/video/Stendal/InterviewSchuler/cue-points.vtt"
       }
     }
   ]

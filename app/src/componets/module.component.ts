@@ -28,7 +28,7 @@ import {RouteParams} from "angular2/router";
                                 <!--<i class="material-icons right">-->
                                     <!--info-->
                                 <!--</i>-->
-                            </a>
+                                </a>
                             </div>
                             <div *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</div>
                         </div>
@@ -62,7 +62,7 @@ import {RouteParams} from "angular2/router";
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="white-text">
+                                    <a href="{{page.material}}" class="white-text">
                                         Materialien
                                     </a>
                                 </li>

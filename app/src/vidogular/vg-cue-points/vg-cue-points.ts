@@ -43,7 +43,7 @@ export class VgCuePoints {
 
             //console.log(cues[i]);
 
-            if (cues[i] != undefined) {
+            if (cues[i] !== undefined) {
 
 
                 var cuePointData = JSON.parse(cues[i].text);

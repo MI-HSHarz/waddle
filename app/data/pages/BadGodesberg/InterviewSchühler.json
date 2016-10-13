@@ -4,8 +4,7 @@
     {
       "video": {
         "videoPath": "data/video/BadGodesberg/InterviewSchuler/BadGodesbergInterviewSchüler.mp4",
-        "trackPath": "data/video/BadGodesberg/InterviewSchuler/cue-points.vtt",
-        "metaTrackPath": "data/video/BadGodesberg/InterviewSchuler/meta-cue-points.vtt"
+        "trackPath": "data/video/BadGodesberg/InterviewSchuler/cue-points.vtt"
       }
     }
   ]

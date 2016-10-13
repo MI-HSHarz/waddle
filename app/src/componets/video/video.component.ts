@@ -57,7 +57,7 @@ import {isUndefined} from "../../util/util";
             <div class="col s12">
                 <div class="card grey darken-4">
                     <div class="card-content white-text">
-                        <span class="card-title"><h4>{{titel}}</h4></span>
+                        <!--<span class="card-title"><h4>{{title}}</h4></span>-->
                     </div>
                 </div>
             </div>
@@ -144,6 +144,7 @@ import {isUndefined} from "../../util/util";
             
                 <ul class="sidebar-collection" *ngIf="!isMeta">
                     <li *ngFor="#cuePoint of cuePoints" class="collection-item"
+                        id="cuePoint{{cuePoint.id}}"
                         [ngClass]="{active:  cuePoint.id === avtivCue?.id}"
                         (click)="jumpToCue(cuePoint)">
                             
@@ -178,8 +179,8 @@ import {isUndefined} from "../../util/util";
                                 </div>
                             </div>
                             <div class="collection-header">
-                                <span class="title">{{cuePoint.title}}</span>
-                                <p>{{cuePoint.startTime | round}}<br>
+                                <span style="white-space: pre;" class="title">{{cuePoint.title}}</span>
+                                <p style="white-space: pre;">{{cuePoint.startTime | round}}<br>
                                  Dauer: {{cuePoint.duration | round}}
                                  </p>
                              </div>
@@ -204,7 +205,7 @@ import {isUndefined} from "../../util/util";
                             <li class="nav-expand" (click)="minimize()"><a >
                                 <i class="material-icons">arrow_forward</i></a>
                             </li>
-                            <li class="switch">
+                            <li *ngIf="hasMeta" class="switch">
                               <label>
                                 K
                                 <input type="checkbox" name="isActive" [(ngModel)]="isMeta">
@@ -213,7 +214,7 @@ import {isUndefined} from "../../util/util";
                               </label>
                             </li>
 
-                            <li class="nav-speaker" >
+                            <li *ngIf="hasKriterienClips"  class="nav-speaker" >
                                 <a *ngIf="!introVideosEnabled"
                                     (click)="introVideosEnable()">
                                     <i  class="material-icons">speaker_notes_off</i>
@@ -258,7 +259,7 @@ import {isUndefined} from "../../util/util";
                             <li class="nav-down" (click)="next()"><a>
                                 <i class="material-icons">keyboard_arrow_down</i></a>
                             </li>
-                            <li class="nav-speaker">
+                            <li *ngIf="hasKriterienClips" class="nav-speaker">
                                 <a *ngIf="!introVideosEnabled"
                                     (click)="introVideosEnable()">
                                     <i  class="material-icons">speaker_notes_off</i>
@@ -347,7 +348,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     @Input('metaTrack') metaTrack: string;
 
     @Input('source') source: string;
-    @Input('titel') titel: string;
+    @Input('title') title: string;
 
     api: VgAPI;
     elem: HTMLElement;
@@ -363,6 +364,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     metaActivCueIndex: number = 0;
 
     hasSmallControlls: boolean = true;
+    //hasIntroVideo: boolean = true;
     introVideosEnabled: boolean = true;
     introVideoIsPlaying: boolean = false;
 
@@ -377,8 +379,11 @@ export class VideoComponent implements OnInit, AfterViewInit {
     fsAPI: VgFullscreenAPI;
 
     isMeta: boolean = false;
+    hasMeta: boolean = true;
 
-    isBezug:boolean = false;
+    isBezug: boolean = false;
+
+    hasKriterienClips: boolean = true;
 
     constructor() {
         this.fsAPI = VgFullscreenAPI;
@@ -408,9 +413,15 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): any {
 
-        console.log(this.track);
+        //console.log(this.track);
         if (this.track ===  null || this.track === undefined) {
             this.isBezug = true;
+        } else if (this.metaTrack ===  null || this.metaTrack === undefined) {
+            // console.log("has no Meta");
+            this.hasMeta = false;
+        } else {
+            // console.log("hasMeta");
+            this.hasMeta = true;
         }
 
         window.onresize = this.onWindowLoadOrResize;
@@ -466,7 +477,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
         this.activCueIndex = indexOfId(this.cuePoints, $event.id);
         this.avtivCue = this.cuePoints[this.activCueIndex];
 
-        if(!this.isMeta) {
+        if (!this.isMeta) {
             this.saveCurrentTime();
         }
 
@@ -491,6 +502,12 @@ export class VideoComponent implements OnInit, AfterViewInit {
         this.cuePoints = $event;
         // console.log(this.cuePoints);
 
+        if (this.cuePoints[0] !== null ) {
+            if (this.cuePoints[0].kriterienclip === "") {
+                this.hasKriterienClips = false;
+            }
+        }
+
         this.jumpToStartPoint();
     }
 
@@ -505,7 +522,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
         this.metaActivCueIndex = indexOfId(this.metaCuePoints, $event.id);
         this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
 
-        if(this.isMeta) {
+        if (this.isMeta) {
             this.saveCurrentTime();
         }
 
@@ -541,7 +558,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
     jumpToCue(cue: Cue) {
         //console.log(cue);
 
-        if(!this.isMeta) {
+        if (!this.isMeta) {
             this.avtivCue = cue;
         } else {
             this.metaAvtivCue = cue;
@@ -558,9 +575,22 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     next() {
 
+
+
         if (this.activCueIndex < this.cuePoints.length - 1) {
             this.activCueIndex++;
             this.avtivCue = this.cuePoints[this.activCueIndex];
+
+
+            // var element = document.getElementById('cuePoint'+ this.avtivCue.id);
+            //
+            // console.log(element);
+            //
+            // if (element !==  null) {
+            //    element.scrollIntoView({block: "start"});
+            // }
+
+
 
             this.seekToTime(this.avtivCue.startTime);
         }
@@ -614,3 +644,5 @@ export class VideoComponent implements OnInit, AfterViewInit {
         localStorage.setItem("timeToStart:" + this.source, (this.activCueIndex) + "");
     }
 }
+
+

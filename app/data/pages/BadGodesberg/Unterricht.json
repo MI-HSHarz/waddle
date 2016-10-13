@@ -5,7 +5,7 @@
       "video": {
         "videoPath": "data/video/BadGodesberg/Unterricht/BadGodesberg_Unterricht.mp4",
         "trackPath": "data/video/BadGodesberg/Unterricht/cue-points.vtt",
-        "metaTrackPath": ""
+        "metaTrackPath": "data/video/BadGodesberg/Unterricht/meta-cue-points.vtt"
       }
     }
   ]

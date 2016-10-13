@@ -3,22 +3,22 @@ WEBVTT FILE
 1
 00:03:25.820 -->  00:04:35.720
 {
-    "title": "Anforderungssituation",
+    "title": "Anforderungs-\nsituation",
     "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/1.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
 2
 00:04:36.520 -->  00:05:29.000
 {
-    "title": "Lernstandsdiagnose",
+    "title": "Lernstands-\ndiagnose",
     "description": "Eine BRU-Lehrkraft braucht Lernstandsdiagnosen, d.h. das Wissen um Einstellungen, Haltungen, Kenntnisse und Fertigkeiten der SuS.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/2.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/SDL_10_Lernstandsdiagnosen.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -29,7 +29,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/3.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/SDL_05_klare Strukturen.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -40,7 +40,7 @@ WEBVTT FILE
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/4.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/SDL_11_Sinnstiftende Kommunikation.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -51,7 +51,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/5.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/SDL_07_echte Lernzeit.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -62,29 +62,29 @@ WEBVTT FILE
     "description": "Guter BRU braucht eine Aufgabenkultur, damit die SuS zum selbstständigen und selbsttätigen Arbeiten angeleitet werden.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/6.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/SDL_06_Aufgabenkultur.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
 7
 00:16:04.240 -->  00:17:19.240
 {
-    "title": "Kategorial-Transzendierender Berufsbezug",
+    "title": "Kategorial\n-Transzendierender Berufsbezug",
     "description": "Kategorial-transzendierende Berufsbezüge erschließen sich im Diskurs über Zugänge zu und Deutungen von Transzendenz im Kontext von Beruflichkeit.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/7.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
 8
 00:17:19.280 -->  00:18:27.640
 {
-    "title": "Kategorial-Identitätsstiftender Berufsbezug",
+    "title": "Kategorial\n-Identitätsstiftender Berufsbezug",
     "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/8.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
+    "kriterienclip": "",
     "href": ""
 }
 
@@ -95,6 +95,6 @@ WEBVTT FILE
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/InterviewLehrer/img/9.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
+    "kriterienclip": "",
     "href": ""
 }
