@@ -155,10 +155,8 @@ import {isUndefined} from "../../util/util";
                                 </div>
                             </div>
                             <div class="collection-header">
-                                <span class="title">{{cuePoint.title}}</span>
-                                <p>{{cuePoint.startTime | round}}<br>
-                                 Dauer: {{cuePoint.duration | round}}
-                                 </p>
+                                <p class="title">{{cuePoint.title}}</p>
+                                <p>{{cuePoint.startTime | round}}</p>
                              </div>
                          </div>
                          <div class="collapsible-body">
@@ -210,7 +208,7 @@ import {isUndefined} from "../../util/util";
                                 K
                                 <input type="checkbox" name="isActive" [(ngModel)]="isMeta">
                                 <span class="lever"></span>
-                                M
+                                B
                               </label>
                             </li>
 
@@ -365,7 +363,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     hasSmallControlls: boolean = true;
     //hasIntroVideo: boolean = true;
-    introVideosEnabled: boolean = true;
+    introVideosEnabled: boolean = false;
     introVideoIsPlaying: boolean = false;
 
     //secong Player stuff
@@ -432,10 +430,10 @@ export class VideoComponent implements OnInit, AfterViewInit {
             this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
         }
 
-        var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
-        if (introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined) {
-            this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
-        }
+        // var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
+        // if (introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined) {
+        //     this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
+        // }
 
         return undefined;
     }
@@ -565,6 +563,8 @@ export class VideoComponent implements OnInit, AfterViewInit {
         }
 
         this.seekToTime(cue.startTime);
+
+        this.introVideoIsPlaying = false;
     }
 
     seekToTime(time: number) {
@@ -582,6 +582,8 @@ export class VideoComponent implements OnInit, AfterViewInit {
             this.avtivCue = this.cuePoints[this.activCueIndex];
 
 
+            this.jumpToCue(this.avtivCue);
+
             // var element = document.getElementById('cuePoint'+ this.avtivCue.id);
             //
             // console.log(element);
@@ -592,7 +594,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
 
 
-            this.seekToTime(this.avtivCue.startTime);
+            //this.seekToTime(this.avtivCue.startTime);
         }
     }
 
@@ -602,7 +604,9 @@ export class VideoComponent implements OnInit, AfterViewInit {
             this.activCueIndex--;
             this.avtivCue = this.cuePoints[this.activCueIndex];
 
-            this.seekToTime(this.avtivCue.startTime);
+            this.jumpToCue(this.avtivCue);
+
+            //this.seekToTime(this.avtivCue.startTime);
         }
     }
 
@@ -644,5 +648,3 @@ export class VideoComponent implements OnInit, AfterViewInit {
         localStorage.setItem("timeToStart:" + this.source, (this.activCueIndex) + "");
     }
 }
-
-

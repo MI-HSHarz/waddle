@@ -323,12 +323,14 @@ nav {
           line-height: inherit;
           .collection-header {
             padding-left: 180px;
+
           }
 
           &.active {
             background: rgba(0,0,0,0.4);
           }
           .title {
+
             display: block;
             font-style: normal;
             font-size: 1.2rem;
@@ -339,6 +341,7 @@ nav {
             margin-bottom: 8px;
             overflow: hidden;
             @extend .grey-text, .text-lighten-2;
+            @extend %extend_hyphens;
           }
           p {
             margin: 0;
@@ -537,4 +540,28 @@ vg-time-display {
     padding-right: 20px;
     height: calc((100vh - #{$navbar-height} ) /3 );
   }
+}
+
+/* 5. typography
+   ========================================================================== */
+
+%extend_hyphens{
+  // Automatische Silbentrennung
+  -moz-hyphens: auto;
+  -o-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+
+  -moz-hyphenate-limit-chars: 10 4 4;
+  -o-hyphenate-limit-chars: 10 4 4;
+  -webkit-hyphenate-limit-chars: 10 4 4;
+  -ms-hyphenate-limit-chars: 10 4 4;
+  hyphenate-limit-chars: 10 4 4;
+
+  -moz-hyphenate-limit-lines: 2;
+  -o-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-lines: 2;
+  hyphenate-limit-lines: 2;
 }

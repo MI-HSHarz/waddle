@@ -27,37 +27,37 @@ import {NgIf, NgFor} from "angular2/common";
                 <div class="row">
                     <div class="col s4">
                         <p>
+                            Prof. Dr. Andreas Obermann (V.i.S.d.P.)<br>
+                            Universität Bonn (bibor) <br>
+                            Am Hof 1<br>
+                            53113 Bonn<br>
+                            www.bibor.uni-bonn.de
+                        </p>
+                 
+                        <p>
                            Andreas Ziemer<br>
-                           Pädagogisch-Theologisches-<br>
-                           Institut der EKM / EKA<br>9
+                           PTI der EKM/EKA<br>
                            Klostergarten 6<br>
                            38871 Drübeck<br>
                            www.pti.ekmd-online.de
                        </p>
                     </div>
                     <div class="col s4">
-                        <p>
-                            Prof. Dr. Andreas Obermann (V.i.S.d.P.)<br>
-                            Am Hof 1<br>
-                            53113 Bonn<br>
-                            www.bibor.uni-bonn.de
-                        </p>
-                    </div>
-                     <div class="col s4">
                         <img class="responsive-img right" src="data/img/bibor_splash2.png" alt="" width="250px">
+                        <img class="responsive-img right" src="data/img/imprint/pti_logo.png" alt="" width="80px">
                     </div>
+                    
+                    
                 </div>
                 <div class="row">
                     <div class="col s8">
                         <h5>Mit Beiträgen von:</h5>
                         <p>
-                            Grube, Alexander | Homann, Markus | Pulver, Anja<br>
-                            Vogel, Mirco | Weidinger, Christoph
+                            Alexander Grube  | Markus Homann | Anja Pulver <br>
+                            Mirco Vogel  | Christoph Weidinger
                         </p>
                     </div>
-                     <div class="col s4">
-                       <img class="responsive-img right" src="data/img/imprint/pti_logo.png" alt="" width="80px">
-                    </div>
+                    
                 </div>
             </div>
             <div id="imprint-bottom" class="section card module half grey darken-3 grey-text text-lighten-2">
@@ -91,9 +91,9 @@ import {NgIf, NgFor} from "angular2/common";
                     </div>
                      <div class="col s4">
                         <p>
-                            Müller, Phillip | Hasenbalg, Hagen<br>
-                            Cramme, Jessica | Schrebe, Christian<br>
-                            Dressel, Kevin | Drews, Luisa | Ritter, Robin
+                            Phillip Müller  | Hagen Hasenbalg <br>
+                            Jessica Cramme  | Christian Schrebe <br>
+                            Kevin Dressel  | Luisa Drews  | Robin Ritter 
                         </p>
                     </div>
                 </div>

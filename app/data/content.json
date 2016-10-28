@@ -9,14 +9,14 @@
       "pages": [
         {
           "menuName": "Vom Glück im Beruf",
-          "subtitle": "Berufsbildende Schulen II des Landkreises Stendal",
+          "subtitle": "Berufsbildende Schulen des Landkreises Stendal",
           "info": "string",
           "img": "data/img/schulen/vlcsnap-2016-09-29-17h42m12s288.png",
           "$href": "pages/Beispiele/page0.json",
           "color": "bibor-blue darken-1",
           "transkript": "data/pdf/Stendal/Stendal_Transkript.pdf",
           "material": "data/pdf/Stendal/Stendal_Material.pdf",
-          "descriptition": "(Alternativ BBS II, Landkreis Stendal)\n11. Klasse Fachgymnasium\nStR’in Anja Pulver (ev.)",
+          "descriptition": "11. Klasse Fachgymnasium\nStR’in Anja Pulver (ev.)",
           "subPages": [
             {
               "menuName": "Unterricht",
@@ -34,14 +34,14 @@
         },
         {
           "menuName": "Worauf ich vertraue",
-          "subtitle": "Berufsbildende Schulen Burgenlandkreis, Weißenfels",
+          "subtitle": "Berufsbildende Schulen Burgenlandkreis",
           "info": "string",
           "img": "data/img/schulen/vlcsnap-2016-10-05-12h15m46s657.png",
           "$href": "pages/Beispiele/page0.json",
           "color": "bibor-blue",
           "transkript": "data/pdf/Weissenfels/Weissenfels_Transkript.pdf",
           "material": "data/pdf/Weissenfels/Weissenfels_Material.pdf",
-          "descriptition": "(Alternativ BBS Burgenlandkreis, Weißenfels)\n11. Klasse Fachgymnasiums\nOStR Alexander Grube (ev.)",
+          "descriptition": "11. Klasse Fachgymnasiums\nOStR Alexander Grube (ev.)",
           "subPages": [
             {
               "menuName": "Unterricht",
@@ -84,7 +84,7 @@
         },
         {
           "menuName": "Der Mensch 2.0",
-          "subtitle": "Alternativ BBS Montabaur",
+          "subtitle": "Berufsbildende Schule Montabaur",
           "info": "string",
           "img": "data/img/schulen/vlcsnap-2016-09-29-18h00m36s745.png",
           "$href": "pages/Beispiele/page1.json",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "name":"MATERIALIEN UND KATEGORIALE BERUFSBEZÜGE",
+      "name":"KATEGORIALE BERUFSBEZÜGE",
       "pages": [
         {
           "menuName": "Kategorial-Indentitaetsstiftender Berufsbezug",
