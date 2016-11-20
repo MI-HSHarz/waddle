@@ -1,14 +1,28 @@
-# waddle
 
-![waddle](https://raw.githubusercontent.com/MI-HSHarz/waddle/master/waddle.png)
+# Angular2 Electron Starter (with angular cli)
 
-## was muss ich tun ?
+```bash
 
-1. waddle laden dafür nimmst du am besten Git
+# angular2 cli required
+npm install -g angular-cli
 
-2. npm install
 
-3. npm start
+# install
+npm install
 
-alternativ kannst du waddle auch mit  npm run dev-server
-in deinem Browser testen.
+# run webpack dev server
+npm start
+
+# run karma tests
+npm test
+
+# build angular project
+npm run build
+
+# preview electron (without angular build)
+npm run electron
+
+# create electron package (build included)
+npm run package
+
+```

@@ -1,0 +1,13 @@
+<div>
+  <label>Page:</label>
+  <input type="number" placeholder="Page" [(ngModel)]="page">
+</div>
+<div class="pdfView" style="overflow-y: scroll;">
+  <pdf-viewer
+          [src]="pdfSrc"
+          [zoom]="1.5"
+          [page]="page"
+          [original-size]="true"
+          [show-all]="true"
+  ></pdf-viewer>
+</div>
