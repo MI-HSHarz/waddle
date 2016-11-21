@@ -252,13 +252,14 @@ nav {
   @extend .z-depth-4;
   .main {
     height: calc(100% - 64px);
-    overflow: hidden;
+    overflow: auto;
     overflow-y: scroll;
     margin-right: -30px;
     .sidebar-collection {
       margin:0px;
       border: none;
       margin-right: 13px;
+
       @extend .z-depth-0;
       .collection-item {
 
