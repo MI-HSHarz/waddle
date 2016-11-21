@@ -11,6 +11,8 @@ import {ContentloaderService} from "./services/contentloader.service";
 import {BrowserModule} from "@angular/platform-browser";
 import {VgControlsModule} from "./videogular/controls";
 import {VgCore} from "./videogular/core";
+import {VgOverlayPlayModule} from './videogular/overlay-play';
+
 import {FormsModule} from "@angular/forms";
 import { CardsComponent } from './cards/cards.component';
 import {RoundPipe} from "./pipes/round.pipe";
@@ -21,7 +23,7 @@ import {PageComponent} from "./page/page.component";
 
 import { VideoPageComponent } from './page/video-page/video-page.component';
 import { VideoOverlayComponent } from './page/video-page/video-overlay/video-overlay.component';
-
+import {VgBufferingModule} from "./videogular/buffering";
 
 @NgModule({
     imports: [
@@ -31,7 +33,9 @@ import { VideoOverlayComponent } from './page/video-page/video-overlay/video-ove
         BrowserModule,
         FormsModule,
         VgCore,
-        VgControlsModule
+        VgControlsModule,
+        VgOverlayPlayModule,
+        VgBufferingModule
     ],
     declarations: [
         AppComponent,
@@ -44,7 +48,7 @@ import { VideoOverlayComponent } from './page/video-page/video-overlay/video-ove
         PdfViewComponent,
         PageComponent,
         VideoPageComponent,
-        VideoOverlayComponent
+        VideoOverlayComponent,
     ],
     providers: [
         ContentloaderService,

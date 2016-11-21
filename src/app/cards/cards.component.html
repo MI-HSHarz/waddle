@@ -43,21 +43,26 @@
 
 
           <ul class="navigation-list" *ngIf="page.transkript != null && page.transkript != undefined">
-            <li>
-              <a  href="#/pdf/{{page.transkript | uriEncode}}"
-                  class="white-text">
-                <!--href="{{page.transkript}}" -->
 
+            <li>
+              <a href="#/pdf/{{page.transkript | uriEncode}}" class="white-text">
                 Transkript
               </a>
-            </li>
-            <li>
-              <a href="{{page.material}}" class="white-text">
-                Materialien
+              <a href="{{page.transkript}}" class="white-text">
+                (sichern)
               </a>
             </li>
-          </ul>
 
+            <li>
+              <a href="#/pdf/{{page.material | uriEncode}}" class="white-text">
+                Transkript
+              </a>
+              <a href="{{page.material}}" class="white-text">
+                (sichern)
+              </a>
+            </li>
+
+          </ul>
 
         </div>
       </div>

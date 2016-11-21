@@ -23,18 +23,19 @@ export class VideoOverlayComponent implements OnInit {
   opacity: number = 0;
 
   constructor() {
-    console.log("VideoOverlayComponent");
+
     this.fsAPI = VgFullscreenAPI;
   }
 
   onPlayerReady(api: VgAPI) {
     this.opacity = 1;
     this.api = api;
-    this.api.play();
+    //this.api.play();
     this.interval = setInterval(() => this.isPlayerReady(), 200 );
   }
 
   ngOnInit(): any {
+    console.log("VideoOverlayComponent: " + this.source);
     return undefined;
   }
 
