@@ -72,7 +72,7 @@ export interface Option {
             width: 100%;
             text-align: center;
             text-transform: uppercase;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             padding-top: 2px;
             pointer-events: none;
         }

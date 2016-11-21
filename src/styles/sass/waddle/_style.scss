@@ -201,6 +201,7 @@ nav {
     position: absolute;
     bottom: 0;
     background-color: color("grey", "darken-4");
+    z-index: 20;
     nav {
       ul {
         li {
@@ -374,7 +375,7 @@ nav {
     border-top: solid 1px;
     border-top-color: #616161;
     background-color: color("grey", "darken-4");
-
+    z-index: 20;
     nav {
       ul {
         li {
@@ -496,7 +497,7 @@ nav {
 }
 
 .overlay ul a {
-  font-family: "Georgia, serif", Times, serif;
+  font-family: 'Georgia', Times, serif;
   font-size: 48px;
   color: #eee;
 }
@@ -525,7 +526,10 @@ nav {
 
 // Ist keine Klasse
 vg-time-display {
-  font-family: Roboto;
+  font-family: 'Roboto';
+}
+#singleVideo {
+  width: 100%;
 }
 /* 5. Imprint
    ========================================================================== */
