@@ -24,6 +24,7 @@ import {PageComponent} from "./page/page.component";
 import { VideoPageComponent } from './page/video-page/video-page.component';
 import { VideoOverlayComponent } from './page/video-page/video-overlay/video-overlay.component';
 import {VgBufferingModule} from "./videogular/buffering";
+import { OpenerComponent } from './opener/opener.component';
 
 @NgModule({
     imports: [
@@ -49,6 +50,7 @@ import {VgBufferingModule} from "./videogular/buffering";
         PageComponent,
         VideoPageComponent,
         VideoOverlayComponent,
+        OpenerComponent,
     ],
     providers: [
         ContentloaderService,

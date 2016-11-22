@@ -23,14 +23,18 @@ export class StartComponent {
   }
 
   ngAfterViewInit() {
-    var element = document.getElementById('modalSerial');
+    // var element = document.getElementById('modalSerial');
 
     var isRegistered = localStorage.getItem("registered");
     //console.log(isRegistered);
 
     if ( isRegistered === null ) {
       //noinspection TypeScriptUnresolvedFunction
-      // $('#modalSerial').openModal();
+      $('#modalSerial').openModal();
+    } else {
+      //noinspection TypeScriptUnresolvedFunction
+      $('#modalOpener').openModal();
+
     }
 
 
@@ -40,8 +44,11 @@ export class StartComponent {
 
     if (this._serialNumberVerificationService.check(serial)) {
       localStorage.setItem("registered", serial);
+      //noinspection TypeScriptUnresolvedFunction
+      $('#modalSerial').closeModal();
 
-      // $('#modalSerial').closeModal();
+      //noinspection TypeScriptUnresolvedFunction
+      $('#modalOpener').openModal();
     }
 
   }

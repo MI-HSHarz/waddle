@@ -82,7 +82,6 @@ export class VideoPageComponent implements OnInit {
 
     ngOnInit(): any {
 
-
         console.log(this.track);
         if ( this.track === null || this.track === undefined ) {
             this.isBezug = true;
@@ -158,7 +157,6 @@ export class VideoPageComponent implements OnInit {
 
 
             this.secondPlayerSource = this.avtivCue.kriterienclip;
-
         }
 
     }
