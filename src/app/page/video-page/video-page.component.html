@@ -92,7 +92,6 @@
 	</div>
 
 	<div *ngIf="!hasSmallControlls" class="section col" id="screen-sidebar-expanded">
-		<div class="row dark">
 			<div class="main">
 
 
@@ -132,7 +131,7 @@
 							</div>
 							<div class="collection-header">
 								<span style="white-space: pre;" class="title">{{cuePoint.title}}</span>
-								<p style="white-space: pre;">{{cuePoint.startTime | round}}<br>
+								<p>{{cuePoint.startTime | round}}<br>
 									Dauer: {{cuePoint.duration | round}}
 								</p>
 							</div>
@@ -180,11 +179,9 @@
 					</div>
 				</nav>
 			</div>
-		</div>
 	</div>
 
 	<div *ngIf="hasSmallControlls" class="section col" id="screen-sidebar-small">
-		<div class="row dark">
 			<div class="main">
 
 				<!--<app-small-controlls-cue-->
@@ -236,7 +233,6 @@
 				</nav>
 			</div>
 		</div>
-	</div>
 </div>
 
 
