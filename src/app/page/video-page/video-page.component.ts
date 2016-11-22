@@ -1,9 +1,11 @@
-import {Component, OnInit, Input, Pipe} from '@angular/core';
+import {Component, OnInit, Input, Pipe, Inject, ViewChild, ElementRef} from '@angular/core';
 import {VgAPI} from "../../videogular/services/vg-api";
 import {Cue} from "../../util/model";
 import {VgFullscreenAPI} from "../../videogular/services/vg-fullscreen-api";
 import {indexOfId} from "../../util/comon";
-import {DomSanitizer} from "@angular/platform-browser";
+import {DOCUMENT} from "@angular/platform-browser";
+import {PageScrollInstance, PageScrollService, EasingLogic} from 'ng2-page-scroll';
+import {PageScrollConfig} from 'ng2-page-scroll';
 
 
 @Component({
@@ -18,6 +20,9 @@ export class VideoPageComponent implements OnInit {
 
     @Input('source') source: string;
     @Input('title') title: string;
+
+    @ViewChild('container')
+    container: ElementRef;
 
     api: VgAPI;
     elem: HTMLElement;
@@ -54,8 +59,11 @@ export class VideoPageComponent implements OnInit {
 
     hasKriterienClips: boolean = true;
 
-    constructor() {
+
+    public constructor(@Inject(DOCUMENT) private document: any,
+                       private pageScrollService: PageScrollService) {
         this.fsAPI = VgFullscreenAPI;
+
     }
 
     onPlayerReady(api: VgAPI) {
@@ -233,6 +241,20 @@ export class VideoPageComponent implements OnInit {
         this.seekToTime(cue.startTime);
 
         this.introVideoIsPlaying = false;
+
+        this.scrollToCue(cue.id)
+    }
+
+    scrollToCue(cueId:string) {
+        console.log("scrollToCue" + cueId);
+
+        let id = '#cuePoint' +cueId;
+
+        // console.log(id);
+        // console.log(this.container.nativeElement);
+
+        let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document,  id, this.container.nativeElement );
+        this.pageScrollService.start(pageScrollInstance);
     }
 
     seekToTime(time: number) {

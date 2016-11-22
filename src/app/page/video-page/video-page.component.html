@@ -94,10 +94,10 @@
 	</div>
 
 	<div *ngIf="!hasSmallControlls" class="section col" id="screen-sidebar-expanded">
-			<div class="main">
+			<div class="main" >
 
 
-				<ul class="sidebar-collection" *ngIf="!isMeta">
+				<ul class="sidebar-collection"  #container *ngIf="!isMeta">
 					<li *ngFor="let cuePoint of cuePoints" class="collection-item"
 					    id="cuePoint{{cuePoint.id}}"
 					    [ngClass]="{active:  cuePoint.id === avtivCue?.id}"
