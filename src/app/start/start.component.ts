@@ -3,6 +3,8 @@ import {Content} from "../util/model";
 import {SerialNumberVerificationService} from "../services/serial-number-verification.service";
 import {ContentloaderService} from "../services/contentloader.service";
 
+let $ = require('../../../node_modules/jquery/dist/jquery.min.js');
+
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
