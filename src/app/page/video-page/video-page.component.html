@@ -69,7 +69,9 @@
 						<videoOverlay
 								*ngIf="introVideoIsPlaying"
 								(onVideoOverlayFinish)="onVideoOverlayFinish($event)"
-								[source]="secondPlayerSource">
+								[source]="secondPlayerSource"
+								class="second-player active"
+								[ngClass]="{active: introVideoIsPlaying}">
 						</videoOverlay>
 
 					</div>
