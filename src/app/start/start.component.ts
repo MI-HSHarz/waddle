@@ -32,9 +32,7 @@ export class StartComponent {
       //noinspection TypeScriptUnresolvedFunction
       $('#modalSerial').openModal();
     } else {
-      //noinspection TypeScriptUnresolvedFunction
-      $('#modalOpener').openModal();
-
+        this.openOpener();
     }
 
 
@@ -47,10 +45,26 @@ export class StartComponent {
       //noinspection TypeScriptUnresolvedFunction
       $('#modalSerial').closeModal();
 
-      //noinspection TypeScriptUnresolvedFunction
-      $('#modalOpener').openModal();
+      this.openOpener();
     }
 
   }
 
+  openOpener(){
+    if (localStorage.getItem("opener") === null){
+//noinspection TypeScriptUnresolvedFunction
+      $('#modalOpener').openModal();
+    }
+  }
+
+  closeOpener() {
+    //noinspection TypeScriptUnresolvedFunction
+    $('#modalOpener').closeModal();
+  }
+
+  closeOpenerForEver() {
+    this.closeOpener()
+    localStorage.setItem("opener", "no");
+
+  }
 }
