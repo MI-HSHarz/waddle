@@ -9,8 +9,18 @@ const BrowserWindow = electron.BrowserWindow
 let mainWindow
 
 function createWindow () {
+
+	var protocol = electron.protocol;
+	protocol.registerFileProtocol('file', function(request, callback) {
+		var url = request.url.substr(7);
+		callback({path: path.normalize(__dirname + '/' + url)});
+	}, function (error) {
+		if (error)
+			console.error('Failed to register protocol')
+	});
+
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+	mainWindow = new BrowserWindow({width: 1024, height: 768})
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)

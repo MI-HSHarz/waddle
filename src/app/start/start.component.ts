@@ -1,72 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Content} from "../util/model";
 import {SerialNumberVerificationService} from "../services/serial-number-verification.service";
 import {ContentloaderService} from "../services/contentloader.service";
 
-let $ = require('../../../node_modules/jquery/dist/jquery.min.js');
+declare var $: any;
 
 @Component({
-  selector: 'app-start',
-  templateUrl: './start.component.html',
-  styleUrls: ['./start.component.scss']
+    selector: 'app-start',
+    templateUrl: './start.component.html',
+    styleUrls: ['./start.component.scss']
 })
 export class StartComponent {
 
-  content: Content = new Content();
+    content: Content = new Content();
 
-  constructor(private _contentloaderService: ContentloaderService,
-              private _serialNumberVerificationService: SerialNumberVerificationService) {
+    constructor(private _contentloaderService: ContentloaderService,
+                private _serialNumberVerificationService: SerialNumberVerificationService) {
 
 
-    this._contentloaderService.contentSubject.subscribe(content => {
-      this.content = content;
-    });
+        this._contentloaderService.contentSubject.subscribe(content => {
+            this.content = content;
+        });
 
-  }
-
-  ngAfterViewInit() {
-    // var element = document.getElementById('modalSerial');
-
-    var isRegistered = localStorage.getItem("registered");
-    //console.log(isRegistered);
-
-    if ( isRegistered === null ) {
-      //noinspection TypeScriptUnresolvedFunction
-      $('#modalSerial').openModal();
-    } else {
-        this.openOpener();
     }
 
+    ngAfterViewInit() {
+        // var element = document.getElementById('modalSerial');
 
-  }
+        var isRegistered = localStorage.getItem("registered");
+        //console.log(isRegistered);
 
-  checkSerial(serial: string) {
+        if ( isRegistered === null ) {
+            $('#modalSerial').openModal();
+        } else {
+            this.openOpener();
+        }
 
-    if (this._serialNumberVerificationService.check(serial)) {
-      localStorage.setItem("registered", serial);
-      //noinspection TypeScriptUnresolvedFunction
-      $('#modalSerial').closeModal();
 
-      this.openOpener();
     }
 
-  }
+    checkSerial(serial: string) {
 
-  openOpener(){
-    if (localStorage.getItem("opener") === null){
-//noinspection TypeScriptUnresolvedFunction
-      $('#modalOpener').openModal();
+        if ( this._serialNumberVerificationService.check(serial) ) {
+            localStorage.setItem("registered", serial);
+            $('#modalSerial').closeModal();
+
+            this.openOpener();
+        }
     }
-  }
 
-  closeOpener() {
-    //noinspection TypeScriptUnresolvedFunction
-    $('#modalOpener').closeModal();
-  }
+    openOpener() {
+        if ( localStorage.getItem("opener") === null ) {
+            $('#modalOpener').openModal();
+        }
+    }
 
-  closeOpenerForEver() {
-    this.closeOpener()
-    localStorage.setItem("opener", "no");
+    closeOpener() {
+        $('#modalOpener').closeModal();
+    }
 
-  }
+    closeOpenerForEver() {
+        this.closeOpener()
+        localStorage.setItem("opener", "no");
+
+    }
 }

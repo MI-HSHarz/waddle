@@ -9,7 +9,10 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "styles/js/jquery-2.2.3.min.js",
+        "styles/js/materialize.js",
+        "styles/js/hammer.js"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -21,8 +24,7 @@
         "styles/styles.scss"
       ],
       "scripts": [
-        "styles/js/jquery-2.2.3.min.js",
-        "styles/js/materialize.js"
+
       ],
       "environments": {
         "source": "environments/environment.ts",

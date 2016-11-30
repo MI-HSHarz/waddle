@@ -113,106 +113,102 @@
       "name":"KATEGORIALE BERUFSBEZÜGE",
       "pages": [
         {
-          "menuName": "Kategorial-Indentitaetsstiftender Berufsbezug",
-          "subtitle": "subtitle",
+          "menuName": "Material-Assoziativ Berufsbezug",
+          "subtitle": "",
           "info": "string",
-          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",
-          "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m57s499.png",
+          "$href": "pages/Beispiele/page1.json",
+          "color": "bibor-blue darken-1",
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Videotitel1",
-              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/BN_3_kategorial-identitätsstiftend.json"
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/material-assoziativ/animation.json"
             },
             {
-              "menuName": "Videotitel2",
-              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/SDL_1_kategorial-identitätsstiftend.json"
-            },
-            {
-              "menuName": "Videotitel3",
-              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/SDL_4_kategorial-identitätsstiftend.json"
-            },
-            {
-              "menuName": "Videotitel4",
-              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/WSF_2_kategorial-identitätsstiftend.json"
-            },
-            {
-              "menuName": "Videotitel5",
-              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/WW_1_kategorial-identitätsstiftend.json"
-            },
-            {
-              "menuName": "Videotitel6",
-              "$href": "pages/Bezuege_isoliert/kategorial-indentitaetsstiftend/WW_3_kategorial-identitätsstiftend.json"
-            }
-          ]
-        },
-        {
-          "menuName": "Kategorial-Transzendierend Berufsbezug",
-          "subtitle": "subtitle",
-          "info": "string",
-          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m41s516.png",
-          "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue darken-3",
-          "descriptition": "",
-          "subPages": [
-            {
-              "menuName": "Videotitel1",
-              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/BN_1_kategorial-transzendierend.json"
-            },
-            {
-              "menuName": "Videotitel2",
-              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/BN_2_kategorial-transzendierend.json"
-            },
-            {
-              "menuName": "Videotitel3",
-              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/SDL_3_kategorial-transzendierend.json"
-            },
-            {
-              "menuName": "Videotitel4",
-              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/WSF_1_kategorial-transzendierend.json"
-            },
-            {
-              "menuName": "Videotitel5",
-              "$href": "pages/Bezuege_isoliert/kategorial-transzendierend/WSF_3_kategorial-transzendierend.json"
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/material-assoziativ/SDL_material-assoziativ.json"
             }
           ]
         },
         {
           "menuName": "Material-Hermeneutisch Berufsbezug",
-          "subtitle": "subtitle",
+          "subtitle": "",
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m51s608.png",
           "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue darken-2",
+          "color": "bibor-blue",
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Videotitel1",
-              "$href": "pages/Bezuege_isoliert/material-hermeneutisch/BN_4_material-hermeneutisch.json"
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/material-hermeneutisch/animation.json"
             },
             {
-              "menuName": "Videotitel2",
-              "$href": "pages/Bezuege_isoliert/material-hermeneutisch/SDL_2_Material-hermeneutisch.json"
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/material-hermeneutisch/SDL_Material-hermeneutisch.json"
             },
             {
-              "menuName": "Videotitel3",
-              "$href": "pages/Bezuege_isoliert/material-hermeneutisch/WW_2_material-hermeneutisch.json"
+              "menuName": "Montabaur",
+              "$href": "pages/Bezuege/material-hermeneutisch/WW_material-hermeneutisch.json"
+            },
+            {
+              "menuName": "Bad Godesberg",
+              "$href": "pages/Bezuege/material-hermeneutisch/BN_material-hermeneutisch.json"
             }
           ]
         },
         {
-          "menuName": "Material-Assoziativ Berufsbezug",
-          "subtitle": "subtitle",
+          "menuName": "Kategorial-Indentitaetsstiftender Berufsbezug",
+          "subtitle": "",
           "info": "string",
-          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m57s499.png",
-          "$href": "pages/Beispiele/page1.json",
-          "color": "bibor-blue lighten-3",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue darken-1",
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Videotitel1",
-              "$href": "pages/Bezuege_isoliert/material-assoziativ/SDL_3_material-assoziativ.json"
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/animation.json"
+            },
+            {
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/SDL_Stendal.json"
+            },
+            {
+              "menuName": "Bad Godesberg",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/BN_Bad Godesberg.json"
+            },
+            {
+              "menuName": "Montabaur",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/WW_Montabaur.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Kategorial-Transzendierend Berufsbezug",
+          "subtitle": "",
+          "info": "string",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m41s516.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue lighten-2",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/kategorial-transzendierend/animation.json"
+            },
+            {
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/kategorial-transzendierend/SDL_Stendal.json"
+            },
+            {
+              "menuName": "Weissenfels",
+              "$href": "pages/Bezuege/kategorial-transzendierend/WSF_Weissenfels.json"
+            },
+            {
+              "menuName": "Bad Godesberg",
+              "$href": "pages/Bezuege/kategorial-transzendierend/BN_Bad Godesberg.json"
             }
           ]
         }
