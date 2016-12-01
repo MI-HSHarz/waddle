@@ -19,7 +19,7 @@
           </div>
           <div *ngIf="page.subtitle" class="card-sub-title activator">{{page.subtitle}}</div>
         </div>
-        <div class="card-reveal">
+        <div class="card-reveal" >
           <div class="card-reveal-header">
             <div class="card-title">
               {{page.menuName}}
@@ -45,20 +45,27 @@
           <ul class="navigation-list" *ngIf="page.transkript != null && page.transkript != undefined">
 
             <li>
-              <a href="#/pdf/{{page.transkript | uriEncode}}" class="white-text">
-                Transkript
-              </a>
+              <!--<a href="#/pdf/{{page.transkript | uriEncode}}" class="white-text">-->
+                <!--Transkript-->
+              <!--</a>-->
+              <!--<a href="{{page.transkript}}" class="white-text">-->
+                <!--(PDF speichern)-->
+              <!--</a>-->
+
               <a href="{{page.transkript}}" class="white-text">
-                (sichern)
+                Transkript
               </a>
             </li>
 
             <li>
-              <a href="#/pdf/{{page.material | uriEncode}}" class="white-text">
-                Transkript
-              </a>
+              <!--<a href="#/pdf/{{page.material | uriEncode}}" class="white-text">-->
+                <!--Material-->
+              <!--</a>-->
+              <!--<a href="{{page.material}}" class="white-text">-->
+                <!--(PDF speichern)-->
+              <!--</a>-->
               <a href="{{page.material}}" class="white-text">
-                (sichern)
+                Material
               </a>
             </li>
 

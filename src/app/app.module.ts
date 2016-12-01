@@ -17,6 +17,7 @@ import {FormsModule} from "@angular/forms";
 import { CardsComponent } from './cards/cards.component';
 import {RoundPipe} from "./pipes/round.pipe";
 import {UriEncodePipe} from "./pipes/uriEncode.pipe";
+
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import {PdfViewComponent} from "./pdf-view/pdf-view.component";
 import {PageComponent} from "./page/page.component";

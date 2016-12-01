@@ -326,6 +326,10 @@ nav {
           .collection-header {
             padding-left: 180px;
 
+            .title {
+              height: 65px;
+            }
+
           }
 
           &.active {

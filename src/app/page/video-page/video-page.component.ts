@@ -5,7 +5,6 @@ import {VgFullscreenAPI} from "../../videogular/services/vg-fullscreen-api";
 import {indexOfId} from "../../util/comon";
 import {DOCUMENT} from "@angular/platform-browser";
 import {PageScrollInstance, PageScrollService, EasingLogic} from 'ng2-page-scroll';
-import {PageScrollConfig} from 'ng2-page-scroll';
 
 
 @Component({

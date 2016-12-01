@@ -15,7 +15,14 @@
 
     "prepare": "cp -a electron/. dist",
     "electron": "npm run prepare && electron dist",
-    "package": "npm run build && npm run prepare && ./node_modules/electron-packager/cli.js dist App --platform=darwin --arch=all --out=dist-app --overwrite"
+
+    "package": "npm run build && npm run prepare && electron-packager dist 'Religion trifft Beruf' --tmpdir=false --platform=darwin --arch=all --out=dist-app --overwrite",
+
+    "package-all": "npm run prepare && electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=all --arch=all  --overwrite",
+    "package-mac": "electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=darwin --arch=all --overwrite",
+    "package-win": "npm run prepare && electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=win32 --arch=ia32  --overwrite"
+
+
   },
   "private": true,
   "dependencies": {
@@ -43,7 +50,8 @@
     "angular-cli": "1.0.0-beta.18",
     "codelyzer": "1.0.0-beta.1",
     "electron": "^1.4.4",
-    "electron-packager": "^8.1.0",
+    "electron-prebuilt": "1.4.10",
+    "electron-packager": "8.3.0",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",

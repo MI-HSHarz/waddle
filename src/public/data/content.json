@@ -164,7 +164,7 @@
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",
           "$href": "pages/Beispiele/page0.json",
-          "color": "bibor-blue darken-1",
+          "color": "bibor-blue lighten-1",
           "descriptition": "",
           "subPages": [
             {
