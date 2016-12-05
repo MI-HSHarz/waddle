@@ -1,0 +1,11 @@
+{
+  "title": "Lehrerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "public/data/video/Montabaur/InterviewLehrer/Montabaur_InterviewLehrer.mp4",
+        "trackPath": "public/data/video/Montabaur/InterviewLehrer/cue-points.vtt"
+      }
+    }
+  ]
+}

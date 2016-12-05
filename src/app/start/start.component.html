@@ -1,0 +1,68 @@
+<div class="container grey darken-4">
+
+	<div id="modalSerial" class="modal">
+		<div class="modal-content">
+			<h4>Seriennummer eingeben</h4>
+			<div class="input-field col s12">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="input-field">
+				<input #serial type="text" class="">
+				<label for="password">Produktschlüssel</label>
+			</div>
+			<button class=" modal-action waves-effect btn-flat"
+			        (click)="checkSerial(serial.value)">
+				überprüfen
+			</button>
+		</div>
+	</div>
+
+
+	<div id="modalOpener" class="modal">
+		<div class="modal-content">
+
+			<vg-player>
+				<video #media id="singleVideo" preload="auto" autoplay>
+					<source src="public/data/video/00_Opener_linksbuendig.mp4" type="video/mp4">
+				</video>
+			</vg-player>
+
+		</div>
+		<div class="modal-footer">
+
+			<button class=" modal-action waves-effect btn-flat"
+			        (click)="closeOpener()">
+				überspringen
+			</button>
+			<button class=" modal-action waves-effect btn-flat"
+			        (click)="closeOpenerForEver()">
+				nicht mehr anzeigen
+			</button>
+		</div>
+	</div>
+
+
+	<div class="section">
+		<div id="index-page-section-top" class="row card module half bibor-blue">
+			<div class="col s12 white-text">
+				<h1 class="title">Religion trifft Beruf</h1>
+				<h4 class="sub-title">Die Praxis des Religionsunterrichtes</h4>
+				<h4 class="sub-title">an Berufsbildenden Schulen</h4>
+
+			</div>
+		</div>
+		<div id="index-page-section-bottom" class="row card module half grey darken-4">
+			<div class="col s61">
+				<div class="white-text">
+					<ul class="navigation-list">
+						<li *ngFor="let module of content.modules; let i = index">
+							<a href="#/cards/{{i}}">{{module.name}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<img class="bibor_splash2" src="public/data/img/logo_bibor.png" alt="">
+		</div>
+	</div>
+</div>
