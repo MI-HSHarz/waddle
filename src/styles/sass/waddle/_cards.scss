@@ -1,0 +1,92 @@
+
+/* ==========================================================================
+   Materialize variables
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Cards
+ */
+
+
+/* 1. Cards
+   ========================================================================== */
+
+.card {
+  border-radius: 0;
+  @extend .card;
+  @extend .z-depth-0;
+  &.half {
+    height: calc((100vh - #{$navbar-height} ) /2 );
+  }
+  &.full {
+    height: calc((100vh - #{$navbar-height} ));
+  }
+  &.centred  {
+    left: 25% !important;
+    top: 25% !important;
+  }
+  .card-reveal {
+    background-color: inherit;
+  }
+  p{
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+  .card-image {
+    z-index: auto;
+    background: #1d4899;
+    background: -moz-linear-gradient(top, #1d4899 0%, black 90%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, black));
+    background: -webkit-linear-gradient(top, #1d4899 0%, black 90%);
+    background: -o-linear-gradient(top, #1d4899 0%, black 90%);
+    background: -ms-linear-gradient(top, #1d4899 0%, black 90%);
+    background: linear-gradient(to bottom, #1d4899 0%, black 90%);
+    img {
+      //opacity: 0.6;
+    }
+  }
+  &.module {
+    .card-sub-title {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      padding-top: 5px;
+    }
+    .card-title {
+      line-height: 24px;
+    }
+    .card-content {
+      position: absolute;
+      width: 100%;
+      height: 95px;
+      bottom: 0;
+      background-color: inherit;
+      .material-icons {
+        line-height: 24px;
+      }
+    }
+    .card-reveal {
+      .card-reveal-header {
+        height: 52px;
+      }
+      .card-sub-title {
+        margin-bottom: 1.5rem;
+      }
+      .material-icons {
+        line-height: 24px;
+      }
+    }
+  }
+}
+.card-panel {
+  border-radius: 0;
+  @extend .card-panel;
+  @extend .z-depth-0;
+  &.large {
+    @extend .card.large;
+  }
+}
+
+
+

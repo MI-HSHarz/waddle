@@ -1,0 +1,222 @@
+{
+  "name": "Titel",
+  "colorScheme":{
+    "menuColor": "#eee"
+  },
+  "modules":[
+    {
+      "name":"DER UNTERRICHT IM FILM",
+      "pages": [
+        {
+          "menuName": "Vom Glück im Beruf",
+          "subtitle": "Berufsbildende Schulen des Landkreises Stendal",
+          "info": "string",
+          "img": "public/data/img/schulen/vlcsnap-2016-09-29-17h42m12s288.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue darken-1",
+          "transkript": "public/data/pdf/Stendal/Stendal_Transkript.pdf",
+          "material": "public/data/pdf/Stendal/Stendal_Material.pdf",
+          "descriptition": "11. Klasse Fachgymnasium\nStR’in Anja Pulver (ev.)",
+          "subPages": [
+            {
+              "menuName": "Unterricht",
+              "$href": "pages/Stendal/Unterricht.json"
+            },
+            {
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/Stendal/InterviewLehrer.json"
+            },
+            {
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/Stendal/InterviewSchühler.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Worauf ich vertraue",
+          "subtitle": "Berufsbildende Schulen Burgenlandkreis",
+          "info": "string",
+          "img": "public/data/img/schulen/vlcsnap-2016-10-05-12h15m46s657.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue",
+          "transkript": "public/data/pdf/Weissenfels/Weissenfels_Transkript.pdf",
+          "material": "public/data/pdf/Weissenfels/Weissenfels_Material.pdf",
+          "descriptition": "11. Klasse Fachgymnasiums\nOStR Alexander Grube (ev.)",
+          "subPages": [
+            {
+              "menuName": "Unterricht",
+              "$href": "pages/Weissenfels/Unterricht.json"
+            },
+            {
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/Weissenfels/InterviewLehrer.json"
+            },
+            {
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/Weissenfels/InterviewSchühler.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Vom Sinn der Arbeit",
+          "subtitle": "Friedrich-List Berufskolleg Bad Godesberg",
+          "info": "string",
+          "img": "public/data/img/schulen/vlcsnap-2016-09-29-17h59m20s893.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue lighten-1",
+          "transkript": "public/data/pdf/Bad Godesberg/Bad Godesberg_Transkript.pdf",
+          "material": "public/data/pdf/Bad Godesberg/Bad Godesberg_Material.pdf",
+          "descriptition": "Einzelhandelskaufleute, zweijährige Ausbildung, 1. Ausbildungsjahr\nPfarrer Markus Homann (ev.)",
+          "subPages": [
+            {
+              "menuName": "Unterricht",
+              "$href": "pages/BadGodesberg/Unterricht.json"
+            },
+            {
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/BadGodesberg/InterviewLehrer.json"
+            },
+            {
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/BadGodesberg/InterviewSchühler.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Der Mensch 2.0",
+          "subtitle": "Berufsbildende Schule Montabaur",
+          "info": "string",
+          "img": "public/data/img/schulen/vlcsnap-2016-09-29-18h00m36s745.png",
+          "$href": "pages/Beispiele/page1.json",
+          "color": "bibor-blue lighten-2",
+          "transkript": "public/data/pdf/Montabaur/Montabaur_Transkript.pdf",
+          "material": "public/data/pdf/Montabaur/Montabaur_Material.pdf",
+          "descriptition": "Fachinformatiker, dreijährige Ausbildung, 1. Ausbildungsjahr\nStD Christoph Weidinger (kath.)",
+          "subPages": [
+            {
+              "menuName": "Unterricht",
+              "$href": "pages/Montabaur/Unterricht.json"
+            },
+            {
+              "menuName": "Interview mit den Lehrkräften",
+              "$href": "pages/Montabaur/InterviewLehrer.json"
+            },
+            {
+              "menuName": "Interview mit den Schülern",
+              "$href": "pages/Montabaur/InterviewSchühler.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"KATEGORIALE BERUFSBEZÜGE",
+      "pages": [
+        {
+          "menuName": "Material-Assoziativ Berufsbezug",
+          "subtitle": "",
+          "info": "string",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m57s499.png",
+          "$href": "pages/Beispiele/page1.json",
+          "color": "bibor-blue darken-1",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/material-assoziativ/animation.json"
+            },
+            {
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/material-assoziativ/SDL_material-assoziativ.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Material-Hermeneutisch Berufsbezug",
+          "subtitle": "",
+          "info": "string",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m51s608.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/material-hermeneutisch/animation.json"
+            },
+            {
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/material-hermeneutisch/SDL_Material-hermeneutisch.json"
+            },
+            {
+              "menuName": "Montabaur",
+              "$href": "pages/Bezuege/material-hermeneutisch/WW_material-hermeneutisch.json"
+            },
+            {
+              "menuName": "Bad Godesberg",
+              "$href": "pages/Bezuege/material-hermeneutisch/BN_material-hermeneutisch.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Kategorial-Indentitaetsstiftender Berufsbezug",
+          "subtitle": "",
+          "info": "string",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue lighten-1",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/animation.json"
+            },
+            {
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/SDL_Stendal.json"
+            },
+            {
+              "menuName": "Bad Godesberg",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/BN_Bad Godesberg.json"
+            },
+            {
+              "menuName": "Montabaur",
+              "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/WW_Montabaur.json"
+            }
+          ]
+        },
+        {
+          "menuName": "Kategorial-Transzendierend Berufsbezug",
+          "subtitle": "",
+          "info": "string",
+          "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m41s516.png",
+          "$href": "pages/Beispiele/page0.json",
+          "color": "bibor-blue lighten-2",
+          "descriptition": "",
+          "subPages": [
+            {
+              "menuName": "Animation",
+              "$href": "pages/Bezuege/kategorial-transzendierend/animation.json"
+            },
+            {
+              "menuName": "Stendal",
+              "$href": "pages/Bezuege/kategorial-transzendierend/SDL_Stendal.json"
+            },
+            {
+              "menuName": "Weissenfels",
+              "$href": "pages/Bezuege/kategorial-transzendierend/WSF_Weissenfels.json"
+            },
+            {
+              "menuName": "Bad Godesberg",
+              "$href": "pages/Bezuege/kategorial-transzendierend/BN_Bad Godesberg.json"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "imprint": {
+    "name": "Impressum",
+    "$href": "pages/page3.json"
+  }
+}

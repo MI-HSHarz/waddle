@@ -1,0 +1,11 @@
+{
+  "title": "Schülerinterview",
+  "components": [
+    {
+      "video": {
+        "videoPath": "public/data/video/Stendal/InterviewSchuler/Stendal_InterviewSchüler.mp4",
+        "trackPath": "public/data/video/Stendal/InterviewSchuler/cue-points.vtt"
+      }
+    }
+  ]
+}

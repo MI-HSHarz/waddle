@@ -1,0 +1,35 @@
+<header>
+  <div class="navbar-fixed">
+    <nav class="black" role="navigation">
+      <div class="nav-wrapper container">
+        <ul class="left">
+          <li>
+            <a [routerLink]="['/']"
+               (click)="start()">
+              <i class="material-icons">home</i>
+            </a>
+          </li>
+          <li *ngIf="titel !== null" >
+            <a href="#/cards/{{mudulNumber}}">
+              {{titel}}
+            </a>
+          </li>
+        </ul>
+
+        <ul class="right second">
+          <li>
+            <a [routerLink]="['/imprint']" >
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+
+</header>
+
+<main id="main flow-text">
+  <router-outlet></router-outlet>
+</main>
