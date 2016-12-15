@@ -55,6 +55,11 @@ export class StartComponent {
         }
     }
 
+    forceOpenOpener() {
+            $('#modalOpener').openModal();
+
+    }
+
     closeOpener() {
         $('#modalOpener').closeModal();
     }

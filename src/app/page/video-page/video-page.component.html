@@ -34,10 +34,9 @@
 										<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
 										<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 										<!--<vg-scrub-bar-cue-points-->
-												<!--[cuePoints]="metadataTrack.cues"></vg-scrub-bar-cue-points>-->
+										<!--[cuePoints]="metadataTrack.cues"></vg-scrub-bar-cue-points>-->
 									</vg-scrub-bar>
 
-									<vg-time-display property="left" format="mm:ss"></vg-time-display>
 									<vg-time-display property="total" format="mm:ss"></vg-time-display>
 
 									<vg-mute></vg-mute>
@@ -94,147 +93,147 @@
 	</div>
 
 	<div *ngIf="!hasSmallControlls" class="section col" id="screen-sidebar-expanded">
-			<div class="main" >
+		<div class="main">
 
 
-				<ul class="sidebar-collection"  #container *ngIf="!isMeta">
-					<li *ngFor="let cuePoint of cuePoints" class="collection-item"
-					    id="cuePoint{{cuePoint.id}}"
-					    [ngClass]="{active:  cuePoint.id === avtivCue?.id}"
-					    (click)="jumpToCue(cuePoint)">
+			<ul class="sidebar-collection" #container *ngIf="!isMeta">
+				<li *ngFor="let cuePoint of cuePoints" class="collection-item"
+				    id="cuePoint{{cuePoint.id}}"
+				    [ngClass]="{active:  cuePoint.id === avtivCue?.id}"
+				    (click)="jumpToCue(cuePoint)">
 
-						<div class="collapsible-header">
-							<div class="collection-image ratio16_9">
-								<div class="content">
-									<img src="{{cuePoint.src}}" alt="" class="responsive-img">
-								</div>
-							</div>
-							<div class="collection-header">
-								<p class="title">{{cuePoint.title}}</p>
-								<p>{{cuePoint.startTime | round}}</p>
+					<div class="collapsible-header">
+						<div class="collection-image ratio16_9">
+							<div class="content">
+								<img src="{{cuePoint.src}}" alt="" class="responsive-img">
 							</div>
 						</div>
-						<div class="collapsible-body">
-							<p>{{ cuePoint.description }}</p>
+						<div class="collection-header">
+							<p class="title">{{cuePoint.title}}</p>
+							<p>{{cuePoint.startTime | round}}</p>
 						</div>
-					</li>
-				</ul>
-
-				<ul class="sidebar-collection" *ngIf="isMeta">
-					<li *ngFor="let cuePoint of metaCuePoints" class="collection-item"
-					    [ngClass]="{active:  cuePoint.id === metaAvtivCue?.id}"
-					    (click)="jumpToCue(cuePoint)">
-
-						<div class="collapsible-header">
-							<div class="collection-image ratio16_9">
-								<div class="content">
-									<img src="{{cuePoint.src}}" alt="" class="responsive-img">
-								</div>
-							</div>
-							<div class="collection-header">
-								<span style="white-space: pre;" class="title">{{cuePoint.title}}</span>
-								<p>
-									{{cuePoint.startTime | round}}
-								</p>
-							</div>
-						</div>
-						<div class="collapsible-body">
-							<p>{{ cuePoint.description }}</p>
-						</div>
-					</li>
-				</ul>
-
-			</div>
-			<div class="down">
-				<nav class="transparent">
-					<div class="nav-wrapper">
-						<ul>
-							<li class="nav-up" (click)="prev()"><a>
-								<i class="material-icons">keyboard_arrow_up</i></a>
-							</li>
-							<li class="nav-down" (click)="next()"><a>
-								<i class="material-icons">keyboard_arrow_down</i></a>
-							</li>
-							<li class="nav-expand" (click)="minimize()"><a>
-								<i class="material-icons">arrow_forward</i></a>
-							</li>
-							<li *ngIf="hasMeta" class="switch">
-								<label>
-									K
-									<input type="checkbox" name="isActive" [(ngModel)]="isMeta">
-									<span class="lever"></span>
-									B
-								</label>
-							</li>
-
-							<li *ngIf="hasKriterienClips" class="nav-speaker">
-								<a *ngIf="!introVideosEnabled"
-								   (click)="introVideosEnable()">
-									<i class="material-icons">speaker_notes_off</i>
-								</a>
-								<a *ngIf="introVideosEnabled"
-								   (click)="introVideosDisable()">
-									<i class="material-icons">speaker_notes</i>
-								</a>
-							</li>
-						</ul>
 					</div>
-				</nav>
-			</div>
+					<div class="collapsible-body">
+						<p>{{ cuePoint.description }}</p>
+					</div>
+				</li>
+			</ul>
+
+			<ul class="sidebar-collection" *ngIf="isMeta">
+				<li *ngFor="let cuePoint of metaCuePoints" class="collection-item"
+				    [ngClass]="{active:  cuePoint.id === metaAvtivCue?.id}"
+				    (click)="jumpToCue(cuePoint)">
+
+					<div class="collapsible-header">
+						<div class="collection-image ratio16_9">
+							<div class="content">
+								<img src="{{cuePoint.src}}" alt="" class="responsive-img">
+							</div>
+						</div>
+						<div class="collection-header">
+							<span style="white-space: pre;" class="title">{{cuePoint.title}}</span>
+							<p>
+								{{cuePoint.startTime | round}}
+							</p>
+						</div>
+					</div>
+					<div class="collapsible-body">
+						<p>{{ cuePoint.description }}</p>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+		<div class="down">
+			<nav class="transparent">
+				<div class="nav-wrapper">
+					<ul>
+						<li class="nav-up" (click)="prev()"><a>
+							<i class="material-icons">keyboard_arrow_up</i></a>
+						</li>
+						<li class="nav-down" (click)="next()"><a>
+							<i class="material-icons">keyboard_arrow_down</i></a>
+						</li>
+						<li class="nav-expand" (click)="minimize()"><a>
+							<i class="material-icons">arrow_forward</i></a>
+						</li>
+						<li *ngIf="hasMeta" class="switch">
+							<label>
+								K
+								<input type="checkbox" name="isActive" [(ngModel)]="isMeta">
+								<span class="lever"></span>
+								B
+							</label>
+						</li>
+
+						<li *ngIf="hasKriterienClips" class="nav-speaker">
+							<a *ngIf="!introVideosEnabled"
+							   (click)="introVideosEnable()">
+								<i class="material-icons">speaker_notes_off</i>
+							</a>
+							<a *ngIf="introVideosEnabled"
+							   (click)="introVideosDisable()">
+								<i class="material-icons">speaker_notes</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 	</div>
 
 	<div *ngIf="hasSmallControlls" class="section col" id="screen-sidebar-small">
-			<div class="main">
+		<div class="main">
 
-				<!--<app-small-controlls-cue-->
-					<!--*ngFor="let cuePoint of cuePoints"-->
-					<!--class="SmallCue"-->
-						<!--[position]="cuePoint.startTime"-->
-						<!--[duration]="api.duration"-->
-				        <!--[title]="cuePoint.title"-->
-				<!--&gt;</app-small-controlls-cue>-->
+			<!--<app-small-controlls-cue-->
+			<!--*ngFor="let cuePoint of cuePoints"-->
+			<!--class="SmallCue"-->
+			<!--[position]="cuePoint.startTime"-->
+			<!--[duration]="api.duration"-->
+			<!--[title]="cuePoint.title"-->
+			<!--&gt;</app-small-controlls-cue>-->
 
-				<div *ngFor="let cuePoint of cuePoints" class="SmallCue"
-				     (click)="jumpToCue(cuePoint)"
-				     [style.top.%]="(cuePoint.startTime / api?.duration * 100)">
+			<div *ngFor="let cuePoint of cuePoints" class="SmallCue"
+			     (click)="jumpToCue(cuePoint)"
+			     [style.top.%]="(cuePoint.startTime / api?.duration * 100)">
                     <span>
-                        {{cuePoint.title}}
+                        {{cuePoint.title | replace}}
                     </span>
-				</div>
-
-				<div class="SmallCue red"
-				     [style.top.%]="(api?.time?.current / (api?.duration * 10))">
-				</div>
 			</div>
 
-			<div class="down">
-				<nav class="transparent">
-					<div class="nav-wrapper">
-						<ul>
-							<li class="nav-up" (click)="prev()"><a>
-								<i class="material-icons">keyboard_arrow_up</i></a>
-							</li>
-							<li class="nav-down" (click)="next()"><a>
-								<i class="material-icons">keyboard_arrow_down</i></a>
-							</li>
-							<li *ngIf="hasKriterienClips" class="nav-speaker">
-								<a *ngIf="!introVideosEnabled"
-								   (click)="introVideosEnable()">
-									<i class="material-icons">speaker_notes_off</i>
-								</a>
-								<a *ngIf="introVideosEnabled"
-								   (click)="introVideosDisable()">
-									<i class="material-icons">speaker_notes</i>
-								</a>
-							</li>
-							<li class="nav-expand" (click)="maximize()"><a>
-								<i class="material-icons">arrow_back</i></a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+			<div class="SmallCue red"
+			     [style.top.%]="(api?.time?.current / (api?.duration * 10))">
 			</div>
 		</div>
+
+		<div class="down">
+			<nav class="transparent">
+				<div class="nav-wrapper">
+					<ul>
+						<li class="nav-up" (click)="prev()"><a>
+							<i class="material-icons">keyboard_arrow_up</i></a>
+						</li>
+						<li class="nav-down" (click)="next()"><a>
+							<i class="material-icons">keyboard_arrow_down</i></a>
+						</li>
+						<li *ngIf="hasKriterienClips" class="nav-speaker">
+							<a *ngIf="!introVideosEnabled"
+							   (click)="introVideosEnable()">
+								<i class="material-icons">speaker_notes_off</i>
+							</a>
+							<a *ngIf="introVideosEnabled"
+							   (click)="introVideosDisable()">
+								<i class="material-icons">speaker_notes</i>
+							</a>
+						</li>
+						<li class="nav-expand" (click)="maximize()"><a>
+							<i class="material-icons">arrow_back</i></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
 </div>
 
 
@@ -258,10 +257,8 @@
 					<div id="videoBox" class='box ratio16_9'>
 						<div class="content">
 
-							<vg-player
-									(onPlayerReady)="onPlayerReady($event)">
 
-								<vg-overlay-play></vg-overlay-play>
+							<vg-player (onPlayerReady)="onPlayerReady($event)">
 
 								<vg-controls>
 									<vg-play-pause></vg-play-pause>
@@ -282,13 +279,14 @@
 									<vg-fullscreen></vg-fullscreen>
 								</vg-controls>
 
-								<video vg-media id="singleVideo" preload="auto" [controls]="controls">
+								<video vg-media id="singleVideo" preload="auto">
 									<source [src]="source" type="video/mp4">
-
-
 								</video>
 
 							</vg-player>
+
+							<vg-overlay-play></vg-overlay-play>
+
 						</div>
 
 					</div>

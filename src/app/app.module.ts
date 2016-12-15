@@ -27,6 +27,7 @@ import { VideoOverlayComponent } from './page/video-page/video-overlay/video-ove
 import {VgBufferingModule} from "./videogular/buffering";
 import { OpenerComponent } from './opener/opener.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
+import {ReplacePipe} from "./pipes/replace.pipe";
 
 @NgModule({
     imports: [
@@ -48,6 +49,7 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
         CardsComponent,
         UriEncodePipe,
         RoundPipe,
+        ReplacePipe,
         PdfViewerComponent,
         PdfViewComponent,
         PageComponent,

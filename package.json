@@ -20,7 +20,7 @@
 
     "package-all": "npm run prepare && electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=all --arch=all  --overwrite",
     "package-mac": "electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=darwin --arch=all --overwrite",
-    "package-win": "npm run prepare && electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=win32 --arch=ia32  --overwrite"
+    "package-win": "electron-packager dist 'Religion trifft Beruf' --tmpdir=false --out=Staging --platform=win32 --arch=ia32  --overwrite"
 
 
   },

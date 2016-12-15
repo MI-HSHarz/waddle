@@ -128,7 +128,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/12.png",
-    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_12_kognitive Aktivierung.mp4",
     "href": ""
 }
 
@@ -146,7 +146,7 @@ WEBVTT FILE
 14
 00:42:54.000 --> 00:43:19.000
 {
-    "title": "Anforderungssituation",
+    "title": "Anforderungs-\nsituation",
     "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/2.png",
@@ -154,6 +154,15 @@ WEBVTT FILE
     "href": ""
 }
 
-
+15
+00:43:19.000 --> 00:45:36.000
+{
+    "title": "Meta-Reflektionen",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/Stendal/Unterricht/img/14.png",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_15a_kategorial-identitätsstiftend.mp4",
+    "href": ""
+}
 
 

@@ -245,15 +245,15 @@ export class VideoPageComponent implements OnInit {
     }
 
     scrollToCue(cueId:string) {
-        console.log("scrollToCue" + cueId);
-
-        let id = '#cuePoint' +cueId;
-
-        // console.log(id);
-        // console.log(this.container.nativeElement);
-
-        let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document,  id, this.container.nativeElement );
-        this.pageScrollService.start(pageScrollInstance);
+        // console.log("scrollToCue" + cueId);
+        //
+        // let id = '#cuePoint' +cueId;
+        //
+        // // console.log(id);
+        // // console.log(this.container.nativeElement);
+        //
+        // let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document,  id, this.container.nativeElement );
+        // this.pageScrollService.start(pageScrollInstance);
     }
 
     seekToTime(time: number) {

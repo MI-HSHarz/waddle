@@ -9,7 +9,8 @@ export class VgAPI {
     playerReadyEvent: EventEmitter<any> = new EventEmitter(true);
 
     constructor() {
-
+        console.log("Api constructor");
+        console.log(this);
     }
 
     onPlayerReady() {
