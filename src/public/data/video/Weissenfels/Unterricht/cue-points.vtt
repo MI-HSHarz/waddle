@@ -4,7 +4,7 @@ WEBVTT FILE
 00:00:00.000 --> 00:01:02.000
 {
     "title": "Anforderungs-\nsituation",
-    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
+    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/1.png",
     "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
@@ -33,6 +33,17 @@ WEBVTT FILE
     "href": ""
 }
 
+4
+00:12:51.000 --> 00:13:18.000
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/Weissenfels/Unterricht/img/4.png",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_04_kategorial-transzendierend.mp4",
+    "href": ""
+}
+
 5
 00:13:18.000 --> 00:16:41.000
 {
@@ -40,7 +51,7 @@ WEBVTT FILE
     "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/5.png",
-    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_06_Sinnstiftende Kommunikation.mp4",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_05_echte Lernzeit.mp4",
     "href": ""
 }
 
@@ -48,10 +59,10 @@ WEBVTT FILE
 00:16:41.000 --> 00:18:38.000
 {
     "title": "Sinnstiftende Kommunikation",
-    "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
+    "description": "Im guten BRU ereignet sich Sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/6.png",
-    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_01_Anforderungssituation.mp4",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_06_Sinnstiftende Kommunikation.mp4",
     "href": ""
 }
 
@@ -103,7 +114,7 @@ WEBVTT FILE
 00:33:48.000 --> 00:41:08.000
 {
     "title": "Outcome",
-    "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
+    "description": "Guter BRU zielt auf einen Outcome, der sich in der Kommunikation und Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/11.png",
     "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_11_Outcome.mp4",
@@ -121,3 +132,24 @@ WEBVTT FILE
     "href": ""
 }
 
+13
+00:42:23.000 --> 00:46:29.000
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/Weissenfels/Unterricht/img/13.png",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_13_kategorial-identitätsstiftend.mp4",
+    "href": ""
+}
+
+14
+00:46:29.000 --> 00:47:17.000
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/Weissenfels/Unterricht/img/14.png",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_14_kategorial-transzendierend.mp4",
+    "href": ""
+}

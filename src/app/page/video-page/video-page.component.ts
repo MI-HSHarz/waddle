@@ -1,10 +1,10 @@
-import {Component, OnInit, Input, Pipe, Inject, ViewChild, ElementRef} from '@angular/core';
+import {Component, OnInit, Input, Pipe, Inject, ViewChild} from '@angular/core';
 import {VgAPI} from "../../videogular/services/vg-api";
 import {Cue} from "../../util/model";
 import {VgFullscreenAPI} from "../../videogular/services/vg-fullscreen-api";
 import {indexOfId} from "../../util/comon";
 import {DOCUMENT} from "@angular/platform-browser";
-import {PageScrollInstance, PageScrollService, EasingLogic} from 'ng2-page-scroll';
+import {isNullOrUndefined} from "util";
 
 
 @Component({
@@ -20,36 +20,21 @@ export class VideoPageComponent implements OnInit {
     @Input('source') source: string;
     @Input('title') title: string;
 
-    @ViewChild('container')
-    container: ElementRef;
-
     api: VgAPI;
-    elem: HTMLElement;
+    fsAPI: VgFullscreenAPI;
 
-    cuePointData: Object = {};
+    videoURL: string = "";
+
     cuePoints: Cue[];
     avtivCue: Cue = new Cue();
     activCueIndex: number = 0;
 
-    metaCuePointData: Object = {};
     metaCuePoints: Cue[];
     metaAvtivCue: Cue = new Cue();
     metaActivCueIndex: number = 0;
 
     hasSmallControlls: boolean = true;
-    //hasIntroVideo: boolean = true;
     introVideosEnabled: boolean = false;
-    introVideoIsPlaying: boolean = false;
-
-    //secong Player stuff
-    secondPlayerApi: VgAPI;
-    secondPlayerSource: string = "";
-
-    controls: boolean = false;
-    autoplay: boolean = false;
-    loop: boolean = false;
-    preload: string = 'auto';
-    fsAPI: VgFullscreenAPI;
 
     isMeta: boolean = false;
     hasMeta: boolean = true;
@@ -58,34 +43,16 @@ export class VideoPageComponent implements OnInit {
 
     hasKriterienClips: boolean = true;
 
+    introIsPlaying: boolean = false;
+    playNextCue:boolean = true;
 
-    public constructor(@Inject(DOCUMENT) private document: any,
-                       private pageScrollService: PageScrollService) {
+    interval;
+
+    currentTime:number = 0;
+
+    public constructor() {
         this.fsAPI = VgFullscreenAPI;
-
     }
-
-    onPlayerReady(api: VgAPI) {
-        this.api = api;
-        //console.log(this.api.duration);
-    }
-
-    onSecondPlayerReady(api: VgAPI) {
-        this.secondPlayerApi = api;
-        this.secondPlayerApi.play();
-    }
-
-    jumpToStartPoint() {
-        // console.log("jumpToStartPoint");
-        var start: number = +localStorage.getItem("timeToStart:" + this.source);
-
-        if ( start > 0 ) {
-            let clue = this.cuePoints[start];
-            //console.log(clue);
-            this.jumpToCue(clue);
-        }
-    }
-
 
     ngOnInit(): any {
 
@@ -100,7 +67,8 @@ export class VideoPageComponent implements OnInit {
             this.hasMeta = true;
         }
 
-        window.onresize = this.onWindowLoadOrResize;
+        window.onresize = this.onWindowLoadOrResize.bind(this);
+        window.dispatchEvent(new Event('resize'));
 
 
         var hasSmallControllsLocalStorageValue = localStorage.getItem("hasSmallControlls");
@@ -108,69 +76,52 @@ export class VideoPageComponent implements OnInit {
             this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
         }
 
-        // var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
-        // if (introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined) {
-        //     this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
-        // }
+        var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
+        if (introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined) {
+            this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
+        }
 
         return undefined;
     }
-
     ngAfterViewInit() {
-        this.onWindowLoadOrResize();
     }
 
-    onWindowLoadOrResize() {
-        //console.log("onWindowLoadOrResize");
-        //console.log(event);
+
+    onPlayerReady(api: VgAPI) {
+        this.api = api;
+        console.log("onPlayerReady");
+        this.seekToTime(this.currentTime);
+    }
+
+    onIntroPlayerReady(){
+        console.log("onIntroPlayerReady");
+    }
+
+
+    onWindowLoadOrResize(event: MyEvent):void {
+        console.log("onWindowLoadOrResize");
+        // console.log(event);
 
         var myDiv = document.getElementById('videoBox');
 
         if ( myDiv !== null && myDiv !== undefined ) {
             //console.log(myDiv);
 
-            //myDiv.style.height = (event.target.innerHeight  - 108 - 64 - 20) + "";
+            myDiv.style.height = (event.target.innerHeight  - 108 - 64 - 20) + "px";
             //myDiv.style.width = myDiv.style.height ;
 
 
-            //noinspection TypeScriptUnresolvedVariable
-            //console.log("width:" + event.target.innerWidth);
-            //noinspection TypeScriptUnresolvedVariable
-            //console.log("height:" + event.target.innerHeight);
+            // noinspection TypeScriptUnresolvedVariable
+            console.log("width:" + event.target.innerWidth);
+            // noinspection TypeScriptUnresolvedVariable
+            console.log("height:" + event.target.innerHeight);
         }
 
     }
 
-    //cues
-
-    onEnterCuePoint($event) {
-
-        //console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
-
-        this.cuePointData = JSON.parse($event.text);
-
-        this.activCueIndex = indexOfId(this.cuePoints, $event.id);
-        this.avtivCue = this.cuePoints[this.activCueIndex];
-
-        if ( !this.isMeta ) {
-            this.saveCurrentTime();
-        }
-
-        if ( this.introVideosEnabled ) {
-
-            //console.log("introVideoIsPlaying");
-            this.api.pause();
-            this.introVideoIsPlaying = true;
-
-
-            this.secondPlayerSource = this.avtivCue.kriterienclip;
-        }
-
-    }
-
-    onExitCuePoint($event) {
-        this.cuePointData = {};
-    }
+    /*
+     * Cues
+     */
 
     onLoadCompleteCuePoints($event) {
         this.cuePoints = $event;
@@ -181,51 +132,59 @@ export class VideoPageComponent implements OnInit {
                 this.hasKriterienClips = false;
             }
         }
+    }
 
-        this.jumpToStartPoint();
+    onLoadCompleteMetaCuePoints($event) {
+        console.log($event);
+        this.metaCuePoints = $event;
+        // console.log(this.cuePoints);
+    }
+
+    onEnterCuePoint($event) {
+        console.log("onEnterCuePoint");
+
+
+        this.activCueIndex = indexOfId(this.cuePoints, $event.id);
+        this.avtivCue = this.cuePoints[this.activCueIndex];
+
+        if ( !this.isMeta ) {
+            console.log("playNextCue " + this.playNextCue);
+
+            if (this.playNextCue) {
+                this.playIntro(this.avtivCue)
+            } else {
+                this.playNextCue = true;
+            }
+        }
+    }
+
+    onExitCuePoint($event) {
+        console.log("onEnterCuePoint");
     }
 
     //Meta cues
-
     onEnterMetaCuePoint($event) {
-
-        //console.log("onEnterCuePoint -> introVideosEnabled:" + this.introVideosEnabled);
-
-        this.metaCuePointData = JSON.parse($event.text);
-
-        this.metaActivCueIndex = indexOfId(this.metaCuePoints, $event.id);
-        this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
-
-        if ( this.isMeta ) {
-            this.saveCurrentTime();
-        }
+        if ( !this.introIsPlaying ) {
+            console.log("onEnterMetaCuePoint");
 
 
-        if ( this.introVideosEnabled ) {
+            this.metaActivCueIndex = indexOfId(this.metaCuePoints, $event.id);
+            this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
 
-            //console.log("introVideoIsPlaying");
-            this.api.pause();
-            this.introVideoIsPlaying = true;
+            if ( this.isMeta) {
+                if (!this.playNextCue) {
+                    this.playIntro(this.metaAvtivCue)
+                } else {
+                    this.playNextCue = false;
+                }
 
-            this.secondPlayerSource = this.metaAvtivCue.kriterienclip;
-
+            }
         }
     }
 
     onExitMetaCuePoint($event) {
-        this.metaCuePointData = {};
     }
 
-    onLoadCompleteMetaCuePoints($event) {
-
-
-        console.log($event);
-        this.metaCuePoints = $event;
-        // console.log(this.cuePoints);
-
-
-        this.jumpToStartPoint();
-    }
 
 
     jumpToCue(cue: Cue) {
@@ -239,49 +198,29 @@ export class VideoPageComponent implements OnInit {
 
         this.seekToTime(cue.startTime);
 
-        this.introVideoIsPlaying = false;
+        this.playNextCue = true;
 
-        this.scrollToCue(cue.id)
+        if ( this.api !== null && this.api !== undefined ) {
+            if(this.introIsPlaying){
+                this.api.currentTime = 10000;
+            }
+        }
     }
 
-    scrollToCue(cueId:string) {
-        // console.log("scrollToCue" + cueId);
-        //
-        // let id = '#cuePoint' +cueId;
-        //
-        // // console.log(id);
-        // // console.log(this.container.nativeElement);
-        //
-        // let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document,  id, this.container.nativeElement );
-        // this.pageScrollService.start(pageScrollInstance);
-    }
+
 
     seekToTime(time: number) {
+        console.log("seekToTime " + time);
         this.api.currentTime = time;
-
-        this.saveCurrentTime();
     }
 
     next() {
-
 
         if ( this.activCueIndex < this.cuePoints.length - 1 ) {
             this.activCueIndex++;
             this.avtivCue = this.cuePoints[this.activCueIndex];
 
-
             this.jumpToCue(this.avtivCue);
-
-            // var element = document.getElementById('cuePoint'+ this.avtivCue.id);
-            //
-            // console.log(element);
-            //
-            // if (element !==  null) {
-            //    element.scrollIntoView({block: "start"});
-            // }
-
-
-            //this.seekToTime(this.avtivCue.startTime);
         }
     }
 
@@ -292,8 +231,6 @@ export class VideoPageComponent implements OnInit {
             this.avtivCue = this.cuePoints[this.activCueIndex];
 
             this.jumpToCue(this.avtivCue);
-
-            //this.seekToTime(this.avtivCue.startTime);
         }
     }
 
@@ -308,33 +245,76 @@ export class VideoPageComponent implements OnInit {
         localStorage.setItem("hasSmallControlls", this.hasSmallControlls.toString());
     }
 
-    introVideosEnable() {
+
+    /*
+     * Intro stuff
+     */
+
+    enableIntroVideos() {
         this.introVideosEnabled = true;
         localStorage.setItem("introVideosEnabled", this.introVideosEnabled.toString());
-
     }
 
-    introVideosDisable() {
+    disableIntroVideo() {
 
         this.introVideosEnabled = false;
 
-        this.introVideoIsPlaying = false;
-
-        this.api.play();
+        this.stopShowIntro();
 
         localStorage.setItem("introVideosEnabled", this.introVideosEnabled.toString());
     }
 
-    onVideoOverlayFinish($event) {
-        this.introVideoIsPlaying = false;
-        this.api.play();
+
+    private playIntro(cue: Cue) {
+
+        console.log("playIntro");
+        console.log(cue);
+
+        if ( this.introVideosEnabled ) {
+
+            this.videoURL = cue.kriterienclip;
+            console.log(this.videoURL);
+
+            this.startShowIntro()
+        }
     }
 
-    private saveCurrentTime() {
-        // console.log("saveCurrentTime", this.activCueIndex);
-        localStorage.setItem("timeToStart:" + this.source, (this.activCueIndex) + "");
+    private startShowIntro() {
+        console.log("startShowIntro");
+
+        this.introIsPlaying = true;
+        this.interval = setInterval(() => this.isPlayerReady(), 200);
+
+    }
+
+    private stopShowIntro() {
+        console.log("stopShowIntro");
+        this.playNextCue = false;
+        this.introIsPlaying = false;
+
+        console.log(this.currentTime);
+        this.currentTime = this.avtivCue.startTime;
+    }
+
+    private isPlayerReady() {
+        if ( this.api !== null && this.api !== undefined ) {
+
+            if ( this.api.isCompleted ) {
+                clearInterval(this.interval);
+                console.log("isCompleted");
+                this.stopShowIntro();
+            }
+        }
+
     }
 
 }
 
+interface MyEventTarget extends EventTarget {
+    innerHeight: number;
+    innerWidth: number;
+}
 
+interface MyEvent extends Event {
+    target: MyEventTarget;
+}

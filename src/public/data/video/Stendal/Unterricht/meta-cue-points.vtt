@@ -3,11 +3,22 @@ WEBVTT FILE
 3
 00:02:49.000 --> 00:04:07.000
 {
-    "title": "Kategorial-\nIdentitätsstitender\nBerufsbezug ",
+    "title": "Kategorial-\nIdentitätsstiftender\nBerufsbezug ",
     "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/3.png",
     "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_03a_kategorial-identitätsstiftend.mp4",
+    "href": ""
+}
+
+5
+00:04:53.000 --> 00:06:08.000
+{
+    "title": "Material-Hermeneutischer Berufsbezug",
+    "description": "Material-Assoziative Bezüge zwischen Religion und Beruf verbinden berufliche Erfahrungen unmittelbar über ein Material oder ein Medium mit Religion.",
+    "shortDescription": "",
+    "src": "public/data/video/Stendal/Unterricht/img/5.png",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_05_klare Strukturen.mp4",
     "href": ""
 }
 
@@ -40,6 +51,6 @@ WEBVTT FILE
     "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/14.png",
-    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_15a_kategorial-identitätsstiftend.mp4",
     "href": ""
 }

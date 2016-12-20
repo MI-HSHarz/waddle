@@ -15,7 +15,7 @@ WEBVTT FILE
 00:01:03.000 --> 00:02:49.000
 {
     "title": "Anforderungs-\nsituation",
-    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
+    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/2.png",
     "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_02_Anforderungssituation.mp4",
@@ -29,7 +29,7 @@ WEBVTT FILE
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/3.png",
-    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_03a_kategorial-identitätsstiftend.mp4",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_03_Sinnstiftende Kommunikation.mp4",
     "href": ""
 }
 
@@ -147,7 +147,7 @@ WEBVTT FILE
 00:42:54.000 --> 00:43:19.000
 {
     "title": "Anforderungs-\nsituation",
-    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
+    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/2.png",
     "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_14_Anforderungssituation.mp4",
