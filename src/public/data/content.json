@@ -110,7 +110,7 @@
       ]
     },
     {
-      "name":"KATEGORIALE BERUFSBEZÜGE",
+      "name":"MATERIALE UND KATEGORIALE BERUFSBEZÜGE",
       "pages": [
         {
           "menuName": "Material-Assoziativer Berufsbezug",
@@ -159,7 +159,7 @@
           ]
         },
         {
-          "menuName": "Kategorial-Indentitätsstiftender Berufsbezug",
+          "menuName": "Kategorial-Identitätsstiftender Berufsbezug",
           "subtitle": "",
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",

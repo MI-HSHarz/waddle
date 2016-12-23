@@ -95,7 +95,7 @@ WEBVTT FILE
     "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/Unterricht/img/8.png",
-    "kriterienclip": "data/video/BadGodesberg/BN_09_kategorial-transzendierend.mp4",
+    "kriterienclip": "data/video/BadGodesberg/Metareflexion.mp4",
     "href": ""
 }
 
@@ -161,7 +161,7 @@ WEBVTT FILE
        "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/Unterricht/img/12.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_15_kategorial-transzendierend.mp4",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
 
@@ -216,6 +216,6 @@ WEBVTT FILE
           "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "data/video/BadGodesberg/Unterricht/img/18.png",
-    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/BN_21_material-hermeneutisch.mp4",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }

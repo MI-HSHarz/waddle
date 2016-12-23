@@ -6,6 +6,13 @@ import {indexOfId} from "../../util/comon";
 import {DOCUMENT} from "@angular/platform-browser";
 import {isNullOrUndefined} from "util";
 
+class CueData {
+    cuePoints: Cue[];
+    avtivCue: Cue = new Cue();
+    activCueIndex: number = 0;
+    introIsPlaying: boolean = false;
+    playNextCue:boolean = true;
+}
 
 @Component({
     selector: 'videoPage',
@@ -24,6 +31,9 @@ export class VideoPageComponent implements OnInit {
     fsAPI: VgFullscreenAPI;
 
     videoURL: string = "";
+
+    cueData:CueData = new CueData();
+    cueDataMeta:CueData = new CueData();
 
     cuePoints: Cue[];
     avtivCue: Cue = new Cue();
@@ -135,7 +145,7 @@ export class VideoPageComponent implements OnInit {
     }
 
     onLoadCompleteMetaCuePoints($event) {
-        console.log($event);
+        // console.log($event);
         this.metaCuePoints = $event;
         // console.log(this.cuePoints);
     }
@@ -164,22 +174,23 @@ export class VideoPageComponent implements OnInit {
 
     //Meta cues
     onEnterMetaCuePoint($event) {
-        if ( !this.introIsPlaying ) {
+
             console.log("onEnterMetaCuePoint");
+            console.log($event);
 
 
             this.metaActivCueIndex = indexOfId(this.metaCuePoints, $event.id);
             this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
 
-            if ( this.isMeta) {
-                if (!this.playNextCue) {
+            if ( this.isMeta ) {
+                if ( this.playNextCue ) {
                     this.playIntro(this.metaAvtivCue)
                 } else {
                     this.playNextCue = false;
                 }
 
             }
-        }
+
     }
 
     onExitMetaCuePoint($event) {
@@ -216,22 +227,43 @@ export class VideoPageComponent implements OnInit {
 
     next() {
 
+        if(this.isMeta){
+
+            if ( this.metaActivCueIndex < this.metaCuePoints.length - 1 ) {
+                this.metaActivCueIndex++;
+                this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
+
+                this.jumpToCue(this.metaAvtivCue);
+            }
+        }else {
         if ( this.activCueIndex < this.cuePoints.length - 1 ) {
             this.activCueIndex++;
             this.avtivCue = this.cuePoints[this.activCueIndex];
 
             this.jumpToCue(this.avtivCue);
-        }
+        }}
+
     }
 
     prev() {
 
-        if ( this.activCueIndex > 0 ) {
-            this.activCueIndex--;
-            this.avtivCue = this.cuePoints[this.activCueIndex];
+        console.log("metaActivCueIndex " + this.metaActivCueIndex);
+        if(this.isMeta){
+            if ( this.metaActivCueIndex > 0 ) {
+                this.metaActivCueIndex--;
+                this.metaAvtivCue = this.metaCuePoints[this.metaActivCueIndex];
 
-            this.jumpToCue(this.avtivCue);
+                this.jumpToCue(this.avtivCue);
+            }
+        }else{
+            if ( this.activCueIndex > 0 ) {
+                this.activCueIndex--;
+                this.avtivCue = this.cuePoints[this.activCueIndex];
+
+                this.jumpToCue(this.avtivCue);
+            }
         }
+
     }
 
 
@@ -267,13 +299,13 @@ export class VideoPageComponent implements OnInit {
 
     private playIntro(cue: Cue) {
 
-        console.log("playIntro");
-        console.log(cue);
+        // console.log("playIntro");
+        // console.log(cue);
 
         if ( this.introVideosEnabled ) {
 
             this.videoURL = cue.kriterienclip;
-            console.log(this.videoURL);
+            // console.log(this.videoURL);
 
             this.startShowIntro()
         }
@@ -289,6 +321,7 @@ export class VideoPageComponent implements OnInit {
 
     private stopShowIntro() {
         console.log("stopShowIntro");
+
         this.playNextCue = false;
         this.introIsPlaying = false;
 

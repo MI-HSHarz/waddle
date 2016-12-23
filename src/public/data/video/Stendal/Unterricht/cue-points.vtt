@@ -135,8 +135,8 @@ WEBVTT FILE
 13
 00:41:01.000 --> 00:43:19.000
 {
-    "title": "Meta-Reflektionen",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "title": "Meta-Reflexionen",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/13.png",
     "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_13_Metareflexion.mp4",
@@ -157,11 +157,11 @@ WEBVTT FILE
 15
 00:43:19.000 --> 00:45:36.000
 {
-    "title": "Meta-Reflektionen",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "title": "Meta-Reflexionen",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/14.png",
-    "kriterienclip": "public/data/video/Stendal/Kriterienclips/SDL_15a_kategorial-identitätsstiftend.mp4",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
 

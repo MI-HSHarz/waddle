@@ -37,10 +37,10 @@ WEBVTT FILE
 00:12:51.000 --> 00:13:18.000
 {
     "title": "Meta-Reflexion",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/4.png",
-    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_04_kategorial-transzendierend.mp4",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
 
@@ -136,20 +136,20 @@ WEBVTT FILE
 00:42:23.000 --> 00:46:29.000
 {
     "title": "Meta-Reflexion",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/13.png",
-    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_13_kategorial-identitätsstiftend.mp4",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
 
 14
 00:46:29.000 --> 00:47:17.000
 {
-    "title": "Meta-Reflexion",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "title": "Meta-Reflexionen",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Weissenfels/Unterricht/img/14.png",
-    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/WSF_14_kategorial-transzendierend.mp4",
+    "kriterienclip": "public/data/video/Weissenfels/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
