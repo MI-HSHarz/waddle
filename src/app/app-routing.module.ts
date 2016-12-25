@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import {ImprintComponent} from "./imprint/imprint.component";
+import {ImprintComponent} from "./components/imprint/imprint.component";
 import {StartComponent} from "./start/start.component";
-import {CardsComponent} from "./cards/cards.component";
-import {PdfViewComponent} from "./pdf-view/pdf-view.component";
-import {PageComponent} from "./page/page.component";
+import {CardsComponent} from "./components/cards/cards.component";
+import {PdfViewComponent} from "./components/pdf-view/pdf-view.component";
+import {PageComponent} from "./components/page/page.component";
 
 const routes: Routes = [
   {
