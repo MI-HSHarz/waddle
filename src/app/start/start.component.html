@@ -33,12 +33,12 @@
 
 			<button class=" modal-action waves-effect btn-flat"
 			        (click)="closeOpener()">
-				überspringen
+				ausblenden
 			</button>
-			<button class=" modal-action waves-effect btn-flat"
-			        (click)="closeOpenerForEver()">
-				nicht mehr anzeigen
-			</button>
+			<!--<button class=" modal-action waves-effect btn-flat"-->
+			        <!--(click)="closeOpenerForEver()">-->
+				<!--nicht mehr anzeigen-->
+			<!--</button>-->
 		</div>
 	</div>
 
@@ -60,9 +60,16 @@
 							<a href="#/cards/{{i}}">{{module.name}}</a>
 						</li>
 					</ul>
+					<ul class="navigation-list" style="margin-top: 50px" (click)="openOpener()">
+						<li >
+							<a (click)="forceOpenOpener()">Medienethischer Impuls</a>
+						</li>
+					</ul>
+
 				</div>
 			</div>
 			<img class="bibor_splash2" src="public/data/img/logo_bibor.png" alt="">
 		</div>
+
 	</div>
 </div>

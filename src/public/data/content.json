@@ -59,7 +59,7 @@
         },
         {
           "menuName": "Vom Sinn der Arbeit",
-          "subtitle": "Friedrich-List Berufskolleg Bad Godesberg",
+          "subtitle": "Friedrich-List-Berufskolleg Bad Godesberg",
           "info": "string",
           "img": "public/data/img/schulen/vlcsnap-2016-09-29-17h59m20s893.png",
           "$href": "pages/Beispiele/page0.json",
@@ -110,10 +110,10 @@
       ]
     },
     {
-      "name":"KATEGORIALE BERUFSBEZÜGE",
+      "name":"MATERIALE UND KATEGORIALE BERUFSBEZÜGE",
       "pages": [
         {
-          "menuName": "Material-Assoziativ Berufsbezug",
+          "menuName": "Material-Assoziativer Berufsbezug",
           "subtitle": "",
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m57s499.png",
@@ -122,17 +122,17 @@
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Animation",
+              "menuName": "Erläuterung",
               "$href": "pages/Bezuege/material-assoziativ/animation.json"
             },
             {
-              "menuName": "Stendal",
+              "menuName": "Ausschnitte aus der UE Stendal",
               "$href": "pages/Bezuege/material-assoziativ/SDL_material-assoziativ.json"
             }
           ]
         },
         {
-          "menuName": "Material-Hermeneutisch Berufsbezug",
+          "menuName": "Material-Hermeneutischer Berufsbezug",
           "subtitle": "",
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m51s608.png",
@@ -141,25 +141,25 @@
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Animation",
+              "menuName": "Erläuterung",
               "$href": "pages/Bezuege/material-hermeneutisch/animation.json"
             },
             {
-              "menuName": "Stendal",
-              "$href": "pages/Bezuege/material-hermeneutisch/SDL_Material-hermeneutisch.json"
+              "menuName": "Ausschnitte aus der UE Stendal",
+              "$href": "pages/Bezuege/material-hermeneutisch/SDL_Stendal.json"
             },
             {
-              "menuName": "Montabaur",
-              "$href": "pages/Bezuege/material-hermeneutisch/WW_material-hermeneutisch.json"
+              "menuName": "Ausschnitte aus der UE Montabaur",
+              "$href": "pages/Bezuege/material-hermeneutisch/WW_Montabaur.json"
             },
             {
-              "menuName": "Bad Godesberg",
-              "$href": "pages/Bezuege/material-hermeneutisch/BN_material-hermeneutisch.json"
+              "menuName": "Ausschnitte aus der UE Bad Godesberg",
+              "$href": "pages/Bezuege/material-hermeneutisch/BN_Bad Godesberg.json"
             }
           ]
         },
         {
-          "menuName": "Kategorial-Indentitaetsstiftender Berufsbezug",
+          "menuName": "Kategorial-Identitätsstiftender Berufsbezug",
           "subtitle": "",
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m11s187.png",
@@ -168,25 +168,25 @@
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Animation",
+              "menuName": "Erläuterung",
               "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/animation.json"
             },
             {
-              "menuName": "Stendal",
+              "menuName": "Ausschnitte aus der UE Stendal",
               "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/SDL_Stendal.json"
             },
             {
-              "menuName": "Bad Godesberg",
+              "menuName": "Ausschnitte aus der UE Bad Godesberg",
               "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/BN_Bad Godesberg.json"
             },
             {
-              "menuName": "Montabaur",
+              "menuName": "Ausschnitte aus der UE Montabaur",
               "$href": "pages/Bezuege/kategorial-indentitaetsstiftend/WW_Montabaur.json"
             }
           ]
         },
         {
-          "menuName": "Kategorial-Transzendierend Berufsbezug",
+          "menuName": "Kategorial-Transzendierender Berufsbezug",
           "subtitle": "",
           "info": "string",
           "img": "public/data/img/bezuege/vlcsnap-2016-09-30-19h15m41s516.png",
@@ -195,19 +195,19 @@
           "descriptition": "",
           "subPages": [
             {
-              "menuName": "Animation",
+              "menuName": "Erläuterung",
               "$href": "pages/Bezuege/kategorial-transzendierend/animation.json"
             },
             {
-              "menuName": "Stendal",
+              "menuName": "Ausschnitte aus der UE Stendal",
               "$href": "pages/Bezuege/kategorial-transzendierend/SDL_Stendal.json"
             },
             {
-              "menuName": "Weissenfels",
+              "menuName": "Ausschnitte aus der UE Weissenfels",
               "$href": "pages/Bezuege/kategorial-transzendierend/WSF_Weissenfels.json"
             },
             {
-              "menuName": "Bad Godesberg",
+              "menuName": "Ausschnitte aus der UE Bad Godesberg",
               "$href": "pages/Bezuege/kategorial-transzendierend/BN_Bad Godesberg.json"
             }
           ]

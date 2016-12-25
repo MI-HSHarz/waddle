@@ -328,6 +328,7 @@ nav {
 
             .title {
               height: 65px;
+              width: 160px;
             }
 
           }
@@ -347,7 +348,6 @@ nav {
             margin-bottom: 8px;
             overflow: hidden;
             @extend .grey-text, .text-lighten-2;
-            @extend %extend_hyphens;
           }
           p {
             margin: 0;
@@ -447,9 +447,9 @@ nav {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 500;
+  z-index: 555;
   display: none;
-  opacity: 0;
+  opacity: 1;
   transition: all 1s ease-out;
   &.active {
     display: block;
@@ -557,24 +557,3 @@ vg-time-display {
 
 /* 5. typography
    ========================================================================== */
-
-%extend_hyphens{
-  // Automatische Silbentrennung
-  -moz-hyphens: auto;
-  -o-hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-
-  -moz-hyphenate-limit-chars: 10 4 4;
-  -o-hyphenate-limit-chars: 10 4 4;
-  -webkit-hyphenate-limit-chars: 10 4 4;
-  -ms-hyphenate-limit-chars: 10 4 4;
-  hyphenate-limit-chars: 10 4 4;
-
-  -moz-hyphenate-limit-lines: 2;
-  -o-hyphenate-limit-lines: 2;
-  -webkit-hyphenate-limit-lines: 2;
-  -ms-hyphenate-limit-lines: 2;
-  hyphenate-limit-lines: 2;
-}

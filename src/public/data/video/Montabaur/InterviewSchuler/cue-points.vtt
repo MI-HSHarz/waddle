@@ -4,7 +4,7 @@ WEBVTT FILE
 00:06:46.280 --> 00:08:08.200
 {
     "title": "Meta\n-Reflexionen",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Montabaur/InterviewSchuler/img/1.png",
     "kriterienclip": "",
@@ -15,7 +15,7 @@ WEBVTT FILE
 00:08:09.800 --> 00:11:06.640
 {
     "title": "Outcome",
-    "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
+    "description": "Guter BRU zielt auf einen Outcome, der sich in der Kommunikation und Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
     "src": "public/data/video/Montabaur/InterviewSchuler/img/2.png",
     "kriterienclip": "",
@@ -33,22 +33,11 @@ WEBVTT FILE
     "href": ""
 }
 
-4
-00:09:39.480 --> 00:10:12.280
-{
-    "title": "Material\n-hermeneutischer Berufsbezug ",
-    "description": "Material-hermeneutische Bezüge zwischen Beruf und Religion sind religiöse Deutungen beruflicher Erfahrungen z.B. durch Symbole oder ethische Herausforderungen.",
-    "shortDescription": "",
-    "src": "public/data/video/Montabaur/InterviewSchuler/img/4.png",
-    "kriterienclip": "",
-    "href": ""
-}
-
 5
 00:10:13.000 --> 00:11:54.960
 {
-    "title": "kategorial\n-identitätsstiftender Berufsbezug",
-    "description": "Kategorial identitätsstiftende Berufsbezüge entstehen bei der Reflektion religiöser Bestimmungsfaktoren für die eigene Person (Identität) angesichts des Berufs.",
+    "title": "Kategorial\n-Identitätsstiftender Berufsbezug",
+    "description": "Kategorial-Identitätsstiftende Berufsbezüge entstehen bei der Reflexion religiöser Bestimmungsfaktoren für die eigene Person und Identität angesichts des Berufs.",
     "shortDescription": "",
     "src": "public/data/video/Montabaur/InterviewSchuler/img/5.png",
     "kriterienclip": "",
@@ -58,8 +47,8 @@ WEBVTT FILE
 6
 00:16:35.400 --> 00:18:36.080
 {
-    "title": "Material\n-hermeneutischer Berufsbezug ",
-    "description": "Material-hermeneutische Bezüge zwischen Beruf und Religion sind religiöse Deutungen beruflicher Erfahrungen z.B. durch Symbole oder ethische Herausforderungen.",
+    "title": "Material\n-Hermeneutischer Berufsbezug ",
+    "description": "Material-Hermeneutische Bezüge zwischen Beruf und Religion sind religiöse Deutungen beruflicher Erfahrungen z.B. durch Symbole oder ethische Herausforderungen.",
     "shortDescription": "",
     "src": "public/data/video/Montabaur/InterviewSchuler/img/6.png",
     "kriterienclip": "",

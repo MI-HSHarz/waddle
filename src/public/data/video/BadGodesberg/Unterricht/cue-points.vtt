@@ -15,7 +15,7 @@ WEBVTT FILE
 00:01:55.680 --> 00:02:23.000
 {
     "title": "Anforderungs-\nsituation",
-    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufen […], an denen sich Bezüge zur Religion zeigen.",
+    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispiele, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/2.png",
     "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_02_Anforderungssituation.mp4",
@@ -62,7 +62,7 @@ WEBVTT FILE
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/5-1.png",
-    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_07_kognitive Aktivierung.mp4",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_06_Sinnstiftende Kommunikation.mp4",
     "href": ""
 }
 
@@ -88,6 +88,17 @@ WEBVTT FILE
     "href": ""
 }
 
+9
+00:23:13.800 --> 00:24:34.000
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "data/video/BadGodesberg/Unterricht/img/8.png",
+    "kriterienclip": "data/video/BadGodesberg/Metareflexion.mp4",
+    "href": ""
+}
+
 10
 00:24:34.000 --> 00:26:04.680
 {
@@ -103,7 +114,7 @@ WEBVTT FILE
 00:26:04.680 --> 00:26:47.800
 {
     "title": " Outcome",
-    "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
+    "description": "Guter BRU zielt auf einen Outcome, der sich in der Kommunikation und Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/10.png",
     "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_11_Outcome.mp4",
@@ -140,6 +151,17 @@ WEBVTT FILE
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/11.png",
     "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_14_kognitive Aktivierung.mp4",
+    "href": ""
+}
+
+15
+00:31:40.000 --> 00:34:10.520
+{
+     "title": "Meta-Reflexion",
+       "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "data/video/BadGodesberg/Unterricht/img/12.png",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
 
@@ -187,3 +209,13 @@ WEBVTT FILE
     "href": ""
 }
 
+21
+00:44:06.200 --> 00:50:00.000
+{
+    "title": "Meta-Reflexion",
+          "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "data/video/BadGodesberg/Unterricht/img/18.png",
+    "kriterienclip": "data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
+    "href": ""
+}
