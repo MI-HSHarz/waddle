@@ -1,0 +1,21 @@
+{
+  "titel": "Titel2",
+  "components": [
+    {
+      "gallery": [
+        {
+          "path": "data/img/1.jpg",
+          "caption": "Bildunterschrift"
+        },
+        {
+          "path": "data/img/2.jpg",
+          "caption": "Bildunterschrift"
+        },
+        {
+          "path": "data/img/3.jpg",
+          "caption": "Bildunterschrift"
+        }
+      ]
+    }
+  ]
+}

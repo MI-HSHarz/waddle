@@ -1,0 +1,11 @@
+{
+  "titel": "Herrausfordern",
+  "components": [
+    {
+      "video": {
+        "videoPath": "data/video/3.2.1_Herausfordern/3.2.1_Herausfordern.mp4",
+        "trackPath": "data/video/3.2.1_Herausfordern/3.2.1_Herausfordern.vtt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+WEBVTT FILE
+
+1
+00:00:00.000 --> 00:01:54.680
+{
+    "title": "Lernstands-\ndiagnose",
+    "description": "Eine BRU-Lehrkraft braucht Lernstandsdiagnosen, d.h. das Wissen um Einstellungen, Haltungen, Kenntnisse und Fertigkeiten der SuS.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/1.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_01_Lernstandsdiagnosen.mp4",
+    "href": ""
+}
+
+2
+00:01:55.680 --> 00:02:22.000
+{
+    "title": "Anforderungs-\nsituation",
+    "description": "Guter BRU braucht Anforderungssituationen: Fallbeispiele, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/2.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_02_Anforderungssituation.mp4",
+    "href": ""
+}
+
+3
+00:02:23.000 --> 00:04:46.840
+{
+    "title": "Aufgabenkultur",
+    "description": "Guter BRU braucht eine Aufgabenkultur, damit die SuS zum selbstständigen und selbsttätigen Arbeiten angeleitet werden.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/3.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_03_Aufgabenkultur.mp4",
+    "href": ""
+}
+
+4
+00:04:47.840 --> 00:15:11.000
+{
+    "title": "Echte Lernzeit",
+    "description": "Guter BRU braucht echte Lernzeit, in der SuS die gestellten Aufgaben gut lösen können und der berufliche Kompetenzerwerb gefördert wird.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/4.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_04_echte Lernzeit.mp4",
+    "href": ""
+}
+
+5
+00:15:12.000 --> 00:16:35.000
+{
+    "title": "Klare Strukturen",
+    "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/5.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_05_klare Strukturen.mp4",
+    "href": ""
+}
+
+6
+00:16:36.000 --> 00:20:46.720
+{
+    "title": "Sinnstiftende Kommunikation",
+    "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/5-1.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_06_Sinnstiftende Kommunikation.mp4",
+    "href": ""
+}
+
+7
+00:20:46.720 --> 00:22:04.520
+{
+    "title": "Kognitive\nAktivierung",
+    "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/6.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_07_kognitive Aktivierung.mp4",
+    "href": ""
+}
+
+8
+00:22:05.520 --> 00:23:12.800
+{
+    "title": "Sinnstiftende Kommunikation",
+    "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/7.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_08_Sinnstiftende Kommunikation.mp4",
+    "href": ""
+}
+
+9
+00:23:13.800 --> 00:24:33.000
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/8.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Metareflexion.mp4",
+    "href": ""
+}
+
+10
+00:24:34.000 --> 00:26:03.680
+{
+    "title": "Sinnstiftende Kommunikation",
+    "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/9.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_10_Sinnstiftende Kommunikation.mp4",
+    "href": ""
+}
+
+11
+00:26:04.680 --> 00:26:46.800
+{
+    "title": " Outcome",
+    "description": "Guter BRU zielt auf einen Outcome, der sich in der Kommunikation und Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/10.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_11_Outcome.mp4",
+    "href": ""
+}
+
+12
+00:26:47.800 --> 00:29:28.000
+{
+    "title": "Kognitive\nAktivierung",
+    "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/11.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_12_kognitive Aktivierung.mp4",
+    "href": ""
+}
+
+13
+00:29:27.000 --> 00:29:43.800
+{
+    "title": " Outcome",
+    "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/11-1.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_13_Outcome.mp4",
+    "href": ""
+}
+
+14
+00:29:44.800 --> 00:31:39.000
+{
+    "title": "Kognitive\nAktivierung",
+    "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/11.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_14_kognitive Aktivierung.mp4",
+    "href": ""
+}
+
+15
+00:31:40.000 --> 00:34:09.520
+{
+     "title": "Meta-Reflexion",
+       "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/12.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
+    "href": ""
+}
+
+16
+00:34:10.520 --> 00:34:33.200
+{
+    "title": "Sinnstiftende Kommunikation",
+    "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/13.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_16_Sinnstiftende Kommunikation.mp4",
+    "href": ""
+}
+
+17
+00:34:34.200 --> 00:36:16.440
+{
+    "title": "Kognitive\nAktivierung",
+    "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/14.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_17_kognitive Aktivierung.mp4",
+    "href": ""
+}
+
+18
+00:36:17.440 --> 00:37:40.560
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+       "shortDescription": "",
+       "src": "public/data/video/BadGodesberg/Unterricht/img/18.png",
+       "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
+       "href": ""
+}
+
+19
+00:37:41.560 --> 00:38:21.880
+{
+    "title": "Sinnstiftende Kommunikation",
+    "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/16.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_19_Sinnstiftende Kommunikation.mp4",
+    "href": ""
+}
+
+20
+00:38:22.880 --> 00:44:05.200
+{
+    "title": "Kognitive\nAktivierung",
+    "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/17.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/BN_20_kognitive Aktivierung.mp4",
+    "href": ""
+}
+
+21
+00:44:06.200 --> 00:50:00.000
+{
+    "title": "Meta-Reflexion",
+          "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/BadGodesberg/Unterricht/img/18.png",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
+    "href": ""
+}
