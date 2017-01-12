@@ -350,6 +350,7 @@ nav {
             @extend .grey-text, .text-lighten-2;
           }
           p {
+
             margin: 0;
             font-size: 1rem;
             line-height: 1.2rem;
@@ -362,6 +363,7 @@ nav {
 
           p {
             padding: 0;
+            padding-right: 10px;
             font-weight: 300;
           }
 

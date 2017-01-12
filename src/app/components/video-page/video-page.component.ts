@@ -75,10 +75,10 @@ export class VideoPageComponent implements OnInit {
             this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
         }
 
-        var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
-        if ( introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined ) {
-            this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
-        }
+        // var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
+        // if ( introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined ) {
+        //     this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
+        // }
 
         return undefined;
     }
@@ -86,6 +86,8 @@ export class VideoPageComponent implements OnInit {
 
     onPlayerReady(api: VgAPI) {
         this.api = api;
+
+        // this.api.pause();
         // console.log("onPlayerReady");
         // console.log(api);
     }

@@ -21,7 +21,7 @@
 
 								<vg-overlay-play></vg-overlay-play>
 
-								<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">>
+								<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
 									<vg-play-pause></vg-play-pause>
 
 									<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
@@ -38,7 +38,7 @@
 									<vg-fullscreen></vg-fullscreen>
 								</vg-controls>
 
-								<video vgMedia #media id="playerOne" preload="auto" autoplay>
+								<video vgMedia #media id="playerOne" preload="auto">
 									<source [src]="source" type="video/mp4">
 
 									<track [src]="track" kind="metadata" label="Cue Points" default
@@ -58,12 +58,12 @@
 
 							</vg-player>
 
-							<div class="second-player active">
-								<vg-player *ngIf="introIsPlaying" (onPlayerReady)="onIntroPlayerReady($event)">
+							<div class="second-player active" *ngIf="introIsPlaying">
+								<vg-player (onPlayerReady)="onIntroPlayerReady($event)">
 
 									<vg-overlay-play></vg-overlay-play>
 
-									<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">>
+									<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
 										<vg-play-pause></vg-play-pause>
 
 										<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
@@ -261,7 +261,7 @@
 							<vg-player>
 								<vg-overlay-play></vg-overlay-play>
 
-								<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">>
+								<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
 									<vg-play-pause></vg-play-pause>
 
 									<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
