@@ -69,6 +69,8 @@ export class VgCuePoints implements OnInit {
     }
 
     onEnter(event:any) {
+        console.log("onEnter");
+        console.log(event);
         this.onEnterCuePoint.next(event.target);
     }
 

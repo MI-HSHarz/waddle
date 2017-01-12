@@ -324,11 +324,18 @@ nav {
           border: none;
           line-height: inherit;
           .collection-header {
+
             padding-left: 180px;
 
             .title {
               height: 65px;
               width: 160px;
+            }
+
+            .seclet-into {
+              position: absolute;
+              right: 10px;
+              top: 55px;
             }
 
           }

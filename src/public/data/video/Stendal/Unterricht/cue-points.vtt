@@ -1,7 +1,7 @@
 WEBVTT FILE
 
 1
-00:00:07.000 --> 00:01:03.000
+00:00:00.001 --> 00:01:03.000
 {
     "title": "Klare Strukturen ",
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
@@ -12,7 +12,7 @@ WEBVTT FILE
 }
 
 2
-00:01:03.000 --> 00:02:49.000
+00:01:03.000 --> 00:02:48.900
 {
     "title": "Anforderungs-\nsituation",
     "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
@@ -23,7 +23,7 @@ WEBVTT FILE
 }
 
 3
-00:02:49.000 --> 00:04:07.000
+00:02:49.000 --> 00:04:06.000
 {
     "title": "Sinnstiftende Kommunikation",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen",
@@ -34,7 +34,7 @@ WEBVTT FILE
 }
 
 4
-00:04:07.000 --> 00:04:53.000
+00:04:07.000 --> 00:04:52.000
 {
     "title": "Lernstandsdiagnose",
     "description": "Eine BRU-Lehrkraft braucht Lernstandsdiagnosen, d.h. das Wissen um Einstellungen, Haltungen, Kenntnisse und Fertigkeiten der SuS.",
@@ -45,7 +45,7 @@ WEBVTT FILE
 }
 
 5
-00:04:53.000 --> 00:06:08.000
+00:04:53.000 --> 00:06:07.000
 {
     "title": "Klare Strukturen",
     "description": "Guter BRU braucht klare Strukturen, die sich durch einen bewusst angelegten roten Faden auszeichnen, der durch die Stunde führt.",
@@ -56,7 +56,7 @@ WEBVTT FILE
 }
 
 6
-00:06:08.000 --> 00:08:06.000
+00:06:08.000 --> 00:08:05.000
 {
     "title": "Aufgabenkultur",
     "description": "Guter BRU braucht eine Aufgabenkultur, damit die SuS zum selbstständigen und selbsttätigen Arbeiten angeleitet werden.",
@@ -78,7 +78,7 @@ WEBVTT FILE
 }
 
 8
-00:13:24.000 --> 00:26:52.000
+00:13:24.000 --> 00:26:51.000
 {
     "title": "Sinnstiftende Kommunikation",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
@@ -89,7 +89,7 @@ WEBVTT FILE
 }
 
 9
-00:26:52.000 --> 00:32:08.000
+00:26:52.000 --> 00:32:07.000
 {
     "title": "Outcome",
     "description": "Guter BRU zielt auf einen outcome, der sich in der Kommunikation / Präsentation der Einschätzungen, Urteile oder Handlungen der SuS zeigt.",
@@ -100,7 +100,7 @@ WEBVTT FILE
 }
 
 10
-00:32:08.000 --> 00:35:55.000
+00:32:08.000 --> 00:35:54.000
 {
     "title": "Lernstandsdiagnose",
     "description": "Eine BRU-Lehrkraft braucht Lernstandsdiagnosen, d.h. das Wissen um Einstellungen, Haltungen, Kenntnisse und Fertigkeiten der SuS.",
@@ -111,7 +111,7 @@ WEBVTT FILE
 }
 
 11
-00:35:55.000 --> 00:38:20.000
+00:35:55.000 --> 00:38:19.000
 {
     "title": "Sinnstiftende Kommunikation",
     "description": "Im guten BRU ereignet sich sinnstiftende Kommunikation, wenn SuS lernfördernd miteinander sprechen oder sie Ergebnisse deuten und beurteilen.",
@@ -121,8 +121,19 @@ WEBVTT FILE
     "href": ""
 }
 
+11.5
+00:38:20.000 --> 00:40:38.000
+{
+    "title": "Meta-Reflexion",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "shortDescription": "",
+    "src": "public/data/video/Stendal/Unterricht/img/5.png",
+    "kriterienclip": "public/data/video/Stendal/Kriterienclips/Metareflexion.mp4",
+    "href": ""
+}
+
 12
-00:40:39.000 --> 00:41:01.000
+00:40:39.000 --> 00:41:00.000
 {
     "title": "Kognitive\n Aktivierung",
     "description": "Guter BRU braucht kognitiver Aktivierungen, die die SuS herausfordern und das eigenständige Denken fördern und fordern.",
@@ -133,9 +144,9 @@ WEBVTT FILE
 }
 
 13
-00:41:01.000 --> 00:43:19.000
+00:41:01.000 --> 00:42:53.000
 {
-    "title": "Meta-Reflexionen",
+    "title": "Meta-Reflexion",
     "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/13.png",
@@ -144,7 +155,7 @@ WEBVTT FILE
 }
 
 14
-00:42:54.000 --> 00:43:19.000
+00:42:54.000 --> 00:43:18.000
 {
     "title": "Anforderungs-\nsituation",
     "description": "Guter BRU braucht Anforderungssituationen: Fallbeispielen, Geschichten, Dilemmata oder Produktionsabläufe, an denen sich Bezüge zur Religion zeigen.",
@@ -157,7 +168,7 @@ WEBVTT FILE
 15
 00:43:19.000 --> 00:45:36.000
 {
-    "title": "Meta-Reflexionen",
+    "title": "Meta-Reflexion",
     "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/Stendal/Unterricht/img/14.png",

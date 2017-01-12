@@ -115,6 +115,9 @@
 						<div class="collection-header">
 							<p class="title">{{cuePoint.title}}</p>
 							<p>{{cuePoint.startTime | round}}</p>
+							<a class="seclet-into" *ngIf="!introVideosEnabled" (click)="jumpToCueWithIntro(cuePoint)">
+								<i class="material-icons">speaker_notes</i>
+							</a>
 						</div>
 					</div>
 					<div class="collapsible-body">
@@ -139,6 +142,10 @@
 							<p>
 								{{cuePoint.startTime | round}}
 							</p>
+
+							<a class="seclet-into" *ngIf="!introVideosEnabled" (click)="jumpToCueWithIntro(cuePoint)">
+								<i class="material-icons">speaker_notes</i>
+							</a>
 						</div>
 					</div>
 					<div class="collapsible-body">

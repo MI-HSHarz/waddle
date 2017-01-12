@@ -1,8 +1,9 @@
-import {Component, OnInit, Input, Pipe, Inject, ViewChild} from '@angular/core';
+import {Component, OnInit, Input, Pipe, Inject, ViewChild, HostListener} from '@angular/core';
 import {Cue} from "../../util/model";
 import {indexOfId} from "../../util/comon";
 import {VgAPI} from "../../videogular/core/services/vg-api";
 import {VgFullscreenAPI} from "../../videogular/core/services/vg-fullscreen-api";
+import {VgStates} from "../../videogular/core/states/vg-states";
 
 
 class CueData {
@@ -14,7 +15,10 @@ class CueData {
 @Component({
     selector: 'videoPage',
     templateUrl: 'video-page.component.html',
-    styleUrls: ['video-page.component.scss']
+    styleUrls: ['video-page.component.scss'],
+    host: {
+        '(document:keydown)': 'handleKeyboardEvents($event)'
+    }
 })
 export class VideoPageComponent implements OnInit {
 
@@ -55,10 +59,10 @@ export class VideoPageComponent implements OnInit {
 
     ngOnInit(): any {
 
-        console.log(this.track);
-        if ( this.track === null || this.track === undefined ) {
+        // console.log(this.track);
+        if (this.track === null || this.track === undefined) {
             this.isBezug = true;
-        } else if ( this.metaTrack === null || this.metaTrack === undefined ) {
+        } else if (this.metaTrack === null || this.metaTrack === undefined) {
             // console.log("has no Meta");
             this.hasMeta = false;
         } else {
@@ -71,7 +75,7 @@ export class VideoPageComponent implements OnInit {
 
 
         var hasSmallControllsLocalStorageValue = localStorage.getItem("hasSmallControlls");
-        if ( hasSmallControllsLocalStorageValue !== null && hasSmallControllsLocalStorageValue !== undefined ) {
+        if (hasSmallControllsLocalStorageValue !== null && hasSmallControllsLocalStorageValue !== undefined) {
             this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
         }
 
@@ -109,14 +113,14 @@ export class VideoPageComponent implements OnInit {
 
         var myDiv = document.getElementById('videoBox');
 
-        if ( myDiv !== null && myDiv !== undefined ) {
+        if (myDiv !== null && myDiv !== undefined) {
             //console.log(myDiv);
 
             myDiv.style.height = (event.target.innerHeight - 108 - 64 - 20) + "px";
             //myDiv.style.width = myDiv.style.height ;
 
-            console.log("width:" + event.target.innerWidth);
-            console.log("height:" + event.target.innerHeight);
+            // console.log("width:" + event.target.innerWidth);
+            // console.log("height:" + event.target.innerHeight);
         }
     }
 
@@ -137,8 +141,8 @@ export class VideoPageComponent implements OnInit {
     onLoadCompleteCuePoints($event) {
         this.cueData.cuePoints = $event;
 
-        if ( this.cueData.cuePoints[0] !== null ) {
-            if ( this.cueData.cuePoints[0].kriterienclip === "" ) {
+        if (this.cueData.cuePoints[0] !== null) {
+            if (this.cueData.cuePoints[0].kriterienclip === "") {
                 this.hasKriterienClips = false;
             }
         }
@@ -150,16 +154,16 @@ export class VideoPageComponent implements OnInit {
     }
 
     onEnterCuePoint($event) {
-        console.log("onEnterCuePoint");
+        // console.log("onEnterCuePoint");
 
 
         this.cueData.activCueIndex = indexOfId(this.cueData.cuePoints, $event.id);
         this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
 
 
-        if ( !this.isMeta ) {
-            console.log("this.isMeta " + this.isMeta);
-            console.log($event);
+        if (!this.isMeta) {
+            // console.log("this.isMeta " + this.isMeta);
+            // console.log($event);
             this.playIntro(this.cueData.avtivCue)
         }
     }
@@ -169,25 +173,28 @@ export class VideoPageComponent implements OnInit {
 
     //Meta cues
     onEnterMetaCuePoint($event) {
-        console.log("onEnterMetaCuePoint");
+        // console.log("onEnterMetaCuePoint");
 
         this.cueDataMeta.activCueIndex = indexOfId(this.cueDataMeta.cuePoints, $event.id);
         this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
 
-        if ( this.isMeta ) {
-            console.log("this.isMeta " + this.isMeta);
-            console.log($event);
+        if (this.isMeta) {
+            // console.log("this.isMeta " + this.isMeta);
+            // console.log($event);
             this.playIntro(this.cueDataMeta.avtivCue)
         }
     }
 
-    onExitMetaCuePoint($event) {}
+    onExitMetaCuePoint($event) {
+    }
 
 
     jumpToCue(cue: Cue) {
-        //console.log(cue);
+        console.log("jumpToCue");
 
-        if ( !this.isMeta ) {
+        console.log(cue);
+
+        if (!this.isMeta) {
             this.cueData.avtivCue = cue;
         } else {
             this.cueData.avtivCue = cue;
@@ -195,8 +202,19 @@ export class VideoPageComponent implements OnInit {
 
         this.seekToTime(cue.startTime);
 
-        this.stopShowIntro();
+        if (this.introIsPlaying) {
+            this.stopShowIntro();
+        }
 
+        // this.playIntro(cue);
+    }
+
+    jumpToCueWithIntro(cue: Cue) {
+        this.introVideosEnabled = true;
+
+        setTimeout(() => {
+            this.introVideosEnabled = false;
+        }, 5);
         // this.playIntro(cue);
     }
 
@@ -207,15 +225,15 @@ export class VideoPageComponent implements OnInit {
     }
 
     next() {
-        if ( this.isMeta ) {
-            if ( this.cueDataMeta.activCueIndex < this.cueDataMeta.cuePoints.length - 1 ) {
+        if (this.isMeta) {
+            if (this.cueDataMeta.activCueIndex < this.cueDataMeta.cuePoints.length - 1) {
                 this.cueDataMeta.activCueIndex++;
                 this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
 
                 this.jumpToCue(this.cueDataMeta.avtivCue);
             }
         } else {
-            if ( this.cueData.activCueIndex < this.cueData.cuePoints.length - 1 ) {
+            if (this.cueData.activCueIndex < this.cueData.cuePoints.length - 1) {
                 this.cueData.activCueIndex++;
                 this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
 
@@ -227,15 +245,15 @@ export class VideoPageComponent implements OnInit {
 
     prev() {
         // console.log("metaActivCueIndex " + this.metaActivCueIndex);
-        if ( this.isMeta ) {
-            if ( this.cueDataMeta.activCueIndex > 0 ) {
+        if (this.isMeta) {
+            if (this.cueDataMeta.activCueIndex > 0) {
                 this.cueDataMeta.activCueIndex--;
                 this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
 
                 this.jumpToCue(this.cueDataMeta.avtivCue);
             }
         } else {
-            if ( this.cueData.activCueIndex > 0 ) {
+            if (this.cueData.activCueIndex > 0) {
                 this.cueData.activCueIndex--;
                 this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
 
@@ -268,9 +286,9 @@ export class VideoPageComponent implements OnInit {
     private playIntro(cue: Cue) {
 
         // console.log("playIntro");
-        console.log(cue);
+        // console.log(cue);
 
-        if ( this.introVideosEnabled ) {
+        if (this.introVideosEnabled) {
 
             this.api.pause();
             this.videoURL = cue.kriterienclip;
@@ -285,6 +303,34 @@ export class VideoPageComponent implements OnInit {
         this.introIsPlaying = false;
     }
 
+    handleKeyboardEvents(event: KeyboardEvent) {
+        let key = event.which || event.keyCode;
+
+        if (key == 32) {
+            if (!this.introIsPlaying) {
+
+                if (this.api.state == VgStates.VG_PAUSED) {
+                    this.api.play();
+                } else {
+                    console.log("playes  ")
+
+                    this.api.pause();
+                }
+            } else {
+                if (this.apiIntro.state == VgStates.VG_PAUSED) {
+                    this.apiIntro.play();
+                } else {
+                    console.log("playes  ")
+
+                    this.apiIntro.pause();
+                }
+            }
+            return false;
+        }
+
+        return true;
+
+    }
 
 }
 

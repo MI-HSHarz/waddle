@@ -2,17 +2,22 @@ import {Component, OnInit} from '@angular/core';
 import {Content} from "../util/model";
 import {SerialNumberVerificationService} from "../services/serial-number-verification.service";
 import {ContentloaderService} from "../services/contentloader.service";
+import {VgAPI} from "../videogular/core/services/vg-api";
 
 declare var $: any;
 
 @Component({
     selector: 'app-start',
     templateUrl: './start.component.html',
-    styleUrls: ['./start.component.scss']
+    styleUrls: ['./start.component.scss'],
+    host: {
+        '(document:keydown)': 'handleKeyboardEvents($event)'
+    }
 })
 export class StartComponent {
 
     content: Content = new Content();
+    api: VgAPI;
 
     constructor(private _contentloaderService: ContentloaderService,
                 private _serialNumberVerificationService: SerialNumberVerificationService) {
@@ -22,6 +27,13 @@ export class StartComponent {
             this.content = content;
         });
 
+    }
+
+    onPlayerReady(api: VgAPI) {
+        this.api = api;
+        console.log("api");
+
+        console.log(this.api);
     }
 
     ngAfterViewInit() {
@@ -58,15 +70,30 @@ export class StartComponent {
     forceOpenOpener() {
             $('#modalOpener').openModal();
 
+        this.api.currentTime = 0;
+
     }
 
     closeOpener() {
         $('#modalOpener').closeModal();
+        this.api.currentTime = 0;
     }
 
     closeOpenerForEver() {
         this.closeOpener()
         localStorage.setItem("opener", "no");
+
+    }
+
+    handleKeyboardEvents(event: KeyboardEvent) {
+        let key = event.which || event.keyCode;
+        console.log(key);
+        if (27 == key) {
+            this.closeOpener();
+        }
+
+
+        return true;
 
     }
 }

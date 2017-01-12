@@ -22,12 +22,33 @@
 	<div id="modalOpener" class="modal">
 		<div class="modal-content">
 
-			<vg-player>
-				<video #media id="singleVideo" preload="auto" autoplay>
+
+            <vg-player (onPlayerReady)="onPlayerReady($event)">
+
+                <vg-overlay-play></vg-overlay-play>
+
+                <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+                    <vg-play-pause></vg-play-pause>
+
+                    <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                    <vg-scrub-bar>
+                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                    </vg-scrub-bar>
+
+                    <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                    <vg-mute></vg-mute>
+
+                    <vg-fullscreen></vg-fullscreen>
+                </vg-controls>
+
+                <video vgMedia #media id="playerOne" preload="auto" autoplay>
 					<source src="public/data/video/00_Opener_linksbuendig.mp4" type="video/mp4">
 				</video>
-			</vg-player>
 
+            </vg-player>
 		</div>
 		<div class="modal-footer">
 
