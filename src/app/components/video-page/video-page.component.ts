@@ -91,9 +91,15 @@ export class VideoPageComponent implements OnInit {
     onPlayerReady(api: VgAPI) {
         this.api = api;
 
-        // this.api.pause();
+
         // console.log("onPlayerReady");
-        // console.log(api);
+        console.log(api);
+
+        this.api.getDefaultMedia().subscriptions.ended.subscribe(() => {
+                // Set the video to the beginning
+                this.api.seekTime(0);
+            }
+        );
     }
 
     onIntroPlayerReady(api: VgAPI) {
@@ -200,7 +206,7 @@ export class VideoPageComponent implements OnInit {
             this.cueData.avtivCue = cue;
         }
 
-        this.seekToTime(cue.startTime);
+        this.seekToTime(cue.startTime - 0.05);
 
         if (this.introIsPlaying) {
             this.stopShowIntro();
@@ -210,11 +216,17 @@ export class VideoPageComponent implements OnInit {
     }
 
     jumpToCueWithIntro(cue: Cue) {
-        this.introVideosEnabled = true;
+        console.log("jumpToCueWithIntro");
 
+
+        this.stopShowIntro();
+        // this.api.pause();
+
+
+        this.introVideosEnabled = true;
         setTimeout(() => {
             this.introVideosEnabled = false;
-        }, 5);
+        }, 500);
         // this.playIntro(cue);
     }
 
@@ -306,10 +318,12 @@ export class VideoPageComponent implements OnInit {
     handleKeyboardEvents(event: KeyboardEvent) {
         let key = event.which || event.keyCode;
 
+        if (key == 27) {
+            this.stopShowIntro();
+        }
         if (key == 32) {
             if (!this.introIsPlaying) {
-
-                if (this.api.state == VgStates.VG_PAUSED) {
+                if (this.api.state == VgStates.VG_PAUSED || this.api.state == VgStates.VG_ENDED) {
                     this.api.play();
                 } else {
                     console.log("playes  ")

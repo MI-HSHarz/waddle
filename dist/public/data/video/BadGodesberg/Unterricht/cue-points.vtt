@@ -1,7 +1,7 @@
 WEBVTT FILE
 
 1
-00:00:00.000 --> 00:01:54.680
+00:00:00.900 --> 00:01:54.680
 {
     "title": "Lernstands-\ndiagnose",
     "description": "Eine BRU-Lehrkraft braucht Lernstandsdiagnosen, d.h. das Wissen um Einstellungen, Haltungen, Kenntnisse und Fertigkeiten der SuS.",
@@ -92,10 +92,10 @@ WEBVTT FILE
 00:23:13.800 --> 00:24:33.000
 {
     "title": "Meta-Reflexion",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/8.png",
-    "kriterienclip": "public/data/video/BadGodesberg/Metareflexion.mp4",
+    "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
     "href": ""
 }
 
@@ -158,7 +158,7 @@ WEBVTT FILE
 00:31:40.000 --> 00:34:09.520
 {
      "title": "Meta-Reflexion",
-       "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+       "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/12.png",
     "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
@@ -191,7 +191,7 @@ WEBVTT FILE
 00:36:17.440 --> 00:37:40.560
 {
     "title": "Meta-Reflexion",
-    "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
        "shortDescription": "",
        "src": "public/data/video/BadGodesberg/Unterricht/img/18.png",
        "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",
@@ -224,7 +224,7 @@ WEBVTT FILE
 00:44:06.200 --> 00:50:00.000
 {
     "title": "Meta-Reflexion",
-          "description": "Guter BRU schafft Räume für Meta-Reflektionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
+    "description": "Guter BRU schafft Räume für Meta-Reflexionen, in denen die SuS über ihren Lebensweg im Zusammenhang von Beruf und Person nachdenken.",
     "shortDescription": "",
     "src": "public/data/video/BadGodesberg/Unterricht/img/18.png",
     "kriterienclip": "public/data/video/BadGodesberg/Kriterienclips/Metareflexion.mp4",

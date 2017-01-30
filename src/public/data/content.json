@@ -48,7 +48,7 @@
               "$href": "pages/Weissenfels/Unterricht.json"
             },
             {
-              "menuName": "Interview mit den Lehrkräften",
+              "menuName": "Interview mit der Lehrkraft",
               "$href": "pages/Weissenfels/InterviewLehrer.json"
             },
             {
@@ -73,7 +73,7 @@
               "$href": "pages/BadGodesberg/Unterricht.json"
             },
             {
-              "menuName": "Interview mit den Lehrkräften",
+              "menuName": "Interview mit der Lehrkraft",
               "$href": "pages/BadGodesberg/InterviewLehrer.json"
             },
             {
@@ -98,7 +98,7 @@
               "$href": "pages/Montabaur/Unterricht.json"
             },
             {
-              "menuName": "Interview mit den Lehrkräften",
+              "menuName": "Interview mit der Lehrkraft",
               "$href": "pages/Montabaur/InterviewLehrer.json"
             },
             {

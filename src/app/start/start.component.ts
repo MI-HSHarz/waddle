@@ -3,6 +3,8 @@ import {Content} from "../util/model";
 import {SerialNumberVerificationService} from "../services/serial-number-verification.service";
 import {ContentloaderService} from "../services/contentloader.service";
 import {VgAPI} from "../videogular/core/services/vg-api";
+import {VgFullscreenAPI} from "../videogular/core/services/vg-fullscreen-api";
+import {VgStates} from "../videogular/core/states/vg-states";
 
 declare var $: any;
 
@@ -18,10 +20,14 @@ export class StartComponent {
 
     content: Content = new Content();
     api: VgAPI;
+	fsAPI: VgFullscreenAPI;
+
+	source = "public/data/video/00_Opener_linksbuendig.mp4";
 
     constructor(private _contentloaderService: ContentloaderService,
                 private _serialNumberVerificationService: SerialNumberVerificationService) {
 
+	    this.fsAPI = VgFullscreenAPI;
 
         this._contentloaderService.contentSubject.subscribe(content => {
             this.content = content;
@@ -42,13 +48,12 @@ export class StartComponent {
         var isRegistered = localStorage.getItem("registered");
         //console.log(isRegistered);
 
-        if ( isRegistered === null ) {
+
+	    if ( isRegistered === null ) {
             $('#modalSerial').openModal();
         } else {
             this.openOpener();
         }
-
-
     }
 
     checkSerial(serial: string) {
@@ -87,9 +92,15 @@ export class StartComponent {
 
     handleKeyboardEvents(event: KeyboardEvent) {
         let key = event.which || event.keyCode;
-        console.log(key);
+	    // console.log(key);
         if (27 == key) {
             this.closeOpener();
+        } else if (key == 32) {
+	        if (this.api.state == VgStates.VG_PAUSED) {
+		        this.api.play();
+	        } else {
+		        this.api.pause();
+	        }
         }
 
 

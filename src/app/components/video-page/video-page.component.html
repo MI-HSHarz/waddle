@@ -115,7 +115,8 @@
 						<div class="collection-header">
 							<p class="title">{{cuePoint.title}}</p>
 							<p>{{cuePoint.startTime | round}}</p>
-							<a class="seclet-into" *ngIf="!introVideosEnabled" (click)="jumpToCueWithIntro(cuePoint)">
+							<a class="seclet-into" *ngIf="!introVideosEnabled && hasKriterienClips"
+							   (click)="jumpToCueWithIntro(cuePoint)">
 								<i class="material-icons">speaker_notes</i>
 							</a>
 						</div>
@@ -143,7 +144,8 @@
 								{{cuePoint.startTime | round}}
 							</p>
 
-							<a class="seclet-into" *ngIf="!introVideosEnabled" (click)="jumpToCueWithIntro(cuePoint)">
+							<a class="seclet-into" *ngIf="!introVideosEnabled && hasKriterienClips"
+							   (click)="jumpToCueWithIntro(cuePoint)">
 								<i class="material-icons">speaker_notes</i>
 							</a>
 						</div>
@@ -265,7 +267,7 @@
 				<div class="video-padding-box">
 					<div id="videoBox" class='box ratio16_9'>
 						<div class="content">
-							<vg-player>
+							<vg-player (onPlayerReady)="onPlayerReady($event)">
 								<vg-overlay-play></vg-overlay-play>
 
 								<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">

@@ -3675,6 +3675,7 @@ if ($) {
     }, 20);
 
 
+
     function createToast(html) {
 
         // Create toast
@@ -6897,6 +6898,7 @@ if ($) {
         } catch (err) {
         }
     }
+
 
 
 // Expose the picker constructor.

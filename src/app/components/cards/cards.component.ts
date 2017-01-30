@@ -12,29 +12,30 @@ export class CardsComponent implements OnInit {
 
   modul: ContentModul = new ContentModul();
 
+	id: number = 0;
   constructor(private _activatedRoute: ActivatedRoute,
               private _contentloaderService: ContentloaderService) {
 
     this._contentloaderService.contentSubject.subscribe(content => {
 
-      var id = 0;
+	    this.id = 0;
       this._activatedRoute.params.forEach((params: Params) => {
-        id = +params['id'];
-        console.log(id);
+	      this.id = +params['id'];
+	      console.log(this.id);
       });
 
-      console.log(id);
+	    console.log(this.id);
 
 
-      if (id != null) {
-        let modul = content.modules[id];
+	    if (this.id != null) {
+		    let modul = content.modules[this.id];
         if (modul != null) {
           this.modul = modul;
 
           console.log(this.modul);
 
           this._contentloaderService.setModulTitel(this.modul.name);
-          this._contentloaderService.setModulNumber(id);
+	        this._contentloaderService.setModulNumber(this.id);
         }
       }
 
