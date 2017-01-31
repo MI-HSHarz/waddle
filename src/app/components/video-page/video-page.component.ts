@@ -7,352 +7,394 @@ import {VgStates} from "../../videogular/core/states/vg-states";
 
 
 class CueData {
-    cuePoints: Cue[];
-    avtivCue: Cue = new Cue();
-    activCueIndex: number = 0;
+	cuePoints: Cue[];
+	avtivCue: Cue = new Cue();
+	activCueIndex: number = 0;
 }
 
 @Component({
-    selector: 'videoPage',
-    templateUrl: 'video-page.component.html',
-    styleUrls: ['video-page.component.scss'],
-    host: {
-        '(document:keydown)': 'handleKeyboardEvents($event)'
-    }
+	selector: 'videoPage',
+	templateUrl: 'video-page.component.html',
+	styleUrls: ['video-page.component.scss'],
+	host: {
+		'(document:keydown)': 'handleKeyboardEvents($event)'
+	}
 })
 export class VideoPageComponent implements OnInit {
 
-    @Input('track') track: string;
-    @Input('metaTrack') metaTrack: string;
+	@Input('track') track: string;
+	@Input('metaTrack') metaTrack: string;
 
-    @Input('source') source: string;
-    @Input('title') title: string;
+	@Input('source') source: string;
+	@Input('title') title: string;
 
-    api: VgAPI;
-    apiIntro: VgAPI;
+	api: VgAPI;
+	apiIntro: VgAPI;
 
-    fsAPI: VgFullscreenAPI;
+	fsAPI: VgFullscreenAPI;
 
-    videoURL: string = "";
+	videoURL: string = "";
 
-    hasSmallControlls: boolean = true;
-    introVideosEnabled: boolean = false;
+	hasSmallControlls: boolean = true;
+	introVideosEnabled: boolean = false;
 
-    introIsPlaying: boolean = false;
+	introIsPlaying: boolean = false;
 
-    hasMeta: boolean = true;
-    isMeta: boolean = false;
+	hasMeta: boolean = true;
+	isMeta: boolean = false;
 
-    isBezug: boolean = false;
-    hasKriterienClips: boolean = true;
+	isBezug: boolean = false;
+	hasKriterienClips: boolean = true;
 
-    interval;
-    currentTime: number = 0;
+	interval;
+	currentTime: number = 0;
 
-    cueData: CueData = new CueData();
-    cueDataMeta: CueData = new CueData();
+	cueData: CueData = new CueData();
+	cueDataMeta: CueData = new CueData();
 
+	shouldJumpToCue = true;
 
-    public constructor() {
-        this.fsAPI = VgFullscreenAPI;
-    }
+	public constructor() {
+		this.fsAPI = VgFullscreenAPI;
+	}
 
-    ngOnInit(): any {
+	ngOnInit(): any {
 
-        // console.log(this.track);
-        if (this.track === null || this.track === undefined) {
-            this.isBezug = true;
-        } else if (this.metaTrack === null || this.metaTrack === undefined) {
-            // console.log("has no Meta");
-            this.hasMeta = false;
-        } else {
-            // console.log("hasMeta");
-            this.hasMeta = true;
-        }
+		// console.log(this.track);
+		if (this.track === null || this.track === undefined) {
+			this.isBezug = true;
+		} else if (this.metaTrack === null || this.metaTrack === undefined) {
+			// console.log("has no Meta");
+			this.hasMeta = false;
+		} else {
+			// console.log("hasMeta");
+			this.hasMeta = true;
+		}
 
-        window.onresize = this.onWindowLoadOrResize.bind(this);
-        window.dispatchEvent(new Event('resize'));
+		window.onresize = this.onWindowLoadOrResize.bind(this);
+		window.dispatchEvent(new Event('resize'));
 
 
-        var hasSmallControllsLocalStorageValue = localStorage.getItem("hasSmallControlls");
-        if (hasSmallControllsLocalStorageValue !== null && hasSmallControllsLocalStorageValue !== undefined) {
-            this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
-        }
+		var hasSmallControllsLocalStorageValue = localStorage.getItem("hasSmallControlls");
+		if (hasSmallControllsLocalStorageValue !== null && hasSmallControllsLocalStorageValue !== undefined) {
+			this.hasSmallControlls = hasSmallControllsLocalStorageValue.startsWith("t");
+		}
 
-        // var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
-        // if ( introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined ) {
-        //     this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
-        // }
+		// var introVideosEnabledLocalStorageValue = localStorage.getItem("introVideosEnabled");
+		// if ( introVideosEnabledLocalStorageValue !== null && introVideosEnabledLocalStorageValue !== undefined ) {
+		//     this.introVideosEnabled = introVideosEnabledLocalStorageValue.startsWith("t");
+		// }
 
-        return undefined;
-    }
+		return undefined;
+	}
 
 
-    onPlayerReady(api: VgAPI) {
-        this.api = api;
+	onPlayerReady(api: VgAPI) {
+		this.api = api;
 
 
-        // console.log("onPlayerReady");
-        console.log(api);
+		// console.log("onPlayerReady");
+		console.log(api);
 
-        this.api.getDefaultMedia().subscriptions.ended.subscribe(() => {
-                // Set the video to the beginning
-                this.api.seekTime(0);
-            }
-        );
-    }
+		this.api.getDefaultMedia().subscriptions.ended.subscribe(() => {
+				// Set the video to the beginning
+				this.api.seekTime(0);
+			}
+		);
+	}
 
-    onIntroPlayerReady(api: VgAPI) {
-        this.apiIntro = api;
-        // console.log("onIntroPlayerReady");
-        // console.log(api);
-        this.apiIntro.getDefaultMedia().subscriptions.ended.subscribe(() => {
-                // Set the video to the beginning
-                this.stopShowIntro()
-            }
-        );
-    }
+	onIntroPlayerReady(api: VgAPI) {
+		this.apiIntro = api;
+		// console.log("onIntroPlayerReady");
+		// console.log(api);
+		this.apiIntro.getDefaultMedia().subscriptions.ended.subscribe(() => {
+				// Set the video to the beginning
+				this.stopShowIntro()
+			}
+		);
+	}
 
 
-    onWindowLoadOrResize(event: MyEvent): void {
-        console.log("onWindowLoadOrResize");
+	onWindowLoadOrResize(event: MyEvent): void {
+		console.log("onWindowLoadOrResize");
 
-        var myDiv = document.getElementById('videoBox');
+		var myDiv = document.getElementById('videoBox');
 
-        if (myDiv !== null && myDiv !== undefined) {
-            //console.log(myDiv);
+		if (myDiv !== null && myDiv !== undefined) {
+			//console.log(myDiv);
 
-            myDiv.style.height = (event.target.innerHeight - 108 - 64 - 20) + "px";
-            //myDiv.style.width = myDiv.style.height ;
+			myDiv.style.height = (event.target.innerHeight - 108 - 64 - 20) + "px";
+			//myDiv.style.width = myDiv.style.height ;
 
-            // console.log("width:" + event.target.innerWidth);
-            // console.log("height:" + event.target.innerHeight);
-        }
-    }
+			// console.log("width:" + event.target.innerWidth);
+			// console.log("height:" + event.target.innerHeight);
+		}
+	}
 
-    minimize() {
-        this.hasSmallControlls = true;
-        localStorage.setItem("hasSmallControlls", this.hasSmallControlls.toString());
-        this.isMeta = false;
-    }
+	minimize() {
+		this.hasSmallControlls = true;
+		localStorage.setItem("hasSmallControlls", this.hasSmallControlls.toString());
+		this.isMeta = false;
+	}
 
-    maximize() {
-        this.hasSmallControlls = false;
-        localStorage.setItem("hasSmallControlls", this.hasSmallControlls.toString());
-    }
+	maximize() {
+		this.hasSmallControlls = false;
+		localStorage.setItem("hasSmallControlls", this.hasSmallControlls.toString());
+	}
 
-    /*
-     * Cues
-     */
-    onLoadCompleteCuePoints($event) {
-        this.cueData.cuePoints = $event;
+	/*
+	 * Cues
+	 */
+	onLoadCompleteCuePoints($event) {
+		this.cueData.cuePoints = $event;
 
-        if (this.cueData.cuePoints[0] !== null) {
-            if (this.cueData.cuePoints[0].kriterienclip === "") {
-                this.hasKriterienClips = false;
-            }
-        }
-    }
+		if (this.cueData.cuePoints[0] !== null) {
+			if (this.cueData.cuePoints[0].kriterienclip === "") {
+				this.hasKriterienClips = false;
+			}
+		}
+	}
 
-    onLoadCompleteMetaCuePoints($event) {
+	onLoadCompleteMetaCuePoints($event) {
 
-        this.cueDataMeta.cuePoints = $event;
-    }
+		this.cueDataMeta.cuePoints = $event;
+	}
 
-    onEnterCuePoint($event) {
-        // console.log("onEnterCuePoint");
+	onEnterCuePoint($event) {
+		// console.log("onEnterCuePoint");
 
 
-        this.cueData.activCueIndex = indexOfId(this.cueData.cuePoints, $event.id);
-        this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
+		this.cueData.activCueIndex = indexOfId(this.cueData.cuePoints, $event.id);
+		this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
 
 
-        if (!this.isMeta) {
-            // console.log("this.isMeta " + this.isMeta);
-            // console.log($event);
-            this.playIntro(this.cueData.avtivCue)
-        }
-    }
+		if (!this.isMeta) {
+			// console.log("this.isMeta " + this.isMeta);
+			// console.log($event);
+			this.playIntro(this.cueData.avtivCue)
+		}
+	}
 
-    onExitCuePoint($event) {
-    }
+	onExitCuePoint($event) {
+	}
 
-    //Meta cues
-    onEnterMetaCuePoint($event) {
-        // console.log("onEnterMetaCuePoint");
+	//Meta cues
+	onEnterMetaCuePoint($event) {
+		// console.log("onEnterMetaCuePoint");
 
-        this.cueDataMeta.activCueIndex = indexOfId(this.cueDataMeta.cuePoints, $event.id);
-        this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
+		this.cueDataMeta.activCueIndex = indexOfId(this.cueDataMeta.cuePoints, $event.id);
+		this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
 
-        if (this.isMeta) {
-            // console.log("this.isMeta " + this.isMeta);
-            // console.log($event);
-            this.playIntro(this.cueDataMeta.avtivCue)
-        }
-    }
+		if (this.isMeta) {
+			// console.log("this.isMeta " + this.isMeta);
+			// console.log($event);
+			this.playIntro(this.cueDataMeta.avtivCue)
+		}
+	}
 
-    onExitMetaCuePoint($event) {
-    }
+	onExitMetaCuePoint($event) {
+	}
 
 
-    jumpToCue(cue: Cue) {
-        console.log("jumpToCue");
+	jumpToCue(cue: Cue) {
+		if (this.shouldJumpToCue) {
 
-        console.log(cue);
 
-        if (!this.isMeta) {
-            this.cueData.avtivCue = cue;
-        } else {
-            this.cueData.avtivCue = cue;
-        }
+			console.log("jumpToCue");
 
-        this.seekToTime(cue.startTime - 0.05);
+			console.log(cue);
 
-        if (this.introIsPlaying) {
-            this.stopShowIntro();
-        }
+			if (this.introIsPlaying) {
+				this.stopShowIntro();
+			}
 
-        // this.playIntro(cue);
-    }
 
-    jumpToCueWithIntro(cue: Cue) {
-        console.log("jumpToCueWithIntro");
+			if (!this.isMeta) {
+				if (this.cueData.avtivCue == cue) {
+					this.seekToTime(cue.startTime - 0.05);
+				} else {
+					this.seekToTime(cue.startTime);
+				}
 
+				this.cueData.avtivCue = cue;
+			} else {
+				if (this.cueDataMeta.avtivCue == cue) {
+					this.seekToTime(cue.startTime - 0.05);
+				} else {
+					this.seekToTime(cue.startTime);
+				}
 
-        this.stopShowIntro();
-        // this.api.pause();
+				this.cueDataMeta.avtivCue = cue;
+			}
 
 
-        this.introVideosEnabled = true;
-        setTimeout(() => {
-            this.introVideosEnabled = false;
-        }, 500);
-        // this.playIntro(cue);
-    }
+		}
+		// this.playIntro(cue);
+	}
 
 
-    seekToTime(time: number) {
-        console.log("seekToTime " + time);
-        this.api.currentTime = time;
-    }
+	seekToTime(time: number) {
+		console.log("seekToTime " + time);
+		this.api.currentTime = time;
+	}
 
-    next() {
-        if (this.isMeta) {
-            if (this.cueDataMeta.activCueIndex < this.cueDataMeta.cuePoints.length - 1) {
-                this.cueDataMeta.activCueIndex++;
-                this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
+	/*
+	 * Intro stuff
+	 */
 
-                this.jumpToCue(this.cueDataMeta.avtivCue);
-            }
-        } else {
-            if (this.cueData.activCueIndex < this.cueData.cuePoints.length - 1) {
-                this.cueData.activCueIndex++;
-                this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
+	enableIntroVideos() {
+		this.introVideosEnabled = true;
+		localStorage.setItem("introVideosEnabled", this.introVideosEnabled.toString());
+	}
 
-                this.jumpToCue(this.cueData.avtivCue);
-            }
-        }
+	disableIntroVideo() {
 
-    }
+		this.introVideosEnabled = false;
 
-    prev() {
-        // console.log("metaActivCueIndex " + this.metaActivCueIndex);
-        if (this.isMeta) {
-            if (this.cueDataMeta.activCueIndex > 0) {
-                this.cueDataMeta.activCueIndex--;
-                this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
+		this.stopShowIntro();
 
-                this.jumpToCue(this.cueDataMeta.avtivCue);
-            }
-        } else {
-            if (this.cueData.activCueIndex > 0) {
-                this.cueData.activCueIndex--;
-                this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
+		localStorage.setItem("introVideosEnabled", this.introVideosEnabled.toString());
+	}
 
-                this.jumpToCue(this.cueData.avtivCue);
-            }
-        }
+	jumpToCueWithIntro(cue: Cue) {
 
-    }
+		console.log("jumpToCueWithIntro");
 
+		this.introIsPlaying = false;
+		this.shouldJumpToCue = false;
 
-    /*
-     * Intro stuff
-     */
+		setTimeout(() => {
+			this.shouldJumpToCue = true;
+			this.seekToTime(cue.startTime);
+			this.forcePlayIntro(cue);
+		}, 20);
 
-    enableIntroVideos() {
-        this.introVideosEnabled = true;
-        localStorage.setItem("introVideosEnabled", this.introVideosEnabled.toString());
-    }
+		// this.playIntro(cue);
+	}
 
-    disableIntroVideo() {
+	private forcePlayIntro(cue: Cue) {
 
-        this.introVideosEnabled = false;
+		console.log("forcePlayIntro");
+		console.log(cue);
 
-        this.stopShowIntro();
+		if (this.introIsPlaying) {
 
-        localStorage.setItem("introVideosEnabled", this.introVideosEnabled.toString());
-    }
+		}
 
+		this.api.pause();
+		this.videoURL = cue.kriterienclip;
+		// console.log(this.videoURL);
 
-    private playIntro(cue: Cue) {
+		this.introIsPlaying = true;
 
-        // console.log("playIntro");
-        // console.log(cue);
+	}
 
-        if (this.introVideosEnabled) {
+	private playIntro(cue: Cue) {
 
-            this.api.pause();
-            this.videoURL = cue.kriterienclip;
-            // console.log(this.videoURL);
+		console.log("playIntro");
+		console.log(cue);
 
-            this.introIsPlaying = true;
-        }
-    }
+		if (this.introVideosEnabled) {
 
-    stopShowIntro() {
-        this.api.play();
-        this.introIsPlaying = false;
-    }
+			this.api.pause();
+			this.videoURL = cue.kriterienclip;
+			// console.log(this.videoURL);
 
-    handleKeyboardEvents(event: KeyboardEvent) {
-        let key = event.which || event.keyCode;
+			this.introIsPlaying = true;
+		}
+	}
 
-        if (key == 27) {
-            this.stopShowIntro();
-        }
-        if (key == 32) {
-            if (!this.introIsPlaying) {
-                if (this.api.state == VgStates.VG_PAUSED || this.api.state == VgStates.VG_ENDED) {
-                    this.api.play();
-                } else {
-                    console.log("playes  ")
 
-                    this.api.pause();
-                }
-            } else {
-                if (this.apiIntro.state == VgStates.VG_PAUSED) {
-                    this.apiIntro.play();
-                } else {
-                    console.log("playes  ")
+	stopShowIntro() {
+		this.api.play();
+		this.introIsPlaying = false;
+	}
 
-                    this.apiIntro.pause();
-                }
-            }
-            return false;
-        }
+	next() {
+		if (this.isMeta) {
+			if (this.cueDataMeta.activCueIndex < this.cueDataMeta.cuePoints.length - 1) {
+				this.cueDataMeta.activCueIndex++;
+				this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
 
-        return true;
+				this.jumpToCue(this.cueDataMeta.avtivCue);
+			}
+		} else {
+			if (this.cueData.activCueIndex < this.cueData.cuePoints.length - 1) {
+				this.cueData.activCueIndex++;
+				this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
 
-    }
+				this.jumpToCue(this.cueData.avtivCue);
+			}
+		}
+
+	}
+
+	prev() {
+		// console.log("metaActivCueIndex " + this.metaActivCueIndex);
+		if (this.isMeta) {
+			if (this.cueDataMeta.activCueIndex > 0) {
+				this.cueDataMeta.activCueIndex--;
+				this.cueDataMeta.avtivCue = this.cueDataMeta.cuePoints[this.cueDataMeta.activCueIndex];
+
+				this.jumpToCue(this.cueDataMeta.avtivCue);
+			}
+		} else {
+			if (this.cueData.activCueIndex > 0) {
+				this.cueData.activCueIndex--;
+				this.cueData.avtivCue = this.cueData.cuePoints[this.cueData.activCueIndex];
+
+				this.jumpToCue(this.cueData.avtivCue);
+			}
+		}
+
+	}
+
+
+	handleKeyboardEvents(event: KeyboardEvent) {
+		let key = event.which || event.keyCode;
+
+		console.log(key);
+		if (key == 27) {
+			this.stopShowIntro();
+		}
+		if (key == 32) {
+			if (!this.introIsPlaying) {
+				if (this.api.state == VgStates.VG_PAUSED || this.api.state == VgStates.VG_ENDED) {
+					this.api.play();
+				} else {
+					console.log("playes  ")
+
+					this.api.pause();
+				}
+			} else {
+				if (this.apiIntro.state == VgStates.VG_PAUSED) {
+					this.apiIntro.play();
+				} else {
+					console.log("playes  ")
+
+					this.apiIntro.pause();
+				}
+			}
+			return false;
+		}
+		if (key == 37 || key == 38) {
+			this.prev();
+		}
+		if (key == 39 || key == 40) {
+			this.next();
+		}
+
+		return true;
+
+	}
 
 }
 
 interface MyEventTarget extends EventTarget {
-    innerHeight: number;
-    innerWidth: number;
+	innerHeight: number;
+	innerWidth: number;
 }
 
 interface MyEvent extends Event {
-    target: MyEventTarget;
+	target: MyEventTarget;
 }
