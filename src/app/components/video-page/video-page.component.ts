@@ -72,6 +72,9 @@ export class VideoPageComponent implements OnInit {
 		}
 
 		window.onresize = this.onWindowLoadOrResize.bind(this);
+
+		this.onWindowLoadOrResize(null);
+
 		window.dispatchEvent(new Event('resize'));
 
 
@@ -86,6 +89,11 @@ export class VideoPageComponent implements OnInit {
 		// }
 
 		return undefined;
+	}
+
+	ngAfterViewInit(): any {
+		console.log("ngAfterViewInit");
+		this.onWindowLoadOrResize(null);
 	}
 
 
@@ -123,7 +131,11 @@ export class VideoPageComponent implements OnInit {
 		if (myDiv !== null && myDiv !== undefined) {
 			//console.log(myDiv);
 
-			myDiv.style.height = (event.target.innerHeight - 108 - 64 - 20) + "px";
+			if (event != null) {
+				myDiv.style.height = (event.target.innerHeight - 108 - 64 - 20) + "px";
+			} else {
+				myDiv.style.height = (window.innerHeight - 108 - 64 - 20) + "px";
+			}
 			//myDiv.style.width = myDiv.style.height ;
 
 			// console.log("width:" + event.target.innerWidth);

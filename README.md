@@ -9,7 +9,7 @@ npm install -g angular-cli
 # install
 npm install
 
-# run webpack dev server
+# run dev server
 npm start
 
 # run karma tests
@@ -18,10 +18,14 @@ npm test
 # build angular project
 npm run build
 
+# befor electron
+npm run prepare
+
 # preview electron (without angular build)
 npm run electron
 
 # create electron package (build included)
-npm run package
+npm run package-win
+npm run package-mac
 
 ```
