@@ -1,11 +1,11 @@
 {
   "name": "Titel",
-  "colorScheme": {
+  "colorScheme":{
     "menuColor": "#eee"
   },
-  "modules": [
+  "modules":[
     {
-      "name": "DER UNTERRICHT IM FILM",
+      "name":"DER UNTERRICHT IM FILM",
       "pages": [
         {
           "menuName": "Vom Glück im Beruf",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "name": "MATERIALE UND KATEGORIALE BERUFSBEZÜGE",
+      "name":"MATERIALE UND KATEGORIALE BERUFSBEZÜGE",
       "pages": [
         {
           "menuName": "Material-Assoziativer Berufsbezug",
