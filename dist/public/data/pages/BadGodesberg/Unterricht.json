@@ -1,0 +1,12 @@
+{
+  "title": "Vom Sinn der Arbeit",
+  "components": [
+    {
+      "video": {
+        "videoPath": "public/data/video/BadGodesberg/Unterricht/BadGodesberg_Unterricht.mp4",
+        "trackPath": "public/data/video/BadGodesberg/Unterricht/cue-points.vtt",
+        "metaTrackPath": "public/data/video/BadGodesberg/Unterricht/meta-cue-points.vtt"
+      }
+    }
+  ]
+}

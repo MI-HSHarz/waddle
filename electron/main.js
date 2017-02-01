@@ -13,16 +13,16 @@ const {Menu} = require('electron')
 
 const template = [
 	{
-		label: 'View',
+        label: 'Ansicht',
 		submenu: [
 			{
-				role: 'reload'
+                role: 'Neu ladem'
 			},
 			{
 				type: 'separator'
 			},
 			{
-				role: 'resetzoom'
+                role: 'zoom zurücksetzen'
 			},
 			{
 				role: 'zoomin'
@@ -34,23 +34,23 @@ const template = [
 				type: 'separator'
 			},
 			{
-				role: 'togglefullscreen'
+                role: 'Vollbild'
 			}
 		]
 	},
 	{
-		role: 'window',
+        role: 'Fenster',
 		submenu: [
 			{
-				role: 'minimize'
+                role: 'verkleinern'
 			},
 			{
-				role: 'close'
+                role: 'schließen'
 			}
 		]
 	},
 	{
-		role: 'help',
+        role: 'Hilfe',
 		submenu: [
 			{
 				label: 'Learn More',
@@ -131,8 +131,8 @@ if (process.platform === 'darwin') {
 
 function createWindow () {
 
-	const menu = Menu.buildFromTemplate(template)
-	Menu.setApplicationMenu(menu)
+    // const menu = Menu.buildFromTemplate(template)
+    // Menu.setApplicationMenu(menu)
 
 	// var protocol = electron.protocol;
 	// protocol.registerFileProtocol('file', function(request, callback) {
@@ -147,9 +147,9 @@ function createWindow () {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
 		width: 1024,
-		height: 768,
+        height: 710,
 		minWidth: 1024,
-		minHeight: 768,
+        minHeight: 710,
 		webPreferences: {
 			nodeIntegration: false
 		}

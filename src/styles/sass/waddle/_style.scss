@@ -324,11 +324,18 @@ nav {
           border: none;
           line-height: inherit;
           .collection-header {
+
             padding-left: 180px;
 
             .title {
               height: 65px;
               width: 160px;
+            }
+
+            .seclet-into {
+              position: absolute;
+              right: 10px;
+              top: 55px;
             }
 
           }
@@ -350,6 +357,7 @@ nav {
             @extend .grey-text, .text-lighten-2;
           }
           p {
+
             margin: 0;
             font-size: 1rem;
             line-height: 1.2rem;
@@ -362,6 +370,7 @@ nav {
 
           p {
             padding: 0;
+            padding-right: 10px;
             font-weight: 300;
           }
 
@@ -557,3 +566,11 @@ vg-time-display {
 
 /* 5. typography
    ========================================================================== */
+
+/* 5. Modal
+   ========================================================================== */
+
+.modal {
+  width: 80%;
+  max-height: 90%;
+}

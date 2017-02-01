@@ -8,9 +8,9 @@
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="{{page.img}}">
         </div>
-        <div class="card-content">
+          <div *ngIf="id != 1" class="card-content">
           <div>
-            <span class="card-title activator">{{page.menuName}}</span>
+              <span class="card-title activator">{{page.menuName}}</span>
             <a>
               <!--<i class="material-icons right">-->
               <!--info-->
